@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>37E4B8CD-7E00-48B9-AB9D-C099AFD4E4D8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Fun App</string>
+	<key>IDESourceControlProjectPath</key>
+	<string>Fun App.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>AA2F63E5-BA6A-4754-A79C-9EEF571A38CA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Jiobu/iOS-class-.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>AA2F63E5-BA6A-4754-A79C-9EEF571A38CA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AA2F63E5-BA6A-4754-A79C-9EEF571A38CA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Fun App</string>
+		</dict>
+	</array>
+</dict>
+</plist>

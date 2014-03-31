@@ -17,13 +17,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+   
 }
 
+- (IBAction)button1:(id)sender {
+    self.label1.text = @"Jisha";
+}
+
+- (IBAction)button2:(id)sender {
+    self.label2.text = self.label2a.text;
+}
+
+- (IBAction)button3:(id)sender {
+    self.label3.textColor = [UIColor brownColor];
+}
 @end
