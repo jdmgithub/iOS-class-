@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>59B200A0-006B-4003-9BFE-02D4BD8462B8</string>
+	<string>B9654F13-BE38-40B7-A3D7-43E173713E8F</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Notes</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/Jiobu/iOS-class-.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Notes_04012014/Notes/Notes.xcodeproj/project.xcworkspace</string>
+	<string>Notes_04012014/Note/Notes/Notes.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1B00FF6D-AEF4-43EF-8B78-81F59C1845D4</key>
-		<string>../../../..</string>
+		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Jiobu/iOS-class-.git</string>

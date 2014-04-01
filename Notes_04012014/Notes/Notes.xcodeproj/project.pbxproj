@@ -10,8 +10,6 @@
 		C31CE07018EAF6050037B94D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31CE06F18EAF6050037B94D /* Foundation.framework */; };
 		C31CE07218EAF6050037B94D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31CE07118EAF6050037B94D /* CoreGraphics.framework */; };
 		C31CE07418EAF6050037B94D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31CE07318EAF6050037B94D /* UIKit.framework */; };
-		C31CE07A18EAF6050037B94D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C31CE07818EAF6050037B94D /* InfoPlist.strings */; };
-		C31CE07C18EAF6050037B94D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C31CE07B18EAF6050037B94D /* main.m */; };
 		C31CE08018EAF6050037B94D /* JONAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C31CE07F18EAF6050037B94D /* JONAppDelegate.m */; };
 		C31CE08218EAF6050037B94D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C31CE08118EAF6050037B94D /* Images.xcassets */; };
 		C31CE08918EAF6050037B94D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31CE08818EAF6050037B94D /* XCTest.framework */; };
@@ -19,6 +17,7 @@
 		C31CE08B18EAF6050037B94D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31CE07318EAF6050037B94D /* UIKit.framework */; };
 		C31CE09318EAF6050037B94D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C31CE09118EAF6050037B94D /* InfoPlist.strings */; };
 		C31CE09518EAF6050037B94D /* NotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C31CE09418EAF6050037B94D /* NotesTests.m */; };
+		C31CE0A018EAF9380037B94D /* JONRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C31CE09F18EAF9380037B94D /* JONRootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +35,6 @@
 		C31CE06F18EAF6050037B94D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C31CE07118EAF6050037B94D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C31CE07318EAF6050037B94D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		C31CE07718EAF6050037B94D /* Notes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Notes-Info.plist"; sourceTree = "<group>"; };
-		C31CE07918EAF6050037B94D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C31CE07B18EAF6050037B94D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C31CE07D18EAF6050037B94D /* Notes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Notes-Prefix.pch"; sourceTree = "<group>"; };
 		C31CE07E18EAF6050037B94D /* JONAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JONAppDelegate.h; sourceTree = "<group>"; };
 		C31CE07F18EAF6050037B94D /* JONAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JONAppDelegate.m; sourceTree = "<group>"; };
 		C31CE08118EAF6050037B94D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -48,6 +43,8 @@
 		C31CE09018EAF6050037B94D /* NotesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NotesTests-Info.plist"; sourceTree = "<group>"; };
 		C31CE09218EAF6050037B94D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C31CE09418EAF6050037B94D /* NotesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotesTests.m; sourceTree = "<group>"; };
+		C31CE09E18EAF9380037B94D /* JONRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JONRootViewController.h; sourceTree = "<group>"; };
+		C31CE09F18EAF9380037B94D /* JONRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JONRootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +104,8 @@
 		C31CE07518EAF6050037B94D /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				C31CE09E18EAF9380037B94D /* JONRootViewController.h */,
+				C31CE09F18EAF9380037B94D /* JONRootViewController.m */,
 				C31CE07E18EAF6050037B94D /* JONAppDelegate.h */,
 				C31CE07F18EAF6050037B94D /* JONAppDelegate.m */,
 				C31CE08118EAF6050037B94D /* Images.xcassets */,
@@ -118,10 +117,6 @@
 		C31CE07618EAF6050037B94D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C31CE07718EAF6050037B94D /* Notes-Info.plist */,
-				C31CE07818EAF6050037B94D /* InfoPlist.strings */,
-				C31CE07B18EAF6050037B94D /* main.m */,
-				C31CE07D18EAF6050037B94D /* Notes-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -220,7 +215,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C31CE07A18EAF6050037B94D /* InfoPlist.strings in Resources */,
 				C31CE08218EAF6050037B94D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,8 +234,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C31CE0A018EAF9380037B94D /* JONRootViewController.m in Sources */,
 				C31CE08018EAF6050037B94D /* JONAppDelegate.m in Sources */,
-				C31CE07C18EAF6050037B94D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,14 +258,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C31CE07818EAF6050037B94D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C31CE07918EAF6050037B94D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		C31CE09118EAF6050037B94D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -358,9 +344,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Notes/Notes-Prefix.pch";
 				INFOPLIST_FILE = "Notes/Notes-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -371,9 +359,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Notes/Notes-Prefix.pch";
 				INFOPLIST_FILE = "Notes/Notes-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
