@@ -19,6 +19,8 @@
 		C31CE0C918EB03D60037B94D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31CE0B118EB03D60037B94D /* UIKit.framework */; };
 		C31CE0D118EB03D60037B94D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C31CE0CF18EB03D60037B94D /* InfoPlist.strings */; };
 		C31CE0D318EB03D60037B94D /* NotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C31CE0D218EB03D60037B94D /* NotesTests.m */; };
+		C31CE0DE18EB04480037B94D /* JONRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C31CE0DD18EB04480037B94D /* JONRootViewController.m */; };
+		C31CE0E118EB0C410037B94D /* JONUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31CE0E018EB0C410037B94D /* JONUIView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		C31CE0CE18EB03D60037B94D /* NotesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NotesTests-Info.plist"; sourceTree = "<group>"; };
 		C31CE0D018EB03D60037B94D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C31CE0D218EB03D60037B94D /* NotesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotesTests.m; sourceTree = "<group>"; };
+		C31CE0DC18EB04480037B94D /* JONRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JONRootViewController.h; sourceTree = "<group>"; };
+		C31CE0DD18EB04480037B94D /* JONRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JONRootViewController.m; sourceTree = "<group>"; };
+		C31CE0DF18EB0C410037B94D /* JONUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JONUIView.h; sourceTree = "<group>"; };
+		C31CE0E018EB0C410037B94D /* JONUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JONUIView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +115,12 @@
 			children = (
 				C31CE0BC18EB03D60037B94D /* JONAppDelegate.h */,
 				C31CE0BD18EB03D60037B94D /* JONAppDelegate.m */,
+				C31CE0DC18EB04480037B94D /* JONRootViewController.h */,
+				C31CE0DD18EB04480037B94D /* JONRootViewController.m */,
 				C31CE0BF18EB03D60037B94D /* Images.xcassets */,
 				C31CE0B418EB03D60037B94D /* Supporting Files */,
+				C31CE0DF18EB0C410037B94D /* JONUIView.h */,
+				C31CE0E018EB0C410037B94D /* JONUIView.m */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -240,7 +250,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C31CE0DE18EB04480037B94D /* JONRootViewController.m in Sources */,
 				C31CE0BE18EB03D60037B94D /* JONAppDelegate.m in Sources */,
+				C31CE0E118EB0C410037B94D /* JONUIView.m in Sources */,
 				C31CE0BA18EB03D60037B94D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
