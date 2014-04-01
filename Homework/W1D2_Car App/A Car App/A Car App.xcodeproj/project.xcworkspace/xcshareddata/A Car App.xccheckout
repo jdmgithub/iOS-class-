@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>ABCFD85A-038E-402C-A7A5-FCF5125D8C62</string>
+	<string>563E263E-74D2-4160-9955-2466A903FE62</string>
 	<key>IDESourceControlProjectName</key>
-	<string>HelloObjectiveC</string>
+	<string>A Car App</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1B00FF6D-AEF4-43EF-8B78-81F59C1845D4</key>
 		<string>https://github.com/Jiobu/iOS-class-.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Notes_04012014/HelloObjectiveC/HelloObjectiveC/HelloObjectiveC.xcodeproj/project.xcworkspace</string>
+	<string>Homework/W1D2_Car App/A Car App/A Car App.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1B00FF6D-AEF4-43EF-8B78-81F59C1845D4</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>1B00FF6D-AEF4-43EF-8B78-81F59C1845D4</string>
 			<key>IDESourceControlWCCName</key>
-			<string>HelloObjectiveC</string>
+			<string>A Car App</string>
 		</dict>
 	</array>
 </dict>
