@@ -17,6 +17,8 @@
         
         self.fixed = YES;
         self.backgroundColor = [UIColor blackColor];
+        self.width = 1;
+        self.brand = @"Porsche";
     }
     return self;
 }

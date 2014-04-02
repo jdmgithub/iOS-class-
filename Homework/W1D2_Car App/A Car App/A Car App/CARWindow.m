@@ -18,6 +18,8 @@
         self.backgroundColor =[UIColor blackColor];
         self.tint = @"black";
         self.alpha =0.8;
+        self.brand = @"Porsche";
+        self.fixed = YES;
     }
     return self;
 }

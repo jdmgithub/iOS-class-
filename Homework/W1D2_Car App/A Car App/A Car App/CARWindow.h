@@ -11,7 +11,8 @@
 @interface CARWindow : UIView
 
 @property (nonatomic) NSString *tint;
-
+@property (nonatomic) NSString *brand;
+@property (nonatomic) BOOL fixed;
 
 
 @end

@@ -11,7 +11,8 @@
 @interface CARBumper : UIView
 
 @property (nonatomic) BOOL fixed;
-
+@property (nonatomic) int *width;
+@property (nonatomic) NSString *brand;
 
 
 @end

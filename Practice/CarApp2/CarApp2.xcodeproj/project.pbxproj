@@ -19,6 +19,13 @@
 		C381018518EC3ACF0020FC07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C381016D18EC3ACF0020FC07 /* UIKit.framework */; };
 		C381018D18EC3ACF0020FC07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C381018B18EC3ACF0020FC07 /* InfoPlist.strings */; };
 		C381018F18EC3ACF0020FC07 /* CarApp2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C381018E18EC3ACF0020FC07 /* CarApp2Tests.m */; };
+		C381019A18EC3B3E0020FC07 /* CARApp2RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C381019918EC3B3E0020FC07 /* CARApp2RootViewController.m */; };
+		C381019D18EC3B900020FC07 /* CARApp2Window.m in Sources */ = {isa = PBXBuildFile; fileRef = C381019C18EC3B900020FC07 /* CARApp2Window.m */; };
+		C38101A018EC3F130020FC07 /* CARApp2Wheel.m in Sources */ = {isa = PBXBuildFile; fileRef = C381019F18EC3F130020FC07 /* CARApp2Wheel.m */; };
+		C38101A318EC3F480020FC07 /* CARApp2Bumper.m in Sources */ = {isa = PBXBuildFile; fileRef = C38101A218EC3F480020FC07 /* CARApp2Bumper.m */; };
+		C38101A618EC3F910020FC07 /* CARApp2Ignition.m in Sources */ = {isa = PBXBuildFile; fileRef = C38101A518EC3F910020FC07 /* CARApp2Ignition.m */; };
+		C38101A918EC3FA30020FC07 /* CARApp2GasPedal.m in Sources */ = {isa = PBXBuildFile; fileRef = C38101A818EC3FA30020FC07 /* CARApp2GasPedal.m */; };
+		C38101AC18EC3FB10020FC07 /* CARApp2Brake.m in Sources */ = {isa = PBXBuildFile; fileRef = C38101AB18EC3FB10020FC07 /* CARApp2Brake.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +55,20 @@
 		C381018A18EC3ACF0020FC07 /* CarApp2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CarApp2Tests-Info.plist"; sourceTree = "<group>"; };
 		C381018C18EC3ACF0020FC07 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C381018E18EC3ACF0020FC07 /* CarApp2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarApp2Tests.m; sourceTree = "<group>"; };
+		C381019818EC3B3E0020FC07 /* CARApp2RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CARApp2RootViewController.h; sourceTree = "<group>"; };
+		C381019918EC3B3E0020FC07 /* CARApp2RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CARApp2RootViewController.m; sourceTree = "<group>"; };
+		C381019B18EC3B900020FC07 /* CARApp2Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CARApp2Window.h; sourceTree = "<group>"; };
+		C381019C18EC3B900020FC07 /* CARApp2Window.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CARApp2Window.m; sourceTree = "<group>"; };
+		C381019E18EC3F130020FC07 /* CARApp2Wheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CARApp2Wheel.h; sourceTree = "<group>"; };
+		C381019F18EC3F130020FC07 /* CARApp2Wheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CARApp2Wheel.m; sourceTree = "<group>"; };
+		C38101A118EC3F480020FC07 /* CARApp2Bumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CARApp2Bumper.h; sourceTree = "<group>"; };
+		C38101A218EC3F480020FC07 /* CARApp2Bumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CARApp2Bumper.m; sourceTree = "<group>"; };
+		C38101A418EC3F910020FC07 /* CARApp2Ignition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CARApp2Ignition.h; sourceTree = "<group>"; };
+		C38101A518EC3F910020FC07 /* CARApp2Ignition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CARApp2Ignition.m; sourceTree = "<group>"; };
+		C38101A718EC3FA30020FC07 /* CARApp2GasPedal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CARApp2GasPedal.h; sourceTree = "<group>"; };
+		C38101A818EC3FA30020FC07 /* CARApp2GasPedal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CARApp2GasPedal.m; sourceTree = "<group>"; };
+		C38101AA18EC3FB10020FC07 /* CARApp2Brake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CARApp2Brake.h; sourceTree = "<group>"; };
+		C38101AB18EC3FB10020FC07 /* CARApp2Brake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CARApp2Brake.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +132,20 @@
 				C381017918EC3ACF0020FC07 /* CARApp2AppDelegate.m */,
 				C381017B18EC3ACF0020FC07 /* Images.xcassets */,
 				C381017018EC3ACF0020FC07 /* Supporting Files */,
+				C381019818EC3B3E0020FC07 /* CARApp2RootViewController.h */,
+				C381019918EC3B3E0020FC07 /* CARApp2RootViewController.m */,
+				C381019B18EC3B900020FC07 /* CARApp2Window.h */,
+				C381019C18EC3B900020FC07 /* CARApp2Window.m */,
+				C381019E18EC3F130020FC07 /* CARApp2Wheel.h */,
+				C381019F18EC3F130020FC07 /* CARApp2Wheel.m */,
+				C38101A118EC3F480020FC07 /* CARApp2Bumper.h */,
+				C38101A218EC3F480020FC07 /* CARApp2Bumper.m */,
+				C38101A418EC3F910020FC07 /* CARApp2Ignition.h */,
+				C38101A518EC3F910020FC07 /* CARApp2Ignition.m */,
+				C38101A718EC3FA30020FC07 /* CARApp2GasPedal.h */,
+				C38101A818EC3FA30020FC07 /* CARApp2GasPedal.m */,
+				C38101AA18EC3FB10020FC07 /* CARApp2Brake.h */,
+				C38101AB18EC3FB10020FC07 /* CARApp2Brake.m */,
 			);
 			path = CarApp2;
 			sourceTree = "<group>";
@@ -240,8 +275,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C38101A618EC3F910020FC07 /* CARApp2Ignition.m in Sources */,
+				C38101AC18EC3FB10020FC07 /* CARApp2Brake.m in Sources */,
+				C381019A18EC3B3E0020FC07 /* CARApp2RootViewController.m in Sources */,
 				C381017A18EC3ACF0020FC07 /* CARApp2AppDelegate.m in Sources */,
 				C381017618EC3ACF0020FC07 /* main.m in Sources */,
+				C381019D18EC3B900020FC07 /* CARApp2Window.m in Sources */,
+				C38101A318EC3F480020FC07 /* CARApp2Bumper.m in Sources */,
+				C38101A918EC3FA30020FC07 /* CARApp2GasPedal.m in Sources */,
+				C38101A018EC3F130020FC07 /* CARApp2Wheel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +403,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CarApp2/CarApp2-Prefix.pch";
 				INFOPLIST_FILE = "CarApp2/CarApp2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -374,6 +417,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CarApp2/CarApp2-Prefix.pch";
 				INFOPLIST_FILE = "CarApp2/CarApp2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
