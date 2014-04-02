@@ -15,11 +15,8 @@
     self = [super init];
     if(self)
     {
-
      self.backgroundColor = [UIColor greenColor];
-     self.layer.cornerRadius = 20;
-
-        
+     self.layer.cornerRadius = 20;     
     }
     return self;
     

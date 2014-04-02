@@ -18,8 +18,8 @@
         self.tirePressure = 30;
         self.flat = NO;
         
-        self.backgroundColor = [UIColor brownColor];
-        self.layer.cornerRadius = 20;
+        self.backgroundColor = [UIColor blueColor];
+        self.layer.cornerRadius = 30;
         self.rimSize = 20;
         self.brand = @"Mitchelin";
         

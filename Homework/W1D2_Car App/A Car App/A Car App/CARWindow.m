@@ -13,10 +13,11 @@
 - (id)init
 {
     self = [super init];
-    if (self) {
+    if (self)
+    {
         self.backgroundColor =[UIColor blackColor];
         self.tint = @"black";
-        self.alpha =0.2;
+        self.alpha =0.8;
     }
     return self;
 }

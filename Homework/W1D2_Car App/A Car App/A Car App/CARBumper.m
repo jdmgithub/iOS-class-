@@ -10,13 +10,13 @@
 
 @implementation CARBumper
 
-- (id)initWithFrame:(CGRect)frame
+- (id)init
 {
-    self = [super initWithFrame:frame];
+    self = [super init];
     if (self) {
         
         self.fixed = YES;
-        self.bumperColor = [UIColor redColor];
+        self.backgroundColor = [UIColor blackColor];
     }
     return self;
 }

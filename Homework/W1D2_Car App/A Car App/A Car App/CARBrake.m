@@ -15,7 +15,6 @@
     self = [super init];
     if(self)
     {
-        
         self.backgroundColor = [UIColor blackColor];
     }
     return self;
