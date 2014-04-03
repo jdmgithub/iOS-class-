@@ -45,15 +45,20 @@
 //     self.imageView.image = profieInfo[@"image"];
      [self.contentView addSubview:imageView];
 //     if(profileInfo !=nil)
+      _profileInfo = profileInfo;
      
-     UITextView * textView = [[UITextView alloc] initWithFrame:CGRectMake(150, 20, 200, 60)];
+     UITextView * textView = [[UITextView alloc] initWithFrame:CGRectMake(100, 20, 100, 60)];
      textView.text = profileInfo[@"name"];
      [self.contentView addSubview:textView];
-         _profileInfo = profileInfo;
      textView.backgroundColor = [UIColor lightGrayColor];
-     textView.font = [UIFont fontWithName:@"Times New Roman" size:(12)];T
+     textView.font = [UIFont fontWithName:@"Times New Roman" size:(12)];
      
      
+     UITextView * urlView = [[UITextView alloc] initWithFrame:CGRectMake(200, 20, 200, 60)];
+     urlView.text = profileInfo[@"github"];
+     [self.contentView addSubview:urlView];
+     urlView.backgroundColor = [UIColor lightGrayColor];
+     urlView.font = [UIFont fontWithName:@"Times New Roman" size:(12)];
 
     
     

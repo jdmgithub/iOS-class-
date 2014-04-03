@@ -13,7 +13,8 @@
 
 {
     NSArray *listItems;
-    NSArray *listImages;
+//    NSArray *listImages;
+//    NSArray *listUrls;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -30,22 +31,22 @@
          */
         
         listItems = @[
-                      @{@"name":@"Ali Houshmand", @"image":[UIImage imageNamed:@"alihoushmand"]},
-                      @{@"name":@"Ashby Thornwell", @"image":[UIImage imageNamed:@"ashbythornwell"]},
-                      @{@"name":@"Austen Johnson", @"image":[UIImage imageNamed:@"austenjohnson"]},
-                      @{@"name":@"Austin Nolan", @"image":[UIImage imageNamed:@"austinnolan"]},
-                      @{@"name":@"Derek Weber", @"image":[UIImage imageNamed:@"derekweber"]},
-                      @{@"name":@"Ed Salter", @"image":[UIImage imageNamed:@"edsalter"]},
-                      @{@"name":@"Heidi Proske", @"image":[UIImage imageNamed:@"heidiproske"]},
-                      @{@"name":@"Jeff King", @"image":[UIImage imageNamed:@"jeffking"]},
-                      @{@"name":@"Jeffrey Moulds",@"image":[UIImage imageNamed:@"jeffreymoulds"]},
-                      @{@"name":@"Jisha Obukwelu", @"image":[UIImage imageNamed:@"jishaobukwelu"]},
-                      @{@"name":@"Jo Albright", @"image":[UIImage imageNamed:@"joalbright"]},
-                      @{@"name":@"Jon Fox", @"image":[UIImage imageNamed:@"jonfox"]},
-                      @{@"name":@"John Yam", @"image":[UIImage imageNamed:@"johnyam"]},
-                      @{@"name":@"Savitha Reddy", @"image":[UIImage imageNamed:@"savithareddy"]},
-                      @{@"name":@"T.J. Mercer", @"image":[UIImage imageNamed:@"tjmercer"]},
-                      @{@"name":@"Teddy Conyers", @"image":[UIImage imageNamed:@"teddyconyers"]},
+                      @{@"name":@"Ali Houshmand", @"image":[UIImage imageNamed:@"alihoushmand"], @"github": @"https://github.com/HoushmandA06"},
+                      @{@"name":@"Ashby Thornwell", @"image":[UIImage imageNamed:@"ashbythornwell"], @"github": @"https://github.com/athornwell"},
+                      @{@"name":@"Austen Johnson", @"image":[UIImage imageNamed:@"austenjohnson"], @"github": @"https://github.com/ajohnson21"},
+                      @{@"name":@"Austin Nolan", @"image":[UIImage imageNamed:@"austinnolan"], @"github": @"https://github.com/adnolan99"},
+                      @{@"name":@"Derek Weber", @"image":[UIImage imageNamed:@"derekweber"], @"github": @"https://github.com/dweber03"},
+                      @{@"name":@"Ed Salter", @"image":[UIImage imageNamed:@"edsalter"], @"github": @"https://github.com/MadArkitekt"},
+                      @{@"name":@"Heidi Proske", @"image":[UIImage imageNamed:@"heidiproske"], @"github": @"https://github.com/justagirlcoding"},
+                      @{@"name":@"Jeff King", @"image":[UIImage imageNamed:@"jeffking"], @"github": @"https://github.com/rampis"},
+                      @{@"name":@"Jeffrey Moulds",@"image":[UIImage imageNamed:@"jeffreymoulds"], @"github": @"https://github.com/jdmgithub"},
+                      @{@"name":@"Jisha Obukwelu", @"image":[UIImage imageNamed:@"jishaobukwelu"], @"github": @"https://github.com/Jiobu"},
+                      @{@"name":@"Jo Albright", @"image":[UIImage imageNamed:@"joalbright"], @"github": @"https://github.com/joalbright"},
+                      @{@"name":@"Jon Fox", @"image":[UIImage imageNamed:@"jonfox"], @"github": @"https://github.com/FoxJon"},
+                      @{@"name":@"John Yam", @"image":[UIImage imageNamed:@"johnyam"], @"github": @"https://github.com/yamski"},
+                      @{@"name":@"Savitha Reddy", @"image":[UIImage imageNamed:@"savithareddy"], @"github": @"https://github.com/savithareddy"},
+                      @{@"name":@"T.J. Mercer", @"image":[UIImage imageNamed:@"tjmercer"], @"github": @"https://github.com/gwanunig14"},
+                      @{@"name":@"Teddy Conyers", @"image":[UIImage imageNamed:@"teddyconyers"], @"github": @"https://github.com/talented76"},
                       ];
         
 //        //listItems = [[NSArray alloc] initWithObjects:@"Monday", @"Tuesday", @"Wednesday", nil];
