@@ -7,6 +7,7 @@
 //
 
 #import "TDLTableViewController.h"
+#import "TDLTableViewCell.h"
 
 @implementation TDLTableViewController
 
@@ -86,13 +87,14 @@
 //                        ];
         
         self.tableView.contentInset = UIEdgeInsetsMake(35, 0, 0, 0);
-        //self.tableView.rowHeight = 100;
+        self.tableView.rowHeight = 100;
         
         UIView * header =[[UIView alloc] initWithFrame:CGRectMake(0, 0 ,320, 40)];
         header.backgroundColor = [UIColor darkGrayColor];
         UILabel * titleHeader = [[UILabel alloc] initWithFrame:CGRectMake(15,10,280,20)];
         titleHeader.text = @"Contacts";
         titleHeader.textColor = [UIColor whiteColor];
+        titleHeader.font = [UIFont fontWithName:@"Times New Roman" size:(14)];
         [header addSubview:titleHeader];
         
         //self.tableView.tableHeaderView = header;
@@ -137,8 +139,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (cell==nil) cell =[[UITableViewCell alloc] init];
+    TDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+   
+//    if (cell==nil)
+//    {
+//        cell =[[TDLTableViewCell alloc] init];
+//        cell.bacground = [UIColor clearColor];
+//    }
+//  must have {} if there are more than one condition otherwise only what is next to will happen
+
+    if (cell==nil) cell =[[TDLTableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell"];
+// looking for reusableCellWithIdentifier.
+   
+
 //    int index = [indexPath row];
     int index = indexPath.row;
     
@@ -148,14 +161,20 @@
     
 //  NSDictionary * listItems = [listItems objectAtIndex:index];
     NSDictionary * listItem = listItems[index];
+    cell.profileInfo = listItem;
     
-//  cell.textLabel.text = [listItem objectForKey:@"name"];
-    cell.textLabel.text = listItem[@"name"];
-    cell.imageView.image = listItem[@"image"];
+//  (custom)
     
-    cell.backgroundColor = [UIColor lightGrayColor];
-    cell.textLabel.textColor = [UIColor darkGrayColor];
-    cell.textLabel.font = [UIFont fontWithName: @"Times New Roman" size:(12)];
+//    Default Styling Methods
+//    cell.textLabel.text = [listItem objectForKey:@"name"];
+//    cell.textLabel.text = listItem[@"name"];
+//    [cell imageView] setImage: listItem[@"name"]
+//    cell.imageView.image = listItem[@"image"];
+    
+    
+//     cell.textLabel.textColor = [UIColor darkGrayColor];
+//     cell.textLabel.font = [UIFont fontWithName: @"Times New Roman" size:(12)];
+     cell.backgroundColor = [UIColor lightGrayColor];
 
     return cell;
 }
