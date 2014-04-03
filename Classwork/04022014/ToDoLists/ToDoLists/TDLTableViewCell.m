@@ -54,7 +54,7 @@
      textView.font = [UIFont fontWithName:@"Times New Roman" size:(12)];
      
      
-     UITextView * urlView = [[UITextView alloc] initWithFrame:CGRectMake(200, 20, 200, 60)];
+     UITextView * urlView = [[UITextView alloc] initWithFrame:CGRectMake(100, 40, 200, 60)];
      urlView.text = profileInfo[@"github"];
      [self.contentView addSubview:urlView];
      urlView.backgroundColor = [UIColor lightGrayColor];
