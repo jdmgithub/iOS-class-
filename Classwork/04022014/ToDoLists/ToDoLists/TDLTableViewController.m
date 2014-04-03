@@ -20,50 +20,76 @@
     self = [super initWithStyle:style];
     if (self)
     {
-        //listItems = [[NSArray alloc] initWithObjects:@"Monday", @"Tuesday", @"Wednesday", nil];
-        listItems = @[@"Ali Houshmand",
-                      @"Ashby Thornwell",
-                      @"Austen Johnson",
-                      @"Austin Nolan",
-                      @"Derek Weber",
-                      @"Ed Salter",
-                      @"Heidi Proske",
-                      @"Jeff King",
-                      @"Jeffrey Moulds",
-                      @"Jisha Obukwelu",
-                      @"Jo Albright",
-                      @"Jon Fox",
-                      @"John Yam",
-                      @"Savitha Reddy",
-                      @"T.J. Mercer",
-                      @"Teddy Conyers"];
+        //NSDictionary * listExample = [[NSDictionary alloc] initWithObjects:(@"Savitha Reddy") forKeys:@[@n *"name"]];
+        /*
+         NSDictionary * list = @{
+                                @"name" : @"Savitha Reddy",
+                                @"image" : [UIImage imageNamed: @"savithareddy"]
+                                };
+         */
         
+        listItems = @[
+                      @{@"name":@"Ali Houshmand", @"image":[UIImage imageNamed:@"alihoushmand"]},
+                      @{@"name":@"Ashby Thornwell", @"image":[UIImage imageNamed:@"ashbythornwell"]},
+                      @{@"name":@"Austen Johnson", @"image":[UIImage imageNamed:@"austenjohnson"]},
+                      @{@"name":@"Austin Nolan", @"image":[UIImage imageNamed:@"austinnolan"]},
+                      @{@"name":@"Derek Weber", @"image":[UIImage imageNamed:@"derekweber"]},
+                      @{@"name":@"Ed Salter", @"image":[UIImage imageNamed:@"edsalter"]},
+                      @{@"name":@"Heidi Proske", @"image":[UIImage imageNamed:@"heidiproske"]},
+                      @{@"name":@"Jeff King", @"image":[UIImage imageNamed:@"jeffking"]},
+                      @{@"name":@"Jeffrey Moulds",@"image":[UIImage imageNamed:@"jeffreymoulds"]},
+                      @{@"name":@"Jisha Obukwelu", @"image":[UIImage imageNamed:@"jishaobukwelu"]},
+                      @{@"name":@"Jo Albright", @"image":[UIImage imageNamed:@"joalbright"]},
+                      @{@"name":@"Jon Fox", @"image":[UIImage imageNamed:@"jonfox"]},
+                      @{@"name":@"John Yam", @"image":[UIImage imageNamed:@"johnyam"]},
+                      @{@"name":@"Savitha Reddy", @"image":[UIImage imageNamed:@"savithareddy"]},
+                      @{@"name":@"T.J. Mercer", @"image":[UIImage imageNamed:@"tjmercer"]},
+                      @{@"name":@"Teddy Conyers", @"image":[UIImage imageNamed:@"teddyconyers"]},
+                      ];
         
-        listImages = @[
-                        [UIImage imageNamed:@"alihoushmand"],
-                        [UIImage imageNamed:@"ashbythornwell"],
-                        [UIImage imageNamed:@"austenjohnson" ],
-                        [UIImage imageNamed:@"austinnolan" ],
-                        [UIImage imageNamed:@"derekweber" ],
-                        [UIImage imageNamed:@"edsalter" ],
-                        [UIImage imageNamed:@"heidiproske" ],
-                        [UIImage imageNamed:@"jeffking" ],
-                        [UIImage imageNamed:@"jeffreymoulds" ],
-                        [UIImage imageNamed:@"jishaobukwelu" ],
-                        [UIImage imageNamed:@"joalbright" ],
-                        [UIImage imageNamed:@"jonfox" ],
-                        [UIImage imageNamed:@"johnyam" ],
-                        [UIImage imageNamed:@"savithareddy" ],
-                        [UIImage imageNamed:@"tjmercer" ],
-                        [UIImage imageNamed:@"teddyconyers"]
-                        ];
+//        //listItems = [[NSArray alloc] initWithObjects:@"Monday", @"Tuesday", @"Wednesday", nil];
+//        listItems = @[@"Ali Houshmand",
+//                      @"Ashby Thornwell",
+//                      @"Austen Johnson",
+//                      @"Austin Nolan",
+//                      @"Derek Weber",
+//                      @"Ed Salter",
+//                      @"Heidi Proske",
+//                      @"Jeff King",
+//                      @"Jeffrey Moulds",
+//                      @"Jisha Obukwelu",
+//                      @"Jo Albright",
+//                      @"Jon Fox",
+//                      @"John Yam",
+//                      @"Savitha Reddy",
+//                      @"T.J. Mercer",
+//                      @"Teddy Conyers"];
+//        
+//        
+//        listImages = @[
+//                        [UIImage imageNamed:@"alihoushmand"],
+//                        [UIImage imageNamed:@"ashbythornwell"],
+//                        [UIImage imageNamed:@"austenjohnson" ],
+//                        [UIImage imageNamed:@"austinnolan" ],
+//                        [UIImage imageNamed:@"derekweber" ],
+//                        [UIImage imageNamed:@"edsalter" ],
+//                        [UIImage imageNamed:@"heidiproske" ],
+//                        [UIImage imageNamed:@"jeffking" ],
+//                        [UIImage imageNamed:@"jeffreymoulds" ],
+//                        [UIImage imageNamed:@"jishaobukwelu" ],
+//                        [UIImage imageNamed:@"joalbright" ],
+//                        [UIImage imageNamed:@"jonfox" ],
+//                        [UIImage imageNamed:@"johnyam" ],
+//                        [UIImage imageNamed:@"savithareddy" ],
+//                        [UIImage imageNamed:@"tjmercer" ],
+//                        [UIImage imageNamed:@"teddyconyers"]
+//                        ];
         
         self.tableView.contentInset = UIEdgeInsetsMake(35, 0, 0, 0);
         //self.tableView.rowHeight = 100;
         
         UIView * header =[[UIView alloc] initWithFrame:CGRectMake(0, 0 ,320, 40)];
-        header.backgroundColor = [UIColor blackColor];
-        
+        header.backgroundColor = [UIColor darkGrayColor];
         UILabel * titleHeader = [[UILabel alloc] initWithFrame:CGRectMake(15,10,280,20)];
         titleHeader.text = @"Contacts";
         titleHeader.textColor = [UIColor whiteColor];
@@ -73,11 +99,10 @@
         [self.tableView setTableHeaderView:header];
         
         UIView * footer =[[UIView alloc] initWithFrame:CGRectMake(0, 0 ,320, 40)];
-        footer.backgroundColor = [UIColor blackColor];
-        
+        footer.backgroundColor = [UIColor darkGrayColor];
         [self.tableView setTableFooterView:footer];
         
-        self.tableView.backgroundColor =[UIColor redColor];
+        self.tableView.backgroundColor =[UIColor lightGrayColor];
         
         //for(NSString * day in listItems);
     }
@@ -113,16 +138,24 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    
     if (cell==nil) cell =[[UITableViewCell alloc] init];
+//    int index = [indexPath row];
+    int index = indexPath.row;
     
-    int index = [indexPath row];
+//    cell.textLabel.text = listItems[index];
+//    cell.imageView.image = listImages[index];
     
-    cell.textLabel.text = listItems[index];
-    cell.imageView.image = listImages[index];
     
-    cell.backgroundColor = [UIColor redColor];
+//  NSDictionary * listItems = [listItems objectAtIndex:index];
+    NSDictionary * listItem = listItems[index];
     
+//  cell.textLabel.text = [listItem objectForKey:@"name"];
+    cell.textLabel.text = listItem[@"name"];
+    cell.imageView.image = listItem[@"image"];
+    
+    cell.backgroundColor = [UIColor lightGrayColor];
+    cell.textLabel.textColor = [UIColor darkGrayColor];
+    cell.textLabel.font = [UIFont fontWithName: @"Times New Roman" size:(12)];
 
     return cell;
 }
