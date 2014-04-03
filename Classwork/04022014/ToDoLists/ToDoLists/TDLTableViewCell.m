@@ -9,6 +9,11 @@
 #import "TDLTableViewCell.h"
 
 @implementation TDLTableViewCell
+{
+    UIImageView * profileImage;
+    UITextView * profileName;
+    UITextView * profileURL;
+}
 
 //@synthesize profileInfo=_profileInfo; not necessary if only overriding getter or setter
 
@@ -19,6 +24,15 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
+        
+        profileImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 60, 60)];
+        [self.contentView addSubview:profileImage];
+        
+        profileName = [[UITextView alloc] initWithFrame:CGRectMake(100, 20, 200, 60)];
+        [self.contentView addSubview:profileName];
+        
+        profileURL = [[UITextView alloc] initWithFrame:CGRectMake(100, 40, 200, 60)];
+        [self.contentView addSubview:profileURL];
         
     }
     return self;
@@ -37,32 +51,27 @@
 
 - (void)setProfileInfo: (NSDictionary *)profileInfo
  {
-     UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 60, 60)];
      
-     imageView.image = profileInfo[@"image"];
-     imageView.layer.cornerRadius = 30;
-     imageView.layer.masksToBounds = YES;
-//     self.imageView.image = profieInfo[@"image"];
-     [self.contentView addSubview:imageView];
 //     if(profileInfo !=nil)
-      _profileInfo = profileInfo;
+     _profileInfo = profileInfo;
      
-     UITextView * textView = [[UITextView alloc] initWithFrame:CGRectMake(100, 20, 100, 60)];
-     textView.text = profileInfo[@"name"];
-     [self.contentView addSubview:textView];
-     textView.backgroundColor = [UIColor lightGrayColor];
-     textView.font = [UIFont fontWithName:@"Times New Roman" size:(12)];
+//   UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 60, 60)];
+     profileImage.image = profileInfo[@"image"];
+     profileImage.layer.cornerRadius = 30;
+     profileImage.layer.masksToBounds = YES;
+//     self.imageView.image = profieInfo[@"image"];
      
      
-     UITextView * urlView = [[UITextView alloc] initWithFrame:CGRectMake(100, 40, 200, 60)];
-     urlView.text = profileInfo[@"github"];
-     [self.contentView addSubview:urlView];
-     urlView.backgroundColor = [UIColor lightGrayColor];
-     urlView.font = [UIFont fontWithName:@"Times New Roman" size:(12)];
-
-    
-    
-
+//   UITextView * textView = [[UITextView alloc] initWithFrame:CGRectMake(100, 20, 100, 60)];
+     profileName.text = profileInfo[@"name"];
+     profileName.backgroundColor = [UIColor lightGrayColor];
+     profileName.font = [UIFont fontWithName:@"Times New Roman" size:(12)];
+     
+     
+//   UITextView * urlView = [[UITextView alloc] initWithFrame:CGRectMake(100, 40, 200, 60)];
+     profileURL.text = profileInfo[@"github"];
+     profileURL.backgroundColor = [UIColor lightGrayColor];
+     profileURL.font = [UIFont fontWithName:@"Times New Roman" size:(12)];
 
  }
 //setter _ Assessor

@@ -90,19 +90,34 @@
         self.tableView.contentInset = UIEdgeInsetsMake(35, 0, 0, 0);
         self.tableView.rowHeight = 100;
         
-        UIView * header =[[UIView alloc] initWithFrame:CGRectMake(0, 0 ,320, 40)];
+        UIView * header =[[UIView alloc] initWithFrame:CGRectMake(0, 0 ,320, 100)];
         header.backgroundColor = [UIColor darkGrayColor];
-        UILabel * titleHeader = [[UILabel alloc] initWithFrame:CGRectMake(15,10,280,20)];
-        titleHeader.text = @"Contacts";
+        self.tableView.tableHeaderView = header;
+        
+        UILabel * titleHeader = [[UILabel alloc] initWithFrame:CGRectMake(20,10,280,30)];
+        titleHeader.text = @"GITHUB USERS";
         titleHeader.textColor = [UIColor whiteColor];
         titleHeader.font = [UIFont fontWithName:@"Times New Roman" size:(14)];
         [header addSubview:titleHeader];
         
+        
+        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(10, 40, 200, 30)];
+        textField.backgroundColor = [UIColor lightGrayColor];
+        textField.font = [UIFont fontWithName:@"Times New Roman" size:(14)];
+        [header addSubview:textField];
+        
+        UIButton * submitButton = [[UIButton alloc] initWithFrame:CGRectMake(220, 40, 100, 30)];
+        submitButton.backgroundColor = [UIColor lightGrayColor];
+        submitButton.layer.cornerRadius = 6;
+        [submitButton setTitle:@"New User" forState:UIControlStateNormal];
+        [submitButton addTarget:(self) action:@selector (enterUser) forControlEvents:UIControlEventTouchUpInside];
+        [header addSubview:submitButton];
+        
         //self.tableView.tableHeaderView = header;
-        [self.tableView setTableHeaderView:header];
         
         UIView * footer =[[UIView alloc] initWithFrame:CGRectMake(0, 0 ,320, 40)];
         footer.backgroundColor = [UIColor darkGrayColor];
+       
         [self.tableView setTableFooterView:footer];
         
         self.tableView.backgroundColor =[UIColor lightGrayColor];
@@ -178,6 +193,11 @@
      cell.backgroundColor = [UIColor lightGrayColor];
 
     return cell;
+}
+
+- (void)enterUser
+{
+    NSLog(@"A New Friend");
 }
 
 @end
