@@ -101,16 +101,16 @@
         [header addSubview:titleHeader];
         
         
-        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(10, 40, 200, 30)];
-        textField.backgroundColor = [UIColor lightGrayColor];
+        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(05, 40, 180, 30)];
+        textField.backgroundColor = [UIColor whiteColor];
         textField.font = [UIFont fontWithName:@"Times New Roman" size:(14)];
         [header addSubview:textField];
         
-        UIButton * submitButton = [[UIButton alloc] initWithFrame:CGRectMake(220, 40, 100, 30)];
+        UIButton * submitButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 40, 100, 30)];
         submitButton.backgroundColor = [UIColor lightGrayColor];
         submitButton.layer.cornerRadius = 6;
         [submitButton setTitle:@"New User" forState:UIControlStateNormal];
-        [submitButton addTarget:(self) action:@selector (enterUser) forControlEvents:UIControlEventTouchUpInside];
+        [submitButton addTarget:(self) action:@selector (newUser) forControlEvents:UIControlEventTouchUpInside];
         [header addSubview:submitButton];
         
         //self.tableView.tableHeaderView = header;
@@ -120,7 +120,7 @@
        
         [self.tableView setTableFooterView:footer];
         
-        self.tableView.backgroundColor =[UIColor lightGrayColor];
+        self.tableView.backgroundColor =[UIColor clearColor];
         
         //for(NSString * day in listItems);
     }
@@ -190,14 +190,18 @@
     
 //     cell.textLabel.textColor = [UIColor darkGrayColor];
 //     cell.textLabel.font = [UIFont fontWithName: @"Times New Roman" size:(12)];
-     cell.backgroundColor = [UIColor lightGrayColor];
+     cell.backgroundColor = [UIColor clearColor];
 
     return cell;
 }
 
-- (void)enterUser
+//- (void)enterUser
+//{
+//    NSLog(@"A New Friend");
+//}
+
+- (void)newUser
 {
     NSLog(@"A New Friend");
 }
-
 @end

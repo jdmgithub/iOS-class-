@@ -64,13 +64,14 @@
      
 //   UITextView * textView = [[UITextView alloc] initWithFrame:CGRectMake(100, 20, 100, 60)];
      profileName.text = profileInfo[@"name"];
-     profileName.backgroundColor = [UIColor lightGrayColor];
+     profileName.backgroundColor = [UIColor clearColor];
      profileName.font = [UIFont fontWithName:@"Times New Roman" size:(12)];
+     
      
      
 //   UITextView * urlView = [[UITextView alloc] initWithFrame:CGRectMake(100, 40, 200, 60)];
      profileURL.text = profileInfo[@"github"];
-     profileURL.backgroundColor = [UIColor lightGrayColor];
+     profileURL.backgroundColor = [UIColor clearColor];
      profileURL.font = [UIFont fontWithName:@"Times New Roman" size:(12)];
 
  }
