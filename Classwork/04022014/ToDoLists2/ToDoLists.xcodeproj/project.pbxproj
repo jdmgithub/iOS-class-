@@ -23,7 +23,8 @@
 		C32C55C818EC8FA10038B237 /* savithareddy.png in Resources */ = {isa = PBXBuildFile; fileRef = C32C55B918EC8FA10038B237 /* savithareddy.png */; };
 		C32C55C918EC8FA10038B237 /* teddyconyers.png in Resources */ = {isa = PBXBuildFile; fileRef = C32C55BA18EC8FA10038B237 /* teddyconyers.png */; };
 		C32C55CA18EC8FA10038B237 /* tjmercer.png in Resources */ = {isa = PBXBuildFile; fileRef = C32C55BB18EC8FA10038B237 /* tjmercer.png */; };
-		C35A9C5518EF33A1007D1F9C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C35A9C5418EF33A0007D1F9C /* Storyboard.storyboard */; };
+		C35A9C4F18EF22BB007D1F9C /* defaultuser.png in Resources */ = {isa = PBXBuildFile; fileRef = C35A9C4E18EF22BB007D1F9C /* defaultuser.png */; };
+		C35A9C5318EF336D007D1F9C /* GitHubFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C35A9C5218EF336D007D1F9C /* GitHubFlow.storyboard */; };
 		C38101BA18EC4B210020FC07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38101B918EC4B210020FC07 /* Foundation.framework */; };
 		C38101BC18EC4B210020FC07 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38101BB18EC4B210020FC07 /* CoreGraphics.framework */; };
 		C38101BE18EC4B210020FC07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38101BD18EC4B210020FC07 /* UIKit.framework */; };
@@ -67,7 +68,8 @@
 		C32C55B918EC8FA10038B237 /* savithareddy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = savithareddy.png; path = ../savithareddy.png; sourceTree = "<group>"; };
 		C32C55BA18EC8FA10038B237 /* teddyconyers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = teddyconyers.png; path = ../teddyconyers.png; sourceTree = "<group>"; };
 		C32C55BB18EC8FA10038B237 /* tjmercer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tjmercer.png; path = ../tjmercer.png; sourceTree = "<group>"; };
-		C35A9C5418EF33A0007D1F9C /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		C35A9C4E18EF22BB007D1F9C /* defaultuser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultuser.png; sourceTree = "<group>"; };
+		C35A9C5218EF336D007D1F9C /* GitHubFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GitHubFlow.storyboard; path = ../ToDoLists/ToDoLists/GitHubFlow.storyboard; sourceTree = "<group>"; };
 		C38101B618EC4B210020FC07 /* ToDoLists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoLists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38101B918EC4B210020FC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C38101BB18EC4B210020FC07 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,6 +119,7 @@
 		C32C55CB18EC8FB70038B237 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C35A9C4E18EF22BB007D1F9C /* defaultuser.png */,
 				C32C55AB18EC8F910038B237 /* alihoushmand.png */,
 				C32C55AD18EC8FA10038B237 /* ashbythornwell.png */,
 				C32C55AE18EC8FA10038B237 /* austenjohnson.png */,
@@ -140,7 +143,7 @@
 		C38101AD18EC4B210020FC07 = {
 			isa = PBXGroup;
 			children = (
-				C35A9C5418EF33A0007D1F9C /* Storyboard.storyboard */,
+				C35A9C5218EF336D007D1F9C /* GitHubFlow.storyboard */,
 				C3C88A9F18EDA7AD0086D9BC /* Controllers */,
 				C38101BF18EC4B210020FC07 /* ToDoLists */,
 				C38101D818EC4B220020FC07 /* ToDoListsTests */,
@@ -309,11 +312,12 @@
 				C32C55C118EC8FA10038B237 /* heidiproske.png in Resources */,
 				C32C55BE18EC8FA10038B237 /* austinnolan.png in Resources */,
 				C32C55C318EC8FA10038B237 /* jeffreymoulds.png in Resources */,
-				C35A9C5518EF33A1007D1F9C /* Storyboard.storyboard in Resources */,
 				C32C55C918EC8FA10038B237 /* teddyconyers.png in Resources */,
 				C32C55C718EC8FA10038B237 /* johnyam.png in Resources */,
+				C35A9C5318EF336D007D1F9C /* GitHubFlow.storyboard in Resources */,
 				C32C55CA18EC8FA10038B237 /* tjmercer.png in Resources */,
 				C32C55C618EC8FA10038B237 /* jonfox.png in Resources */,
+				C35A9C4F18EF22BB007D1F9C /* defaultuser.png in Resources */,
 				C38101C418EC4B210020FC07 /* InfoPlist.strings in Resources */,
 				C32C55C218EC8FA10038B237 /* jeffking.png in Resources */,
 				C32C55C418EC8FA10038B237 /* jishaobukwelu.png in Resources */,

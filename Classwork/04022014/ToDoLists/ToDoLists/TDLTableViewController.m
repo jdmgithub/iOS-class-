@@ -12,12 +12,16 @@
 @implementation TDLTableViewController
 
 {
-    NSArray *listItems;
+    NSMutableArray *listItems;
+    //changed from NSArray to Mutable to allow change
 //    NSArray *listImages;
 //    NSArray *listUrls;
+    UITextField * nameField;
+//changed all from textField
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithStyle:(UITableViewStyle)style //id is a wild card
+//- (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithStyle:style];
     if (self)
@@ -30,7 +34,10 @@
                                 };
          */
         
-        listItems = @[
+// @[] is a literal of NSArray place [ - then add mutableCopy to create an instance object (makes a copy of array)
+        NSArray * array =@[
+        //[@[
+        //NSMutableArray alloc] initWithObjects:
                       @{@"name":@"Ali Houshmand", @"image":[UIImage imageNamed:@"alihoushmand"], @"github": @"https://github.com/HoushmandA06"},
                       @{@"name":@"Ashby Thornwell", @"image":[UIImage imageNamed:@"ashbythornwell"], @"github": @"https://github.com/athornwell"},
                       @{@"name":@"Austen Johnson", @"image":[UIImage imageNamed:@"austenjohnson"], @"github": @"https://github.com/ajohnson21"},
@@ -48,6 +55,14 @@
                       @{@"name":@"T.J. Mercer", @"image":[UIImage imageNamed:@"tjmercer"], @"github": @"https://github.com/gwanunig14"},
                       @{@"name":@"Teddy Conyers", @"image":[UIImage imageNamed:@"teddyconyers"], @"github": @"https://github.com/talented76"}
                       ];
+                     //mutableCopy];
+                     //nil];
+        listItems = [array mutableCopy];
+        
+//        [listItems addObject:@{}];
+
+        
+//        [listItems addObject:@{@"name":@"New User", @"image":[UIImage imageNamed:@"new_user"], @"github": @"https://github.com/new_user"}];
         
 //        //listItems = [[NSArray alloc] initWithObjects:@"Monday", @"Tuesday", @"Wednesday", nil];
 //        listItems = @[@"Ali Houshmand",
@@ -87,7 +102,7 @@
 //                        [UIImage imageNamed:@"teddyconyers"]
 //                        ];
         
-        self.tableView.contentInset = UIEdgeInsetsMake(35, 0, 0, 0);
+//        self.tableView.contentInset = UIEdgeInsetsMake(35, 0, 0, 0);
         self.tableView.rowHeight = 100;
         
         UIView * header =[[UIView alloc] initWithFrame:CGRectMake(0, 0 ,320, 100)];
@@ -101,10 +116,14 @@
         [header addSubview:titleHeader];
         
         
-        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(05, 40, 180, 30)];
-        textField.backgroundColor = [UIColor whiteColor];
-        textField.font = [UIFont fontWithName:@"Times New Roman" size:(14)];
-        [header addSubview:textField];
+        //UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(05, 40, 180, 30)];
+        nameField = [[UITextField alloc] initWithFrame:CGRectMake(05, 40, 180, 30)];
+        nameField.backgroundColor = [UIColor whiteColor];
+        nameField.font = [UIFont fontWithName:@"Times New Roman" size:(14)];
+        
+        nameField.delegate = self;
+        
+        [header addSubview:nameField];
         
         UIButton * submitButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 40, 100, 30)];
         submitButton.backgroundColor = [UIColor lightGrayColor];
@@ -169,15 +188,28 @@
    
 
 //    int index = [indexPath row];
-    int index = indexPath.row;
+    
     
 //    cell.textLabel.text = listItems[index];
 //    cell.imageView.image = listImages[index];
     
     
 //  NSDictionary * listItems = [listItems objectAtIndex:index];
-    NSDictionary * listItem = listItems[index];
-    cell.profileInfo = listItem;
+    
+//reverseArray changes the order of the array
+    
+//    int index = indexPath.row;
+//    
+//    NSArray * reverseArray =[[listItems reverseObjectEnumerator] allObjects];
+//    
+//    NSDictionary * listItem = reverseArray[index];
+    
+    
+//    NSDictionary * listItem =[self getListItem:indexPath:row];
+    cell.profileInfo = [self getListItem:indexPath.row];
+//  cell.profileInfo = listItem;
+
+    
     
 //  (custom)
     
@@ -195,13 +227,74 @@
     return cell;
 }
 
+
 //- (void)enterUser
 //{
 //    NSLog(@"A New Friend");
 //}
 
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    int index = indexPath.row;
+//    
+//    NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
+//    
+//    NSDictionary * listItem = reverseArray[index];
+    NSDictionary * listItem =[self getListItem:indexPath.row];
+    NSLog(@"%@",listItem);
+    UIViewController * webController = [[UIViewController alloc] init];
+    UIWebView * webView = [[UIWebView alloc]init];
+// using view controller because there is no webview controller
+//subview allows you to mangage sizes of the content views
+// we are using the webpages view
+//ViewController is a temporary  view that is only necessary when pushing a cell
+    webController.view = webView;
+    
+//     UIWindow * window = [[UIApplication sharedApplication].windows firstObject];
+    UIWindow * window = UIApplication.sharedApplication.windows.firstObject;
+//.window is an array because there could be multiple windows in your app
+    
+    UINavigationController * navController = (UINavigationController *)
+    window.rootViewController;
+    
+    [navController pushViewController:webController animated:YES];
+    //    [webView loadRequest:([NSURLRequest requestWithURL:[NSURL URLWithString:listItems[@"github"]]]];
+
+}
+
+- (NSDictionary *)getListItem: (NSInteger)row
+{
+    NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
+    return reverseArray[row];
+}
+
 - (void)newUser
 {
-    NSLog(@"A New Friend");
+    NSString * userName = nameField.text;
+    NSLog(@"%@",userName);
+    nameField.text =@"";
+//creates an empty field every
+    [listItems addObject:@{
+                           @"name":userName,
+                           //     @"image":[UIImage imageNamed:@"new_user"],
+                           @"github": [NSString stringWithFormat:@"https://github.com/%@",userName] }
+    ];
+    
+    [nameField resignFirstResponder];
+    [self.tableView reloadData];
+    
+    NSLog(@"listItems Count :%d",[listItems count]);
+    
+//    NSLog(@"A New Friend");
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    //    NSLog(@"return key");
+    //    return YES;
+    [self newUser];
+    return YES;
+}
+//keyboard is removed
+
 @end

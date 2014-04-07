@@ -15,24 +15,17 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-//    TDLTableViewController * rootViewController =[[TDLTableViewController alloc] initWithStyle:UITableViewStylePlain];
-//    
-//    UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:rootViewController];
+    TDLTableViewController * rootViewController =[[TDLTableViewController alloc] initWithStyle:UITableViewStylePlain];
     
-    TDLTableViewController * tableViewController =[[TDLTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    
-    UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:tableViewController];
+    UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:rootViewController];
     
     self.window.rootViewController =navController;
-    
-    //  self.window.rootViewController = [[TDLTableViewController alloc] initWithStyle:(UITableViewStylePlain)];
-    
+                                              
     self.window.backgroundColor = [UIColor colorWithRed:255/255.0f green:144/255.0f blue:52/255.0f alpha:1.0f];
     
     [self.window makeKeyAndVisible];
     
     return YES;
 }
-
 
 @end
