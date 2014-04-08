@@ -1,18 +1,18 @@
 //
-//  Fun_AppTests.m
-//  Fun AppTests
+//  ToDoListsTests.m
+//  ToDoListsTests
 //
-//  Created by Jisha Obukwelu on 3/31/14.
+//  Created by Jisha Obukwelu on 4/2/14.
 //  Copyright (c) 2014 Jisha Obukwelu. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface Fun_AppTests : XCTestCase
+@interface ToDoListsTests : XCTestCase
 
 @end
 
-@implementation Fun_AppTests
+@implementation ToDoListsTests
 
 - (void)setUp
 {

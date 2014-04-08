@@ -21,8 +21,8 @@
     if (self)
     {
         
-        profileImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 60, 60)];
-        [self.contentView addSubview:profileImage];
+       profileImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 60, 60)];
+       [self.contentView addSubview:profileImage];
         
         profileName = [[UITextView alloc] initWithFrame:CGRectMake(100, 20, 200, 60)];
         [self.contentView addSubview:profileName];
@@ -35,9 +35,16 @@
 }
 - (void)setProfileInfo: (NSDictionary *)profileInfo
  {
-     _profileInfo = profileInfo;
+     NSURL * imageURL = [NSURL URLWithString:profileInfo[@"image"]];
      
-     profileImage.image = profileInfo[@"image"];
+     NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+     
+     //NSData * imageData = [NSData dataWithContentsOfURL:profileInfo[@"imag"]];
+     
+     UIImage * image = [UIImage imageWithData:imageData];
+     
+     profileImage.image = image;
+  //   profileImage.image = profileInfo[@"image"];
      profileImage.layer.cornerRadius = 30;
      profileImage.layer.masksToBounds = YES;
      
@@ -48,6 +55,8 @@
      profileURL.text = profileInfo[@"github"];
      profileURL.backgroundColor = [UIColor clearColor];
      profileURL.font = [UIFont fontWithName:@"Times New Roman" size:(12)];
+
+     _profileInfo = profileInfo;
 
  }
 

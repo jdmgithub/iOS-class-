@@ -8,6 +8,7 @@
 
 #import "TDLTableViewController.h"
 #import "TDLTableViewCell.h"
+#import "TDLGitHubRequest.h"
 
 @implementation TDLTableViewController
 
@@ -18,6 +19,7 @@
 //    NSArray *listUrls;
     UITextField * nameField;
 //changed all from textField
+    UINavigationController * navController;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style //id is a wild card
@@ -26,6 +28,11 @@
     self = [super initWithStyle:style];
     if (self)
     {
+        
+        UIWindow * window = UIApplication.sharedApplication.windows.firstObject;
+        
+        navController = (UINavigationController *)window.rootViewController;
+
         //NSDictionary * listExample = [[NSDictionary alloc] initWithObjects:(@"Savitha Reddy") forKeys:@[@n *"name"]];
         /*
          NSDictionary * list = @{
@@ -35,26 +42,26 @@
          */
         
 // @[] is a literal of NSArray place [ - then add mutableCopy to create an instance object (makes a copy of array)
-        NSArray * array =@[
-        //[@[
-        //NSMutableArray alloc] initWithObjects:
-                      @{@"name":@"Ali Houshmand", @"image":[UIImage imageNamed:@"alihoushmand"], @"github": @"https://github.com/HoushmandA06"},
-                      @{@"name":@"Ashby Thornwell", @"image":[UIImage imageNamed:@"ashbythornwell"], @"github": @"https://github.com/athornwell"},
-                      @{@"name":@"Austen Johnson", @"image":[UIImage imageNamed:@"austenjohnson"], @"github": @"https://github.com/ajohnson21"},
-                      @{@"name":@"Austin Nolan", @"image":[UIImage imageNamed:@"austinnolan"], @"github": @"https://github.com/adnolan99"},
-                      @{@"name":@"Derek Weber", @"image":[UIImage imageNamed:@"derekweber"], @"github": @"https://github.com/dweber03"},
-                      @{@"name":@"Ed Salter", @"image":[UIImage imageNamed:@"edsalter"], @"github": @"https://github.com/MadArkitekt"},
-                      @{@"name":@"Heidi Proske", @"image":[UIImage imageNamed:@"heidiproske"], @"github": @"https://github.com/justagirlcoding"},
-                      @{@"name":@"Jeff King", @"image":[UIImage imageNamed:@"jeffking"], @"github": @"https://github.com/rampis"},
-                      @{@"name":@"Jeffrey Moulds",@"image":[UIImage imageNamed:@"jeffreymoulds"], @"github": @"https://github.com/jdmgithub"},
-                      @{@"name":@"Jisha Obukwelu", @"image":[UIImage imageNamed:@"jishaobukwelu"], @"github": @"https://github.com/Jiobu"},
-                      @{@"name":@"Jo Albright", @"image":[UIImage imageNamed:@"joalbright"], @"github": @"https://github.com/joalbright"},
-                      @{@"name":@"Jon Fox", @"image":[UIImage imageNamed:@"jonfox"], @"github": @"https://github.com/FoxJon"},
-                      @{@"name":@"John Yam", @"image":[UIImage imageNamed:@"johnyam"], @"github": @"https://github.com/yamski"},
-                      @{@"name":@"Savitha Reddy", @"image":[UIImage imageNamed:@"savithareddy"], @"github": @"https://github.com/savithareddy"},
-                      @{@"name":@"T.J. Mercer", @"image":[UIImage imageNamed:@"tjmercer"], @"github": @"https://github.com/gwanunig14"},
-                      @{@"name":@"Teddy Conyers", @"image":[UIImage imageNamed:@"teddyconyers"], @"github": @"https://github.com/talented76"}
-                      ];
+//        NSArray * array =@[
+//        //[@[
+//        //NSMutableArray alloc] initWithObjects:
+//                      @{@"name":@"Ali Houshmand", @"image":[UIImage imageNamed:@"alihoushmand"], @"github": @"https://github.com/HoushmandA06"},
+//                      @{@"name":@"Ashby Thornwell", @"image":[UIImage imageNamed:@"ashbythornwell"], @"github": @"https://github.com/athornwell"},
+//                      @{@"name":@"Austen Johnson", @"image":[UIImage imageNamed:@"austenjohnson"], @"github": @"https://github.com/ajohnson21"},
+//                      @{@"name":@"Austin Nolan", @"image":[UIImage imageNamed:@"austinnolan"], @"github": @"https://github.com/adnolan99"},
+//                      @{@"name":@"Derek Weber", @"image":[UIImage imageNamed:@"derekweber"], @"github": @"https://github.com/dweber03"},
+//                      @{@"name":@"Ed Salter", @"image":[UIImage imageNamed:@"edsalter"], @"github": @"https://github.com/MadArkitekt"},
+//                      @{@"name":@"Heidi Proske", @"image":[UIImage imageNamed:@"heidiproske"], @"github": @"https://github.com/justagirlcoding"},
+//                      @{@"name":@"Jeff King", @"image":[UIImage imageNamed:@"jeffking"], @"github": @"https://github.com/rampis"},
+//                      @{@"name":@"Jeffrey Moulds",@"image":[UIImage imageNamed:@"jeffreymoulds"], @"github": @"https://github.com/jdmgithub"},
+//                      @{@"name":@"Jisha Obukwelu", @"image":[UIImage imageNamed:@"jishaobukwelu"], @"github": @"https://github.com/Jiobu"},
+//                      @{@"name":@"Jo Albright", @"image":[UIImage imageNamed:@"joalbright"], @"github": @"https://github.com/joalbright"},
+//                      @{@"name":@"Jon Fox", @"image":[UIImage imageNamed:@"jonfox"], @"github": @"https://github.com/FoxJon"},
+//                      @{@"name":@"John Yam", @"image":[UIImage imageNamed:@"johnyam"], @"github": @"https://github.com/yamski"},
+//                      @{@"name":@"Savitha Reddy", @"image":[UIImage imageNamed:@"savithareddy"], @"github": @"https://github.com/savithareddy"},
+//                      @{@"name":@"T.J. Mercer", @"image":[UIImage imageNamed:@"tjmercer"], @"github": @"https://github.com/gwanunig14"},
+//                      @{@"name":@"Teddy Conyers", @"image":[UIImage imageNamed:@"teddyconyers"], @"github": @"https://github.com/talented76"}
+//                      ];
                      //mutableCopy];
                      //nil];
         listItems = [array mutableCopy];
@@ -233,7 +240,7 @@
 //    NSLog(@"A New Friend");
 //}
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 //    int index = indexPath.row;
 //    
@@ -251,14 +258,20 @@
     webController.view = webView;
     
 //     UIWindow * window = [[UIApplication sharedApplication].windows firstObject];
-    UIWindow * window = UIApplication.sharedApplication.windows.firstObject;
+//    UIWindow * window = UIApplication.sharedApplication.windows.firstObject;
 //.window is an array because there could be multiple windows in your app
     
-    UINavigationController * navController = (UINavigationController *)
-    window.rootViewController;
+//    UINavigationController * navController = (UINavigationController *)
+//window.rootViewController;
     
     [navController pushViewController:webController animated:YES];
     //    [webView loadRequest:([NSURLRequest requestWithURL:[NSURL URLWithString:listItems[@"github"]]]];
+    
+    NSURL * url = [NSURL URLWithString:listItem[@"github"]];
+    
+    NSURLRequest * request = [NSURLRequest requestWithURL:url];
+    
+    [webView loadRequest:request];
 
 }
 
@@ -271,15 +284,23 @@
 - (void)newUser
 {
     NSString * userName = nameField.text;
+    
     NSLog(@"%@",userName);
     nameField.text =@"";
-//creates an empty field every
-    [listItems addObject:@{
-                           @"name":userName,
-                           //     @"image":[UIImage imageNamed:@"new_user"],
-                           @"github": [NSString stringWithFormat:@"https://github.com/%@",userName] }
-    ];
     
+    NSDictionary * userInfo = [TDLGitHubRequest getUserWithUsername:userName];
+    
+    if([[userInfo allKeys] count] ==3) [listItems addObject:userInfo];
+    else NSLog(@"not enough data");
+    
+
+//creates an empty field every
+//    [listItems addObject:@{
+//                           @"name":userName,
+//                           //     @"image":[UIImage imageNamed:@"new_user"],
+//                           @"github": [NSString stringWithFormat:@"https://github.com/%@",userName] }
+//    ];
+//    
     [nameField resignFirstResponder];
     [self.tableView reloadData];
     

@@ -51,12 +51,21 @@
 
 - (void)setProfileInfo: (NSDictionary *)profileInfo
  {
+     NSURL * imageURL = [NSURL URLWithString:profileInfo[@"image"]];
+     
+     NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+     
+     //NSData * imageData = [NSData dataWithContentsOfURL:profileInfo[@"imag"]];
+     
+     UIImage * image = [UIImage imageWithData:imageData];
+
      
 //     if(profileInfo !=nil)
      _profileInfo = profileInfo;
      
 //   UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 60, 60)];
-     profileImage.image = profileInfo[@"image"];
+ //    profileImage.image = profileInfo[@"image"];
+     profileImage.image = image;
      profileImage.layer.cornerRadius = 30;
      profileImage.layer.masksToBounds = YES;
 //     self.imageView.image = profieInfo[@"image"];

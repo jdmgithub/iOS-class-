@@ -5,31 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>37E4B8CD-7E00-48B9-AB9D-C099AFD4E4D8</string>
+	<string>9064E41C-32E9-4D96-A9B5-6575A9FF133E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Fun App</string>
+	<string>ToDoLists</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F07B2953-D845-48AB-BC9A-81C432C7F92D</key>
+		<string>https://github.com/Jiobu/iOS-class-.git</string>
+	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Fun App.xcodeproj/project.xcworkspace</string>
+	<string>Notes_04012014/04022014/ToDoLists/ToDoLists.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>AA2F63E5-BA6A-4754-A79C-9EEF571A38CA</key>
-		<string>../..</string>
+		<key>F07B2953-D845-48AB-BC9A-81C432C7F92D</key>
+		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Jiobu/iOS-class-.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>AA2F63E5-BA6A-4754-A79C-9EEF571A38CA</string>
+	<string>F07B2953-D845-48AB-BC9A-81C432C7F92D</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>AA2F63E5-BA6A-4754-A79C-9EEF571A38CA</string>
+			<string>F07B2953-D845-48AB-BC9A-81C432C7F92D</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Fun App</string>
+			<string>ToDoLists</string>
 		</dict>
 	</array>
 </dict>
