@@ -19,7 +19,7 @@
     
     UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:rootViewController];
     
-    self.window.rootViewController =navController;
+    self.window.rootViewController = navController;
                                               
     self.window.backgroundColor = [UIColor colorWithRed:255/255.0f green:144/255.0f blue:52/255.0f alpha:1.0f];
     

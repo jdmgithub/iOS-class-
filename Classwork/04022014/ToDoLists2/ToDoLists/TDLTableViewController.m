@@ -15,24 +15,14 @@
 {
     NSMutableArray *listItems;
     UITextField * nameField;
-   
 }
 
-- (void)toggleEdit
 
-{
-    [self.tableView  setEditing:!self.tableView.editing animated:YES];
-}
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:UITableViewStylePlain];
     if (self)
     {
-        UIBarButtonItem * editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(toggleEdit)];
-        
-        self.navigationItem.rightBarButtonItem = editButton;
-
-        
 //               listItems = [@[
 //                      @{@"name":@"Ali Houshmand", @"image":[UIImage imageNamed:@"alihoushmand"], @"github": @"https://github.com/HoushmandA06"},
 //                      @{@"name":@"Ashby Thornwell", @"image":[UIImage imageNamed:@"ashbythornwell"], @"github": @"https://github.com/athornwell"},
@@ -53,18 +43,9 @@
 //                      ] mutableCopy];
         
         
-        listItems =[@[
-                      @{
-                      @"name" : @"Jo Albright",
-                      @"image" : @"https://avatars.githubusercontent.com/u/1536630?",
-                      @"github" : @"https://github.com/joalbright"
-                      },
-                      @{
-                      @"name" : @"Jisha Obukwelu",
-                      @"image" : @"https://avatars3.githubusercontent.com/u/6852465?s=460",
-                      @"github" : @"https://github.com/jiobu"
-                      }
-                      ] mutableCopy];
+        listItems =[@[] mutableCopy];
+        
+        [self loadListItems];
         
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
         self.tableView.rowHeight = 100;
@@ -99,9 +80,7 @@
         
         UIView * footer =[[UIView alloc] initWithFrame:CGRectMake(0, 0 ,320, 40)];
         footer.backgroundColor = [UIColor darkGrayColor];
-       
         [self.tableView setTableFooterView:footer];
-        
         self.tableView.backgroundColor =[UIColor clearColor];
 }
     return self;
@@ -110,6 +89,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -124,15 +105,11 @@
       return [listItems count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    
     if (cell==nil) cell =[[TDLTableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell"];
-    
      cell.profileInfo = [self getListItem:indexPath.row];
-    
      cell.backgroundColor = [UIColor clearColor];
     
     return cell;
@@ -144,17 +121,11 @@
     NSLog(@"%@",listItem);
     
     UIViewController * webController = [[UIViewController alloc] init];
-    
     UIWebView * webView = [[UIWebView alloc]init];
-     webController.view = webView;
-    
-    
+    webController.view = webView;
     [self.navigationController pushViewController:webController animated:YES];
-    
     NSURL * url = [NSURL URLWithString:listItem[@"github"]];
-    
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
-    
     [webView loadRequest:request];
 }
 
@@ -163,26 +134,66 @@
     return YES;
 }
 
--(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [listItems removeObjectAtIndex:indexPath.row];
-    [self.tableView reloadData];
-    NSLog(@"%@", listItems);
+    NSDictionary * listItem = [self getListItem:indexPath.row];
+    
+    [listItems removeObjectIdenticalTo:listItem];
+    
+    TDLTableViewCell *cell = (TDLTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    cell.alpha = 0;
+    
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    
+    [self saveData];
 }
 
--(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return YES;
 }
 
--(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
     if (sourceIndexPath == destinationIndexPath) return;
+// we will switch array objects here
     
     NSDictionary * sourceItem = [self getListItem:sourceIndexPath.row];
+    
     NSDictionary * toItem = [self getListItem:destinationIndexPath.row];
+    
     [listItems removeObjectIdenticalTo:sourceItem];
+    
     [listItems insertObject:sourceItem atIndex:[listItems indexOfObject:toItem]];
+    
+    [self saveData];
+}
+- (void)newUser
+{
+    NSString * username = nameField.text;
+    nameField.text =@"";
+    NSDictionary * userInfo = [TDLGitHubRequest getUserWithUsername:username];
+    
+    if([[userInfo allKeys] count] ==3)
+    {
+        [listItems addObject:userInfo];
+    } else {
+        NSLog(@"not enough data");
+        
+        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Not Enough Information" message:@"Unable to Add User" delegate:self cancelButtonTitle:@"Try Again" otherButtonTitles:nil];
+        
+        [alertView show];
+    }
+    
+    [nameField resignFirstResponder];
+    [self.tableView reloadData];
+    [self saveData];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+ 
+    return YES;
 }
 
 - (NSDictionary *)getListItem: (NSInteger)row
@@ -191,25 +202,27 @@
     return reverseArray[row];
 }
 
-- (void)newUser
+- (void)saveData
 {
-    NSString * username = nameField.text;
-    
-    nameField.text =@"";
-    NSDictionary * userInfo = [TDLGitHubRequest getUserWithUsername:username];
-    
-    if([[userInfo allKeys] count] ==3) [listItems addObject:userInfo];
-    else NSLog(@"not enough data");
-    
-    [nameField resignFirstResponder];
-    [self.tableView reloadData];
-    }
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [self newUser];
-    return YES;
+    NSString *path = [self listArchivePath];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:listItems];
+    [data writeToFile:path options:NSDataWritingAtomic error:nil];
 }
 
+- (NSString *)listArchivePath
+{
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = documentDirectories[0];
+    return [documentDirectory stringByAppendingPathComponent:@"listdata.data"];
+}
+
+- (void)loadListItems
+{
+    NSString *path = [self listArchivePath];
+    if([[NSFileManager defaultManager] fileExistsAtPath:path])
+    {
+        listItems = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    }
+}
 
 @end

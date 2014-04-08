@@ -22,12 +22,21 @@
     UINavigationController * navController;
 }
 
+//- (void)toggleEdit
+//
+//{
+//    [self.tableView  setEditing:!self.tableView.editing animated:YES];
+//}
+
 - (id)initWithStyle:(UITableViewStyle)style //id is a wild card
 //- (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithStyle:style];
     if (self)
-    {
+    {//        UIBarButtonItem * editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(toggleEdit)];
+        //
+        //        self.navigationItem.rightBarButtonItem = editButton;
+
         
         UIWindow * window = UIApplication.sharedApplication.windows.firstObject;
         
@@ -64,7 +73,7 @@
 //                      ];
                      //mutableCopy];
                      //nil];
-        listItems = [array mutableCopy];
+//        listItems = [array mutableCopy];
         
 //        [listItems addObject:@{}];
 
@@ -161,7 +170,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
