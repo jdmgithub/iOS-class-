@@ -19,6 +19,8 @@
 		C39702F418F44ADC00D77A63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39702DC18F44ADC00D77A63 /* UIKit.framework */; };
 		C39702FC18F44ADC00D77A63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C39702FA18F44ADC00D77A63 /* InfoPlist.strings */; };
 		C39702FE18F44ADC00D77A63 /* JishaToDoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C39702FD18F44ADC00D77A63 /* JishaToDoListTests.m */; };
+		C397030918F44B2800D77A63 /* TDLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C397030818F44B2800D77A63 /* TDLTableViewController.m */; };
+		C397030C18F44B7500D77A63 /* TDLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C397030B18F44B7500D77A63 /* TDLTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		C39702F918F44ADC00D77A63 /* JishaToDoListTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JishaToDoListTests-Info.plist"; sourceTree = "<group>"; };
 		C39702FB18F44ADC00D77A63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C39702FD18F44ADC00D77A63 /* JishaToDoListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JishaToDoListTests.m; sourceTree = "<group>"; };
+		C397030718F44B2800D77A63 /* TDLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TDLTableViewController.h; path = JishaToDoList/TDLTableViewController.h; sourceTree = "<group>"; };
+		C397030818F44B2800D77A63 /* TDLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDLTableViewController.m; path = JishaToDoList/TDLTableViewController.m; sourceTree = "<group>"; };
+		C397030A18F44B7500D77A63 /* TDLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TDLTableViewCell.h; path = JishaToDoList/TDLTableViewCell.h; sourceTree = "<group>"; };
+		C397030B18F44B7500D77A63 /* TDLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDLTableViewCell.m; path = JishaToDoList/TDLTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				C39702DE18F44ADC00D77A63 /* JishaToDoList */,
+				C397030E18F4503500D77A63 /* Cells */,
+				C397030D18F4501D00D77A63 /* Controllers */,
 				C39702F718F44ADC00D77A63 /* JishaToDoListTests */,
 				C39702D718F44ADC00D77A63 /* Frameworks */,
 				C39702D618F44ADC00D77A63 /* Products */,
@@ -142,6 +150,24 @@
 				C39702FA18F44ADC00D77A63 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C397030D18F4501D00D77A63 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C397030718F44B2800D77A63 /* TDLTableViewController.h */,
+				C397030818F44B2800D77A63 /* TDLTableViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C397030E18F4503500D77A63 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C397030A18F44B7500D77A63 /* TDLTableViewCell.h */,
+				C397030B18F44B7500D77A63 /* TDLTableViewCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C397030C18F44B7500D77A63 /* TDLTableViewCell.m in Sources */,
+				C397030918F44B2800D77A63 /* TDLTableViewController.m in Sources */,
 				C39702E518F44ADC00D77A63 /* main.m in Sources */,
 				C39702E918F44ADC00D77A63 /* TDLAppDelegate.m in Sources */,
 			);
@@ -361,6 +389,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JishaToDoList/JishaToDoList-Prefix.pch";
 				INFOPLIST_FILE = "JishaToDoList/JishaToDoList-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -374,6 +403,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JishaToDoList/JishaToDoList-Prefix.pch";
 				INFOPLIST_FILE = "JishaToDoList/JishaToDoList-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

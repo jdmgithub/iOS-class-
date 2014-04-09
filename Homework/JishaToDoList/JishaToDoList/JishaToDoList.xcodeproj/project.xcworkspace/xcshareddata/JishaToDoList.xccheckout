@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>72E96D7B-CBCF-496E-BE02-1EEA7741D91A</string>
+	<string>E4A78023-E90A-4266-86FD-3E5B7188523F</string>
 	<key>IDESourceControlProjectName</key>
 	<string>JishaToDoList</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>F07B2953-D845-48AB-BC9A-81C432C7F92D</string>
 			<key>IDESourceControlWCCName</key>
-			<string>ToDoLists</string>
+			<string>JishaToDoList</string>
 		</dict>
 	</array>
 </dict>
