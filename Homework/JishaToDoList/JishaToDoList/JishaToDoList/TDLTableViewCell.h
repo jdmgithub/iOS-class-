@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface TDLTableViewCell : UITableViewCell
+@property (nonatomic) UILabel * moreToDo;
+@property (nonatomic) UIButton * setPriority;
+@property (nonatomic) UIView * priorityLevel;
+@property (nonatomic) UIView * strikeThrough;
+
++ (BOOL)askUser;
+- (void)showCircleButtons;
+- (void)hideCircleButtons;
 
 @end

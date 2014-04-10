@@ -21,6 +21,7 @@
 		C39702FE18F44ADC00D77A63 /* JishaToDoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C39702FD18F44ADC00D77A63 /* JishaToDoListTests.m */; };
 		C397030918F44B2800D77A63 /* TDLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C397030818F44B2800D77A63 /* TDLTableViewController.m */; };
 		C397030C18F44B7500D77A63 /* TDLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C397030B18F44B7500D77A63 /* TDLTableViewCell.m */; };
+		C3991F3D18F5D514006F0D26 /* MOVE.m in Sources */ = {isa = PBXBuildFile; fileRef = C3991F3C18F5D514006F0D26 /* MOVE.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		C397030818F44B2800D77A63 /* TDLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDLTableViewController.m; path = JishaToDoList/TDLTableViewController.m; sourceTree = "<group>"; };
 		C397030A18F44B7500D77A63 /* TDLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TDLTableViewCell.h; path = JishaToDoList/TDLTableViewCell.h; sourceTree = "<group>"; };
 		C397030B18F44B7500D77A63 /* TDLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDLTableViewCell.m; path = JishaToDoList/TDLTableViewCell.m; sourceTree = "<group>"; };
+		C3991F3B18F5D514006F0D26 /* MOVE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVE.h; sourceTree = "<group>"; };
+		C3991F3C18F5D514006F0D26 /* MOVE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVE.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,7 @@
 				C39702DE18F44ADC00D77A63 /* JishaToDoList */,
 				C397030E18F4503500D77A63 /* Cells */,
 				C397030D18F4501D00D77A63 /* Controllers */,
+				C3991F3E18F5D522006F0D26 /* Animation */,
 				C39702F718F44ADC00D77A63 /* JishaToDoListTests */,
 				C39702D718F44ADC00D77A63 /* Frameworks */,
 				C39702D618F44ADC00D77A63 /* Products */,
@@ -168,6 +172,15 @@
 				C397030B18F44B7500D77A63 /* TDLTableViewCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		C3991F3E18F5D522006F0D26 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				C3991F3B18F5D514006F0D26 /* MOVE.h */,
+				C3991F3C18F5D514006F0D26 /* MOVE.m */,
+			);
+			name = Animation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3991F3D18F5D514006F0D26 /* MOVE.m in Sources */,
 				C397030C18F44B7500D77A63 /* TDLTableViewCell.m in Sources */,
 				C397030918F44B2800D77A63 /* TDLTableViewController.m in Sources */,
 				C39702E518F44ADC00D77A63 /* main.m in Sources */,
@@ -468,6 +482,7 @@
 				C397030318F44ADC00D77A63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C397030418F44ADC00D77A63 /* Build configuration list for PBXNativeTarget "JishaToDoListTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +491,7 @@
 				C397030618F44ADC00D77A63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

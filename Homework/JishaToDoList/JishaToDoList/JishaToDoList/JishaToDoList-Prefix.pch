@@ -14,3 +14,13 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define FADE_COLOR [UIColor colorWithRed:255/255.0f green:215/255.0f blue:209/255.0f alpha:1.0f]
+#define GREEN_COLOR [UIColor greenColor]
+#define YELLOW_COLOR [UIColor yellowColor]
+#define RED_COLOR [UIColor redColor]
+
+
+
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
