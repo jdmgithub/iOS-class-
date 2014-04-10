@@ -8,14 +8,45 @@
 
 #import <UIKit/UIKit.h>
 
+//declaring protocol
+@protocol TDLTableViewCellDeglegate;
+
 @interface TDLTableViewCell : UITableViewCell
+
+//have it twice because it is needed  to call certain property
+
+@property (nonatomic, assign)id<TDLTableViewCellDeglegate> delegate;
+
 @property (nonatomic) UILabel * moreToDo;
 @property (nonatomic) UIButton * setPriority;
 @property (nonatomic) UIView * priorityLevel;
 @property (nonatomic) UIView * strikeThrough;
 
-+ (BOOL)askUser;
+@property (nonatomic) BOOL swiped;
+
+//- (BOOL)askUser;
+- (void)resetLayout;
+
 - (void)showCircleButtons;
 - (void)hideCircleButtons;
 
+- (void)showDeleteButton;
+- (void)hideDeleteButton;
+
 @end
+
+@protocol TDLTableViewCellDeglegate <NSObject>
+
+//deletes Item
+- (void)deleteItem:(TDLTableViewCell *)cell ;
+
+//gets priority when pushed
+- (void)setItemPriority:(int)priority withItem: (TDLTableViewCell *)cell;
+
+@optional
+
+- (void)optionalMethod;
+
+
+@end
+

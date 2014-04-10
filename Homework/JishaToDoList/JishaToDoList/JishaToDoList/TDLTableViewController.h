@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TDLTableViewCell.h"
 
-@interface TDLTableViewController : UITableViewController
+@interface TDLTableViewController : UITableViewController <UITextFieldDelegate, TDLTableViewCellDeglegate>
 
 @end

@@ -27,10 +27,6 @@
         
         [self.contentView addSubview:self.priorityLevel];
         
-        
-//        self.yesNo = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(dectectSwipe)];
-//        [self.priorityLevel addSubview:self.yesNo];
-
         self.moreToDo = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 200, 50)];
         self.moreToDo.textColor = [UIColor whiteColor];
         self.moreToDo.font = [UIFont fontWithName:@"Times New Roman" size:34];
@@ -45,48 +41,64 @@
         self.setPriority.layer.cornerRadius = 10;
         self.setPriority.backgroundColor = [UIColor whiteColor];
         [self.priorityLevel addSubview:self.setPriority];
-        
-        
     }
     return self;
 }
-//+ (BOOL)askUser
-//{
-//    yesNo = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(dectectSwipe)];
-//    [self.contentView addSubview:self.yesNo];
-//
-//}
 
-- (void)showCircleButtons
+- (void)resetLayout
+{
+//    if (self.swiped)
+//    {
+//        [self createButtons];
+//    } else {
+    self.priorityLevel.frame = CGRectMake(10,0, self.frame.size.width -20, 40);
+    [button1 removeFromSuperview];
+    [button2 removeFromSuperview];
+    [button3 removeFromSuperview];
+    self.swiped = NO;
+}
+
+- (void)createButtons
 {
     button1 = [[UIButton alloc] initWithFrame:CGRectMake(170, 0, 40, 40)];
     button1.tag = 1;
     button1.alpha = 0;
     button1.backgroundColor = GREEN_COLOR;
     button1.layer.cornerRadius = button1.frame.size.width / 2.0;
-//    [button1 addTarget:(self) action:@selector (addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
+    [button1 addTarget:(self) action:@selector (pressPriorityButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:button1];
     
     button2 = [[UIButton alloc] initWithFrame:CGRectMake(220, 0, 40, 40)];
     button2.tag = 2;
     button2.alpha = 0;
     button2.backgroundColor = YELLOW_COLOR;
-    button2.layer.cornerRadius = button1.frame.size.width / 2.0;;
-//    [button2 addTarget:(self) action:@selector (addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
+    button2.layer.cornerRadius = button1.frame.size.width / 2.0;
+    [button2 addTarget:(self) action:@selector (pressPriorityButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:button2];
     
     button3 = [[UIButton alloc] initWithFrame:CGRectMake(270, 0, 40, 40)];
     button3.tag = 3;
     button3.alpha = 0;
     button3.backgroundColor = RED_COLOR;
-    button3.layer.cornerRadius = button1.frame.size.width / 2.0;;
-//    [button3 addTarget:(self) action:@selector (addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
+    button3.layer.cornerRadius = button3.frame.size.width / 2.0;
+    [button3 addTarget:(self) action:@selector (pressPriorityButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:button3];
+}
 
+- (void)pressPriorityButton:(id)sender
+{
+    UIButton * button = (UIButton *)sender;
+    
+    [self.delegate setItemPriority:(int)button.tag withItem:self];
+}
+
+- (void)showCircleButtons
+{
+    [self createButtons];
+    
     [MOVE animateView:button1 properties:@{@"alpha":@1, @"duration":@0.2, @"delay":@0.3}];
     [MOVE animateView:button2 properties:@{@"alpha":@1, @"duration":@0.2, @"delay":@0.2}];
     [MOVE animateView:button3 properties:@{@"alpha":@1, @"duration":@0.2, @"delay":@0.1}];
-    
 }
 
 - (void)hideCircleButtons
@@ -94,6 +106,33 @@
     [MOVE animateView:button1 properties:@{@"alpha":@0, @"duration":@0.0, @"delay":@0.1, @"remove":@YES}];
     [MOVE animateView:button2 properties:@{@"alpha":@0, @"duration":@0.1, @"delay":@0.2, @"remove":@YES}];
     [MOVE animateView:button3 properties:@{@"alpha":@0, @"duration":@0.2, @"delay":@0.3, @"remove":@YES}];
+}
+
+- (void)showDeleteButton
+{
+    button3 = [[UIButton alloc] initWithFrame:CGRectMake(270, 0, 40, 40)];
+    button3.alpha = 0;
+    button3.backgroundColor = RED_COLOR;
+    button3.layer.cornerRadius = button3.frame.size.width / 2.0;
+    
+    [button3 addTarget:(self) action:@selector (pressDeleteButton) forControlEvents:UIControlEventTouchUpInside];
+    
+    [button3 setTitle:@"DELETE" forState:UIControlStateNormal];
+    button3.titleLabel.font =[UIFont fontWithName:@"Times New Roman" size:(10)];
+    
+    [self.contentView addSubview:button3];
+    
+    [MOVE animateView:button3 properties:@{@"alpha":@1, @"duration":@0.2, @"delay":@0.3}];
+}
+
+- (void)pressDeleteButton
+//self is the Table View Controller
+{
+    [self.delegate deleteItem:self];
+}
+- (void)hideDeleteButton
+{
+   [MOVE animateView:button3 properties:@{@"alpha":@0, @"duration":@0.2, @"delay":@0.0, @"remove":@YES}];
 }
 
 - (void)awakeFromNib

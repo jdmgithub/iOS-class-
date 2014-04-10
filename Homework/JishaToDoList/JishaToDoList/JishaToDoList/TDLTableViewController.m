@@ -7,7 +7,6 @@
 //
 
 #import "TDLTableViewController.h"
-#import "TDLTableViewCell.h"
 #import "MOVE.h"
 
 @interface TDLTableViewController ()
@@ -34,7 +33,6 @@
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,80)];
- //       self.tableView.tableHeaderView.backgroundColor = [UIColor purpleColor];
         self.tableView.rowHeight = 60;
         self.tableView.layer.cornerRadius = 3;
         
@@ -51,6 +49,9 @@
         toDoField.layer.cornerRadius = 6;
         toDoField.textAlignment = NSTextAlignmentCenter;
         toDoField.font = [UIFont fontWithName:@"Times New Roman" size:(20)];
+        
+        toDoField.delegate = self;
+        
         [self.tableView.tableHeaderView addSubview:toDoField];
         
         button1 = [[UIButton alloc] initWithFrame:CGRectMake(170, 20, 40, 40)];
@@ -73,15 +74,57 @@
         button3.layer.cornerRadius = button3.frame.size.width / 2.0;
         [button3 addTarget:(self) action:@selector (addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
         [self.tableView.tableHeaderView addSubview:button3];
-        
-//        UIView * footer = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,50)];
-//        self.tableView.tableFooterView = footer;
-//        footer.backgroundColor = [UIColor purpleColor];
-        
-
     }
     return self;
 }
+
+- (void)deleteItem:(TDLTableViewCell *)cell
+{
+    NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
+    
+    [toDoItems removeObjectAtIndex:indexPath.row];
+    
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)setItemPriority:(int)priority withItem: (TDLTableViewCell *)cell
+{
+    NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
+    
+    NSDictionary * toDoItem = toDoItems[indexPath.row];
+    
+    NSDictionary * updateToDoItem = @{
+                                      @"name" : toDoItem[@"name"],
+                                      @"priority" : @(priority),
+                                      @"constant" : @(priority)
+                                      };
+    // remove old dictionary at cell
+    [toDoItems removeObjectAtIndex:indexPath.row];
+    
+    //add new dictionary for cell
+    [toDoItems insertObject:updateToDoItem atIndex:indexPath.row];
+    
+    cell.priorityLevel.backgroundColor = priorityColors[priority];
+    
+    [MOVE animateView:cell.priorityLevel properties:@{@"x":@10, @"duration":@0.5}];
+    [cell hideCircleButtons];
+    cell.swiped = NO;
+    
+    NSLog(@"Priority : %d", priority);
+    
+    [self saveData];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+//return key makes keyboard go away
+{
+    NSLog(@"Returned");
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
 -(void) addNewListItem:(id)sender;
 //logs what happens when you type in field and touch a specific button
 {
@@ -90,16 +133,18 @@
     
     if(![name isEqualToString:@""])
     {
-        [toDoItems insertObject:@{@"name":name, @"priority" : @(button.tag)} atIndex:0];
-    }
+        [toDoItems insertObject:@{@"name":name, @"priority" : @(button.tag), @"constant" : @(button.tag)} atIndex:0];
+    };
     
     NSLog(@"%@", sender);
     
+    //after clicking a button keyboard goes away
     [toDoField resignFirstResponder];
+
     [self.tableView reloadData];
+    
     [self saveData];
 }
-#pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 //creates new cells as you input information
@@ -108,13 +153,19 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//colors and prioritizes inputs
+//strikesthrough and changes priority to 0
 {
     TDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    if (cell==nil) cell =[[TDLTableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell"];
+    if (cell==nil)
+    {
+        cell =[[TDLTableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell"];
+    }
+    [cell resetLayout];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    cell.delegate = self;
     
     NSDictionary * toDoItem = toDoItems[indexPath.row];
     
@@ -130,7 +181,6 @@
         cell.setPriority.alpha = 1;
     }
 
-        
     cell.moreToDo.text = toDoItem[@"name"];
     
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeCell:)];
@@ -150,54 +200,74 @@
     // get cell from tableview at row
     TDLTableViewCell *cell = (TDLTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     
-    //user answers whether or not they have completed item before it is marked done
     
-//    if([priorityLevel  )
-//    {
-//        [listItems addObject:userInfo];
-//    } else {
-//        NSLog(@"not enough data");
-//        
-//        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Not Enough Information" message:@"Unable to Add User" delegate:self cancelButtonTitle:@"Try Again" otherButtonTitles:nil];
-//        
-//        [alertView show];
-//    }
-//
+    //do not strike through if cell is moved
+    if(cell.swiped) return;
     
-    //set cell background to done color
-    cell.priorityLevel.backgroundColor = priorityColors[0];
-    cell.strikeThrough.alpha = 1;
-    cell.setPriority.alpha = 0;
     
-    //create new dictionary with done priority
-    NSDictionary * updatetoDoItems = @{@"name" : toDoItems[indexPath.row][@"name"],
-                                      @"priority" : @0
-                                      };
+    NSDictionary * toDoItem = toDoItems[indexPath.row];
+    NSDictionary * updateToDoItem;
+    
+    if([toDoItem[@"priority"] intValue])
+    {   //set cell background to done color
+        
+        cell.priorityLevel.backgroundColor = priorityColors[0];
+        cell.strikeThrough.alpha = 1;
+        cell.setPriority.alpha = 0;
+        
+        //create new dictionary with done priority
+        updateToDoItem = @{@"name" : toDoItem[@"name"],
+                                           @"priority" : @0,
+                                           @"constant" : toDoItem[@"constant"]
+                           };
+            } else {
+        //undo action
+        cell.priorityLevel.backgroundColor = priorityColors[[toDoItems[indexPath.row][@"constant"] intValue]];
+        cell.strikeThrough.alpha = 0;
+        cell.setPriority.alpha = 1;
+        
+        //create new dictionary with done priority
+        updateToDoItem = @{@"name" : toDoItem[@"name"],
+                                           @"priority" : toDoItem[@"constant"],
+                                           @"constant" : toDoItem[@"constant"]
+                           };
+            }
+    
     // remove old dictionary at cell
     [toDoItems removeObjectAtIndex:indexPath.row];
     
     //add new dictionary for cell
-    [toDoItems insertObject:updatetoDoItems atIndex:indexPath.row];
+    [toDoItems insertObject:updateToDoItem atIndex:indexPath.row];
+    
     
     [self saveData];
 }
+
 - (void)swipeCell:(UISwipeGestureRecognizer *)gesture
 {
-//    NSLog(@"%@", gesture.direction);
-    
     TDLTableViewCell * cell = (TDLTableViewCell *)gesture.view;
     
     NSInteger index = [self.tableView indexPathForCell:cell].row;
     
-    //cell = dictionary
+    NSDictionary * toDoItem = toDoItems[index];
     
-    switch (gesture.direction) {
+    int completed = ([toDoItem[@"priority"] intValue] == 0) ? 10 : 0;
+    
+    //gesture.direction == left : 2
+    //gesture.direction == right :1
+    //gesture.direction == left && priority == 12:
+    //gesture.direction == right && priority == 11:
+    
+    //swipe left or right
+    
+    switch (gesture.direction + (completed)) {
         case 1://right
             
             NSLog(@"swiping right");
             
             [MOVE animateView:cell.priorityLevel properties:@{@"x":@10,@"duration":@0.5}];
             [cell hideCircleButtons];
+            cell.swiped = NO;
             break;
             
         case 2://left
@@ -206,8 +276,23 @@
             
             [MOVE animateView:cell.priorityLevel properties:@{@"x":@-147, @"duration":@0.5}];
             [cell showCircleButtons];
+            cell.swiped = YES;
+            break;
+         
+        case 11://right and priority
+            
+            [MOVE animateView:cell.priorityLevel properties:@{@"x":@10,@"duration":@0.5}];
+            [cell hideDeleteButton];
+            cell.swiped = NO;
             break;
             
+        case 12://left and priority
+            
+            [MOVE animateView:cell.priorityLevel properties:@{@"x":@-47, @"duration":@0.5}];
+            [cell showDeleteButton];
+            cell.swiped = YES;
+            break;
+
         default:
             break;
     }
@@ -249,19 +334,9 @@
     [super viewDidLoad];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-// makes text field go away
-{
-    [textField resignFirstResponder];
-    return NO;
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
 
-
-
 @end
-
