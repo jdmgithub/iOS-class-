@@ -19,6 +19,9 @@
 		C343AC3A18F829720052FD31 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C343AC2218F829720052FD31 /* UIKit.framework */; };
 		C343AC4218F829720052FD31 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C343AC4018F829720052FD31 /* InfoPlist.strings */; };
 		C343AC4418F829720052FD31 /* SquaresTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C343AC4318F829720052FD31 /* SquaresTests.m */; };
+		C343AC5618F82BA40052FD31 /* SCGCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = C343AC5518F82BA40052FD31 /* SCGCircle.m */; };
+		C343AC5A18F82CBE0052FD31 /* SCGStageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C343AC5918F82CBE0052FD31 /* SCGStageVC.m */; };
+		C343AC5D18F8330E0052FD31 /* SCGSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = C343AC5C18F8330E0052FD31 /* SCGSquare.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,12 @@
 		C343AC3F18F829720052FD31 /* SquaresTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SquaresTests-Info.plist"; sourceTree = "<group>"; };
 		C343AC4118F829720052FD31 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C343AC4318F829720052FD31 /* SquaresTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SquaresTests.m; sourceTree = "<group>"; };
+		C343AC5418F82BA40052FD31 /* SCGCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGCircle.h; sourceTree = "<group>"; };
+		C343AC5518F82BA40052FD31 /* SCGCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGCircle.m; sourceTree = "<group>"; };
+		C343AC5818F82CBE0052FD31 /* SCGStageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGStageVC.h; sourceTree = "<group>"; };
+		C343AC5918F82CBE0052FD31 /* SCGStageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGStageVC.m; sourceTree = "<group>"; };
+		C343AC5B18F8330E0052FD31 /* SCGSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGSquare.h; sourceTree = "<group>"; };
+		C343AC5C18F8330E0052FD31 /* SCGSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGSquare.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +86,7 @@
 		C343AC1218F829720052FD31 = {
 			isa = PBXGroup;
 			children = (
+				C343AC5018F829C80052FD31 /* Controllers */,
 				C343AC2418F829720052FD31 /* Squares */,
 				C343AC3D18F829720052FD31 /* SquaresTests */,
 				C343AC1D18F829720052FD31 /* Frameworks */,
@@ -142,6 +152,27 @@
 				C343AC4018F829720052FD31 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C343AC5018F829C80052FD31 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C343AC5818F82CBE0052FD31 /* SCGStageVC.h */,
+				C343AC5918F82CBE0052FD31 /* SCGStageVC.m */,
+				C343AC5718F82C270052FD31 /* Squares and Circles */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C343AC5718F82C270052FD31 /* Squares and Circles */ = {
+			isa = PBXGroup;
+			children = (
+				C343AC5418F82BA40052FD31 /* SCGCircle.h */,
+				C343AC5518F82BA40052FD31 /* SCGCircle.m */,
+				C343AC5B18F8330E0052FD31 /* SCGSquare.h */,
+				C343AC5C18F8330E0052FD31 /* SCGSquare.m */,
+			);
+			name = "Squares and Circles";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C343AC5D18F8330E0052FD31 /* SCGSquare.m in Sources */,
+				C343AC5A18F82CBE0052FD31 /* SCGStageVC.m in Sources */,
+				C343AC5618F82BA40052FD31 /* SCGCircle.m in Sources */,
 				C343AC2F18F829720052FD31 /* SCGAppDelegate.m in Sources */,
 				C343AC2B18F829720052FD31 /* main.m in Sources */,
 			);
@@ -363,6 +397,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Squares/Squares-Prefix.pch";
 				INFOPLIST_FILE = "Squares/Squares-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -376,6 +411,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Squares/Squares-Prefix.pch";
 				INFOPLIST_FILE = "Squares/Squares-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

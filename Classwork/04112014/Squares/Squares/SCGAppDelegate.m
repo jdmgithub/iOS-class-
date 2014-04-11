@@ -7,6 +7,7 @@
 //
 
 #import "SCGAppDelegate.h"
+#import "SCGStageVC.h"
 
 @implementation SCGAppDelegate
 
@@ -14,10 +15,26 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    self.window.rootViewController = [[SCGStageVC alloc] initWithNibName:nil bundle:nil];
+    
     self.window.backgroundColor = [UIColor whiteColor];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
