@@ -37,10 +37,11 @@
         self.strikeThrough.alpha = 0;
         [self.priorityLevel addSubview:self.strikeThrough];
 
-        self.setPriority = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 50, 10, 20, 20)];
-        self.setPriority.layer.cornerRadius = 10;
-        self.setPriority.backgroundColor = [UIColor whiteColor];
-        [self.priorityLevel addSubview:self.setPriority];
+        self.whiteButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 50, 10, 20, 20)];
+        self.whiteButton.layer.cornerRadius = 10;
+        self.whiteButton.backgroundColor = [UIColor whiteColor];
+        [_whiteButton addTarget:(self) action:@selector (buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [self.priorityLevel addSubview:self.whiteButton];
     }
     return self;
 }
@@ -124,6 +125,48 @@
     
     [MOVE animateView:button3 properties:@{@"alpha":@1, @"duration":@0.2, @"delay":@0.3}];
 }
+
+-(IBAction)buttonPressed:(id)sender
+{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Changing Priority"
+                                                   message: @"Do you want to change the priority?"
+                                                  delegate: self
+                                         cancelButtonTitle:@"Cancel"
+                                         otherButtonTitles:@"OK",nil];
+    
+    alert.delegate = self;
+    
+    
+    [alert show];
+    [alert frame];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"alert clicked : %d",buttonIndex);
+    
+    // 0 cancel
+    // 1 ok
+//    switch (gesture.direction) {
+//        case 1://0 Cancel
+//            
+//            NSLog(@"Cancel");
+//            
+//            return cell;
+//            break;
+//            
+//        case 2://1 Ok
+//            
+//            NSLog(@"Ok");
+//            
+//            [MOVE animateView:cell.priorityLevel properties:@{@"x":@-147, @"duration":@0.5}];
+//            [cell showCircleButtons];
+//            cell.swiped = YES;
+//            break;
+//    }
+    
+}
+
 
 - (void)pressDeleteButton
 //self is the Table View Controller

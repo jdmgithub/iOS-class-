@@ -11,20 +11,19 @@
 //declaring protocol
 @protocol TDLTableViewCellDeglegate;
 
-@interface TDLTableViewCell : UITableViewCell
+@interface TDLTableViewCell : UITableViewCell <UIAlertViewDelegate>
 
 //have it twice because it is needed  to call certain property
 
 @property (nonatomic, assign)id<TDLTableViewCellDeglegate> delegate;
 
 @property (nonatomic) UILabel * moreToDo;
-@property (nonatomic) UIButton * setPriority;
+@property (nonatomic) UIButton * whiteButton;
 @property (nonatomic) UIView * priorityLevel;
 @property (nonatomic) UIView * strikeThrough;
 
 @property (nonatomic) BOOL swiped;
 
-//- (BOOL)askUser;
 - (void)resetLayout;
 
 - (void)showCircleButtons;
@@ -36,6 +35,8 @@
 @end
 
 @protocol TDLTableViewCellDeglegate <NSObject>
+
+-(IBAction)buttonPressed:(id)sender;
 
 //deletes Item
 - (void)deleteItem:(TDLTableViewCell *)cell ;

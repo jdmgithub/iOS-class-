@@ -78,6 +78,7 @@
     return self;
 }
 
+
 - (void)deleteItem:(TDLTableViewCell *)cell
 {
     NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
@@ -174,11 +175,11 @@
     if([toDoItem[@"priority"] intValue] == 0)
     {
         cell.strikeThrough.alpha = 1;
-        cell.setPriority.alpha = 0;
+        cell.whiteButton.alpha = 0;
         
     } else {
         cell.strikeThrough.alpha = 0;
-        cell.setPriority.alpha = 1;
+        cell.whiteButton.alpha = 1;
     }
 
     cell.moreToDo.text = toDoItem[@"name"];
@@ -213,7 +214,7 @@
         
         cell.priorityLevel.backgroundColor = priorityColors[0];
         cell.strikeThrough.alpha = 1;
-        cell.setPriority.alpha = 0;
+        cell.whiteButton.alpha = 0;
         
         //create new dictionary with done priority
         updateToDoItem = @{@"name" : toDoItem[@"name"],
@@ -224,7 +225,7 @@
         //undo action
         cell.priorityLevel.backgroundColor = priorityColors[[toDoItems[indexPath.row][@"constant"] intValue]];
         cell.strikeThrough.alpha = 0;
-        cell.setPriority.alpha = 1;
+        cell.whiteButton.alpha = 1;
         
         //create new dictionary with done priority
         updateToDoItem = @{@"name" : toDoItem[@"name"],
