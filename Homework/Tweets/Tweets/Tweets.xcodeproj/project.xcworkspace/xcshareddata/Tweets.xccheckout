@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7F1E0C63-8E4E-4868-B118-C818819DD667</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Tweets</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>195790AE-C636-41AE-A5D9-9F05B6A36DBA</key>
+		<string>https://github.com/Jiobu/iOS-class-.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Homework/Tweets/Tweets/Tweets.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>195790AE-C636-41AE-A5D9-9F05B6A36DBA</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Jiobu/iOS-class-.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>195790AE-C636-41AE-A5D9-9F05B6A36DBA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>195790AE-C636-41AE-A5D9-9F05B6A36DBA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS_Class</string>
+		</dict>
+	</array>
+</dict>
+</plist>

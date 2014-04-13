@@ -9,13 +9,19 @@
 #import "SCGCircle.h"
 
 @implementation SCGCircle
+{
+    UIColor * dotColor;
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+    
     if (self) {
         self.backgroundColor = [UIColor clearColor];
+        dotColor = [UIColor colorWithWhite:0.95 alpha:1.0];
     }
+    
     return self;
 }
 
@@ -23,7 +29,7 @@
  {
      CGContextRef context = UIGraphicsGetCurrentContext();
      
-     [[UIColor lightGrayColor] set];
+     [dotColor set];
      
      float dotXY = (self.frame.size.width - 20) / 2;
      
@@ -34,7 +40,11 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"my position is %d", self.position);
+    dotColor = [self.delegate circleTappedWithPosition:self.position];
+    
+    [self setNeedsDisplay];
+    
+    NSLog(@"my position is col %d, row %d", (int)self.position.x, (int)self.position.y);
 }
 
 

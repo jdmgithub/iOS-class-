@@ -8,8 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SCGCircleDelegate;
+
 @interface SCGCircle : UIView
 
-@property (nonatomic)int position;
+@property (nonatomic, assign) id<SCGCircleDelegate> delegate;
+
+@property (nonatomic) CGPoint position; 
+
+@end
+
+@protocol SCGCircleDelegate <NSObject>
+
+- (UIColor *)circleTappedWithPosition:(CGPoint)position;
+
+
 
 @end
