@@ -19,6 +19,8 @@
 		C30A962D18FB1CBD00193ECC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30A961518FB1CBD00193ECC /* UIKit.framework */; };
 		C30A963518FB1CBD00193ECC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C30A963318FB1CBD00193ECC /* InfoPlist.strings */; };
 		C30A963718FB1CBD00193ECC /* TweetsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C30A963618FB1CBD00193ECC /* TweetsTests.m */; };
+		C30A964318FB1D4200193ECC /* TNDTweetsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C30A964218FB1D4200193ECC /* TNDTweetsTVC.m */; };
+		C30A964718FB208000193ECC /* TNDTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C30A964618FB208000193ECC /* TNDTweetCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		C30A963218FB1CBD00193ECC /* TweetsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TweetsTests-Info.plist"; sourceTree = "<group>"; };
 		C30A963418FB1CBD00193ECC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C30A963618FB1CBD00193ECC /* TweetsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweetsTests.m; sourceTree = "<group>"; };
+		C30A964118FB1D4200193ECC /* TNDTweetsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNDTweetsTVC.h; sourceTree = "<group>"; };
+		C30A964218FB1D4200193ECC /* TNDTweetsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNDTweetsTVC.m; sourceTree = "<group>"; };
+		C30A964518FB208000193ECC /* TNDTweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNDTweetCell.h; sourceTree = "<group>"; };
+		C30A964618FB208000193ECC /* TNDTweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNDTweetCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,8 @@
 		C30A960518FB1CBD00193ECC = {
 			isa = PBXGroup;
 			children = (
+				C30A964418FB203B00193ECC /* Cells */,
+				C30A964018FB1D1400193ECC /* Controllers */,
 				C30A961718FB1CBD00193ECC /* Tweets */,
 				C30A963018FB1CBD00193ECC /* TweetsTests */,
 				C30A961018FB1CBD00193ECC /* Frameworks */,
@@ -142,6 +150,24 @@
 				C30A963318FB1CBD00193ECC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C30A964018FB1D1400193ECC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C30A964118FB1D4200193ECC /* TNDTweetsTVC.h */,
+				C30A964218FB1D4200193ECC /* TNDTweetsTVC.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C30A964418FB203B00193ECC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C30A964518FB208000193ECC /* TNDTweetCell.h */,
+				C30A964618FB208000193ECC /* TNDTweetCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +266,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C30A964718FB208000193ECC /* TNDTweetCell.m in Sources */,
 				C30A961E18FB1CBD00193ECC /* main.m in Sources */,
+				C30A964318FB1D4200193ECC /* TNDTweetsTVC.m in Sources */,
 				C30A962218FB1CBD00193ECC /* TNDAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +391,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tweets/Tweets-Prefix.pch";
 				INFOPLIST_FILE = "Tweets/Tweets-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -376,6 +405,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tweets/Tweets-Prefix.pch";
 				INFOPLIST_FILE = "Tweets/Tweets-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
