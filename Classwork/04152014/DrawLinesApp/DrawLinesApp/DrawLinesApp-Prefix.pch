@@ -14,3 +14,10 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define RED_COLOR [UIColor redColor]
+#define BLUE_COLOR [UIColor blueColor]
+#define YELLOW_COLOR [UIColor yellowColor]
+
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width

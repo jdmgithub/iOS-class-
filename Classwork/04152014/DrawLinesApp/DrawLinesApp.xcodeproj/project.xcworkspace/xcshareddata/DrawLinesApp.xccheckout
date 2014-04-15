@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>6EE03D87-FA3B-49F2-B203-470DA99146F6</string>
+	<string>5B423427-4B73-4760-9C51-09F68271B2E7</string>
 	<key>IDESourceControlProjectName</key>
 	<string>DrawLinesApp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>F07B2953-D845-48AB-BC9A-81C432C7F92D</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Squares</string>
+			<string>DrawLinesApp</string>
 		</dict>
 	</array>
 </dict>

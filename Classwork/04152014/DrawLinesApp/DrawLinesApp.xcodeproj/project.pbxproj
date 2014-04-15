@@ -19,6 +19,9 @@
 		C396DC1A18FD6743000FD0D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C396DC0218FD6743000FD0D2 /* UIKit.framework */; };
 		C396DC2218FD6743000FD0D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C396DC2018FD6743000FD0D2 /* InfoPlist.strings */; };
 		C396DC2418FD6743000FD0D2 /* DrawLinesAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C396DC2318FD6743000FD0D2 /* DrawLinesAppTests.m */; };
+		C396DC3018FD6795000FD0D2 /* DLAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C396DC2F18FD6795000FD0D2 /* DLAViewController.m */; };
+		C396DC3418FD6992000FD0D2 /* DLAStageLines.m in Sources */ = {isa = PBXBuildFile; fileRef = C396DC3318FD6992000FD0D2 /* DLAStageLines.m */; };
+		C396DC3718FD7D98000FD0D2 /* DLAStageScribble.m in Sources */ = {isa = PBXBuildFile; fileRef = C396DC3618FD7D98000FD0D2 /* DLAStageScribble.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,12 @@
 		C396DC1F18FD6743000FD0D2 /* DrawLinesAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrawLinesAppTests-Info.plist"; sourceTree = "<group>"; };
 		C396DC2118FD6743000FD0D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C396DC2318FD6743000FD0D2 /* DrawLinesAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawLinesAppTests.m; sourceTree = "<group>"; };
+		C396DC2E18FD6795000FD0D2 /* DLAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLAViewController.h; sourceTree = "<group>"; };
+		C396DC2F18FD6795000FD0D2 /* DLAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLAViewController.m; sourceTree = "<group>"; };
+		C396DC3218FD6992000FD0D2 /* DLAStageLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLAStageLines.h; sourceTree = "<group>"; };
+		C396DC3318FD6992000FD0D2 /* DLAStageLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLAStageLines.m; sourceTree = "<group>"; };
+		C396DC3518FD7D98000FD0D2 /* DLAStageScribble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLAStageScribble.h; sourceTree = "<group>"; };
+		C396DC3618FD7D98000FD0D2 /* DLAStageScribble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLAStageScribble.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +86,8 @@
 		C396DBF218FD6743000FD0D2 = {
 			isa = PBXGroup;
 			children = (
+				C396DC3118FD6976000FD0D2 /* View */,
+				C396DC2D18FD675E000FD0D2 /* Controller */,
 				C396DC0418FD6743000FD0D2 /* DrawLinesApp */,
 				C396DC1D18FD6743000FD0D2 /* DrawLinesAppTests */,
 				C396DBFD18FD6743000FD0D2 /* Frameworks */,
@@ -142,6 +153,26 @@
 				C396DC2018FD6743000FD0D2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C396DC2D18FD675E000FD0D2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C396DC2E18FD6795000FD0D2 /* DLAViewController.h */,
+				C396DC2F18FD6795000FD0D2 /* DLAViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C396DC3118FD6976000FD0D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C396DC3218FD6992000FD0D2 /* DLAStageLines.h */,
+				C396DC3318FD6992000FD0D2 /* DLAStageLines.m */,
+				C396DC3518FD7D98000FD0D2 /* DLAStageScribble.h */,
+				C396DC3618FD7D98000FD0D2 /* DLAStageScribble.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,7 +272,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C396DC0F18FD6743000FD0D2 /* DLAAppDelegate.m in Sources */,
+				C396DC3718FD7D98000FD0D2 /* DLAStageScribble.m in Sources */,
 				C396DC0B18FD6743000FD0D2 /* main.m in Sources */,
+				C396DC3418FD6992000FD0D2 /* DLAStageLines.m in Sources */,
+				C396DC3018FD6795000FD0D2 /* DLAViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +397,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrawLinesApp/DrawLinesApp-Prefix.pch";
 				INFOPLIST_FILE = "DrawLinesApp/DrawLinesApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -376,7 +412,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrawLinesApp/DrawLinesApp-Prefix.pch";
 				INFOPLIST_FILE = "DrawLinesApp/DrawLinesApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
