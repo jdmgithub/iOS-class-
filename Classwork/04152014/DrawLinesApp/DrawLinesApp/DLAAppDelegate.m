@@ -1,25 +1,20 @@
 //
-//  SCGAppDelegate.m
-//  Squares
+//  DLAAppDelegate.m
+//  DrawLinesApp
 //
-//  Created by Jisha Obukwelu on 4/11/14.
+//  Created by Jisha Obukwelu on 4/15/14.
 //  Copyright (c) 2014 Jisha Obukwelu. All rights reserved.
 //
 
-#import "SCGAppDelegate.h"
-#import "SCGStageVC.h"
+#import "DLAAppDelegate.h"
 
-@implementation SCGAppDelegate
+@implementation DLAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    
-    self.window.rootViewController = [[SCGStageVC alloc] initWithNibName:nil bundle:nil];
-    
     self.window.backgroundColor = [UIColor whiteColor];
-    
     [self.window makeKeyAndVisible];
     return YES;
 }

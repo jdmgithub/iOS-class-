@@ -77,7 +77,7 @@
 //                        @"urls":  @[]
 //                    }
 //                },
-//                @"protected": @false,
+//                @"protected": @NO,
 //                @"followers_count": @207,
 //                @"friends_count": @313,
 //                @"listed_count": @12,
@@ -85,13 +85,13 @@
 //                @"favourites_count": @26,
 //                @"utc_offset": @14400,
 //                @"time_zone": @"Eastern Time (US & Canada)",
-//                @"geo_enabled": @true,
-//                @"verified": @false,
+//                @"geo_enabled": @YES,
+//                @"verified": @NO,
 //                @"statuses_count": @201,
 //                @"lang": @"en",
-//                @"contributors_enabled": @false,
-//                @"is_translator": @false,
-//                @"is_translation_enabled": @false,
+//                @"contributors_enabled": @NO,
+//                @"is_translator": @NO,
+//                @"is_translation_enabled": @NO,
 //                @"profile_background_color": @"FFFFFF",
 //                @"profile_background_image_url": @"http://pbs.twimg.com/profile_background_images/267632372/logo.jpg",
 //                @"profile_background_image_url_https": @"https://pbs.twimg.com/profile_background_images/267632372/logo.jpg",
@@ -105,12 +105,12 @@
 //                @"profile_sidebar_border_color": @"FFFFFF",
 //                @"profile_sidebar_fill_color": @"F7F7F7",
 //                @"profile_text_color": @"424242",
-//                @"profile_use_background_image": @true,
-//                @"default_profile": @false,
-//                @"default_profile_image": @false,
-//                @"following": @false,
-//                @"follow_request_sent": @false,
-//                @"notifications": @false
+//                @"profile_use_background_image": @YES,
+//                @"default_profile": @NO,
+//                @"default_profile_image": @NO,
+//                @"following": @NO,
+//                @"follow_request_sent": @NO,
+//                @"notifications": @NO
 //            },
 //            @"geo": null,
 //            @"coordinates": null,
@@ -235,7 +235,7 @@
     
     
     NSDictionary * tweetList = tweetLists[indexPath.row];
-    
+    cell.textLabel.text = tweetList[@"text"];
 
     cell.backgroundColor = [UIColor orangeColor];
     return cell;
