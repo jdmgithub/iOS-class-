@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>BCD152C4-A124-43D1-A7F8-E9FA50D6177A</string>
+	<string>07DFC0A0-3F78-40ED-A054-AD37A1ED9458</string>
 	<key>IDESourceControlProjectName</key>
-	<string>CGDrawing</string>
+	<string>BrickBreaker</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>F07B2953-D845-48AB-BC9A-81C432C7F92D</key>
 		<string>https://github.com/Jiobu/iOS-class-.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Classwork/04172014/CGDrawing/CGDrawing.xcodeproj/project.xcworkspace</string>
+	<string>Classwork/04172014/BrickBreaker/BrickBreaker.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>F07B2953-D845-48AB-BC9A-81C432C7F92D</key>

@@ -1,5 +1,5 @@
 //
-//  DLAAppDelegate.h
+//  CGDrawing.h
 //  CGDrawing
 //
 //  Created by Jisha Obukwelu on 4/17/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DLAAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface CGDrawing : UIView
 
 @end

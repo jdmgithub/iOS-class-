@@ -19,6 +19,7 @@
 		C3B584F9190010B800A8B1CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B584E1190010B800A8B1CB /* UIKit.framework */; };
 		C3B58501190010B800A8B1CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3B584FF190010B800A8B1CB /* InfoPlist.strings */; };
 		C3B58503190010B800A8B1CB /* CGDrawingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B58502190010B800A8B1CB /* CGDrawingTests.m */; };
+		C3B5850E190010D900A8B1CB /* CGDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B5850D190010D900A8B1CB /* CGDrawing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		C3B584FE190010B800A8B1CB /* CGDrawingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CGDrawingTests-Info.plist"; sourceTree = "<group>"; };
 		C3B58500190010B800A8B1CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C3B58502190010B800A8B1CB /* CGDrawingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGDrawingTests.m; sourceTree = "<group>"; };
+		C3B5850C190010D900A8B1CB /* CGDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGDrawing.h; sourceTree = "<group>"; };
+		C3B5850D190010D900A8B1CB /* CGDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGDrawing.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				C3B584ED190010B800A8B1CB /* CGAppDelegate.m */,
 				C3B584EF190010B800A8B1CB /* Images.xcassets */,
 				C3B584E4190010B800A8B1CB /* Supporting Files */,
+				C3B5850C190010D900A8B1CB /* CGDrawing.h */,
+				C3B5850D190010D900A8B1CB /* CGDrawing.m */,
 			);
 			path = CGDrawing;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 			files = (
 				C3B584EE190010B800A8B1CB /* CGAppDelegate.m in Sources */,
 				C3B584EA190010B800A8B1CB /* main.m in Sources */,
+				C3B5850E190010D900A8B1CB /* CGDrawing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
