@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C3B5849B19000BF400A8B1CB"
+               BlueprintIdentifier = "C3B584D9190010B800A8B1CB"
                BuildableName = "CGDrawing.app"
                BlueprintName = "CGDrawing"
                ReferencedContainer = "container:CGDrawing.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C3B584B619000BF400A8B1CB"
+               BlueprintIdentifier = "C3B584F4190010B800A8B1CB"
                BuildableName = "CGDrawingTests.xctest"
                BlueprintName = "CGDrawingTests"
                ReferencedContainer = "container:CGDrawing.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C3B5849B19000BF400A8B1CB"
+            BlueprintIdentifier = "C3B584D9190010B800A8B1CB"
             BuildableName = "CGDrawing.app"
             BlueprintName = "CGDrawing"
             ReferencedContainer = "container:CGDrawing.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C3B5849B19000BF400A8B1CB"
+            BlueprintIdentifier = "C3B584D9190010B800A8B1CB"
             BuildableName = "CGDrawing.app"
             BlueprintName = "CGDrawing"
             ReferencedContainer = "container:CGDrawing.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C3B5849B19000BF400A8B1CB"
+            BlueprintIdentifier = "C3B584D9190010B800A8B1CB"
             BuildableName = "CGDrawing.app"
             BlueprintName = "CGDrawing"
             ReferencedContainer = "container:CGDrawing.xcodeproj">
