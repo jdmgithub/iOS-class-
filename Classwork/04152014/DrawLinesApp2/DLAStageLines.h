@@ -1,5 +1,5 @@
 //
-//  DLAStageScribble.h
+//  DLAStage.h
 //  DrawLinesApp
 //
 //  Created by Jisha Obukwelu on 4/15/14.
@@ -8,15 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DLAStageScribble : UIView
+@interface DLAStageLines : UIView
 
 @property (nonatomic) float lineWidth;
 @property (nonatomic) UIColor * lineColor;
-@property (nonatomic) NSMutableArray * lines;
-
-
--(void)clearStage;
--(void)undoStage;
-
 
 @end

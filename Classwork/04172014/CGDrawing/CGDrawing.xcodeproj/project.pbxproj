@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C3B584A019000BF400A8B1CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B5849F19000BF400A8B1CB /* Foundation.framework */; };
+		C3B584A219000BF400A8B1CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B584A119000BF400A8B1CB /* CoreGraphics.framework */; };
+		C3B584A419000BF400A8B1CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B584A319000BF400A8B1CB /* UIKit.framework */; };
+		C3B584AA19000BF400A8B1CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3B584A819000BF400A8B1CB /* InfoPlist.strings */; };
+		C3B584AC19000BF400A8B1CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B584AB19000BF400A8B1CB /* main.m */; };
+		C3B584B019000BF400A8B1CB /* DLAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B584AF19000BF400A8B1CB /* DLAAppDelegate.m */; };
+		C3B584B219000BF400A8B1CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3B584B119000BF400A8B1CB /* Images.xcassets */; };
+		C3B584B919000BF400A8B1CB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B584B819000BF400A8B1CB /* XCTest.framework */; };
+		C3B584BA19000BF400A8B1CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B5849F19000BF400A8B1CB /* Foundation.framework */; };
+		C3B584BB19000BF400A8B1CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B584A319000BF400A8B1CB /* UIKit.framework */; };
+		C3B584C319000BF400A8B1CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3B584C119000BF400A8B1CB /* InfoPlist.strings */; };
+		C3B584C519000BF400A8B1CB /* CGDrawingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B584C419000BF400A8B1CB /* CGDrawingTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C3B584BC19000BF400A8B1CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3B5849419000BF400A8B1CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3B5849B19000BF400A8B1CB;
+			remoteInfo = CGDrawing;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C3B5849C19000BF400A8B1CB /* CGDrawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CGDrawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3B5849F19000BF400A8B1CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C3B584A119000BF400A8B1CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C3B584A319000BF400A8B1CB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C3B584A719000BF400A8B1CB /* CGDrawing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CGDrawing-Info.plist"; sourceTree = "<group>"; };
+		C3B584A919000BF400A8B1CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3B584AB19000BF400A8B1CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C3B584AD19000BF400A8B1CB /* CGDrawing-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CGDrawing-Prefix.pch"; sourceTree = "<group>"; };
+		C3B584AE19000BF400A8B1CB /* DLAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLAAppDelegate.h; sourceTree = "<group>"; };
+		C3B584AF19000BF400A8B1CB /* DLAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLAAppDelegate.m; sourceTree = "<group>"; };
+		C3B584B119000BF400A8B1CB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C3B584B719000BF400A8B1CB /* CGDrawingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CGDrawingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3B584B819000BF400A8B1CB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C3B584C019000BF400A8B1CB /* CGDrawingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CGDrawingTests-Info.plist"; sourceTree = "<group>"; };
+		C3B584C219000BF400A8B1CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3B584C419000BF400A8B1CB /* CGDrawingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGDrawingTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3B5849919000BF400A8B1CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3B584A219000BF400A8B1CB /* CoreGraphics.framework in Frameworks */,
+				C3B584A419000BF400A8B1CB /* UIKit.framework in Frameworks */,
+				C3B584A019000BF400A8B1CB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3B584B419000BF400A8B1CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3B584B919000BF400A8B1CB /* XCTest.framework in Frameworks */,
+				C3B584BB19000BF400A8B1CB /* UIKit.framework in Frameworks */,
+				C3B584BA19000BF400A8B1CB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3B5849319000BF400A8B1CB = {
+			isa = PBXGroup;
+			children = (
+				C3B584A519000BF400A8B1CB /* CGDrawing */,
+				C3B584BE19000BF400A8B1CB /* CGDrawingTests */,
+				C3B5849E19000BF400A8B1CB /* Frameworks */,
+				C3B5849D19000BF400A8B1CB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C3B5849D19000BF400A8B1CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3B5849C19000BF400A8B1CB /* CGDrawing.app */,
+				C3B584B719000BF400A8B1CB /* CGDrawingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3B5849E19000BF400A8B1CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3B5849F19000BF400A8B1CB /* Foundation.framework */,
+				C3B584A119000BF400A8B1CB /* CoreGraphics.framework */,
+				C3B584A319000BF400A8B1CB /* UIKit.framework */,
+				C3B584B819000BF400A8B1CB /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3B584A519000BF400A8B1CB /* CGDrawing */ = {
+			isa = PBXGroup;
+			children = (
+				C3B584AE19000BF400A8B1CB /* DLAAppDelegate.h */,
+				C3B584AF19000BF400A8B1CB /* DLAAppDelegate.m */,
+				C3B584B119000BF400A8B1CB /* Images.xcassets */,
+				C3B584A619000BF400A8B1CB /* Supporting Files */,
+			);
+			path = CGDrawing;
+			sourceTree = "<group>";
+		};
+		C3B584A619000BF400A8B1CB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3B584A719000BF400A8B1CB /* CGDrawing-Info.plist */,
+				C3B584A819000BF400A8B1CB /* InfoPlist.strings */,
+				C3B584AB19000BF400A8B1CB /* main.m */,
+				C3B584AD19000BF400A8B1CB /* CGDrawing-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3B584BE19000BF400A8B1CB /* CGDrawingTests */ = {
+			isa = PBXGroup;
+			children = (
+				C3B584C419000BF400A8B1CB /* CGDrawingTests.m */,
+				C3B584BF19000BF400A8B1CB /* Supporting Files */,
+			);
+			path = CGDrawingTests;
+			sourceTree = "<group>";
+		};
+		C3B584BF19000BF400A8B1CB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3B584C019000BF400A8B1CB /* CGDrawingTests-Info.plist */,
+				C3B584C119000BF400A8B1CB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3B5849B19000BF400A8B1CB /* CGDrawing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3B584C819000BF400A8B1CB /* Build configuration list for PBXNativeTarget "CGDrawing" */;
+			buildPhases = (
+				C3B5849819000BF400A8B1CB /* Sources */,
+				C3B5849919000BF400A8B1CB /* Frameworks */,
+				C3B5849A19000BF400A8B1CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CGDrawing;
+			productName = CGDrawing;
+			productReference = C3B5849C19000BF400A8B1CB /* CGDrawing.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C3B584B619000BF400A8B1CB /* CGDrawingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3B584CB19000BF400A8B1CB /* Build configuration list for PBXNativeTarget "CGDrawingTests" */;
+			buildPhases = (
+				C3B584B319000BF400A8B1CB /* Sources */,
+				C3B584B419000BF400A8B1CB /* Frameworks */,
+				C3B584B519000BF400A8B1CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3B584BD19000BF400A8B1CB /* PBXTargetDependency */,
+			);
+			name = CGDrawingTests;
+			productName = CGDrawingTests;
+			productReference = C3B584B719000BF400A8B1CB /* CGDrawingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3B5849419000BF400A8B1CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DLA;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Jisha Obukwelu";
+				TargetAttributes = {
+					C3B584B619000BF400A8B1CB = {
+						TestTargetID = C3B5849B19000BF400A8B1CB;
+					};
+				};
+			};
+			buildConfigurationList = C3B5849719000BF400A8B1CB /* Build configuration list for PBXProject "CGDrawing" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C3B5849319000BF400A8B1CB;
+			productRefGroup = C3B5849D19000BF400A8B1CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3B5849B19000BF400A8B1CB /* CGDrawing */,
+				C3B584B619000BF400A8B1CB /* CGDrawingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3B5849A19000BF400A8B1CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3B584AA19000BF400A8B1CB /* InfoPlist.strings in Resources */,
+				C3B584B219000BF400A8B1CB /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3B584B519000BF400A8B1CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3B584C319000BF400A8B1CB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3B5849819000BF400A8B1CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3B584B019000BF400A8B1CB /* DLAAppDelegate.m in Sources */,
+				C3B584AC19000BF400A8B1CB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3B584B319000BF400A8B1CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3B584C519000BF400A8B1CB /* CGDrawingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C3B584BD19000BF400A8B1CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3B5849B19000BF400A8B1CB /* CGDrawing */;
+			targetProxy = C3B584BC19000BF400A8B1CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C3B584A819000BF400A8B1CB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3B584A919000BF400A8B1CB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C3B584C119000BF400A8B1CB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3B584C219000BF400A8B1CB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C3B584C619000BF400A8B1CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C3B584C719000BF400A8B1CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C3B584C919000BF400A8B1CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CGDrawing/CGDrawing-Prefix.pch";
+				INFOPLIST_FILE = "CGDrawing/CGDrawing-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C3B584CA19000BF400A8B1CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CGDrawing/CGDrawing-Prefix.pch";
+				INFOPLIST_FILE = "CGDrawing/CGDrawing-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C3B584CC19000BF400A8B1CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CGDrawing.app/CGDrawing";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CGDrawing/CGDrawing-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CGDrawingTests/CGDrawingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C3B584CD19000BF400A8B1CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CGDrawing.app/CGDrawing";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CGDrawing/CGDrawing-Prefix.pch";
+				INFOPLIST_FILE = "CGDrawingTests/CGDrawingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3B5849719000BF400A8B1CB /* Build configuration list for PBXProject "CGDrawing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3B584C619000BF400A8B1CB /* Debug */,
+				C3B584C719000BF400A8B1CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3B584C819000BF400A8B1CB /* Build configuration list for PBXNativeTarget "CGDrawing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3B584C919000BF400A8B1CB /* Debug */,
+				C3B584CA19000BF400A8B1CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C3B584CB19000BF400A8B1CB /* Build configuration list for PBXNativeTarget "CGDrawingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3B584CC19000BF400A8B1CB /* Debug */,
+				C3B584CD19000BF400A8B1CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C3B5849419000BF400A8B1CB /* Project object */;
+}

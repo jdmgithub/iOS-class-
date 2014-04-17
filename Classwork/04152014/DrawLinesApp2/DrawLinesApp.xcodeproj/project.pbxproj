@@ -22,8 +22,6 @@
 		C396DC3018FD6795000FD0D2 /* DLAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C396DC2F18FD6795000FD0D2 /* DLAViewController.m */; };
 		C396DC3418FD6992000FD0D2 /* DLAStageLines.m in Sources */ = {isa = PBXBuildFile; fileRef = C396DC3318FD6992000FD0D2 /* DLAStageLines.m */; };
 		C396DC3718FD7D98000FD0D2 /* DLAStageScribble.m in Sources */ = {isa = PBXBuildFile; fileRef = C396DC3618FD7D98000FD0D2 /* DLAStageScribble.m */; };
-		C3B584901900079F00A8B1CB /* UndoButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B5848F1900079F00A8B1CB /* UndoButton.png */; };
-		C3B58492190007A300A8B1CB /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B58491190007A300A8B1CB /* Delete.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +57,6 @@
 		C396DC3318FD6992000FD0D2 /* DLAStageLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLAStageLines.m; sourceTree = "<group>"; };
 		C396DC3518FD7D98000FD0D2 /* DLAStageScribble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLAStageScribble.h; sourceTree = "<group>"; };
 		C396DC3618FD7D98000FD0D2 /* DLAStageScribble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLAStageScribble.m; sourceTree = "<group>"; };
-		C3B5848F1900079F00A8B1CB /* UndoButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UndoButton.png; sourceTree = "<group>"; };
-		C3B58491190007A300A8B1CB /* Delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Delete.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +86,6 @@
 		C396DBF218FD6743000FD0D2 = {
 			isa = PBXGroup;
 			children = (
-				C3B5848018FEF77400A8B1CB /* images */,
 				C396DC3118FD6976000FD0D2 /* View */,
 				C396DC2D18FD675E000FD0D2 /* Controller */,
 				C396DC0418FD6743000FD0D2 /* DrawLinesApp */,
@@ -180,15 +175,6 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		C3B5848018FEF77400A8B1CB /* images */ = {
-			isa = PBXGroup;
-			children = (
-				C3B58491190007A300A8B1CB /* Delete.png */,
-				C3B5848F1900079F00A8B1CB /* UndoButton.png */,
-			);
-			name = images;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -265,9 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3B58492190007A300A8B1CB /* Delete.png in Resources */,
 				C396DC0918FD6743000FD0D2 /* InfoPlist.strings in Resources */,
-				C3B584901900079F00A8B1CB /* UndoButton.png in Resources */,
 				C396DC1118FD6743000FD0D2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

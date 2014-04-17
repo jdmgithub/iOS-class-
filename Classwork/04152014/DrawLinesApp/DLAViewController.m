@@ -16,13 +16,14 @@
 
 @implementation DLAViewController
 {
-    UIButton * eraser;
-    UIButton * button1;
-    UIButton * button2;
-    UIButton * button3;
-    NSArray * lineColors;
     DLAStageScribble * scribbleView;
+    
     UIView * colorsDrawer;
+    
+    float lineWidth;
+    
+    UIColor * lineColor;
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -30,7 +31,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        
     }
     
     return self;
@@ -40,14 +40,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    lineColor = [UIColor colorWithRed:0.251f green:0.251f blue:0.251f alpha:1.0f],
+    lineWidth = 5.0;
 
-    scribbleView = [[DLAStageScribble alloc] initWithFrame:self.view.frame];
+    [self toggleStage];
+    
     [self.view addSubview:scribbleView];
     
-    UISlider * slider = [[UISlider alloc] initWithFrame:CGRectMake(30, SCREEN_HEIGHT - 43, 280, 23)];
+    UISlider * slider = [[UISlider alloc] initWithFrame:CGRectMake(30, 380, 280, 23)];
     
     slider.minimumValue = 2.0;
     slider.maximumValue = 20.0;
+    slider.value = lineWidth;
     
     [slider addTarget:self action:@selector(changeLineWidth:) forControlEvents:UIControlEventValueChanged];
     
@@ -69,7 +74,7 @@
     {
         int index = [colors indexOfObject:color];
         
-        UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(buttonWidth * index, 0, buttonWidth, buttonWidth)];
+        UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(buttonWidth * index, 0, buttonWidth, 40)];
         
         button.backgroundColor = color;
         [button addTarget:self action:@selector(changeColor:) forControlEvents:UIControlEventTouchUpInside];
@@ -77,25 +82,79 @@
         [colorsDrawer addSubview:button];
     }
     [self.view addSubview:colorsDrawer];
+    
+    
+    UIButton * toggleButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 420, 50, 50)];
+    toggleButton.backgroundColor = [UIColor orangeColor];
+    [toggleButton   addTarget:self action:@selector(toggleStage) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:toggleButton];
+    
+    UIButton * undoButton = [[UIButton alloc] initWithFrame:CGRectMake(135, 420, 50, 50)];
+    undoButton.backgroundColor = [UIColor lightGrayColor];
+    [undoButton   addTarget:self action:@selector(undoStage) forControlEvents:UIControlEventTouchUpInside];
+    [undoButton setImage:[UIImage imageNamed:@"UndoButton"] forState:UIControlStateNormal];
+    [self.view addSubview:undoButton];
+    
+    
+    UIButton * clearButton = [[UIButton alloc] initWithFrame:CGRectMake(260, 420, 50, 50)];
+    clearButton.backgroundColor = [UIColor redColor];
+    [clearButton   addTarget:self action:@selector(clearStage) forControlEvents:UIControlEventTouchUpInside];
+    [clearButton setImage:[UIImage imageNamed:@"Delete"] forState:UIControlStateNormal];
+    [self.view addSubview:clearButton];
+
 }
 
-
--(void)changeLineWidth:(UISlider *)sender
+- (void)toggleStage
 {
-    scribbleView.lineWidth = sender.value;
+    NSMutableArray * lines = scribbleView.lines;
+    
+    [scribbleView removeFromSuperview];
+    
+    if([scribbleView isMemberOfClass:[DLAStageScribble class]])
+    {
+        
+        scribbleView = [[DLAStageLines alloc] initWithFrame:self.view.frame];
+        
+    }else {
+        
+        scribbleView = [[DLAStageScribble alloc] initWithFrame:self.view.frame];
+    }
+    
+    scribbleView.lineWidth = lineWidth;
+    scribbleView.lineColor = lineColor;
+    
+    if (lines != nil)scribbleView.lines = lines;
+    
+    [self.view insertSubview:scribbleView atIndex:0];
 }
 
+- (void)changeLineWidth:(UISlider *)sender
+{
+        lineWidth = sender.value;
+        scribbleView.lineWidth = lineWidth;
+}
 
 - (void)changeColor: (UIButton *)sender
 {
-    scribbleView.lineColor = sender.backgroundColor;
+    lineColor = sender.backgroundColor;
+    scribbleView.lineColor = lineColor;
 }
-
 
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
 }
+
+- (void)undoStage
+{
+    [scribbleView undoStage];
+}
+
+- (void)clearStage
+{
+    [scribbleView clearStage];
+}
+
 
 
 @end
