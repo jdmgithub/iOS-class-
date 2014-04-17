@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>51B44999-12EB-4A20-990F-AADF9DA499E8</string>
+	<string>EF33C1E0-E109-46A6-B944-F76DF721D87E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>BrickBreaker</string>
+	<string>Pong tutorial</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>F07B2953-D845-48AB-BC9A-81C432C7F92D</key>
 		<string>https://github.com/Jiobu/iOS-class-.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Classwork/04172014/BrickBreaker/BrickBreaker.xcodeproj/project.xcworkspace</string>
+	<string>Practice/Pong tutorial/Pong tutorial.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>F07B2953-D845-48AB-BC9A-81C432C7F92D</key>
-		<string>../../../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Jiobu/iOS-class-.git</string>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>F07B2953-D845-48AB-BC9A-81C432C7F92D</string>
 			<key>IDESourceControlWCCName</key>
-			<string>BrickBreaker</string>
+			<string>DrawLinesApp</string>
 		</dict>
 	</array>
 </dict>

@@ -19,6 +19,14 @@
 		C3B58537190018C500A8B1CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B5851F190018C500A8B1CB /* UIKit.framework */; };
 		C3B5853F190018C500A8B1CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3B5853D190018C500A8B1CB /* InfoPlist.strings */; };
 		C3B58541190018C500A8B1CB /* BrickBreakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B58540190018C500A8B1CB /* BrickBreakerTests.m */; };
+		C3B5854C19001BD500A8B1CB /* BBAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B5854B19001BD500A8B1CB /* BBAViewController.m */; };
+		C3B5854F19001D3300A8B1CB /* BBALevelController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B5854E19001D3300A8B1CB /* BBALevelController.m */; };
+		C3B585551900324B00A8B1CB /* soccerBall.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B585541900324B00A8B1CB /* soccerBall.png */; };
+		C3B585571900325000A8B1CB /* soccerGoal.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B585561900325000A8B1CB /* soccerGoal.png */; };
+		C3B58559190037E300A8B1CB /* soccerPlayerLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B58558190037E300A8B1CB /* soccerPlayerLeft.png */; };
+		C3B5855B19004D8E00A8B1CB /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B5855A19004D8E00A8B1CB /* ball.png */; };
+		C3B5855D19004D9100A8B1CB /* alien2.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B5855C19004D9100A8B1CB /* alien2.png */; };
+		C3B5855F19004D9500A8B1CB /* alien1.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B5855E19004D9500A8B1CB /* alien1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +56,16 @@
 		C3B5853C190018C500A8B1CB /* BrickBreakerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BrickBreakerTests-Info.plist"; sourceTree = "<group>"; };
 		C3B5853E190018C500A8B1CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C3B58540190018C500A8B1CB /* BrickBreakerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrickBreakerTests.m; sourceTree = "<group>"; };
+		C3B5854A19001BD500A8B1CB /* BBAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAViewController.h; sourceTree = "<group>"; };
+		C3B5854B19001BD500A8B1CB /* BBAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAViewController.m; sourceTree = "<group>"; };
+		C3B5854D19001D3300A8B1CB /* BBALevelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBALevelController.h; sourceTree = "<group>"; };
+		C3B5854E19001D3300A8B1CB /* BBALevelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBALevelController.m; sourceTree = "<group>"; };
+		C3B585541900324B00A8B1CB /* soccerBall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soccerBall.png; sourceTree = "<group>"; };
+		C3B585561900325000A8B1CB /* soccerGoal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soccerGoal.png; sourceTree = "<group>"; };
+		C3B58558190037E300A8B1CB /* soccerPlayerLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soccerPlayerLeft.png; sourceTree = "<group>"; };
+		C3B5855A19004D8E00A8B1CB /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+		C3B5855C19004D9100A8B1CB /* alien2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alien2.png; sourceTree = "<group>"; };
+		C3B5855E19004D9500A8B1CB /* alien1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alien1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +95,8 @@
 		C3B5850F190018C500A8B1CB = {
 			isa = PBXGroup;
 			children = (
+				C3B585531900324300A8B1CB /* images */,
+				C3B5855019001D4600A8B1CB /* Controllers */,
 				C3B58521190018C500A8B1CB /* BrickBreaker */,
 				C3B5853A190018C500A8B1CB /* BrickBreakerTests */,
 				C3B5851A190018C500A8B1CB /* Frameworks */,
@@ -142,6 +162,46 @@
 				C3B5853D190018C500A8B1CB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3B5855019001D4600A8B1CB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C3B5855219001D8C00A8B1CB /* Level */,
+				C3B5855119001D5A00A8B1CB /* ViewController */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C3B5855119001D5A00A8B1CB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C3B5854A19001BD500A8B1CB /* BBAViewController.h */,
+				C3B5854B19001BD500A8B1CB /* BBAViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		C3B5855219001D8C00A8B1CB /* Level */ = {
+			isa = PBXGroup;
+			children = (
+				C3B5854D19001D3300A8B1CB /* BBALevelController.h */,
+				C3B5854E19001D3300A8B1CB /* BBALevelController.m */,
+			);
+			name = Level;
+			sourceTree = "<group>";
+		};
+		C3B585531900324300A8B1CB /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C3B5855E19004D9500A8B1CB /* alien1.png */,
+				C3B5855C19004D9100A8B1CB /* alien2.png */,
+				C3B5855A19004D8E00A8B1CB /* ball.png */,
+				C3B58558190037E300A8B1CB /* soccerPlayerLeft.png */,
+				C3B585561900325000A8B1CB /* soccerGoal.png */,
+				C3B585541900324B00A8B1CB /* soccerBall.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,8 +280,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3B5855D19004D9100A8B1CB /* alien2.png in Resources */,
 				C3B58526190018C500A8B1CB /* InfoPlist.strings in Resources */,
 				C3B5852E190018C500A8B1CB /* Images.xcassets in Resources */,
+				C3B5855B19004D8E00A8B1CB /* ball.png in Resources */,
+				C3B585551900324B00A8B1CB /* soccerBall.png in Resources */,
+				C3B585571900325000A8B1CB /* soccerGoal.png in Resources */,
+				C3B58559190037E300A8B1CB /* soccerPlayerLeft.png in Resources */,
+				C3B5855F19004D9500A8B1CB /* alien1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +306,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3B5854F19001D3300A8B1CB /* BBALevelController.m in Sources */,
+				C3B5854C19001BD500A8B1CB /* BBAViewController.m in Sources */,
 				C3B5852C190018C500A8B1CB /* BBAAppDelegate.m in Sources */,
 				C3B58528190018C500A8B1CB /* main.m in Sources */,
 			);
@@ -360,10 +428,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BrickBreaker/BrickBreaker-Prefix.pch";
 				INFOPLIST_FILE = "BrickBreaker/BrickBreaker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -373,10 +444,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BrickBreaker/BrickBreaker-Prefix.pch";
 				INFOPLIST_FILE = "BrickBreaker/BrickBreaker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -440,6 +514,7 @@
 				C3B58546190018C500A8B1CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3B58547190018C500A8B1CB /* Build configuration list for PBXNativeTarget "BrickBreakerTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +523,7 @@
 				C3B58549190018C500A8B1CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
