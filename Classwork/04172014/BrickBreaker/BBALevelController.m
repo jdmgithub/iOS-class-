@@ -7,6 +7,7 @@
 //
 
 #import "BBALevelController.h"
+#import "MOVE.h"
 
 @interface BBALevelController () <UICollisionBehaviorDelegate>
 //All PRIVATE PROPERTIES
@@ -36,8 +37,9 @@
 @implementation BBALevelController
 {
     float paddleWidth;
-    float points;
+    int points;
     UILabel * pointValue;
+    UILabel * scoreBoard;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -86,6 +88,11 @@
     self.ballsDynamicsProperties.elasticity = 1.0;
     self.ballsDynamicsProperties.resistance = 0.0;
     
+    scoreBoard = [[UILabel alloc] initWithFrame:CGRectMake(420, 250, 300, 100)];
+    scoreBoard.textColor = [UIColor redColor];
+    scoreBoard.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:scoreBoard];
+    
 }
 
 - (void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item1 withItem:(id<UIDynamicItem>)item2 atPoint:(CGPoint)p
@@ -102,19 +109,19 @@
                     [brick removeFromSuperview];
                     [self.collider removeItem:brick];
                     
-                    pointValue = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 20, 20)];
-                    pointValue.backgroundColor = [UIColor orangeColor];
-                    pointValue.font = [UIFont fontWithName:@"Helvetica" size:5];
+                    pointValue = [[UILabel alloc] initWithFrame:CGRectMake(tempBrick.frame.origin.x, tempBrick.frame.origin.y, 50, 20)];
+                    pointValue.backgroundColor = [UIColor clearColor];
+                    pointValue.font = [UIFont fontWithName:@"Helvetica" size:12];
                     pointValue.textColor = [UIColor whiteColor];
+                   [MOVE animateView:pointValue properties:@{@"alpha":@0, @"duration":@1, @"delay":@0.0, @"remove":@YES}];
                     pointValue.text = @"+100";
                     
                     [self.view addSubview:pointValue];
                     
                     points +=100;
                     
-                    NSLog(@"Total Points = %f", points);
-                    
- //                   [self pointLabelWithBrick:brick];
+                    scoreBoard.text = [NSString stringWithFormat:@"%d",points];
+        
             }
                 brick.alpha = 0.5;
         }
@@ -150,14 +157,19 @@
 
 - (void) createBrick
 {
+    int brickRows =6;
     int brickCols = 8;
     float brickWidth = (SCREEN_WIDTH - (10 *(brickCols + 1)))/brickCols;
-    
-    for (int i = 0; i < brickCols; i++)
+    float brickHeight = (SCREEN_HEIGHT - (10 * (brickRows + 1)))/brickRows;
+   
+    for (int row = 0; row < brickRows; row++)
     {
-        float brickX = ((brickWidth + 10) * i) + 10;
+        for (int col = 0; col < brickCols; col++)
+    {
+        float brickX = ((brickWidth + 10) * col) + 10;
+        float brickY = ((brickHeight + 10) * row) + 10;
         
-        UIImageView * brick = [[UIImageView alloc] initWithFrame:CGRectMake(brickX, 10, brickWidth, 30)];
+        UIImageView * brick = [[UIImageView alloc] initWithFrame:CGRectMake(brickX, brickY, brickWidth, brickHeight)];
         
         brick.layer.cornerRadius = 6;
         brick.backgroundColor = [UIColor colorWithWhite:0.7 alpha:1.0];
@@ -167,7 +179,7 @@
         [self.view addSubview:brick];
         [self.bricks addObject:brick];
     }
-
+    }
 }
 
 - (void) createBall
@@ -182,7 +194,7 @@
     [self.balls addObject:ball];
     
     self.pusher = [[UIPushBehavior alloc] initWithItems:self.balls mode:UIPushBehaviorModeInstantaneous];
-    self.pusher.pushDirection = CGVectorMake(0.1, 0.1);
+    self.pusher.pushDirection = CGVectorMake(0.2, 0.2);
     self.pusher.active = YES; //Because push is instantaneous, it will only happen once
     [self.animator addBehavior:self.pusher];
 }

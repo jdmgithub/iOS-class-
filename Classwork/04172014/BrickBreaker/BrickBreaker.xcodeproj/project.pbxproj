@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C314F4C61900A8A400E19509 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C314F4C21900A8A400E19509 /* .gitignore */; };
+		C314F4C71900A8A400E19509 /* MOVE.m in Sources */ = {isa = PBXBuildFile; fileRef = C314F4C41900A8A400E19509 /* MOVE.m */; };
+		C314F4C81900A8A400E19509 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C314F4C51900A8A400E19509 /* README.md */; };
 		C3B5851C190018C500A8B1CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B5851B190018C500A8B1CB /* Foundation.framework */; };
 		C3B5851E190018C500A8B1CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B5851D190018C500A8B1CB /* CoreGraphics.framework */; };
 		C3B58520190018C500A8B1CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B5851F190018C500A8B1CB /* UIKit.framework */; };
@@ -40,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C314F4C21900A8A400E19509 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		C314F4C31900A8A400E19509 /* MOVE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVE.h; sourceTree = "<group>"; };
+		C314F4C41900A8A400E19509 /* MOVE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVE.m; sourceTree = "<group>"; };
+		C314F4C51900A8A400E19509 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		C3B58518190018C500A8B1CB /* BrickBreaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrickBreaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3B5851B190018C500A8B1CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C3B5851D190018C500A8B1CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -92,9 +99,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C314F4C11900A8A400E19509 /* Move */ = {
+			isa = PBXGroup;
+			children = (
+				C314F4C21900A8A400E19509 /* .gitignore */,
+				C314F4C31900A8A400E19509 /* MOVE.h */,
+				C314F4C41900A8A400E19509 /* MOVE.m */,
+				C314F4C51900A8A400E19509 /* README.md */,
+			);
+			path = Move;
+			sourceTree = "<group>";
+		};
 		C3B5850F190018C500A8B1CB = {
 			isa = PBXGroup;
 			children = (
+				C314F4C11900A8A400E19509 /* Move */,
 				C3B585531900324300A8B1CB /* images */,
 				C3B5855019001D4600A8B1CB /* Controllers */,
 				C3B58521190018C500A8B1CB /* BrickBreaker */,
@@ -282,11 +301,13 @@
 			files = (
 				C3B5855D19004D9100A8B1CB /* alien2.png in Resources */,
 				C3B58526190018C500A8B1CB /* InfoPlist.strings in Resources */,
+				C314F4C81900A8A400E19509 /* README.md in Resources */,
 				C3B5852E190018C500A8B1CB /* Images.xcassets in Resources */,
 				C3B5855B19004D8E00A8B1CB /* ball.png in Resources */,
 				C3B585551900324B00A8B1CB /* soccerBall.png in Resources */,
 				C3B585571900325000A8B1CB /* soccerGoal.png in Resources */,
 				C3B58559190037E300A8B1CB /* soccerPlayerLeft.png in Resources */,
+				C314F4C61900A8A400E19509 /* .gitignore in Resources */,
 				C3B5855F19004D9500A8B1CB /* alien1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C314F4C71900A8A400E19509 /* MOVE.m in Sources */,
 				C3B5854F19001D3300A8B1CB /* BBALevelController.m in Sources */,
 				C3B5854C19001BD500A8B1CB /* BBAViewController.m in Sources */,
 				C3B5852C190018C500A8B1CB /* BBAAppDelegate.m in Sources */,
