@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>73958BBD-CBA2-4607-ACBB-A131E1D17223</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Program2_Chapter3</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F07B2953-D845-48AB-BC9A-81C432C7F92D</key>
+		<string>https://github.com/Jiobu/iOS-class-.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Practice/Practice/Program2_Chapter3/Program2_Chapter3.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F07B2953-D845-48AB-BC9A-81C432C7F92D</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Jiobu/iOS-class-.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F07B2953-D845-48AB-BC9A-81C432C7F92D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F07B2953-D845-48AB-BC9A-81C432C7F92D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BrickBreaker</string>
+		</dict>
+	</array>
+</dict>
+</plist>
