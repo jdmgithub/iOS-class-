@@ -5,27 +5,31 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>228C1642-66E4-468C-88A8-A3C0E7015F72</string>
+	<string>91BB502D-4B3B-46D2-8788-C6D6C020ECD7</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Program1</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1930A67F-2A2B-4599-9CD6-35A904E2D303</key>
 		<string>https://github.com/Jiobu/iOS-class-.git</string>
+		<key>92AE8372-CC50-4C49-BD66-8B57F505830C</key>
+		<string>https://github.com/Jiobu/iOS-class-.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Practice/Practice/Program1/Program1.xcodeproj/project.xcworkspace</string>
+	<string>Program1.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1930A67F-2A2B-4599-9CD6-35A904E2D303</key>
 		<string>../../../../..</string>
+		<key>92AE8372-CC50-4C49-BD66-8B57F505830C</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Jiobu/iOS-class-.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1930A67F-2A2B-4599-9CD6-35A904E2D303</string>
+	<string>92AE8372-CC50-4C49-BD66-8B57F505830C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -34,7 +38,15 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>1930A67F-2A2B-4599-9CD6-35A904E2D303</string>
 			<key>IDESourceControlWCCName</key>
-			<string>iOS_Class</string>
+			<string>Program1</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>92AE8372-CC50-4C49-BD66-8B57F505830C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Program1</string>
 		</dict>
 	</array>
 </dict>
