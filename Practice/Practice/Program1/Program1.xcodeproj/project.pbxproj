@@ -19,6 +19,7 @@
 		C36040801903177400070AEF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36040681903177400070AEF /* UIKit.framework */; };
 		C36040881903177400070AEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C36040861903177400070AEF /* InfoPlist.strings */; };
 		C360408A1903177400070AEF /* Program1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C36040891903177400070AEF /* Program1Tests.m */; };
+		C3604096190317CB00070AEF /* PPPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3604095190317CB00070AEF /* PPPViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		C36040851903177400070AEF /* Program1Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Program1Tests-Info.plist"; sourceTree = "<group>"; };
 		C36040871903177400070AEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C36040891903177400070AEF /* Program1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Program1Tests.m; sourceTree = "<group>"; };
+		C3604094190317CB00070AEF /* PPPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPViewController.h; sourceTree = "<group>"; };
+		C3604095190317CB00070AEF /* PPPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 		C36040581903177400070AEF = {
 			isa = PBXGroup;
 			children = (
+				C36040931903179F00070AEF /* Controllers */,
 				C360406A1903177400070AEF /* Program1 */,
 				C36040831903177400070AEF /* Program1Tests */,
 				C36040631903177400070AEF /* Frameworks */,
@@ -142,6 +146,16 @@
 				C36040861903177400070AEF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C36040931903179F00070AEF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C3604094190317CB00070AEF /* PPPViewController.h */,
+				C3604095190317CB00070AEF /* PPPViewController.m */,
+			);
+			name = Controllers;
+			path = Program1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C36040711903177400070AEF /* main.m in Sources */,
+				C3604096190317CB00070AEF /* PPPViewController.m in Sources */,
 				C36040751903177400070AEF /* PPPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +376,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Program1/Program1-Prefix.pch";
 				INFOPLIST_FILE = "Program1/Program1-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -374,6 +390,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Program1/Program1-Prefix.pch";
 				INFOPLIST_FILE = "Program1/Program1-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
