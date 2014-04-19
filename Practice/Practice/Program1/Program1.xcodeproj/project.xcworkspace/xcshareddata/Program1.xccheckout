@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>6A92AD76-E564-425A-949E-F5DA118BF07D</string>
+	<string>10F552FB-23E0-4E0C-A14F-6B017B0E2F0E</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Program1</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -36,7 +36,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1930A67F-2A2B-4599-9CD6-35A904E2D303</string>
+			<string>92AE8372-CC50-4C49-BD66-8B57F505830C</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Program1</string>
 		</dict>
@@ -44,9 +44,9 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>92AE8372-CC50-4C49-BD66-8B57F505830C</string>
+			<string>1930A67F-2A2B-4599-9CD6-35A904E2D303</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Program1</string>
+			<string>Program2</string>
 		</dict>
 	</array>
 </dict>
