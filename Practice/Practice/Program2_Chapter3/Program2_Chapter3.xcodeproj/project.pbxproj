@@ -19,6 +19,7 @@
 		C3981D1A190343D40031F11B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3981D02190343D40031F11B /* UIKit.framework */; };
 		C3981D22190343D40031F11B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3981D20190343D40031F11B /* InfoPlist.strings */; };
 		C3981D24190343D40031F11B /* Program2_Chapter3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3981D23190343D40031F11B /* Program2_Chapter3Tests.m */; };
+		C3981D30190343FE0031F11B /* PPPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3981D2F190343FE0031F11B /* PPPViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		C3981D1F190343D40031F11B /* Program2_Chapter3Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Program2_Chapter3Tests-Info.plist"; sourceTree = "<group>"; };
 		C3981D21190343D40031F11B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C3981D23190343D40031F11B /* Program2_Chapter3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Program2_Chapter3Tests.m; sourceTree = "<group>"; };
+		C3981D2E190343FE0031F11B /* PPPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPViewController.h; sourceTree = "<group>"; };
+		C3981D2F190343FE0031F11B /* PPPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 		C3981CF2190343D40031F11B = {
 			isa = PBXGroup;
 			children = (
+				C3981D2D190343ED0031F11B /* Controllers */,
 				C3981D04190343D40031F11B /* Program2_Chapter3 */,
 				C3981D1D190343D40031F11B /* Program2_Chapter3Tests */,
 				C3981CFD190343D40031F11B /* Frameworks */,
@@ -142,6 +146,15 @@
 				C3981D20190343D40031F11B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3981D2D190343ED0031F11B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C3981D2E190343FE0031F11B /* PPPViewController.h */,
+				C3981D2F190343FE0031F11B /* PPPViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3981D0B190343D40031F11B /* main.m in Sources */,
+				C3981D30190343FE0031F11B /* PPPViewController.m in Sources */,
 				C3981D0F190343D40031F11B /* PPPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
