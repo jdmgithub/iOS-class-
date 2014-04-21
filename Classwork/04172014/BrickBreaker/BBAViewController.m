@@ -114,11 +114,11 @@
     [self.view addSubview:scoreBoard];
 }
 
-- (void)reduceLives:(int)lives
-{
-    lifeCount.text = [NSString stringWithFormat:@"%.d", lives];
-    [self.view addSubview:lifeCount];
-}
+//- (void)reduceLives:(int)lives
+//{
+//    lifeCount.text = [NSString stringWithFormat:@"%.d", lives];
+//    [self.view addSubview:lifeCount];
+//}
 - (void)gameDone
 {
     [level.view removeFromSuperview];

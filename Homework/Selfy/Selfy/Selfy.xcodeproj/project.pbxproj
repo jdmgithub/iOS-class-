@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C3CE69A9190586A9005635FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE69A8190586A9005635FB /* Foundation.framework */; };
+		C3CE69AB190586A9005635FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE69AA190586A9005635FB /* CoreGraphics.framework */; };
+		C3CE69AD190586A9005635FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE69AC190586A9005635FB /* UIKit.framework */; };
+		C3CE69B3190586A9005635FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3CE69B1190586A9005635FB /* InfoPlist.strings */; };
+		C3CE69B5190586A9005635FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CE69B4190586A9005635FB /* main.m */; };
+		C3CE69B9190586A9005635FB /* SYAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CE69B8190586A9005635FB /* SYAAppDelegate.m */; };
+		C3CE69BB190586A9005635FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3CE69BA190586A9005635FB /* Images.xcassets */; };
+		C3CE69C2190586A9005635FB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE69C1190586A9005635FB /* XCTest.framework */; };
+		C3CE69C3190586A9005635FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE69A8190586A9005635FB /* Foundation.framework */; };
+		C3CE69C4190586A9005635FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE69AC190586A9005635FB /* UIKit.framework */; };
+		C3CE69CC190586A9005635FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3CE69CA190586A9005635FB /* InfoPlist.strings */; };
+		C3CE69CE190586A9005635FB /* SelfyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CE69CD190586A9005635FB /* SelfyTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C3CE69C5190586A9005635FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3CE699D190586A9005635FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3CE69A4190586A9005635FB;
+			remoteInfo = Selfy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C3CE69A5190586A9005635FB /* Selfy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Selfy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3CE69A8190586A9005635FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C3CE69AA190586A9005635FB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C3CE69AC190586A9005635FB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C3CE69B0190586A9005635FB /* Selfy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Selfy-Info.plist"; sourceTree = "<group>"; };
+		C3CE69B2190586A9005635FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3CE69B4190586A9005635FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C3CE69B6190586A9005635FB /* Selfy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Selfy-Prefix.pch"; sourceTree = "<group>"; };
+		C3CE69B7190586A9005635FB /* SYAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYAAppDelegate.h; sourceTree = "<group>"; };
+		C3CE69B8190586A9005635FB /* SYAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYAAppDelegate.m; sourceTree = "<group>"; };
+		C3CE69BA190586A9005635FB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C3CE69C0190586A9005635FB /* SelfyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SelfyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3CE69C1190586A9005635FB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C3CE69C9190586A9005635FB /* SelfyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SelfyTests-Info.plist"; sourceTree = "<group>"; };
+		C3CE69CB190586A9005635FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3CE69CD190586A9005635FB /* SelfyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelfyTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3CE69A2190586A9005635FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3CE69AB190586A9005635FB /* CoreGraphics.framework in Frameworks */,
+				C3CE69AD190586A9005635FB /* UIKit.framework in Frameworks */,
+				C3CE69A9190586A9005635FB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3CE69BD190586A9005635FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3CE69C2190586A9005635FB /* XCTest.framework in Frameworks */,
+				C3CE69C4190586A9005635FB /* UIKit.framework in Frameworks */,
+				C3CE69C3190586A9005635FB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3CE699C190586A9005635FB = {
+			isa = PBXGroup;
+			children = (
+				C3CE69AE190586A9005635FB /* Selfy */,
+				C3CE69C7190586A9005635FB /* SelfyTests */,
+				C3CE69A7190586A9005635FB /* Frameworks */,
+				C3CE69A6190586A9005635FB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C3CE69A6190586A9005635FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3CE69A5190586A9005635FB /* Selfy.app */,
+				C3CE69C0190586A9005635FB /* SelfyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3CE69A7190586A9005635FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3CE69A8190586A9005635FB /* Foundation.framework */,
+				C3CE69AA190586A9005635FB /* CoreGraphics.framework */,
+				C3CE69AC190586A9005635FB /* UIKit.framework */,
+				C3CE69C1190586A9005635FB /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3CE69AE190586A9005635FB /* Selfy */ = {
+			isa = PBXGroup;
+			children = (
+				C3CE69B7190586A9005635FB /* SYAAppDelegate.h */,
+				C3CE69B8190586A9005635FB /* SYAAppDelegate.m */,
+				C3CE69BA190586A9005635FB /* Images.xcassets */,
+				C3CE69AF190586A9005635FB /* Supporting Files */,
+			);
+			path = Selfy;
+			sourceTree = "<group>";
+		};
+		C3CE69AF190586A9005635FB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3CE69B0190586A9005635FB /* Selfy-Info.plist */,
+				C3CE69B1190586A9005635FB /* InfoPlist.strings */,
+				C3CE69B4190586A9005635FB /* main.m */,
+				C3CE69B6190586A9005635FB /* Selfy-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3CE69C7190586A9005635FB /* SelfyTests */ = {
+			isa = PBXGroup;
+			children = (
+				C3CE69CD190586A9005635FB /* SelfyTests.m */,
+				C3CE69C8190586A9005635FB /* Supporting Files */,
+			);
+			path = SelfyTests;
+			sourceTree = "<group>";
+		};
+		C3CE69C8190586A9005635FB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3CE69C9190586A9005635FB /* SelfyTests-Info.plist */,
+				C3CE69CA190586A9005635FB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3CE69A4190586A9005635FB /* Selfy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3CE69D1190586A9005635FB /* Build configuration list for PBXNativeTarget "Selfy" */;
+			buildPhases = (
+				C3CE69A1190586A9005635FB /* Sources */,
+				C3CE69A2190586A9005635FB /* Frameworks */,
+				C3CE69A3190586A9005635FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Selfy;
+			productName = Selfy;
+			productReference = C3CE69A5190586A9005635FB /* Selfy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C3CE69BF190586A9005635FB /* SelfyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3CE69D4190586A9005635FB /* Build configuration list for PBXNativeTarget "SelfyTests" */;
+			buildPhases = (
+				C3CE69BC190586A9005635FB /* Sources */,
+				C3CE69BD190586A9005635FB /* Frameworks */,
+				C3CE69BE190586A9005635FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3CE69C6190586A9005635FB /* PBXTargetDependency */,
+			);
+			name = SelfyTests;
+			productName = SelfyTests;
+			productReference = C3CE69C0190586A9005635FB /* SelfyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3CE699D190586A9005635FB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SYA;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Jisha Obukwelu";
+				TargetAttributes = {
+					C3CE69BF190586A9005635FB = {
+						TestTargetID = C3CE69A4190586A9005635FB;
+					};
+				};
+			};
+			buildConfigurationList = C3CE69A0190586A9005635FB /* Build configuration list for PBXProject "Selfy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C3CE699C190586A9005635FB;
+			productRefGroup = C3CE69A6190586A9005635FB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3CE69A4190586A9005635FB /* Selfy */,
+				C3CE69BF190586A9005635FB /* SelfyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3CE69A3190586A9005635FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3CE69B3190586A9005635FB /* InfoPlist.strings in Resources */,
+				C3CE69BB190586A9005635FB /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3CE69BE190586A9005635FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3CE69CC190586A9005635FB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3CE69A1190586A9005635FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3CE69B9190586A9005635FB /* SYAAppDelegate.m in Sources */,
+				C3CE69B5190586A9005635FB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3CE69BC190586A9005635FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3CE69CE190586A9005635FB /* SelfyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C3CE69C6190586A9005635FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3CE69A4190586A9005635FB /* Selfy */;
+			targetProxy = C3CE69C5190586A9005635FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C3CE69B1190586A9005635FB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3CE69B2190586A9005635FB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C3CE69CA190586A9005635FB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3CE69CB190586A9005635FB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C3CE69CF190586A9005635FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C3CE69D0190586A9005635FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C3CE69D2190586A9005635FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Selfy/Selfy-Prefix.pch";
+				INFOPLIST_FILE = "Selfy/Selfy-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C3CE69D3190586A9005635FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Selfy/Selfy-Prefix.pch";
+				INFOPLIST_FILE = "Selfy/Selfy-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C3CE69D5190586A9005635FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Selfy.app/Selfy";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Selfy/Selfy-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SelfyTests/SelfyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C3CE69D6190586A9005635FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Selfy.app/Selfy";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Selfy/Selfy-Prefix.pch";
+				INFOPLIST_FILE = "SelfyTests/SelfyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3CE69A0190586A9005635FB /* Build configuration list for PBXProject "Selfy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3CE69CF190586A9005635FB /* Debug */,
+				C3CE69D0190586A9005635FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3CE69D1190586A9005635FB /* Build configuration list for PBXNativeTarget "Selfy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3CE69D2190586A9005635FB /* Debug */,
+				C3CE69D3190586A9005635FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C3CE69D4190586A9005635FB /* Build configuration list for PBXNativeTarget "SelfyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3CE69D5190586A9005635FB /* Debug */,
+				C3CE69D6190586A9005635FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C3CE699D190586A9005635FB /* Project object */;
+}
