@@ -1,5 +1,5 @@
 //
-//  TIAViewController.h
+//  TIATableViewController.h
 //  TweetIt
 //
 //  Created by Jisha Obukwelu on 4/21/14.
@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#define  NAME_KEY tweet[@"name"]
 
-@interface TIAViewController : UIViewController
+@interface TIATableViewController : UITableViewController
 
-@property (nonatomic) NSDictionary * tweet;
 @end

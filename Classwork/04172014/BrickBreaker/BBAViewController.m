@@ -19,7 +19,7 @@
     BBALevelController * level;
     UIButton * startButton;
     UILabel * scoreBoard;
-    UILabel * lifeCount;
+    UIImageView * lifeCount;
     
 //    UILabel * lifeCount1;
 //    UILabel * lifeCount2;
@@ -39,10 +39,10 @@
         scoreBoard.textAlignment = NSTextAlignmentRight;
         [self.view addSubview:scoreBoard];
         
-        lifeCount = [[UILabel alloc] initWithFrame:CGRectMake(450, 0, 100, 40)];
-        lifeCount.textColor = [UIColor greenColor];
+        lifeCount = [[UIImageView alloc] initWithFrame:CGRectMake(450, 0, 100, 40)];
+        lifeCount.tintColor = [UIColor greenColor];
         lifeCount.backgroundColor = [UIColor clearColor];
-        lifeCount.textAlignment = NSTextAlignmentLeft;
+        
         [self.view addSubview:lifeCount];
 
 //        lifeCount1 = [[UILabel alloc] initWithFrame:CGRectMake(395, 10, 20, 20)];
@@ -73,7 +73,7 @@
 //                                     
 //    int defaultTopScore =[[NSUserDefaults standardUserDefaults]];
 //    topScore = [[userDefaults objectForKey:@"topScore"] intValue];
-    
+//    
 //    header = [[BBAHeader alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
 //    header.topScore = topScore;
 //    [header showStart];
@@ -125,7 +125,7 @@
     [self.view addSubview:startButton];
     [scoreBoard removeFromSuperview];
 }
-//
+
 //- (void)updatePoints:(int)points
 //{
 //    scoreBoard.currentScore = points;
@@ -140,12 +140,12 @@
 //        [userDefaults synchronize];
 //    }
 //}
-
+//
 //- (int)loseLife
 //{
 //    if(lives > 0) lives --;
-//    header.livesLeft = lives;
-//    if(lives == 0)[self.gameLost];
+//    lifeCount.livesLeft = lives;
+//    if(lives == 0)[self.viewDidLoad];
 //    return lives;
 //}
 
