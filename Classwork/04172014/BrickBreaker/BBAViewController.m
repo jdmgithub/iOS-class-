@@ -20,6 +20,10 @@
     UIButton * startButton;
     UILabel * scoreBoard;
     UILabel * lifeCount;
+    
+//    UILabel * lifeCount1;
+//    UILabel * lifeCount2;
+//    UILabel * lifeCount3;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -27,6 +31,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
+       
+                                         
         scoreBoard = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 100, 40)];
         scoreBoard.textColor = [UIColor greenColor];
         scoreBoard.backgroundColor = [UIColor clearColor];
@@ -39,7 +45,22 @@
         lifeCount.textAlignment = NSTextAlignmentLeft;
         [self.view addSubview:lifeCount];
 
-   
+//        lifeCount1 = [[UILabel alloc] initWithFrame:CGRectMake(395, 10, 20, 20)];
+//        lifeCount1.layer.cornerRadius = 10;
+//        lifeCount1.backgroundColor = [UIColor greenColor];
+//        [self.view addSubview:lifeCount1];
+//        
+//        lifeCount2 = [[UILabel alloc] initWithFrame:CGRectMake(425, 10, 20, 20)];
+//        lifeCount2.layer.cornerRadius = 10;
+//        lifeCount2.backgroundColor = [UIColor greenColor];
+//        [self.view addSubview:lifeCount2];
+//        
+//        lifeCount3 = [[UILabel alloc] initWithFrame:CGRectMake(455, 10, 20, 20)];
+//        lifeCount3.layer.cornerRadius = 10;
+//        lifeCount3.backgroundColor = [UIColor greenColor];
+//        [self.view addSubview:lifeCount3];
+
+
     }
     return self;
 }
@@ -47,6 +68,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+//    NSUserDefaults * userDefaults = [[NSUserDefaults standardUserDefaults];
+//                                     
+//    int defaultTopScore =[[NSUserDefaults standardUserDefaults]];
+//    topScore = [[userDefaults objectForKey:@"topScore"] intValue];
+    
+//    header = [[BBAHeader alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
+//    header.topScore = topScore;
+//    [header showStart];
+//    [self.view addSubview:header];
     
     level =[[BBALevelController alloc] initWithNibName:nil bundle:nil];
     [self.view addSubview:level.view];
@@ -93,8 +124,30 @@
     [level.view removeFromSuperview];
     [self.view addSubview:startButton];
     [scoreBoard removeFromSuperview];
-
 }
+//
+//- (void)updatePoints:(int)points
+//{
+//    scoreBoard.currentScore = points;
+//    if (scoreBoard.currentScore > topScore)
+//    {
+//        topScore - scoreBoard.currentScore;
+//        newHighScore = YES;
+//        //update my default value
+//        
+//        NSUserDefaults * userDefaults = [[NSUserDefaults standardUserDefaults];
+//        [userDefault setObject: @(topSCore) forKey:@"topScore"];
+//        [userDefaults synchronize];
+//    }
+//}
+
+//- (int)loseLife
+//{
+//    if(lives > 0) lives --;
+//    header.livesLeft = lives;
+//    if(lives == 0)[self.gameLost];
+//    return lives;
+//}
 
 - (void)didReceiveMemoryWarning
 {
