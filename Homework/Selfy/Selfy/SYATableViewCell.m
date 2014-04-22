@@ -11,8 +11,8 @@
 @implementation SYATableViewCell
 {
     UIImageView * profileImage;
-    UITextView * profileName;
-    UITextView * profileCaption;
+    UILabel * profileName;
+    UILabel * profileCaption;
     UIImageView * profileAvatar;
 }
 
@@ -21,40 +21,46 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
-        profileImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 60, 60)];
+        profileImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, 40, 280, 200)];
+        profileImage.backgroundColor = [UIColor lightGrayColor];
         [self.contentView addSubview:profileImage];
         
-        profileName = [[UITextView alloc] initWithFrame:CGRectMake(100, 20, 200, 60)];
+        profileName = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 280, 20)];
+        profileName.backgroundColor = [UIColor darkGrayColor];
+        profileName.textColor = [UIColor whiteColor];
         [self.contentView addSubview:profileName];
         
-        profileCaption = [[UITextView alloc] initWithFrame:CGRectMake(100, 40, 200, 60)];
+        profileCaption = [[UILabel alloc] initWithFrame:CGRectMake(100, 240, 200, 20)];
+        profileCaption.textColor = [UIColor darkGrayColor];
         [self.contentView addSubview:profileCaption];
         
-        profileAvatar = [[UIImageView alloc] initWithFrame:CGRectMake(20, 40, 60, 60)];
+        profileAvatar = [[UIImageView alloc] initWithFrame:CGRectMake(20, 240, 60, 60)];
+        profileAvatar.backgroundColor = [UIColor lightGrayColor];
         [self.contentView addSubview:profileAvatar];
     }
     return self;
 }
 
-- (void)setUserInfo: (NSDictionary *)userInfo
+- (void)setSelfyInfo: (NSDictionary *)selfyInfo
 {
-    profileImage.image = userInfo[@"image"];
-    profileImage.layer.cornerRadius = 30;
-    profileImage.layer.masksToBounds = YES;
+    _selfyInfo = selfyInfo;
     
-    profileName.text = userInfo[@"name"];
-    profileName.backgroundColor = [UIColor clearColor];
-    profileName.font = [UIFont fontWithName:@"Times New Roman" size:(12)];
+    profileName.text = selfyInfo[@"name"];
     
-    profileCaption.text = userInfo[@"caption"];
-    profileCaption.backgroundColor = [UIColor clearColor];
-    profileCaption.font = [UIFont fontWithName:@"Times New Roman" size:(12)];
+    profileCaption.text = selfyInfo[@"caption"];
     
-    profileAvatar.image = userInfo[@"avatar"];
-    profileAvatar.layer.cornerRadius = 30;
-    profileAvatar.layer.masksToBounds = YES;
+    NSURL * imageURL = [NSURL URLWithString:selfyInfo[@"image"]];
+    NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+    UIImage * image = [UIImage imageWithData:imageData];
     
-    _userInfo = userInfo;
+    profileImage.image = image;
+    
+    NSURL * avatarURL = [NSURL URLWithString:selfyInfo[@"avatar"]];
+    NSData * avatarData = [NSData dataWithContentsOfURL:avatarURL];
+    UIImage * avatar = [UIImage imageWithData:avatarData];
+    
+    profileAvatar.image = avatar;
+    
 }
 
 - (void)awakeFromNib

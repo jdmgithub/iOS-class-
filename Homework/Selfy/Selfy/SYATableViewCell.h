@@ -10,7 +10,7 @@
 
 @interface SYATableViewCell : UITableViewCell
 
-@property (nonatomic) NSDictionary * userInfo;
+@property (nonatomic) NSDictionary * selfyInfo;
 
 
 

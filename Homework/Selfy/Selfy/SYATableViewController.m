@@ -18,7 +18,7 @@
     UITableViewHeaderFooterView * header;
     UIButton * settings;
     UIButton * addNew;
-    NSMutableArray * userLists;
+    NSMutableArray * selfies;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -26,15 +26,16 @@
     self = [super initWithStyle:style];
     if (self)
     {
-        userLists = [@[
-                       @{@"image":@"samandI",
-                         @"name":@"Jiobu",
-                         @"caption":@"New Apple Developer",
-                         @"avatar":@"soccerBall"},
+        selfies = [@[
+                       @{@"image": @"https://scontent-b-atl.xx.fbcdn.net/hphotos-prn2/t1.0-9/1186039_10151986279756439_860063747_n.jpg",
+                         @"name": @"Jiobu",
+                         @"caption": @"New Apple Developer",
+                         @"avatar": @"https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-frc1/t1.0-9/1962676_10151986272971439_776488807_n.jpg"
+                        },
                        ]mutableCopy];
 
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
-        self.tableView.rowHeight = 100;
+        self.tableView.rowHeight = 500;
         
         header = [[UITableViewHeaderFooterView alloc] initWithFrame:CGRectMake(0, 0, 350, 60)];
         NSLog(@"%@",self.tableView.tableHeaderView);
@@ -83,12 +84,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [userLists count];
+    return [selfies count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary * userList = userLists[indexPath.row];
     
     SYATableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
@@ -96,11 +96,7 @@
     {
         cell = [[SYATableViewCell  alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
         
-//        cell.userInfo = [self getUserInfo:indexPath.row];
-        cell.imageView.image = userList[@"image"];
-        cell.textLabel.text = userList[@"name"];
-        cell.textLabel.text = userList[@"caption"];
-        cell.imageView.image = userList[@"avatar"];
+        cell.selfyInfo = selfies[indexPath.row];
     }
     // Configure the cell..
     return cell;
