@@ -20,10 +20,6 @@
     UIButton * startButton;
     UILabel * scoreBoard;
     UILabel * lifeCount;
-    
-//    UILabel * lifeCount1;
-//    UILabel * lifeCount2;
-//    UILabel * lifeCount3;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -45,23 +41,6 @@
         lifeCount.text = @"Lives : 3";
         
         [self.view addSubview:lifeCount];
-
-//        lifeCount1 = [[UILabel alloc] initWithFrame:CGRectMake(395, 10, 20, 20)];
-//        lifeCount1.layer.cornerRadius = 10;
-//        lifeCount1.backgroundColor = [UIColor greenColor];
-//        [self.view addSubview:lifeCount1];
-//        
-//        lifeCount2 = [[UILabel alloc] initWithFrame:CGRectMake(425, 10, 20, 20)];
-//        lifeCount2.layer.cornerRadius = 10;
-//        lifeCount2.backgroundColor = [UIColor greenColor];
-//        [self.view addSubview:lifeCount2];
-//        
-//        lifeCount3 = [[UILabel alloc] initWithFrame:CGRectMake(455, 10, 20, 20)];
-//        lifeCount3.layer.cornerRadius = 10;
-//        lifeCount3.backgroundColor = [UIColor greenColor];
-//        [self.view addSubview:lifeCount3];
-
-
     }
     return self;
 }

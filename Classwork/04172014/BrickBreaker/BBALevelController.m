@@ -85,6 +85,7 @@
     self.collider.collisionMode = UICollisionBehaviorModeEverything;
 //    self.collider.translatesReferenceBoundsIntoBoundary = YES; //creates boundary's bounds based oon the reference
     
+    //create balls after collider so balls can take collider properties
     [self createBall];
     
     int w = self.view.frame.size.width;
@@ -155,12 +156,14 @@
         [ball removeFromSuperview];
         [self.collider removeItem:ball];
         
+        //associates lives with ball going through floor
         lives--;
         
         if(lives > 0) [self createBall];
         
         [self.delegate reduceLives:lives];
         
+        //lives must equal 0 before game restarts
        if([self.delegate respondsToSelector:@selector(gameDone)] && lives == 0)
             [self.delegate gameDone];
     }
@@ -251,11 +254,12 @@
     [self.view addSubview:ball];
     [self.balls addObject:ball];
     
+    //adding ball with dynamic property
     [self.collider addItem:ball];
     [self.ballsDynamicsProperties addItem:ball];
     
     self.pusher = [[UIPushBehavior alloc] initWithItems:self.balls mode:UIPushBehaviorModeInstantaneous];
-    self.pusher.pushDirection = CGVectorMake(0.05, 0.05);
+    self.pusher.pushDirection = CGVectorMake(0.08, 0.08);
     self.pusher.active = YES; //Because push is instantaneous, it will only happen once
     [self.animator addBehavior:self.pusher];
 
