@@ -19,6 +19,10 @@
 		C3CE69C4190586A9005635FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE69AC190586A9005635FB /* UIKit.framework */; };
 		C3CE69CC190586A9005635FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3CE69CA190586A9005635FB /* InfoPlist.strings */; };
 		C3CE69CE190586A9005635FB /* SelfyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CE69CD190586A9005635FB /* SelfyTests.m */; };
+		C3CE69D919058794005635FB /* SYATableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CE69D819058794005635FB /* SYATableViewController.m */; };
+		C3CE69DC19058DE2005635FB /* SYATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CE69DB19058DE2005635FB /* SYATableViewCell.m */; };
+		C3CE69DE190593AC005635FB /* samandI.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE69DD190593AC005635FB /* samandI.png */; };
+		C3CE69E0190593F1005635FB /* soccerBall.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE69DF190593F1005635FB /* soccerBall.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,12 @@
 		C3CE69C9190586A9005635FB /* SelfyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SelfyTests-Info.plist"; sourceTree = "<group>"; };
 		C3CE69CB190586A9005635FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C3CE69CD190586A9005635FB /* SelfyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelfyTests.m; sourceTree = "<group>"; };
+		C3CE69D719058794005635FB /* SYATableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYATableViewController.h; sourceTree = "<group>"; };
+		C3CE69D819058794005635FB /* SYATableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYATableViewController.m; sourceTree = "<group>"; };
+		C3CE69DA19058DE2005635FB /* SYATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYATableViewCell.h; sourceTree = "<group>"; };
+		C3CE69DB19058DE2005635FB /* SYATableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYATableViewCell.m; sourceTree = "<group>"; };
+		C3CE69DD190593AC005635FB /* samandI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = samandI.png; sourceTree = "<group>"; };
+		C3CE69DF190593F1005635FB /* soccerBall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soccerBall.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,12 @@
 		C3CE699C190586A9005635FB = {
 			isa = PBXGroup;
 			children = (
+				C3CE69DF190593F1005635FB /* soccerBall.png */,
+				C3CE69DD190593AC005635FB /* samandI.png */,
+				C3CE69DA19058DE2005635FB /* SYATableViewCell.h */,
+				C3CE69DB19058DE2005635FB /* SYATableViewCell.m */,
+				C3CE69D719058794005635FB /* SYATableViewController.h */,
+				C3CE69D819058794005635FB /* SYATableViewController.m */,
 				C3CE69AE190586A9005635FB /* Selfy */,
 				C3CE69C7190586A9005635FB /* SelfyTests */,
 				C3CE69A7190586A9005635FB /* Frameworks */,
@@ -221,7 +237,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3CE69B3190586A9005635FB /* InfoPlist.strings in Resources */,
+				C3CE69DE190593AC005635FB /* samandI.png in Resources */,
 				C3CE69BB190586A9005635FB /* Images.xcassets in Resources */,
+				C3CE69E0190593F1005635FB /* soccerBall.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +259,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3CE69B9190586A9005635FB /* SYAAppDelegate.m in Sources */,
+				C3CE69DC19058DE2005635FB /* SYATableViewCell.m in Sources */,
 				C3CE69B5190586A9005635FB /* main.m in Sources */,
+				C3CE69D919058794005635FB /* SYATableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +381,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Selfy/Selfy-Prefix.pch";
 				INFOPLIST_FILE = "Selfy/Selfy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -374,6 +395,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Selfy/Selfy-Prefix.pch";
 				INFOPLIST_FILE = "Selfy/Selfy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
