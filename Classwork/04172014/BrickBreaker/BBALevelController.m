@@ -68,16 +68,24 @@
 
 - (void)resetLevel
 {
+    
+//        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"alien2"]];
+
+//        UIImageView
+    
+    
+    
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
     [self createPaddle];
     [self createBrick];
-    [self createBall];
     
     self.collider = [[UICollisionBehavior alloc] initWithItems:[self allItems]];
     self.collider.collisionDelegate = self;
     self.collider.collisionMode = UICollisionBehaviorModeEverything;
 //    self.collider.translatesReferenceBoundsIntoBoundary = YES; //creates boundary's bounds based oon the reference
+    
+    [self createBall];
     
     int w = self.view.frame.size.width;
     int h = self.view.frame.size.height;
@@ -123,10 +131,6 @@
                 
                 [self.delegate addPoints:(int)points];
                 
-                lives --;
-                
-                [self.delegate reduceLives:(int)lives];
-                
 /*
                 [UIView animateWithDuration:0.4 animations:^{
                     label.alpha = 0.0;
@@ -151,7 +155,13 @@
         [ball removeFromSuperview];
         [self.collider removeItem:ball];
         
-       if([self.delegate respondsToSelector:@selector(gameDone)])
+        lives--;
+        
+        if(lives > 0) [self createBall];
+        
+        [self.delegate reduceLives:lives];
+        
+       if([self.delegate respondsToSelector:@selector(gameDone)] && lives == 0)
             [self.delegate gameDone];
     }
 }
@@ -183,7 +193,7 @@
 - (NSArray *)allItems
 {
     NSMutableArray * items = [@[self.paddle]mutableCopy];
-    for (UIView * item in self.balls) [items addObject:item];
+//    for (UIView * item in self.balls) [items addObject:item];
     for (UIView * item in self.bricks) [items addObject:item];
     return items;
 }
@@ -240,6 +250,9 @@
     ball.image = [UIImage imageNamed:@"ball"];
     [self.view addSubview:ball];
     [self.balls addObject:ball];
+    
+    [self.collider addItem:ball];
+    [self.ballsDynamicsProperties addItem:ball];
     
     self.pusher = [[UIPushBehavior alloc] initWithItems:self.balls mode:UIPushBehaviorModeInstantaneous];
     self.pusher.pushDirection = CGVectorMake(0.05, 0.05);

@@ -19,7 +19,7 @@
     BBALevelController * level;
     UIButton * startButton;
     UILabel * scoreBoard;
-    UIImageView * lifeCount;
+    UILabel * lifeCount;
     
 //    UILabel * lifeCount1;
 //    UILabel * lifeCount2;
@@ -39,9 +39,10 @@
         scoreBoard.textAlignment = NSTextAlignmentRight;
         [self.view addSubview:scoreBoard];
         
-        lifeCount = [[UIImageView alloc] initWithFrame:CGRectMake(450, 0, 100, 40)];
-        lifeCount.tintColor = [UIColor greenColor];
+        lifeCount = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 100, 0, 100, 40)];
+        lifeCount.textColor = [UIColor greenColor];
         lifeCount.backgroundColor = [UIColor clearColor];
+        lifeCount.text = @"Lives : 3";
         
         [self.view addSubview:lifeCount];
 
@@ -79,9 +80,6 @@
 //    [header showStart];
 //    [self.view addSubview:header];
     
-    level =[[BBALevelController alloc] initWithNibName:nil bundle:nil];
-    [self.view addSubview:level.view];
-    
     startButton = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-200)/2, (SCREEN_HEIGHT-200)/2,200,200)];
     startButton.layer.cornerRadius = 100;
     startButton.backgroundColor = [UIColor grayColor];
@@ -110,15 +108,15 @@
 
 - (void)addPoints:(int)points
 {
-    scoreBoard.text = [NSString stringWithFormat:@"%.d", points];
+    scoreBoard.text = [NSString stringWithFormat:@"Score : %d", points];
     [self.view addSubview:scoreBoard];
 }
 
-//- (void)reduceLives:(int)lives
-//{
-//    lifeCount.text = [NSString stringWithFormat:@"%.d", lives];
-//    [self.view addSubview:lifeCount];
-//}
+- (void)reduceLives:(int)lives
+{
+    lifeCount.text = [NSString stringWithFormat:@"Lives : %d", lives];
+    [self.view addSubview:lifeCount];
+}
 - (void)gameDone
 {
     [level.view removeFromSuperview];
