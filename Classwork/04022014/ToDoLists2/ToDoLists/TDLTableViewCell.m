@@ -20,7 +20,6 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
-        
        profileImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 60, 60)];
        [self.contentView addSubview:profileImage];
         
@@ -29,10 +28,10 @@
         
         profileURL = [[UITextView alloc] initWithFrame:CGRectMake(100, 40, 200, 60)];
         [self.contentView addSubview:profileURL];
-        
     }
     return self;
 }
+
 - (void)setProfileInfo: (NSDictionary *)profileInfo
  {
      NSURL * imageURL = [NSURL URLWithString:profileInfo[@"image"]];
@@ -57,7 +56,6 @@
      profileURL.font = [UIFont fontWithName:@"Times New Roman" size:(12)];
 
      _profileInfo = profileInfo;
-
  }
 
 - (void)awakeFromNib

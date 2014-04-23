@@ -8,6 +8,7 @@
 
 #import "SYATableViewController.h"
 #import "SYATableViewCell.h"
+#import <Parse/Parse.h>
 
 @interface SYATableViewController ()
 
@@ -59,6 +60,8 @@
         [addNew  setTitle:@"ADD NEW" forState:UIControlStateNormal];
         
         [header addSubview:addNew];
+        
+               self.tableView.rowHeight = self.tableView.frame.size.width + 100;
     }
     return self;
 }
@@ -91,11 +94,9 @@
 {
     
     SYATableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    
     if (cell == nil)
     {
-        cell = [[SYATableViewCell  alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-        
+        cell = [[SYATableViewCell  alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];        
         cell.selfyInfo = selfies[indexPath.row];
     }
     // Configure the cell..

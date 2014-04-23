@@ -8,13 +8,24 @@
 
 #import "SYAAppDelegate.h"
 #import "SYATableViewController.h"
+#import <Parse/Parse.h>
+#import "SYALoginViewController.h"
+#import "SYASelfyViewController.h"
 
 @implementation SYAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[SYATableViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    [Parse setApplicationId:@"H1JHLiA7kFRmIWvtbkHDcnA1Caj4UofHxRx6UZAB"
+                  clientKey:@"dKLyXccYHUy1MXNgrdR2Sq5b1fNQoTr4clSXVd3p"];
+    
+    [PFUser enableAutomaticUser];
+    
+//    self.window.rootViewController = [[SYATableViewController alloc] initWithStyle:UITableViewStylePlain];
+    self.window.rootViewController = [[SYALoginViewController alloc] initWithNibName:nil bundle:nil];
+//    self.window.rootViewController = [[SYASelfyViewController alloc] initWithNibName:nil bundle:nil];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

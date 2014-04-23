@@ -21,6 +21,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
+        
         profileImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, 40, 280, 200)];
         profileImage.backgroundColor = [UIColor lightGrayColor];
         [self.contentView addSubview:profileImage];
@@ -36,6 +37,8 @@
         
         profileAvatar = [[UIImageView alloc] initWithFrame:CGRectMake(20, 240, 60, 60)];
         profileAvatar.backgroundColor = [UIColor lightGrayColor];
+        profileAvatar.layer.cornerRadius = 30;
+        profileAvatar.layer.masksToBounds = YES;
         [self.contentView addSubview:profileAvatar];
     }
     return self;
