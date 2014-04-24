@@ -19,6 +19,12 @@
 		C32DB7651907F66000DE1BF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32DB74D1907F66000DE1BF8 /* UIKit.framework */; };
 		C32DB76D1907F66000DE1BF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C32DB76B1907F66000DE1BF8 /* InfoPlist.strings */; };
 		C32DB76F1907F66000DE1BF8 /* TweetLikeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C32DB76E1907F66000DE1BF8 /* TweetLikeTests.m */; };
+		C32DB77B1907F68100DE1BF8 /* TLATableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C32DB77A1907F68100DE1BF8 /* TLATableViewController.m */; };
+		C32DB77F1907F72C00DE1BF8 /* TLATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C32DB77E1907F72C00DE1BF8 /* TLATableViewCell.m */; };
+		C32DB7821907F77900DE1BF8 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = C32DB7811907F77900DE1BF8 /* heart.png */; };
+		C32DB7861908187900DE1BF8 /* TLANavController.m in Sources */ = {isa = PBXBuildFile; fileRef = C32DB7851908187900DE1BF8 /* TLANavController.m */; };
+		C32DB78A1908373400DE1BF8 /* TLAView.m in Sources */ = {isa = PBXBuildFile; fileRef = C32DB7891908373400DE1BF8 /* TLAView.m */; };
+		C32DB78C190839CF00DE1BF8 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C32DB78B190839CF00DE1BF8 /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,16 @@
 		C32DB76A1907F66000DE1BF8 /* TweetLikeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TweetLikeTests-Info.plist"; sourceTree = "<group>"; };
 		C32DB76C1907F66000DE1BF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C32DB76E1907F66000DE1BF8 /* TweetLikeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweetLikeTests.m; sourceTree = "<group>"; };
+		C32DB7791907F68100DE1BF8 /* TLATableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLATableViewController.h; sourceTree = "<group>"; };
+		C32DB77A1907F68100DE1BF8 /* TLATableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLATableViewController.m; sourceTree = "<group>"; };
+		C32DB77D1907F72C00DE1BF8 /* TLATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLATableViewCell.h; sourceTree = "<group>"; };
+		C32DB77E1907F72C00DE1BF8 /* TLATableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLATableViewCell.m; sourceTree = "<group>"; };
+		C32DB7811907F77900DE1BF8 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart.png; path = ../../../../../../../../../../Desktop/heart.png; sourceTree = "<group>"; };
+		C32DB7841908187900DE1BF8 /* TLANavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLANavController.h; sourceTree = "<group>"; };
+		C32DB7851908187900DE1BF8 /* TLANavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLANavController.m; sourceTree = "<group>"; };
+		C32DB7881908373400DE1BF8 /* TLAView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLAView.h; sourceTree = "<group>"; };
+		C32DB7891908373400DE1BF8 /* TLAView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAView.m; sourceTree = "<group>"; };
+		C32DB78B190839CF00DE1BF8 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../../../../../../../../../Desktop/logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +93,9 @@
 		C32DB73D1907F66000DE1BF8 = {
 			isa = PBXGroup;
 			children = (
+				C32DB7871908371200DE1BF8 /* UIView */,
+				C32DB783190817FE00DE1BF8 /* NavigationController */,
+				C32DB7781907F66F00DE1BF8 /* Controller */,
 				C32DB74F1907F66000DE1BF8 /* TweetLike */,
 				C32DB7681907F66000DE1BF8 /* TweetLikeTests */,
 				C32DB7481907F66000DE1BF8 /* Frameworks */,
@@ -111,6 +130,7 @@
 				C32DB7591907F66000DE1BF8 /* TLAAppDelegate.m */,
 				C32DB75B1907F66000DE1BF8 /* Images.xcassets */,
 				C32DB7501907F66000DE1BF8 /* Supporting Files */,
+				C32DB7801907F76F00DE1BF8 /* Images */,
 			);
 			path = TweetLike;
 			sourceTree = "<group>";
@@ -142,6 +162,53 @@
 				C32DB76B1907F66000DE1BF8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C32DB7781907F66F00DE1BF8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C32DB7791907F68100DE1BF8 /* TLATableViewController.h */,
+				C32DB77A1907F68100DE1BF8 /* TLATableViewController.m */,
+				C32DB77C1907F71300DE1BF8 /* Cell */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C32DB77C1907F71300DE1BF8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C32DB77D1907F72C00DE1BF8 /* TLATableViewCell.h */,
+				C32DB77E1907F72C00DE1BF8 /* TLATableViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		C32DB7801907F76F00DE1BF8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C32DB78B190839CF00DE1BF8 /* logo.png */,
+				C32DB7811907F77900DE1BF8 /* heart.png */,
+			);
+			name = Images;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		C32DB783190817FE00DE1BF8 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				C32DB7841908187900DE1BF8 /* TLANavController.h */,
+				C32DB7851908187900DE1BF8 /* TLANavController.m */,
+			);
+			name = NavigationController;
+			sourceTree = "<group>";
+		};
+		C32DB7871908371200DE1BF8 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				C32DB7881908373400DE1BF8 /* TLAView.h */,
+				C32DB7891908373400DE1BF8 /* TLAView.m */,
+			);
+			name = UIView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,7 +287,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C32DB78C190839CF00DE1BF8 /* logo.png in Resources */,
 				C32DB7541907F66000DE1BF8 /* InfoPlist.strings in Resources */,
+				C32DB7821907F77900DE1BF8 /* heart.png in Resources */,
 				C32DB75C1907F66000DE1BF8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,7 +310,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C32DB75A1907F66000DE1BF8 /* TLAAppDelegate.m in Sources */,
+				C32DB77F1907F72C00DE1BF8 /* TLATableViewCell.m in Sources */,
+				C32DB7861908187900DE1BF8 /* TLANavController.m in Sources */,
 				C32DB7561907F66000DE1BF8 /* main.m in Sources */,
+				C32DB78A1908373400DE1BF8 /* TLAView.m in Sources */,
+				C32DB77B1907F68100DE1BF8 /* TLATableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
