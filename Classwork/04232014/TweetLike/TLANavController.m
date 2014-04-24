@@ -55,7 +55,7 @@
 
 - (void)cancelTweet:(UIButton * )sender
 {
-    [UIView animateWithDuration:0.4 animations:^{
+    [UIView animateWithDuration:1.0 animations:^{
         [newTweetLayout removeFromSuperview];
         bluebox.frame = self.navigationBar.frame;
     } completion:^(BOOL finished) {
@@ -104,6 +104,12 @@
     bluebox = [[UIView alloc] initWithFrame:self.navigationBar.frame];
     bluebox.backgroundColor = [UIColor colorWithRed:0.216f green:0.533f blue:0.984f alpha:1.0f];
     [self.view addSubview:bluebox];
+    
+    UIButton * logoButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 175, 45)];
+    logoButton.imageView.image = [UIImage imageNamed:@"logo"];
+    logoButton.layer.masksToBounds = YES;
+    [logoButton addTarget:self action:@selector(addNewTweet:) forControlEvents:UIControlEventTouchUpInside];
+    [bluebox addSubview:logoButton];
     
     addNew = [[UIButton alloc] initWithFrame:CGRectMake(80,(self.navigationBar.frame.size.height - 30)/2, 160, 30)];
     addNew.backgroundColor = [UIColor whiteColor];
