@@ -8,7 +8,7 @@
 
 #import "TLATableViewController.h"
 #import "TLATableViewCell.h"
-#import "TLANavController.h"
+
 
 @interface TLATableViewController () 
 
@@ -18,17 +18,14 @@
 {
     UIView * header;
     UIView * newForm;
-//    NSMutableArray * tweetLikes;
-    
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-        
-        self.tweetLikes = [@[]mutableCopy];
+    if (self)
+    {
+        self.tweetItems = [@[]mutableCopy];
         
         self.tableView.separatorColor = [UIColor blueColor];
         self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
@@ -38,27 +35,9 @@
     return self;
 }
 
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-     self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.tweetLikes count];
+    return [self.tweetItems count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,9 +47,7 @@
     {
         cell = [[TLATableViewCell  alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    
-    cell.tweetInfo = self.tweetLikes[indexPath.row];
-    
+    cell.tweetInfo = self.tweetItems[indexPath.row];
     return cell;
 }
 
@@ -94,8 +71,7 @@
 
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
+{}
 
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
@@ -109,19 +85,28 @@
     return YES;
 }
 
-- (void)printOutTweetsInDictionary
+- (void)addTweetsInDictionary:(NSString *)tweet
 {
-    for (NSDictionary* tweetInfo in self.tweetLikes)
-    {
-        NSLog(@"%@", tweetInfo);
-    }
+    if([tweet isEqualToString:@""])return;
+    [self.tweetItems insertObject:@{
+                                    @"image":[UIImage imageNamed:@"heart"],
+                                    @"likes": @0,
+                                    @"tweet": tweet,
+                                    }atIndex:0];
+    [self saveData];
+    [self.tableView reloadData];
+}
+
+- (BOOL)isTweetItemsEmpty
+{
+    return([self.tweetItems count] == 0);
 }
 
 - (void)saveData
 //saves data
 {
     NSString *path = [self listArchivePath];
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.tweetLikes];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.tweetItems];
     [data writeToFile:path options:NSDataWritingAtomic error:nil];
 }
 
@@ -136,18 +121,32 @@
 }
 
 - (void)loadListItems
-
 //what happens when your to do list is loaded
-
 {
     NSString *path = [self listArchivePath];
     
     if([[NSFileManager defaultManager] fileExistsAtPath:path])
     {
-        self.tweetLikes = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        self.tweetItems = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
     }
-    
 }
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    // Uncomment the following line to preserve selection between presentations.
+    self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
 
 
 @end

@@ -10,8 +10,8 @@
 
 @interface TLATableViewController : UITableViewController
 
-@property (nonatomic) NSMutableArray * tweetLikes;
-
-- (void)printOutTweetsInDictionary;
+@property (nonatomic) NSMutableArray * tweetItems;
+@property (nonatomic, getter = isTweetItemsEmpty) BOOL tweetItemsEmpty;
+- (void)addTweetsInDictionary:(NSString *)tweet;
 
 @end
