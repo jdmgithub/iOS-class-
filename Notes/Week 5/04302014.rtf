@@ -194,10 +194,6 @@ in the \
 	//UIActivityIndicatorView\
 \
 \
-\
-\
-\
-\
 
 \f2\b HOMEWORK\
 
@@ -206,16 +202,73 @@ in the \
 2. header - button that accesses photo library\
 3. fills in image view as background\
 \
+Adding Images\
+
+\f2\b 1. UIViewController \
+add:\
+imageView\
+navBar (header)\
+libraryButton (accesses the photo library)\
+\
+
+\f1\b0 - (\cf2 void\cf0 )viewDidLoad\
+\{\
+    [\cf2 super\cf0  \cf6 viewDidLoad\cf0 ];\
+    \
+    \cf3 imageView\cf0  = [[\cf4 UIImageView\cf0  \cf6 alloc\cf0 ] \cf6 initWithFrame\cf0 :\cf2 self\cf0 .\cf4 view\cf0 .\cf4 frame\cf0 ];\
+    \
+    \cf3 imageView\cf0 .\cf4 contentMode\cf0  = \cf6 UIViewContentModeScaleToFill\cf0 ;\
+    \
+    [\cf2 self\cf0 .\cf4 view\cf0  \cf6 addSubview\cf0 :\cf3 imageView\cf0 ];\
+    \
+    \cf4 UIView\cf0  * navBar = [[\cf4 UIView\cf0  \cf6 alloc\cf0 ] \cf6 initWithFrame\cf0 :\cf6 CGRectMake\cf0 (\cf5 0\cf0 , \cf5 0\cf0 , \cf7 SCREEN_WIDTH\cf0 , \cf5 60\cf0 )];\
+    navBar.\cf4 backgroundColor\cf0  = [\cf4 UIColor\cf0  \cf6 blackColor\cf0 ];\
+    [\cf2 self\cf0 .\cf4 view\cf0  \cf6 addSubview\cf0 :navBar];\
+    \
+    \cf4 UIButton\cf0  * libraryButton = [[\cf4 UIButton\cf0  \cf6 alloc\cf0 ] \cf6 initWithFrame\cf0 :\cf6 CGRectMake\cf0 (\cf5 10\cf0 , \cf5 10\cf0 , \cf5 30\cf0 , \cf5 30\cf0 )];\
+    libraryButton.\cf4 layer\cf0 .\cf4 cornerRadius\cf0  = \cf5 15\cf0 ;\
+    libraryButton.\cf4 backgroundColor\cf0  = [\cf4 UIColor\cf0  \cf6 whiteColor\cf0 ];\
+    [libraryButton \cf6 addTarget\cf0 :\cf2 self\cf0  \cf6 action\cf0 :\cf2 @selector\cf0 (selectImages:) \cf6 forControlEvents\cf0 :\cf6 UIControlEventTouchUpInside\cf0 ];\
+    [navBar \cf6 addSubview\cf0 :libraryButton];\
+\}\
+\
+
+\f2\b \
+2. create method to access images from the photo library\
+
+\f1\b0 \
+- (\cf2 void\cf0 )selectImages: (\cf4 UIButton\cf0  *)sender\
+\{\
+    \cf4 UIImagePickerController\cf0  * photoLibrary = [[\cf4 UIImagePickerController\cf0  \cf6 alloc\cf0 ]\cf6 init\cf0 ];\
+    photoLibrary.\cf4 delegate\cf0  = \cf2 self\cf0 ;\
+    photoLibrary.\cf4 sourceType\cf0  = \cf6 UIImagePickerControllerSourceTypePhotoLibrary\cf0 ;\
+    photoLibrary.\cf4 allowsEditing\cf0  = \cf2 YES\cf0 ;\
+    \
+    [\cf2 self\cf0  \cf6 presentViewController\cf0 :photoLibrary \cf6 animated\cf0 :\cf2 YES\cf0  \cf6 completion\cf0 :\cf2 nil\cf0 ];\
+\}\
+\
+
+\f2\b 3. then create a delegate method so it can access the image\
+\
+
+\f1\b0 - (\cf2 void\cf0 )imagePickerController:(\cf4 UIImagePickerController\cf0  *)picker didFinishPickingMediaWithInfo:(\cf4 NSDictionary\cf0  *)info\
+\{\
+    \cf6 NSLog\cf0 (\cf10 @"%@"\cf0 , info);\
+    \cf3 imageView\cf0 .\cf4 image\cf0  = info[\cf4 UIImagePickerControllerOriginalImage\cf0 ];\
+    [picker \cf6 dismissViewControllerAnimated\cf0 :\cf2 YES\cf0  \cf6 completion\cf0 :\cf2 nil\cf0 ];\
+\}\
 \
 \
 \
 \
 \
-\
-\
-\
-\
-\
+
+\f2\b HOMEWORK\
+1. UIScroll view  h 100 \
+2. UIView h 40\
+3. 20 white squares - 80 x 80 UIbutton\
+4. scroll horizontally
+\f1\b0 \
 \
 \
 \
