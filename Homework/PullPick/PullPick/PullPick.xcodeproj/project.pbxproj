@@ -19,6 +19,7 @@
 		C3A1532D19116F5400CEBB4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A1531519116F5400CEBB4F /* UIKit.framework */; };
 		C3A1533519116F5400CEBB4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3A1533319116F5400CEBB4F /* InfoPlist.strings */; };
 		C3A1533719116F5400CEBB4F /* PullPickTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A1533619116F5400CEBB4F /* PullPickTests.m */; };
+		C3A153481911776700CEBB4F /* PPAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A153471911776700CEBB4F /* PPAViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		C3A1533219116F5400CEBB4F /* PullPickTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PullPickTests-Info.plist"; sourceTree = "<group>"; };
 		C3A1533419116F5400CEBB4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C3A1533619116F5400CEBB4F /* PullPickTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PullPickTests.m; sourceTree = "<group>"; };
+		C3A153461911776700CEBB4F /* PPAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPAViewController.h; sourceTree = "<group>"; };
+		C3A153471911776700CEBB4F /* PPAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPAViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 		C3A1530519116F5400CEBB4F = {
 			isa = PBXGroup;
 			children = (
+				C3A153461911776700CEBB4F /* PPAViewController.h */,
+				C3A153471911776700CEBB4F /* PPAViewController.m */,
 				C3A1531719116F5400CEBB4F /* PullPick */,
 				C3A1533019116F5400CEBB4F /* PullPickTests */,
 				C3A1531019116F5400CEBB4F /* Frameworks */,
@@ -241,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3A1532219116F5400CEBB4F /* PPAAppDelegate.m in Sources */,
+				C3A153481911776700CEBB4F /* PPAViewController.m in Sources */,
 				C3A1531E19116F5400CEBB4F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
