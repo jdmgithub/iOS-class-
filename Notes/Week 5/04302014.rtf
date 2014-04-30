@@ -1,0 +1,255 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red170\green13\blue145;\red63\green110\blue116;\red92\green38\blue153;
+\red28\green0\blue207;\red46\green13\blue110;\red100\green56\blue32;\red38\green71\blue75;\red230\green87\blue141;
+\red196\green26\blue22;\red192\green237\blue254;}
+\margl1440\margr1440\vieww10620\viewh16300\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 04302014\
+\
+* look at To Do app \
+* try and use swipe gestures to \'93toggle\'94 between views\
+* workshop settings branch - 04292014\
+\
+
+\b0 Created \
+1. UIButton _ SLFNavButton\
+2. VC _SLFSettingsVC\
+\
+1. UIButton class\
+in the .h\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf2 \CocoaLigature0 @property\cf0  (\cf2 nonatomic\cf0  \cf2 getter\cf0  = isToggled) \cf2 BOOL\cf0  toggle;\
+\
+- (void)toggle;\
+\
+(putting it in the .h because we are going to call it in the action)\
+\
+2. .m\
+a. \
+- (\cf2 void\cf0 )toggle\
+\{\
+    \cf2 self\cf0 .\cf3 toggled\cf0  = !\cf2 self\cf0 .\cf3 toggled\cf0 ;\
+\}\
+self.toggled is setting\
+= !self.toggled is getting\
+\
+self.toggled = ![self isToggled];\
+[self setToggled:![self isToggled]];\
+(parameter comes after the =\
+\
+\
+(if the bottom toggle is yes than click and it\'92s no)\
+\
+b. \
+- (\cf2 void\cf0 )setToggled:(\cf2 BOOL\cf0 )toggled\
+\{\
+    \cf3 _toggled\cf0  = toggled;\
+    \cf2 self\cf0 .\cf4 alpha\cf0  = \cf5 0.0\cf0 ;\
+\
+(fades the button out)\
+    [\cf2 self\cf0  \cf6 setNeedsDisplay\cf0 ];\
+\
+setNeedsDisplay - redraws this view (button is a subclass of a UIView)\
+\
+    [\cf4 UIView\cf0  \cf6 animateWithDuration\cf0 :\cf5 0.3\cf0  \cf6 delay\cf0 :\cf5 0.2\cf0  \cf6 options\cf0 :\cf6 UIViewAnimationCurveEaseInOut\cf0  \cf6 animations\cf0 :^\{\
+        \cf2 self\cf0 .\cf4 alpha\cf0  = \cf5 1.0\cf0 ;\} \cf6 completion\cf0 :\cf2 nil\cf0 ];\
+(fades the button back in with some animation)\
+\}\
+\
+c. \
+- (\cf2 void\cf0 )drawRect:(\cf4 CGRect\cf0 )rect\
+\{\
+    \cf2 float\cf0  pad = \cf5 1.0\cf0 ;\
+    \cf2 float\cf0  w = rect.\cf4 size\cf0 .\cf4 width\cf0  - pad;\
+    \cf2 float\cf0  h = rect.\cf4 size\cf0 .\cf4 height\cf0  - pad;\
+    \
+    \cf4 CGContextRef\cf0  context = \cf6 UIGraphicsGetCurrentContext\cf0 ();\
+    \cf6 CGContextSetLineWidth\cf0 (context, \cf5 2.0\cf0 );\
+    \cf6 CGContextSetLineCap\cf0 (context, \cf6 kCGLineCapRound\cf0 );\
+    \
+    \cf6 CGContextClearRect\cf0 (context, rect);\
+    \
+    \
+    \
+    \cf2 if\cf0  ([\cf2 self\cf0  isToggled])\
+    \{\
+		[\cf2 self\cf0 .\cf4 toggledTintColor\cf0  \cf6 set\cf0 ];\
+\
+        CGContextMoveToPoint(context, pad, pad);\
+        CGContextAddLineToPoint(context, w, h);\
+        \
+        CGContextMoveToPoint(context, w, pad);\
+        CGContextAddLineToPoint(context, pad, h);\
+\
+    \} \cf2 else\cf0  \{\
+		\
+		[\cf2 self\cf0 .\cf4 tintColor\cf0  \cf6 set\cf0 ];\
+\
+        CGContextMoveToPoint(context, pad, pad);\
+        CGContextAddLineToPoint(context, w, pad);\
+        \
+        CGContextMoveToPoint(context, pad, h/\cf5 2\cf0 );\
+        CGContextAddLineToPoint(context, w, h/\cf5 2\cf0 );\
+        \
+        CGContextMoveToPoint(context,   pad, h);\
+        CGContextAddLineToPoint(context, w, h);\
+    \}\
+   \
+    \cf6 CGContextStrokePath\cf0 (context);\
+\}\
+\
+to set the toggled tint color\
+\
+if(self.toggledTintColor !=nil) [self.toggledTintColor set];\
+\
+\
+if statement to set where the button changes from 3 lines to an X based on if it is toggled\
+\
+\
+3. \
+a. now import settingVC and button to the TableVC\
+\
+b. implementation SLFSettingsButton * settingsButtonView\
+\
+c. \
+- (\cf2 void\cf0 )viewDidLoad\
+\{\
+    [\cf2 super\cf0  \cf6 viewDidLoad\cf0 ];\
+    \cf3 settingsButtonView\cf0  = [[\cf3 SLFSettingsButton\cf0  \cf6 alloc\cf0 ] \cf6 initWithFrame\cf0 :\cf6 CGRectMake\cf0  (\cf5 0\cf0 ,\cf5 0\cf0 ,\cf5 20\cf0 ,\cf5 20\cf0 )];\
+    \cf3 settingsButtonView\cf0 .\cf4 tintColor\cf0  = \cf7 BLUE_COLOR\cf0 ;\
+    \
+    [\cf3 settingsButtonView\cf0  \cf6 addTarget\cf0 :\cf2 self\cf0  \cf6 action\cf0 :\cf2 @selector\cf0 (openSettings) \cf6 forControlEvents\cf0 :\cf6 UIControlEventTouchUpInside\cf0 ];\
+    \
+    \cf4 UIBarButtonItem\cf0  * settingsButton = [[\cf4 UIBarButtonItem\cf0  \cf6 alloc\cf0 ] \cf6 initWithCustomView\cf0 :\cf3 settingsButtonView\cf0 ];\
+    \cf2 self\cf0 .\cf4 navigationItem\cf0 .\cf4 leftBarButtonItem\cf0  = settingsButton;\
+\}\
+created settingsButtonView - leftBarButtonItem with a custom settings button\
+the button is a view that is sitting inside the leftBarButton item\
+\
+d. creating the slide effect of bringing the settingsVC into view\
+\
+- (\cf2 void\cf0 )openSettings\
+\{\
+    [\cf3 settingsButtonView\cf0  \cf8 toggle\cf0 ];\
+    \cf2 int\cf0  X = [\cf3 settingsButtonView\cf0  \cf8 isToggled\cf0 ] ? \cf7 SCREEN_WIDTH\cf0  - \cf5 52\cf0  : \cf5 0\cf0 ;\
+\
+\
+it can also be written\
+\cf2 int\cf0  X = \cf5 0\cf0 ;\
+    \cf2 if\cf0 ([\cf3 settingsButtonView\cf0  \cf8 isToggled\cf0 ]) X = \cf7 SCREEN_WIDTH\cf0  - \cf5 52\cf0 ;\
+\
+if the button is not pressed keep the table controller as the full view\
+when clicked have the screen slide over \
+\
+\
+[\cf4 UIView\cf0  \cf6 animateWithDuration\cf0 :\cf5 0.3\cf0  \cf6 delay\cf0 :\cf5 0.0\cf0  \cf6 options\cf0 :\cf6 UIViewAnimationOptionCurveEaseInOut\cf0  \cf6 animations\cf0 :^\{\
+        \cf2 self\cf0 .\cf4 navigationController\cf0 .\cf4 view\cf0 .\cf4 frame\cf0  = \cf6 CGRectMake\cf0 (X, \cf5 0\cf0 , \cf7 SCREEN_WIDTH\cf0 , \cf7 SCREEN_HEIGHT\cf0 );\
+    \} \cf6 completion\cf0 :^(\cf2 BOOL\cf0  finished) \{\
+        \cf2 if\cf0 (![\cf3 settingsButtonView\cf0  \cf8 isToggled\cf0 ])\
+        \{\
+            [\cf3 settingsVC\cf0 .\cf4 view\cf0  \cf6 removeFromSuperview\cf0 ];\
+        \}\
+    \}];\
+\
+gradually eases in and out depending on what position the button is in (3 lines or x)\
+then when the view is not toggled remove the settingsVC from the superview\
+\cf2 		if\cf0 ([\cf3 settingsButtonView\cf0  \cf8 isToggled\cf0 ])\
+    	\{\
+        	\cf2 if\cf0 (\cf3 settingsVC\cf0  == \cf2 nil\cf0 )\
+        	\cf3 settingsVC\cf0  = [[\cf3 SLFSettingsViewController\cf0  \cf6 alloc\cf0 ] \cf6 initWithNibName\cf0 :\cf2 nil\cf0  \cf6 bundle\cf0 :\cf2 nil\cf0 ];\
+        \
+        	\cf3 settingsVC\cf0 .\cf4 view\cf0 .\cf4 frame\cf0  = \cf6 CGRectMake\cf0 (\cf5 52\cf0  - \cf7 SCREEN_WIDTH\cf0 , \cf5 0\cf0 , \cf7 SCREEN_WIDTH\cf0  - \cf5 52\cf0 , 	\cf7 SCREEN_HEIGHT\cf0 );\
+        	[\cf2 self\cf0 .\cf4 navigationController\cf0 .\cf4 view\cf0  \cf6 addSubview\cf0 :\cf3 settingsVC\cf0 .\cf4 view\cf0 ];\
+        	[\cf2 self\cf0 .\cf4 navigationController\cf0  \cf6 addChildViewController\cf0 :\cf3 settingsVC\cf0 ];\
+    \}\
+\}\
+if statement \
+if button is toggled (pressed then slide screen over by 52 an then alloc and init the settingsVC.\
+ \
+4. settingsVC\
+in the \
+\
+- (\cf2 void\cf0 )registerNewUser\
+\{\
+    [\cf2 self\cf0  \cf8 hideKeyboard\cf0 ];\
+    \
+    \cf9 PFUser *user = [PFUser user];\
+\cf0     \
+    \cf4 NSData\cf0  * imageData = \cf6 UIImagePNGRepresentation\cf0 (\cf3 avatar\cf0 .\cf4 image\cf0 );    \
+	\cf3 PFFile\cf0  * imageFile = 	[\cf3 PFFile\cf0  \cf8 fileWithName\cf0 :\cf10 @"avatar.png"\cf0  \cf8 data\cf0 :imageData];\
+    \
+  \cf11   \cf9 user.username = ((UITextField *)fields [0]).text;\
+    user.password = ((UITextField *)fields [1]).text;\
+    user.email = ((UITextField *)fields [3]).text;\
+    \
+    user[@"displayName"] = ((UITextField *)fields [3]).text;\
+\
+\cf0     user[\cf10 @"avatar"\cf0 ] = imageFile;\
+\
+	//UIActivityIndicatorView\
+\
+\
+\
+\
+\
+\
+
+\f2\b HOMEWORK\
+
+\f1\b0 create 2 new apps\
+1. UIImageView Background fills the View Controller\
+2. header - button that accesses photo library\
+3. fills in image view as background\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}

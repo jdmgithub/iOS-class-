@@ -1,0 +1,289 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red63\green110\blue116;\red92\green38\blue153;\red46\green13\blue110;
+\red28\green0\blue207;\red196\green26\blue22;\red100\green56\blue32;\red170\green13\blue145;\red0\green116\blue0;
+\red38\green71\blue75;}
+\margl1440\margr1440\vieww13860\viewh16300\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 Creating a Sign Up Page\
+\
+1. create a sign up button in the LoginViewController\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf2 \CocoaLigature0 signUp\cf0  = [[\cf3 UIButton\cf0  \cf4 alloc\cf0 ] \cf4 initWithFrame\cf0 :\cf4 CGRectMake\cf0 (\cf5 0\cf0 , \cf5 120\cf0 , \cf5 280\cf0 , \cf5 40\cf0 )];\
+        [\cf2 signUp\cf0  \cf4 setTitle\cf0 :\cf6 @"SIGN IN"\cf0  \cf4 forState\cf0 :\cf4 UIControlStateNormal\cf0 ];\
+        \cf2 signUp\cf0 .\cf3 titleLabel\cf0 .\cf3 textColor\cf0  = [\cf3 UIColor\cf0  \cf4 whiteColor\cf0 ];\
+        \cf2 signUp\cf0 .\cf3 layer\cf0 .\cf3 cornerRadius\cf0  = \cf5 6\cf0 ;\
+        \cf2 signUp\cf0 .\cf3 backgroundColor\cf0  = \cf7 BLUE_COLOR\cf0 ;\
+        \cf2 signUp\cf0 .\cf3 alpha\cf0  = \cf5 0.5\cf0 ;\
+        [\cf2 signUp\cf0  \cf4 addTarget\cf0 :\cf8 self\cf0  \cf4 action\cf0 :\cf8 @selector\cf0 (showSignUp:) \cf4 forControlEvents\cf0 :\cf4 UIControlEventTouchUpInside\cf0 ];\
+        [\cf2 logInPage\cf0  \cf4 addSubview\cf0 :\cf2 signUp\cf0 ];\
+\
+2. set up method\
+\
+- (\cf8 void\cf0 )showSignUp\
+\{\
+    \cf2 SLFSignUpViewController\cf0  * signUpVC = [[\cf2 SLFSignUpViewController\cf0  \cf4 alloc\cf0 ] \cf4 initWithNibName\cf0 :\cf8 nil\cf0  \cf4 bundle\cf0 :\cf8 nil\cf0 ];\
+    \cf2 SLFNewNavigationController\cf0  * nc = [[\cf2 SLFNewNavigationController\cf0  \cf4 alloc\cf0 ] \cf4 initWithRootViewController\cf0 :signUpVC];\
+    nc.\cf3 navigationBar\cf0 .\cf3 barTintColor\cf0  = \cf7 BLUE_COLOR\cf0 ;\
+    nc.\cf3 navigationBar\cf0 .\cf3 translucent\cf0  = \cf8 NO\cf0 ;\
+    [\cf8 self\cf0 .\cf3 navigationController\cf0  \cf4 presentViewController\cf0 :nc \cf4 animated\cf0 :\cf8 YES\cf0  \cf4 completion\cf0 :^\{\}];\
+\}\
+reused navigation controller from Table View Controller\
+\
+3. set up SignUpViewControler\
+3a:\
+\cf8 @implementation\cf0  SLFSignUpViewController\
+\{\
+    \cf3 UIView\cf0  * signUpForm;\
+    \cf3 UIImageView\cf0  * avatar;\
+\cf3 	NSArray\cf0  * fieldNames;\
+    \cf3 NSMutableArray\cf0  * fields;\
+\}\
+\
+3b1:\
+- (\cf8 void\cf0 )viewWillAppear:(\cf8 BOOL\cf0 )animated\
+\{\
+    \cf3 UIBarButtonItem\cf0  * cancelSignUp = [[\cf3 UIBarButtonItem\cf0  \cf4 alloc\cf0 ] \cf4 initWithBarButtonSystemItem\cf0 :\cf4 UIBarButtonSystemItemCancel\cf0  \cf4 target\cf0 :\cf8 self\cf0  \cf4 action\cf0 :\cf8 @selector\cf0 (cancelSignUp)];\
+    \
+    cancelSignUp.\cf3 tintColor\cf0  = [\cf3 UIColor\cf0  \cf4 whiteColor\cf0 ];\
+    \cf8 self\cf0 .\cf3 navigationItem\cf0 .\cf3 rightBarButtonItem\cf0  = cancelSignUp;\
+    \
+ 	\cf2 signUpOrigY\cf0  = (\cf8 self\cf0 .\cf3 view\cf0 .\cf3 frame\cf0 .\cf3 size\cf0 .\cf3 height\cf0  - \cf5 240\cf0 )/\cf5 2\cf0 ;\
+\
+    \cf2 signUpForm\cf0  = [[\cf3 UIView\cf0  \cf4 alloc\cf0 ] \cf4 initWithFrame\cf0 :\cf4 CGRectMake\cf0 (\cf5 20\cf0 , \cf5 100\cf0 , \cf5 280\cf0 , \cf8 self\cf0 .\cf3 view\cf0 .\cf3 frame\cf0 .\cf3 size\cf0 .\cf3 height\cf0  - \cf5 40\cf0 )];\
+    [\cf8 self\cf0 .\cf3 view\cf0  \cf4 addSubview\cf0 :\cf2 signUpForm\cf0 ];\
+\
+3b2: create text fields automatically utilizing the for loop\
+\
+or you can create a UITextFieldClass, just pass through name and fields\
+\cf2 \
+	fieldNames\cf0  = \cf5 @[\cf6 @"USERNAME"\cf0 ,\
+                   \cf6 @"DISPLAYNAME"\cf0 ,\
+                   \cf6 @"PASSWORD"\cf0 ,\
+                   \cf6 @"EMAIL"\cf5 ]\cf0 ;\
+    \
+    \cf8 for\cf0 (\cf3 NSString\cf0  * name \cf8 in\cf0  \cf2 fieldNames\cf0 )  \
+    \{\
+        \cf9 // index will = 0,1,2,3\cf0 \
+        \
+        \cf3 NSInteger\cf0  index = [\cf2 fields\cf0  \cf4 indexOfObject\cf0 :name];\
+        \
+        \cf3 UITextField\cf0  * textField = [[\cf3 UITextField\cf0  \cf4 alloc\cf0 ] \cf4 initWithFrame\cf0 :\cf4 CGRectMake\cf0 (\cf5 0\cf0 , index * \cf5 50\cf0 , \cf5 280\cf0 , \cf5 40\cf0 )];\
+        textField.\cf3 backgroundColor\cf0  = [\cf3 UIColor\cf0  \cf4 lightGrayColor\cf0 ];\
+        textField.\cf3 alpha\cf0  = \cf5 0.7\cf0 ;\
+        textField.\cf3 placeholder\cf0  = name;\
+        textField.\cf3 textAlignment\cf0  = \cf4 NSTextAlignmentCenter\cf0 ;\
+        textField.\cf3 layer\cf0 .\cf3 cornerRadius\cf0  = \cf5 6\cf0 ;\
+        textField.\cf3 font\cf0  = [\cf3 UIFont\cf0  \cf4 fontWithName\cf0 :\cf6 @"HELVETICA"\cf0  \cf4 size\cf0 :\cf5 15\cf0 ];\
+        textField.\cf3 autocorrectionType\cf0  = \cf4 UITextAutocapitalizationTypeNone\cf0 ;\
+        textField.\cf3 autocapitalizationType\cf0  = \cf8 FALSE\cf0 ;\
+        textField.\cf3 delegate\cf0  = \cf8 self\cf0 ;\
+        [\cf2 signUpForm\cf0  \cf4 addSubview\cf0 :textField];\
+    \}\
+3b3: create a mutable array of field names\
+\
+[\cf2 fields\cf0  \cf4 addObject\cf0 :textField];\
+\
+\
+3b4. create a register button\
+\
+ 		\cf3 UIButton\cf0  * registerButton = [[\cf3 UIButton\cf0  \cf4 alloc\cf0 ] \cf4 initWithFrame\cf0 :\cf4 CGRectMake\cf0 (\cf5 0\cf0 , [\cf2 fieldNames\cf0  \cf4 count\cf0 ] * \cf5 50\cf0 , \cf5 280\cf0 , \cf5 40\cf0 )];\
+        [registerButton \cf4 setTitle\cf0 :\cf6 @"REGISTER"\cf0  \cf4 forState\cf0 :\cf4 UIControlStateNormal\cf0 ];\
+        registerButton.\cf3 titleLabel\cf0 .\cf3 textColor\cf0  = [\cf3 UIColor\cf0  \cf4 whiteColor\cf0 ];\
+        registerButton.\cf3 layer\cf0 .\cf3 cornerRadius\cf0  = \cf5 6\cf0 ;\
+        registerButton.\cf3 backgroundColor\cf0  = \cf7 BLUE_COLOR\cf0 ;\
+        registerButton.\cf3 alpha\cf0  = \cf5 0.5\cf0 ;\
+        [registerButton \cf4 addTarget\cf0 :\cf8 self\cf0  \cf4 action\cf0 :\cf8 @selector\cf0 (registerNewUser) \cf4 forControlEvents\cf0 :\cf4 UIControlEventTouchUpInside\cf0 ];\
+        [\cf2 signUpForm\cf0  \cf4 addSubview\cf0 :registerButton];\
+\
+\}\
+\
+4. setting up a number to check against \
+   cannot access any of the other ones until each field is filled.\
+\
+- (\cf8 BOOL\cf0 )textFieldShouldBeginEditing:(\cf3 UITextField\cf0  *)textField\
+\{\
+    \cf3 NSInteger\cf0  index = [\cf2 fields\cf0  \cf4 indexOfObject\cf0 :textField];\
+    \cf3 NSInteger\cf0  emptyIndex = [\cf2 fields\cf0  \cf4 count\cf0 ];\
+    \
+    \cf8 for\cf0  (\cf3 UITextField\cf0  * textFieldItem \cf8 in\cf0  \cf2 fields\cf0 )\
+    \{\
+        \cf3 NSInteger\cf0  fieldIndex = [\cf2 fields\cf0  \cf4 indexOfObject\cf0 :textField];\
+        \cf8 if\cf0  (emptyIndex < \cf5 0\cf0 )\
+        \{\
+            \cf8 if\cf0  ([textFieldItem.\cf3 text\cf0  \cf4 isEqualToString\cf0 :\cf6 @""\cf0 ])\
+            \{\
+                emptyIndex = fieldIndex;\
+            \}\
+        \}\
+    \}\
+    \cf8 if\cf0 (index <= emptyIndex) \cf8 return\cf0  \cf8 YES\cf0 ;\
+    \cf8 return\cf0  \cf8 NO\cf0 ;\
+\}\
+\
+5. moves fields up as you edit\
+runs through index of text fields and moves up a set amount \
+extraSlide is based on height of screen height\
+- (\cf8 void\cf0 )textFieldDidBeginEditing:(\cf3 UITextField\cf0  *)textField\
+\{\
+    \cf8 int\cf0  extraSlide = \cf5 0\cf0 ;\
+    \
+    \cf9 // 416 h for 3.5"\cf0 \
+    \
+    \cf8 if\cf0 (\cf8 self\cf0 .\cf3 view\cf0 .\cf3 frame\cf0 .\cf3 size\cf0 .\cf3 height\cf0  >\cf5 500\cf0 )\cf9 // 504 h for 4"\cf0 \
+    \{\
+        extraSlide = \cf5 107\cf0 ;\
+        \
+    \} \cf8 else\cf0  \{\cf9 // 416 h for 3.5"\cf0 \
+        \
+         \cf3 NSInteger\cf0  index = [\cf2 fields\cf0  \cf4 indexOfObject\cf0 :textField];\
+         extraSlide = index * \cf5 25\cf0  + \cf5 65\cf0 ;\
+    \}\
+    \
+    [\cf3 UITextField\cf0  \cf4 animateWithDuration\cf0 :\cf5 0.2\cf0  \cf4 animations\cf0 :^\{\
+        \cf2 signUpForm\cf0 .\cf3 frame\cf0  = \cf4 CGRectMake\cf0 (\cf5 20\cf0 , \cf2 signUpOrigY\cf0  - extraSlide, \cf5 280\cf0 , \cf5 240\cf0 );\
+    \}];\
+\}\
+\
+6. going to table view controller after signing up\
+\
+- (\cf8 void\cf0 )registerNewUser\
+\{\
+    \cf2 PFUser\cf0  *user = [\cf2 PFUser\cf0  \cf10 user\cf0 ];\
+    user.\cf2 username\cf0  = ((\cf3 UITextField\cf0  *)\cf2 fields\cf0  [\cf5 0\cf0 ]).\cf3 text\cf0 ;\
+    user.\cf2 password\cf0  = ((\cf3 UITextField\cf0  *)\cf2 fields\cf0  [\cf5 1\cf0 ]).\cf3 text\cf0 ;\
+    user.\cf2 email\cf0  = ((\cf3 UITextField\cf0  *)\cf2 fields\cf0  [\cf5 3\cf0 ]).\cf3 text\cf0 ;\
+    \
+    user[\cf6 @"displayName"\cf0 ] = ((\cf3 UITextField\cf0  *)\cf2 fields\cf0  [\cf5 3\cf0 ]).\cf3 text\cf0 ;\
+    \
+    [user \cf10 signUpInBackgroundWithBlock\cf0 :^(\cf8 BOOL\cf0  succeeded, \cf3 NSError\cf0  *error) \{\
+        \cf8 if\cf0  (error == \cf5 0\cf0 )\
+        \{\
+            \cf3 UINavigationController\cf0  * pNC = (\cf3 UINavigationController\cf0  *)\cf8 self\cf0 .\cf3 presentingViewController\cf0 ;\
+            pNC.\cf3 navigationBarHidden\cf0  = \cf8 NO\cf0 ;\
+            pNC.\cf3 viewControllers\cf0  = \cf5 @[\cf0 [[\cf2 SLFTableViewController\cf0  \cf4 alloc\cf0 ] \cf4 initWithStyle\cf0 :\cf4 UITableViewStylePlain\cf0 ]\cf5 ]\cf0 ;\
+            [\cf8 self\cf0  \cf10 cancelSignUp\cf0 ];\
+            \
+        \} \cf8 else\cf0  \{\
+                \cf3 NSString\cf0  * errorDescription = error.\cf4 userInfo\cf0 [\cf6 @"error"\cf0 ];\
+                \cf3 UIAlertView\cf0  * alertView = [[\cf3 UIAlertView\cf0  \cf4 alloc\cf0 ] \cf4 initWithTitle\cf0 :\cf6 @"Error"\cf0 \
+                                                                    \cf4 message\cf0 :errorDescription\
+                                                                    \cf4 delegate\cf0 :\cf8 self\cf0 \
+                                                           \cf4 cancelButtonTitle\cf0 :\cf6 @"Try Again"\cf0 \
+                                                           \cf4 otherButtonTitles\cf0 :\cf8 nil\cf0 ];\
+               [alertView \cf4 show\cf0 ];        \}\
+    \}];\
+\
+\}\
+\
+7. go back to login controller\
+\
+- (\cf8 void\cf0 )logIn: (\cf3 UIButton\cf0  *)signIn\
+\{\
+\
+//change to PFUser to keep current users info only\
+	[\cf2 PFUser\cf0  \cf10 logInWithUsernameInBackground\cf0 :\cf2 loginField\cf0 .\cf3 text\cf0  \cf10 password\cf0 :\cf2 passwordField\cf0 .\cf3 text\cf0  \cf10 block\cf0 :^(\cf2 PFUser\cf0  *user, \cf3 NSError\cf0  *error)\
+    \{\
+        \cf8 if\cf0 (error == \cf8 nil\cf0 )\
+        \{\
+            \cf8 self\cf0 .\cf3 navigationController\cf0 .\cf3 navigationBarHidden\cf0  = \cf8 NO\cf0 ;\
+            \cf8 self\cf0 .\cf3 navigationController\cf0 .\cf3 viewControllers\cf0  = \cf5 @[\cf0 [[\cf2 SLFTableViewController\cf0  \cf4 alloc\cf0 ] 		\
+				\cf4 initWithStyle\cf0 :\cf4 UITableViewStylePlain\cf0 ]\cf5 ]\cf0 ;\
+            \
+        \} \cf8 else\cf0  \{\
+            \cf9 //error.userInfo[@"error"]\cf0 \
+            \cf3 NSString\cf0  * errorDescription = error.\cf4 userInfo\cf0 [\cf6 @"error"\cf0 ];\
+            \
+            \cf9 //UIAlertView with message\cf0 \
+            \cf3 UIAlertView\cf0  * alertView = [[\cf3 UIAlertView\cf0  \cf4 alloc\cf0 ] \cf4 initWithTitle\cf0 :\cf6 @"Login Error"\cf0  \cf4 message\cf0 :errorDescription \cf4 delegate\cf0 :\cf8 self\cf0 \
+                                                       \cf4 cancelButtonTitle\cf0 :\cf6 @"Try Again"\cf0  \cf4 otherButtonTitles\cf0 :\cf8 nil\cf0 ];\
+            [alertView \cf4 show\cf0 ];\
+            \
+            \cf9 //activity indicator remove\cf0 \
+            [activityIndicator \cf4 removeFromSuperview\cf0 ];\
+        \}\}];\
+\
+\}\
+from\
+\
+[user \cf10 saveInBackgroundWithBlock\cf0 :^(\cf8 BOOL\cf0  succeeded, \cf3 NSError\cf0  *error)\
+saving the current user over and over even though we were inputting different names and passwords\
+\{\
+        \cf8 if\cf0 (error == \cf8 nil\cf0 )\
+        \{\
+            \cf8 self\cf0 .\cf3 navigationController\cf0 .\cf3 navigationBarHidden\cf0  = \cf8 NO\cf0 ;\
+            \cf8 self\cf0 .\cf3 navigationController\cf0 .\cf3 viewControllers\cf0  = \cf5 @[\cf0 [[\cf2 SLFTableViewController\cf0  \cf4 alloc\cf0 ] \cf4 initWithStyle\cf0 :\cf4 UITableViewStylePlain\cf0 ]\cf5 ]\cf0 ;\
+        \} \cf8 else\cf0  \{\
+            \cf9 //error.userInfo[@"error"]\cf0 \
+            \cf3 NSString\cf0  * errorDescription = error.\cf4 userInfo\cf0 [\cf6 @"error"\cf0 ];\
+            \
+            \cf9 //UIAlertView with message\cf0 \
+            \cf3 UIAlertView\cf0  * alertView = [[\cf3 UIAlertView\cf0  \cf4 alloc\cf0 ] \cf4 initWithTitle\cf0 :\cf6 @"Login Error"\cf0  \cf4 message\cf0 :errorDescription \cf4 delegate\cf0 :\cf8 self\cf0 \
+                                                       \cf4 cancelButtonTitle\cf0 :\cf6 @"Try Again"\cf0  \cf4 otherButtonTitles\cf0 :\cf8 nil\cf0 ];\
+            [alertView \cf4 show\cf0 ];\
+            \
+            \cf9 //activity indicator remove\cf0 \
+            [activityIndicator \cf4 removeFromSuperview\cf0 ];\
+        \}\}];\
+\
+\
+\
+\
+\
+\
+\
+
+\f2\b HOMEWORK\
+\
+Workshop Settings Branch :\
+- add settings button to tableviewcontroller\
+- make settings button be 3 lines when unclicked then an X when clicked\
+- make settings button slide navigation controller to the right (SCREEN_WIDTH - 50) ... X will slide it back\
+- create a settings viewcontroller that will house an avatar image, username, display name, and email fields, change password button, logout button, save settings button\
+- make avatar clickable to show photo library (later this will show camera or library options)\
+- add avatar imageview back into the tableviewcell (based on the parent user)
+\f1\b0 \
+\
+\
+\
+WORKSHOP SETTINGS BRANCH:\
+\
+SLFSettings Button\
+\
+- toggle to the left or right\
+\
+\
+
+\f2\b Left to Do\
+Avatar\
+make x button\
+toggle\
+create a UILabel for settings, sign up \
+create a selfy logo
+\f1\b0 \
+\
+\
+\
+\
+\
+\
+\cf8 self\cf0 .\cf3 navigationController\cf0 .\cf3 view\cf0 .\cf3 frame\cf0  = \cf4 CGRectMake\cf0 (\cf5 280\cf0 , \cf5 0\cf0 , \cf7 SCREEN_WIDTH\cf0 , \cf7 SCREEN_HEIGHT\cf0 );\
+    \
+    \cf8 if\cf0  (\
+    \{\
+        \
+    \} \cf8 else\cf0  \{\
+        \
+        SLFSettingViewController * settingsVC = [[SLFSettingViewController alloc] initWithNibName:\cf8 nil\cf0  bundle:\cf8 nil\cf0 ];\
+        SLFNewNavigationController * nc = [[SLFNewNavigationController alloc] initWithRootViewController:settingsVC];\
+        nc.navigationBar.barTintColor = \cf7 BLUE_COLOR\cf0 ;\
+        nc.navigationBar.translucent = \cf8 NO\cf0 ;\
+        \cf8 self\cf0 .navigationController.view.frame = CGRectMake(\cf5 0\cf0 , \cf5 0\cf0 , \cf7 SCREEN_WIDTH\cf0 , \cf7 SCREEN_HEIGHT\cf0 );\
+    \}\
+    \
+    [\cf8 self\cf0 .navigationController]\
+    \
+}

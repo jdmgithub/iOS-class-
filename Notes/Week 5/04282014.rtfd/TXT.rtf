@@ -1,0 +1,240 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red92\green38\blue153;\red0\green116\blue0;\red63\green110\blue116;
+\red170\green13\blue145;\red46\green13\blue110;\red196\green26\blue22;\red38\green71\blue75;\red28\green0\blue207;
+}
+\margl1440\margr1440\vieww10560\viewh16300\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 04282014\
+\
+\
+ALEXANDER PARK\
+\
+SelfyApp\
+
+\b0 made our UIimageView global\
+\
+
+\b image.png
+\b0  (file name for parse)\
+\
+dismissViewController works with presetViewController - one slides up while the other slides down\
+\
+using the 
+\b cancelNewSelfy
+\b0  method because you want to utilize the code for this method but if you change it then you have to be more specific \
+\
+
+\b PARSE QUERY\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\b0\fs20 \cf0 \CocoaLigature0 - (\cf2 NSInteger\cf0 )tableView:(\cf2 UITableView\cf0  *)tableView numberOfRowsInSection:(\cf2 NSInteger\cf0 )section\
+\{\
+    \cf3 // Return the number of rows in the section.\cf0 \
+    \cf4 PFQuery\cf0  * query = [PFQuery queryWithClassName:<#(NSString *)#>];\
+    \cf5 return\cf0  [\cf4 selfies\cf0  \cf6 count\cf0 ];\
+\}\
+\
+\
+skip\
+allows you to skip what you have queried already\
+\
+query 50\
+skip 50 - so you do not reload the first 50\
+\
+
+\f2\b Reflector\
+
+\f1\b0 allows you to airplay your phone, etc and can record yourself using your app.\
+\
+changed NSMutableArray * selfies to an NSArray because we are not changing the array but filling it through a query\
+(parse is handling the mutable array)\
+\
+
+\f2\b Query to figure out what we is being saved
+\f1\b0 \
+\cf5 for\cf0  (\cf4 PFObject\cf0  * userSelfy \cf5 in\cf0  \cf4 selfies\cf0 )\
+    \{\
+        \cf6 NSLog\cf0 (\cf7 @"caption: %@"\cf0 ,[userSelfy \cf8 objectForKey\cf0 :\cf7 @"captions"\cf0 ]);\
+    \}\
+
+\f2\b \
+\cf3 Converted all this to a PFFile
+\f1\b0 \
+//    NSURL * imageURL = [NSURL URLWithString:selfyInfo[@"image"]];\cf0 \
+\cf3 //    NSData * imageData = [NSData dataWithContentsOfURL:imageURL];\cf0 \
+\cf3 //    UIImage * image = [UIImage imageWithData:imageData];\cf0 \
+    \
+\cf3 //    profileImage.image = image;\cf0 \
+    \
+\cf3 //    NSURL * avatarURL = [NSURL URLWithString:selfyInfo[@"avatar"]];\cf0 \
+\cf3 //    NSData * avatarData = [NSData dataWithContentsOfURL:avatarURL];\cf0 \
+\cf3 //    UIImage * avatar = [UIImage imageWithData:avatarData];\cf0 \
+\cf3 //    \cf0 \
+\cf3 //    profileAvatar.image = avatar;\
+\
+can use PFImageView\
+\cf0   \cf4 _selfyInfo\cf0  = selfyInfo;\
+    \
+    \
+    \cf4 profileCaption\cf0 .\cf2 text\cf0  = [selfyInfo \cf8 objectForKey\cf0 :\cf7 @"caption"\cf0 ];\
+    \
+    \cf4 PFFile\cf0  * imageFile = [selfyInfo \cf8 objectForKey\cf0 :\cf7 @"image"\cf0 ];\
+    \cf2 NSData\cf0  * imageData = [imageFile \cf8 getData\cf0 ];\
+    \cf2 UIImage\cf0  * image = [\cf2 UIImage\cf0  \cf6 imageWithData\cf0 :imageData];\
+    \cf4 profileImage\cf0 .\cf2 image\cf0  = [selfyInfo \cf8 objectForKey\cf0 :\cf7 @"image"\cf0 ];\
+    \cf4 profileImage\cf0 .\cf2 image\cf0  = image;\
+\
+\
+\
+\
+- (\cf5 void\cf0 )refreshSelfies\
+\{\
+    \cf4 PFQuery\cf0  * query = [\cf4 PFQuery\cf0  \cf8 queryWithClassName\cf0 :\cf7 @"UserSelfy"\cf0 ];\
+\
+	choices:\
+	1. selfies = [query findObjects]; (runs synchronously meaning that it blocks the main thread)\
+\
+    2a.[query \cf8 findObjectsInBackgroundWithTarget\cf0 :\cf5 self\cf0  \cf8 selector\cf0 :\cf5 @selector\cf0 (callbackWithResult:error:)];\
+\
+	2b.[query \cf8 findObjectsInBackgroundWithBlock\cf0 :^(\cf8 NSArray *objects, error:(NSError * error)\{\}];\
+\
+(These two make sure that it will not get in the way of other processes if it takes longer)\
+\}\
+\cf0 \
+- (\cf5 void\cf0 )callbackWithResult:(\cf2 NSArray\cf0  *)result error:(\cf2 NSError\cf0  *)error\
+\{\
+    method that goes with 2.a\
+\}\
+    \
+Use 2a if you are running multiple queries\
+can make the queries public and then you can use it for other queries\
+\
+you can tell which objects are going through by the PFFile name and if you properly subclass\
+\
+\
+\
+ \cf4 selfies\cf0  = \cf9 @[\cf0 \
+                       \cf9 @\{\cf7 @"image"\cf0 : \cf7 @"https://scontent-b-atl.xx.fbcdn.net/hphotos-prn2/t1.0-9/1186039_10151986279756439_860063747_n.jpg"\cf0 ,\
+                         \cf7 @"name"\cf0 : \cf7 @"Jiobu"\cf0 ,\
+                         \cf7 @"caption"\cf0 : \cf7 @"New Apple Developer"\cf0 ,\
+                         \cf7 @"avatar"\cf0 : \cf7 @"https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-frc1/t1.0-9/1962676_10151986272971439_776488807_n.jpg"\cf0 \
+                        \cf9 \}\cf0 ,\
+                       \cf9 ]\cf0 ;\
+        \
+can erase fake data because we are now pulling from parse directly\
+\
+\
+
+\f2\b WORKSHOP HOMEWORK\
+\
+\
+
+\f1\b0 \cf3 \
+\
+\
+\cf0 \
+\cf3 //after user connect to self: filter only your user's selfies \cf0 \
+    \
+\cf3 \
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 {{\NeXTGraphic Pasted Graphic.tiff \width400 \height420
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\fs20 \cf3 \CocoaLigature0 \
+\pard\tx481\pardeftab481\pardirnatural
+\cf3 \
+
+\f2\b \cf0 SLFTableViewController\
+- (void)refreshSelfies
+\f1\b0 \cf3 \
+//change order by created date: newest first;\
+\
+XXXX - did with class\
+\
+
+\f2\b \cf0 SLFSelfyViewController\
+- (void) newSelfy\
+
+\f1\b0 \cf3 //connect current user to newSefly as parent:Parse documentation: relational data\
+\
+\cf0 newSelfy[\cf7 @"parent"\cf0 ] = [\cf4 PFUser\cf0  \cf8 currentUser\cf0 ];\
+\cf3 it\'92s a key\
+\
+\cf0 one object owns another object, then you can query and figure out the relationship\
+newSelfy will only have one parent\
+one parent can have many selfies (children)\
+but the selfies(child) will not have more than one parent.\
+\
+\
+using the user object\
+\
+denotes a relationship to another object \cf3 \
+\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 {{\NeXTGraphic Screen Shot 2014-04-28 at 2.42.09 PM.png \width11920 \height380
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\fs20 \cf3 \CocoaLigature0 \
+\pard\tx481\pardeftab481\pardirnatural
+\cf3 \
+\
+sign in  and sign up\
+(username, password and login)\
+\
+signing up functionality\
+(username, password, email, display name, avatar image)\
+\
+change our avatar\
+\
+\
+\
+//    PFSignUpViewController *signUpController = [[PFSignUpViewController alloc] init];\cf0 \
+\cf3 //    signUpController.delegate = self;\cf0 \
+\cf3 //    [self presentViewController:signUpController animated:YES completion:^\{\}];\cf0 \
+    \
+\cf3 //    PFUser *user = [PFUser user];\cf0 \
+\cf3 //    user.username = @"my name";\cf0 \
+\cf3 //    user.password = @"my pass";\cf0 \
+\cf3 //    user.email = @"email@example.com";\cf0 \
+    \
+\cf3 //    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) \{\cf0 \
+\cf3 //        if (!error) \{\cf0 \
+\cf3 //            [self.view addSubview:logInPage];\cf0 \
+\cf3 //        \} else \{\cf0 \
+\cf3 //            NSString *errorString = [error userInfo][@"error"];\cf0 \
+\cf3 //            UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Error"\cf0 \
+\cf3 //                                                                 message:errorString\cf0 \
+\cf3 //                                                                delegate:self\cf0 \
+\cf3 //                                                       cancelButtonTitle:@"Try Again"\cf0 \
+\cf3 //                                                       otherButtonTitles:nil];\cf0 \
+\cf3 //            [alertView show];        \}\cf0 \
+\cf3 //    \}];\cf0 \
+\cf3 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\cf0 \
+}
