@@ -34,26 +34,29 @@
     navBar.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:navBar];
     
-    UIButton * libraryButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 30, 30)];
+    int spacing = 10;
+    
+    UIButton * libraryButton = [[UIButton alloc] initWithFrame:CGRectMake(spacing, spacing, 30, 30)];
     libraryButton.layer.cornerRadius = 15;
     libraryButton.backgroundColor = [UIColor redColor];
     [libraryButton addTarget:self action:@selector(selectImages:) forControlEvents:UIControlEventTouchUpInside];
     [navBar addSubview:libraryButton];
     
     scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0,SCREEN_HEIGHT - 100,SCREEN_WIDTH, 100)];
+//    scrollView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10);
     scrollView.backgroundColor =[UIColor lightGrayColor];
     
     int squares = 20;
     for(int i = 0; i < squares; i++)
     {
-        int pad = 80;
-        int x = (10 + pad) * i;
-        button = [[UIButton alloc] initWithFrame:CGRectMake(x, 10, 80, 80)];
+        int buttonSize = 80;
+        int x = ((spacing + buttonSize) * i) + spacing;
+        button = [[UIButton alloc] initWithFrame:CGRectMake(x, spacing, buttonSize, buttonSize)];
         button.backgroundColor = [UIColor redColor];
         [scrollView addSubview:button];
     }
     
-    scrollView.contentSize = CGSizeMake((button.frame.size.width + 10) * squares, 100);
+    scrollView.contentSize = CGSizeMake((button.frame.size.width + spacing)* squares + spacing, 100);
     [self.view addSubview:scrollView];
 }
 
