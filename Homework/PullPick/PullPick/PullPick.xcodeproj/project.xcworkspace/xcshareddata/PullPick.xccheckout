@@ -17,6 +17,8 @@
 	<string>Homework/PullPick/PullPick/PullPick.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>F07269B9-6858-43EE-B996-B0DA680A802B</key>
+		<string>../../../../../../05022014/HueSaturationBrightness</string>
 		<key>F07B2953-D845-48AB-BC9A-81C432C7F92D</key>
 		<string>../../../../..</string>
 	</dict>
@@ -28,6 +30,14 @@
 	<string>F07B2953-D845-48AB-BC9A-81C432C7F92D</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F07269B9-6858-43EE-B996-B0DA680A802B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HueSaturationBrightness</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
