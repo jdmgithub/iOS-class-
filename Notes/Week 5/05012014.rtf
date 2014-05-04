@@ -1,0 +1,229 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red63\green110\blue116;\red92\green38\blue153;\red46\green13\blue110;
+\red28\green0\blue207;\red100\green56\blue32;\red0\green116\blue0;\red170\green13\blue145;\red38\green71\blue75;
+}
+\margl1440\margr1440\vieww10800\viewh16300\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 05012014\
+\
+PullPick\
+
+\b0 \
+1. created a new UIViewController\
+2. moved Scrollview and button creation to this file\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf0 \CocoaLigature0  \cf2 scrollView\cf0  = [[\cf3 UIScrollView\cf0  \cf4 alloc\cf0 ]\cf4 initWithFrame\cf0 :\cf4 CGRectMake\cf0 (\cf5 0\cf0 ,\cf6 SCREEN_HEIGHT\cf0  - \cf5 100\cf0 ,\cf6 SCREEN_WIDTH\cf0 , \cf5 100\cf0 )];\
+    \cf7 //    scrollView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10);\cf0 \
+    \cf2 scrollView\cf0 .\cf3 backgroundColor\cf0  =[\cf3 UIColor\cf0  \cf4 lightGrayColor\cf0 ];\
+    \
+    \cf8 int\cf0  spacing = \cf5 10\cf0 ;\
+    \cf8 int\cf0  squares = \cf5 20\cf0 ;\
+    \cf8 for\cf0 (\cf8 int\cf0  i = \cf5 0\cf0 ; i < squares; i++)\
+    \{\
+        \cf8 int\cf0  buttonSize = \cf5 80\cf0 ;\
+        \cf8 int\cf0  x = ((spacing + buttonSize) * i) + spacing;\
+        \cf2 button\cf0  = [[\cf3 UIButton\cf0  \cf4 alloc\cf0 ] \cf4 initWithFrame\cf0 :\cf4 CGRectMake\cf0 (x, spacing, buttonSize, buttonSize)];\
+        \cf2 button\cf0 .\cf3 backgroundColor\cf0  = [\cf3 UIColor\cf0  \cf4 redColor\cf0 ];\
+        [\cf2 scrollView\cf0  \cf4 addSubview\cf0 :\cf2 button\cf0 ];\
+\
+2. imported PPAFilterController to PPAViewController\
+   - created a filter delegate\
+\
+alloc and init the filter controller in view did load\
+\cf2     filterVC\cf0  = [[\cf2 PPAFilterController\cf0  \cf4 alloc\cf0 ] \cf4 initWithNibName\cf0 :\cf8 nil\cf0  \cf4 bundle\cf0 :\cf8 nil\cf0 ];\
+    \cf2 filterVC\cf0 .\cf2 delegate\cf0  = \cf8 self\cf0 ;\
+    \cf2 filterVC\cf0 .\cf3 view\cf0 .\cf3 frame\cf0  = \cf4 CGRectMake\cf0 (\cf5 0\cf0 , \cf6 SCREEN_HEIGHT\cf0  - \cf5 100\cf0 , \cf6 SCREEN_WIDTH\cf0 , \cf5 100\cf0 );\
+\
+In the Filter Controller.h \
+1. created a PPAFilterControllerDelegate\
+\cf8 @protocol\cf0  \cf2 PPAFilterControllerDelegate\cf0 ; says what protocols will be adhered\
+\
+\cf8 2. \
+@property\cf0  (\cf8 nonatomic\cf0 , \cf8 assign\cf0 ) \cf8 id\cf0  <\cf2 PPAFilterControllerDelegate\cf0 > delegate;\
+(id because we can pass through anything as the delegate)\
+\
+\cf8 3. \
+@property\cf0  (\cf8 nonatomic\cf0 ) \cf3 UIImage\cf0  * imageToFilter;\
+must set this property in the .m file\
+\
+4. defines the protocol and method to be adhered to\
+\cf8 @protocol\cf0   PPAFilterControllerDelegate <\cf3 NSObject\cf0 >\
+\
+5.\
+(must occur when another controller accepts delegate position)\
+- (\cf8 void\cf0 )updateCurrentImageWithFilteredImage:(\cf3 UIImage\cf0  *)image;\
+\{\
+    \cf2 imageView\cf0 .\cf3 image\cf0  = image;\
+\}\
+\
+6. In the View Controller m\
+a. now declare the PPAFilterDelegate\
+b. implement the method\
+c. setOriginalImage (setter method)\
+\
+- (\cf8 void\cf0 )setOriginalImage: (\cf3 UIImage\cf0  *)originalImage\
+\{\
+    \cf2 _originalImage\cf0  = originalImage;\
+    \cf2 filterVC\cf0 .\cf2 imageToFilter\cf0  = originalImage;\
+    \cf2 imageView\cf0 .\cf3 image\cf0  = originalImage;\
+    \
+\}\
+\
+\
+7.\
+- (\cf3 UIImage\cf0  *)filterImage:(\cf3 UIImage\cf0  *)image filterName:(\cf3 NSString\cf0  *)filterName\
+\{\
+    \cf3 CIImage\cf0  * ciImage = [\cf3 CIImage\cf0  \cf4 imageWithCGImage\cf0 :image.\cf3 CGImage\cf0 ];\
+    \cf3 CIFilter\cf0  * filter = [\cf3 CIFilter\cf0  \cf4 filterWithName\cf0 :filterName];\
+    \
+    [filter \cf4 setValue\cf0 :ciImage \cf4 forKeyPath\cf0 :\cf3 kCIInputImageKey\cf0 ];\
+\
+	
+\f2\b instance parameter / instance parameter\
+	kCIInputImageKey = 
+\f1\b0 the object that allows you to access the value of an object\
+    \
+    \cf3 CIContext\cf0  * ciContext = [\cf3 CIContext\cf0  \cf4 contextWithOptions\cf0 :\cf8 nil\cf0 ];\
+    \
+    \cf3 CIImage\cf0  * ciResult = [filter \cf4 valueForKeyPath\cf0 :\cf3 kCIOutputImageKey\cf0 ];\
+	\
+    \cf8 return\cf0  [\cf3 UIImage\cf0  \cf4 imageWithCGImage\cf0 :[ciContext \cf4 createCGImage\cf0 :ciResult \cf4 fromRect\cf0 :[ciResult \cf4 extent\cf0 ]]];\
+\
+pulling out a CGImage after applying a filter\
+\
+\}\
+\
+Had to use CGImage because the CIImage value is nil \
+(Like a UIImage and can with CoreGraphics_\
+\
+UIImage is a property\
+We are using CIImages and CGImages because you cannot use filters on a UIImage\
+need CIImage to work with CoreImages\
+\
+CGImage and CIImage is a UIImage property \
+ \
+CIImage built to balance and not become to large\
+\
+created a filter controller just to run faster\
+\
+\
+\cf8 return\cf0  [\cf3 UIImage\cf0  \cf4 imageWithCGImage\cf0 :[ciContext \cf4 createCGImage\cf0 :ciResult \cf4 fromRect\cf0 :[ciResult \cf4 extent\cf0 ]]];\
+\
+
+\f2\b Core Image Programming Guide
+\f1\b0 \
+CIContext * ciContext = [CIContext contextWithOptions:nil];\
+CGRect rect = [ciResult extent];\
+CGIImageRef cgiImageReg = [ciContext create CGImage:ciResult fromRect:rect];\
+UIImage * uiImage = [UIImage imageWithCGImage:cgImageRef];\
+\
+8. - (\cf8 void\cf0 )setImageToFilter:(\cf3 UIImage\cf0  *)imageToFilter\
+\{\
+    \cf2 _imageToFilter\cf0  = imageToFilter;\
+    \
+    \cf8 for\cf0  (\cf3 UIButton\cf0  * filterButton \cf8 in\cf0  \cf2 filterButtons\cf0 )\
+    \{\
+        \cf3 NSString\cf0  * filterName = [\cf2 filterNames\cf0  \cf4 objectAtIndex\cf0 :filterButton.\cf3 tag\cf0 ];\
+        \
+\
+
+\f2\b choose filter based on position in array\
+
+\f1\b0 \
+        \cf3 UIImage\cf0  * smallImage = [\cf8 self\cf0  \cf9 shrinkImage\cf0 :imageToFilter \cf9 maxWH\cf0 :\cf2 wh\cf0 ];\
+\
+
+\f2\b shrink image so that it does not have to apply filter on a full size image\
+        \
+
+\f1\b0         \cf4 dispatch_async\cf0 (\cf4 dispatch_get_global_queue\cf0 (\cf6 DISPATCH_QUEUE_PRIORITY_DEFAULT\cf0 , (\cf8 unsigned\cf0  \cf8 long\cf0 )\cf8 NULL\cf0 ), ^\{\
+            \cf3 UIImage\cf0  * image = [\cf8 self\cf0  \cf9 filterImage\cf0 :smallImage \cf9 filterName\cf0 :filterName];\
+            \
+            [filterButton \cf4 setImage\cf0 :image \cf4 forState\cf0 :\cf4 UIControlStateNormal\cf0 ];\
+            \
+            filterButton.\cf3 imageView\cf0 .\cf3 contentMode\cf0  = \cf4 UIViewContentModeScaleAspectFill\cf0 ;\
+        \});\
+    \}\
+
+\f2\b grand central dispatch (GCD)allows you to process off the main thread to not reduce the speed of the app\
+
+\f1\b0 \
+\
+\}\
+\
+\
+\
+\
+UIImage to show off in the UIInterface (more part of the interface)\
+CoreImage specialized version of drawing that allows you to work with filters\
+CoreGraphics for drawing\
+CoreImageFramework (rooted in NSObject)\
+\
+\
+
+\f2\b HOMEWORK\
+
+\f1\b0 Take features and put in string to see how it works\
+\
+blur\
+distortion\
+\
+CIImage, look over list and pick a couple of filters to work with \
+look at the parameters necessary to make them wokr\
+go through today\'92s code and make notes about its functionality\
+tutorials for working with images\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
