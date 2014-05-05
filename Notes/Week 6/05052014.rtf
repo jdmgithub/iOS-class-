@@ -1,5 +1,202 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
-{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+\f3\fnil\fcharset0 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;\red100\green56\blue32;\red196\green26\blue22;\red170\green13\blue145;
+\red63\green110\blue116;\red92\green38\blue153;\red46\green13\blue110;\red38\green71\blue75;\red0\green116\blue0;
+\red28\green0\blue207;\red254\green73\blue64;}
+\margl1440\margr1440\vieww9360\viewh16300\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 05052014\
+\
+ISSUE WITH ARC\
+
+\b0 once scope ends instance method ends\
+scope runs faster than sound\
+\
+PixelNoise\
+\
+PNAViewController - make the root view controller\
+PNAViewController.m\
+\
+1. import necessary files\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf2 \CocoaLigature0 #import \cf3 "PNAViewController.h"\cf2 \
+#import \cf3 "PNAPixelSounds.h"\cf2 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+2. put in implementation because it will be reused\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf4 \CocoaLigature0 @implementation\cf0  PNAViewController\
+\{\
+    \cf5 PNAPixelSounds\cf0  * sounds;\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf0 \CocoaLigature0  cannot keep avaudio player inside a specific scope because the sound is longer than scope allows for.\
+\
+made the AVaudioPlayer a strong property allows player to stay alive as long as pixel sounds is alive.  had to make it a local instance variable\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 3. alloc / init PNAPixelSounds\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf0 \CocoaLigature0 - (\cf4 id\cf0 )initWithNibName:(\cf6 NSString\cf0  *)nibNameOrNil bundle:(\cf6 NSBundle\cf0  *)nibBundleOrNil\
+\{\
+    \cf4 self\cf0  = [\cf4 super\cf0  \cf7 initWithNibName\cf0 :nibNameOrNil \cf7 bundle\cf0 :nibBundleOrNil];\
+    \cf4 if\cf0  (\cf4 self\cf0 )\
+    \{\
+        \cf5 sounds\cf0  = [[\cf5 PNAPixelSounds\cf0  \cf7 alloc\cf0 ] \cf7 init\cf0 ];\
+    \}\
+    \cf4 return\cf0  \cf4 self\cf0 ;\
+\}\
+\
+4. implemented instance method \
+this allows sound to be heard when screen is tapped\
+\
+- (\cf4 void\cf0 ) touchesBegan:(\cf6 NSSet\cf0  *)touches withEvent:(\cf6 UIEvent\cf0  *)event\
+\{\
+    \cf7 NSLog\cf0 (\cf3 @"Play Sound"\cf0 );\
+    [\cf5 sounds\cf0  \cf8 playSoundWithName\cf0 :\cf3 @"click_alert"\cf0 ];\
+\}\
+\
+\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f2\b \cf0 PNAPIXELSOUND
+\f1\b0 \
+1. imported foundation and av foundation to utilize sound\
+\
+\pard\tx481\pardeftab481\pardirnatural
+\cf2 #import \cf3 <Foundation/Foundation.h>\cf2 \
+#import \cf3 <AVFoundation/AVFoundation.h>\cf2 \
+\pard\tx481\pardeftab481\pardirnatural
+\cf0 \
+\cf4 @interface\cf0  PNAPixelSounds : \cf6 NSObject\cf0  <\cf6 AVAudioPlayerDelegate\cf0 >\
+\
+\cf4 @property\cf0  (\cf4 nonatomic\cf0 , \cf4 strong\cf0 ) \cf6 AVAudioPlayer\cf0  *player;\
+\pard\tx481\pardeftab481\pardirnatural
+\cf9 //@property (nonatomic) NSMutableArray * players;\cf0 \
+\
+- (\cf4 void\cf0 )playSoundWithName:(\cf6 NSString\cf0  *)soundName;\
+\
+2. \
+- (\cf4 void\cf0 )playSoundWithName:(\cf6 NSString\cf0  *)soundName\
+\{\
+    \cf6 NSString\cf0  * file = [[\cf6 NSBundle\cf0  \cf7 mainBundle\cf0 ] \cf7 pathForResource\cf0 :soundName \cf7 ofType\cf0 :\cf3 @"wav"\cf0 ];\
+    \cf6 NSData\cf0  * fileData = [\cf6 NSData\cf0  \cf7 dataWithContentsOfFile\cf0 :file];\
+    \cf4 self\cf0 .\cf5 player\cf0  = [[\cf6 AVAudioPlayer\cf0  \cf7 alloc\cf0 ] \cf7 initWithData\cf0 :fileData \cf7 error\cf0 :\cf4 nil\cf0 ];\
+    [\cf4 self\cf0 .\cf5 player\cf0  \cf7 play\cf0 ];\
+\}\
+\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f2\b \cf0 BRICKBREAKER APP
+\f1\b0 \
++ class name * is  a singleton (returns the same instance not a new instance)\
+\
+1. Import two sounds \
+2. click and game over\
+3. create property\
+\pard\tx481\pardeftab481\pardirnatural
+\cf4 @property\cf0 (\cf4 nonatomic\cf0 ) \cf6 AVAudioPlayer\cf0  * player;\
+\
+4. alloc and init audio\
+\cf4 self\cf0 .\cf5 player\cf0  = [[\cf6 AVAudioPlayer\cf0  \cf7 alloc\cf0 ] \cf7 init\cf0 ];\
+\
+5. took out init and created a new method to play the sound\
+\
+- (\cf4 void\cf0 )playSoundWithName:(\cf6 NSString\cf0  *)soundName\
+\{\
+    \cf6 NSString\cf0  * file = [[\cf6 NSBundle\cf0  \cf7 mainBundle\cf0 ] \cf7 pathForResource\cf0 :soundName \cf7 ofType\cf0 :\cf3 @"wav"\cf0 ];\
+    \cf6 NSURL\cf0  * url = [\cf6 NSURL\cf0  \cf7 URLWithString\cf0 :file];\
+    \cf4 self\cf0 .\cf5 player\cf0  = [[\cf6 AVAudioPlayer\cf0  \cf7 alloc\cf0 ] \cf7 initWithContentsOfURL\cf0 :url \cf7 error\cf0 :\cf4 nil\cf0 ];\
+    \
+    [\cf4 self\cf0 .\cf5 player\cf0  \cf7 play\cf0 ];\
+\}\
+\
+pulls info \
+\pard\pardeftab720
+
+\f3\fs22 \cf0 \CocoaLigature1 An NSURL object represents a URL that can potentially contain the location of a resource on a remote server, the path of a local file on disk, or even an arbitrary piece of encoded data.\
+\
+6. call this sound when there is a collision\
+\
+create if statement \
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf0 \CocoaLigature0  \cf4 if\cf0  ([item1 \cf7 isEqual\cf0 :\cf4 self\cf0 .\cf5 paddle\cf0 ] || [item2 \cf7 isEqual\cf0 :\cf4 self\cf0 .\cf5 paddle\cf0 ])\
+    \{\
+        [\cf4 self\cf0  \cf8 playSoundWithName\cf0 :\cf3 @"retro_click"\cf0 ];\
+    \}\
+\pard\pardeftab720
+\cf0 \
+\
+\pard\tx481\pardeftab481\pardirnatural
+\cf0 [\cf4 self\cf0  \cf8 playSoundWithName\cf0 :\cf3 @"electric_alert"\cf0 ];\
+\
+7. updated playSoundWithName method\
+\
+  \cf6 NSURL\cf0  * url = [[\cf6 NSURL\cf0  \cf7 alloc\cf0 ] \cf7 initFileURLWithPath\cf0 :file];\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f2\b \cf0 BACK TO PIXEL NOISE\
+pixelsounds.m\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\b0 \cf4 self\cf0 .\cf5 player\cf0 .\cf6 numberOfLoops\cf0  = \cf10 0\cf0 ;\
+number of plays +1\
+\
+negative numbers play infinitely\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f2\b \cf11 world = [[PNAPixelWorldController alloc] initWithNibName:nil bundle:nil];\
+\
+create a new class \
+PNAPixelWorldController\
+\
+\
+self = [super init]\
+\
+if (self)\
+self.players = [@[mutablecopy]];\
+\
+[self.players addObject:player]\
+NSLog(@\'93players\'94)\
+\
+- audioPlayerDidFinishPlaying\
+remove identical objects\
+\
+add delegate\
+\
+\pard\tx481\pardeftab481\pardirnatural
+\cf0 UIKitDynamics - \
+WorldViewController\
+collision behavior - hits bottom\
+animator\
+gravity behavior\
+\
+sounds\
+touches began and moved \
+\
+blocks are UIView\
+\
+views are destroyed upon completion\
+use frames bounds as property\
+\
+try and do splatter\
+push behavior \
+gravity to push it back down\
 }
