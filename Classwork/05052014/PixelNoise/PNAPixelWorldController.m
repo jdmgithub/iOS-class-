@@ -12,14 +12,21 @@
 
 @interface PNAPixelWorldController () <UICollisionBehaviorDelegate>
 
+@property (nonatomic) AVAudioPlayer * player;
 @property (nonatomic, strong) UIDynamicAnimator *animator;
+@property (nonatomic) UIGravityBehavior * gravityBehavior;
+@property (nonatomic) UICollisionBehavior * collisionBehavior;
+@property (nonatomic) UIView * square;
+@property (nonatomic) UIAttachmentBehavior * attacher;
+@property (nonatomic) NSMutableArray * squares;
+@property (nonatomic) UIDynamicItemBehavior * squareDynamicsProperties;
 
 @end
 
 @implementation PNAPixelWorldController
 {
     PNAPixelSounds * sounds;
-    UIView * squares;
+    CGPoint point;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -28,6 +35,7 @@
     if (self)
     {
         sounds = [[PNAPixelSounds alloc] init];
+        self.squares = [@[]mutableCopy];
     }
     return self;
 }
@@ -35,45 +43,76 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    squares = [[UIView alloc] initWithFrame:CGRectMake(0,0,10,10)];
-    squares.tintColor = [UIColor darkGrayColor];
-    [self.view addSubview:squares];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)createSquares
 {
-    [super viewDidAppear:animated];
+    self.square = [[UIView alloc] initWithFrame:CGRectMake(point.x,point.y,10,10)];
+    self.square.backgroundColor = [UIColor darkGrayColor];
+    [self.view addSubview:self.square];
     
-    UIDynamicAnimator *animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-    
-    UIGravityBehavior *gravityBeahvior = [[UIGravityBehavior alloc] initWithItems:@[squares]];
-    [animator addBehavior:gravityBeahvior];
-    
-    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[squares]];
-    // Creates collision boundaries from the bounds of the dynamic animator's
-    // reference view (self.view).
-    collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
-    collisionBehavior.collisionDelegate = self;
-    [animator addBehavior:collisionBehavior];
-    
-    self.animator = animator;
-}
+    [self.squares addObject:self.square];
 
-- (void)collisionBehavior:(UICollisionBehavior*)behavior beganContactForItem:(id<UIDynamicItem>)item withBoundaryIdentifier:(id<NSCopying>)identifier atPoint:(CGPoint)p
-{
-       [(UIView*)item setTintColor:[UIColor lightGrayColor]];
-}
+    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    
+    self.gravityBehavior = [[UIGravityBehavior alloc] initWithItems:self.squares];
+    [self.animator addBehavior:self.gravityBehavior];
+    
+    self.collisionBehavior = [[UICollisionBehavior alloc] initWithItems:self.squares];
+    self.collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+    self.collisionBehavior.collisionDelegate = self;
+    
+    int w = self.view.frame.size.width;
+    int h = self.view.frame.size.height;
+    
+   
+    [self.collisionBehavior addBoundaryWithIdentifier:@"floor" fromPoint:CGPointMake(0,h+10)
+                                              toPoint:CGPointMake(w, h+10)];
+    
+    [self.animator addBehavior:self.collisionBehavior];
+    
+    self.squareDynamicsProperties = [self createPropertiesForItems:self.squares];
+    self.squareDynamicsProperties.density = 200000;
+    self.squareDynamicsProperties.elasticity = 1.0;
+    self.squareDynamicsProperties.resistance = 0.0;
 
-- (void)collisionBehavior:(UICollisionBehavior*)behavior endedContactForItem:(id<UIDynamicItem>)item withBoundaryIdentifier:(id<NSCopying>)identifier
-{
-        [(UIView*)item setTintColor:[UIColor darkGrayColor]];
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    UITouch *touch=[[event allTouches]anyObject];
+    point = [touch locationInView:self.view];
     [sounds playSoundWithName:@"click_alert"];
-   
+    [self createSquares];
+}
+
+- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch=[[event allTouches]anyObject];
+    point = [touch locationInView:self.view];
+    [sounds playSoundWithName:@"click_alert"];
+    [self createSquares];
+}
+
+
+- (void)playSoundWithName:(NSString *)soundName
+{
+    NSString * file = [[NSBundle mainBundle] pathForResource:soundName ofType:@"wav"];
+    NSURL * url = [[NSURL alloc] initFileURLWithPath:file];
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    [self.player play];
+}
+
+- (UIDynamicItemBehavior*)createPropertiesForItems:(NSArray *)squares
+{
+    UIDynamicItemBehavior * properties = [[UIDynamicItemBehavior alloc] initWithItems:squares];
+    properties.allowsRotation = YES;
+    properties.friction = 0.0;
+    properties.elasticity = 1.0;
+    properties.density = 10;
+    [self.animator addBehavior:properties];
+    return properties;//must return something
 }
 
 - (BOOL)prefersStatusBarHidden {return YES;}
@@ -82,7 +121,5 @@
 {
     [super didReceiveMemoryWarning];
 }
-
-
 
 @end
