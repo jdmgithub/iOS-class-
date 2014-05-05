@@ -10,6 +10,8 @@
 		C314F4C61900A8A400E19509 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C314F4C21900A8A400E19509 /* .gitignore */; };
 		C314F4C71900A8A400E19509 /* MOVE.m in Sources */ = {isa = PBXBuildFile; fileRef = C314F4C41900A8A400E19509 /* MOVE.m */; };
 		C314F4C81900A8A400E19509 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C314F4C51900A8A400E19509 /* README.md */; };
+		C35F4B961917D5FD00C7A54E /* electric_alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = C35F4B951917D5FD00C7A54E /* electric_alert.wav */; };
+		C35F4B981917D61000C7A54E /* retro_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = C35F4B971917D61000C7A54E /* retro_click.wav */; };
 		C3B5851C190018C500A8B1CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B5851B190018C500A8B1CB /* Foundation.framework */; };
 		C3B5851E190018C500A8B1CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B5851D190018C500A8B1CB /* CoreGraphics.framework */; };
 		C3B58520190018C500A8B1CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B5851F190018C500A8B1CB /* UIKit.framework */; };
@@ -47,6 +49,8 @@
 		C314F4C31900A8A400E19509 /* MOVE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVE.h; sourceTree = "<group>"; };
 		C314F4C41900A8A400E19509 /* MOVE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVE.m; sourceTree = "<group>"; };
 		C314F4C51900A8A400E19509 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		C35F4B951917D5FD00C7A54E /* electric_alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = electric_alert.wav; path = ../../../../../../../../../../Desktop/Sounds/narfstuff_ui_sounds/buttons/on_alert/electric_alert.wav; sourceTree = "<group>"; };
+		C35F4B971917D61000C7A54E /* retro_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = retro_click.wav; path = ../../../../../../../../../../Desktop/Sounds/narfstuff_ui_sounds/buttons/on_click/retro_click.wav; sourceTree = "<group>"; };
 		C3B58518190018C500A8B1CB /* BrickBreaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrickBreaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3B5851B190018C500A8B1CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C3B5851D190018C500A8B1CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -110,9 +114,19 @@
 			path = Move;
 			sourceTree = "<group>";
 		};
+		C35F4B991917D61E00C7A54E /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				C35F4B951917D5FD00C7A54E /* electric_alert.wav */,
+				C35F4B971917D61000C7A54E /* retro_click.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		C3B5850F190018C500A8B1CB = {
 			isa = PBXGroup;
 			children = (
+				C35F4B991917D61E00C7A54E /* Sounds */,
 				C314F4C11900A8A400E19509 /* Move */,
 				C3B585531900324300A8B1CB /* images */,
 				C3B5855019001D4600A8B1CB /* Controllers */,
@@ -303,9 +317,11 @@
 				C3B58526190018C500A8B1CB /* InfoPlist.strings in Resources */,
 				C314F4C81900A8A400E19509 /* README.md in Resources */,
 				C3B5852E190018C500A8B1CB /* Images.xcassets in Resources */,
+				C35F4B981917D61000C7A54E /* retro_click.wav in Resources */,
 				C3B5855B19004D8E00A8B1CB /* ball.png in Resources */,
 				C3B585551900324B00A8B1CB /* soccerBall.png in Resources */,
 				C3B585571900325000A8B1CB /* soccerGoal.png in Resources */,
+				C35F4B961917D5FD00C7A54E /* electric_alert.wav in Resources */,
 				C3B58559190037E300A8B1CB /* soccerPlayerLeft.png in Resources */,
 				C314F4C61900A8A400E19509 /* .gitignore in Resources */,
 				C3B5855F19004D9500A8B1CB /* alien1.png in Resources */,

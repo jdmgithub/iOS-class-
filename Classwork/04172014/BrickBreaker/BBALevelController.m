@@ -9,7 +9,11 @@
 #import "BBALevelController.h"
 #import "MOVE.h"
 
+#import <AVFoundation/AVFoundation.h>
+
 @interface BBALevelController () <UICollisionBehaviorDelegate>
+
+@property(nonatomic) AVAudioPlayer * player;
 //All PRIVATE PROPERTIES
 @property (nonatomic) UIView * paddle;
 @property (nonatomic) NSMutableArray * balls;
@@ -52,6 +56,14 @@
         paddleWidth = 80;
         points = 0;
         lives = 3;
+//        gamePoint = 0;
+//        levelPoints = 0;
+//        bricksBroken = 0;
+//        livesLost = 0;
+//        paddleHits = 0;
+//        ceilingHits = 0;
+//        leftWallHits = 0;
+//        rightWallHits = 0;
         
         self.view.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1.0];
         
@@ -59,6 +71,15 @@
         [self.view addGestureRecognizer:tap];
     }
     return self;
+}
+
+- (void)playSoundWithName:(NSString *)soundName
+{
+    NSString * file = [[NSBundle mainBundle] pathForResource:soundName ofType:@"wav"];
+    NSURL * url = [[NSURL alloc] initFileURLWithPath:file];
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    [self.player play];
 }
 
 - (void)viewDidLoad
@@ -69,12 +90,6 @@
 - (void)resetLevel
 {
     
-//        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"alien2"]];
-
-//        UIImageView
-    
-    
-    
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
     [self createPaddle];
@@ -83,7 +98,7 @@
     self.collider = [[UICollisionBehavior alloc] initWithItems:[self allItems]];
     self.collider.collisionDelegate = self;
     self.collider.collisionMode = UICollisionBehaviorModeEverything;
-//    self.collider.translatesReferenceBoundsIntoBoundary = YES; //creates boundary's bounds based oon the reference
+//    self.collider.translatesReferenceBoundsIntoBoundary = YES; //creates boundary's bounds based on the reference
     
     //create balls after collider so balls can take collider properties
     [self createBall];
@@ -114,6 +129,13 @@
 
 - (void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item1 withItem:(id<UIDynamicItem>)item2 atPoint:(CGPoint)p
 {
+    
+    if ([item1 isEqual:self.paddle] || [item2 isEqual:self.paddle])
+    {
+        [self playSoundWithName:@"retro_click"];
+//        paddleHits++;
+//        levelInfo[@"paddle_hits"] = @(paddleHits);
+    }
     UIView * tempBrick;
     
     for (UIView * brick in self.bricks)
@@ -144,7 +166,11 @@
         }
     }
     
-    if(tempBrick != nil) [self.bricks removeObjectIdenticalTo:tempBrick]; //finds item in array that is identical to brick hit
+    if(tempBrick != nil)
+    {
+        [self playSoundWithName:@"electric_alert"];
+        [self.bricks removeObjectIdenticalTo:tempBrick]; //finds item in array that is identical to brick hit
+    }
 }
 
 - (void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item withBoundaryIdentifier:(id<NSCopying>)identifier atPoint:(CGPoint)p
