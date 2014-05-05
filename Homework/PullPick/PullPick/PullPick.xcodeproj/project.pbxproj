@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C347FA6E191329840078B59D /* PPACustomFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = C347FA6D191329840078B59D /* PPACustomFilter.m */; };
 		C397CC7519128077005F24D8 /* PPAFilterController.m in Sources */ = {isa = PBXBuildFile; fileRef = C397CC7419128077005F24D8 /* PPAFilterController.m */; };
-		C39FE52119141D9C00ECA925 /* HSBColorControlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C39FE52019141D9C00ECA925 /* HSBColorControlVC.m */; };
+		C39C3C781916E6CD00DD8FF2 /* HSBColorControlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C39C3C771916E6CD00DD8FF2 /* HSBColorControlVC.m */; };
 		C39FE5251914253300ECA925 /* blur.png in Resources */ = {isa = PBXBuildFile; fileRef = C39FE5241914253300ECA925 /* blur.png */; };
 		C39FE5271914253A00ECA925 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = C39FE5261914253A00ECA925 /* filter.png */; };
 		C39FE5291914253F00ECA925 /* HSB.png in Resources */ = {isa = PBXBuildFile; fileRef = C39FE5281914253F00ECA925 /* HSB.png */; };
@@ -45,8 +45,8 @@
 		C347FA6D191329840078B59D /* PPACustomFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPACustomFilter.m; sourceTree = "<group>"; };
 		C397CC7319128077005F24D8 /* PPAFilterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPAFilterController.h; sourceTree = "<group>"; };
 		C397CC7419128077005F24D8 /* PPAFilterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPAFilterController.m; sourceTree = "<group>"; };
-		C39FE51F19141D9C00ECA925 /* HSBColorControlVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSBColorControlVC.h; path = ../../../../05022014/HueSaturationBrightness/HSBColorControlVC.h; sourceTree = "<group>"; };
-		C39FE52019141D9C00ECA925 /* HSBColorControlVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSBColorControlVC.m; path = ../../../../05022014/HueSaturationBrightness/HSBColorControlVC.m; sourceTree = "<group>"; };
+		C39C3C761916E6CD00DD8FF2 /* HSBColorControlVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSBColorControlVC.h; sourceTree = "<group>"; };
+		C39C3C771916E6CD00DD8FF2 /* HSBColorControlVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSBColorControlVC.m; sourceTree = "<group>"; };
 		C39FE5241914253300ECA925 /* blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blur.png; path = ../../../../../../../../../../Desktop/blur.png; sourceTree = "<group>"; };
 		C39FE5261914253A00ECA925 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filter.png; path = ../../../../../../../../../../Desktop/filter.png; sourceTree = "<group>"; };
 		C39FE5281914253F00ECA925 /* HSB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HSB.png; path = ../../../../../../../../../../Desktop/HSB.png; sourceTree = "<group>"; };
@@ -128,11 +128,11 @@
 		C39FE51D19141D5900ECA925 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C39FE51B19141CBB00ECA925 /* FilterController */,
 				C39FE53319142C7900ECA925 /* ControlController */,
 				C39FE52A1914265A00ECA925 /* Blur */,
 				C39FE52219141DAC00ECA925 /* HSB */,
 				C39FE51C19141D2100ECA925 /* ViewController */,
-				C39FE51B19141CBB00ECA925 /* FilterController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -148,8 +148,8 @@
 		C39FE52219141DAC00ECA925 /* HSB */ = {
 			isa = PBXGroup;
 			children = (
-				C39FE51F19141D9C00ECA925 /* HSBColorControlVC.h */,
-				C39FE52019141D9C00ECA925 /* HSBColorControlVC.m */,
+				C39C3C761916E6CD00DD8FF2 /* HSBColorControlVC.h */,
+				C39C3C771916E6CD00DD8FF2 /* HSBColorControlVC.m */,
 			);
 			name = HSB;
 			sourceTree = "<group>";
@@ -354,9 +354,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C39FE52119141D9C00ECA925 /* HSBColorControlVC.m in Sources */,
 				C3A1532219116F5400CEBB4F /* PPAAppDelegate.m in Sources */,
 				C39FE5401914396F00ECA925 /* BlurViewController.m in Sources */,
+				C39C3C781916E6CD00DD8FF2 /* HSBColorControlVC.m in Sources */,
 				C3A153481911776700CEBB4F /* PPAViewController.m in Sources */,
 				C3A1531E19116F5400CEBB4F /* main.m in Sources */,
 				C347FA6E191329840078B59D /* PPACustomFilter.m in Sources */,
