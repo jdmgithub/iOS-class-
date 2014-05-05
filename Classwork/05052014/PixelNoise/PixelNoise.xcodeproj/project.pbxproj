@@ -19,6 +19,10 @@
 		C35F4B771917C6FB00C7A54E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C35F4B5F1917C6FB00C7A54E /* UIKit.framework */; };
 		C35F4B7F1917C6FB00C7A54E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C35F4B7D1917C6FB00C7A54E /* InfoPlist.strings */; };
 		C35F4B811917C6FB00C7A54E /* PixelNoiseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C35F4B801917C6FB00C7A54E /* PixelNoiseTests.m */; };
+		C35F4B8C1917C7C400C7A54E /* PNAPixelSounds.m in Sources */ = {isa = PBXBuildFile; fileRef = C35F4B8B1917C7C400C7A54E /* PNAPixelSounds.m */; };
+		C35F4B911917C84000C7A54E /* PNAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C35F4B901917C84000C7A54E /* PNAViewController.m */; };
+		C35F4B931917CD2F00C7A54E /* click_alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = C35F4B921917CD2F00C7A54E /* click_alert.wav */; };
+		C35F4B9F1917E7F600C7A54E /* PNAPixelWorldController.m in Sources */ = {isa = PBXBuildFile; fileRef = C35F4B9E1917E7F600C7A54E /* PNAPixelWorldController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,13 @@
 		C35F4B7C1917C6FB00C7A54E /* PixelNoiseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PixelNoiseTests-Info.plist"; sourceTree = "<group>"; };
 		C35F4B7E1917C6FB00C7A54E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C35F4B801917C6FB00C7A54E /* PixelNoiseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PixelNoiseTests.m; sourceTree = "<group>"; };
+		C35F4B8A1917C7C400C7A54E /* PNAPixelSounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNAPixelSounds.h; sourceTree = "<group>"; };
+		C35F4B8B1917C7C400C7A54E /* PNAPixelSounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNAPixelSounds.m; sourceTree = "<group>"; };
+		C35F4B8F1917C84000C7A54E /* PNAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNAViewController.h; sourceTree = "<group>"; };
+		C35F4B901917C84000C7A54E /* PNAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNAViewController.m; sourceTree = "<group>"; };
+		C35F4B921917CD2F00C7A54E /* click_alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = click_alert.wav; path = ../../../../../../../../../../Desktop/Sounds/narfstuff_ui_sounds/buttons/on_alert/click_alert.wav; sourceTree = "<group>"; };
+		C35F4B9D1917E7F600C7A54E /* PNAPixelWorldController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNAPixelWorldController.h; sourceTree = "<group>"; };
+		C35F4B9E1917E7F600C7A54E /* PNAPixelWorldController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNAPixelWorldController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +88,10 @@
 		C35F4B4F1917C6FB00C7A54E = {
 			isa = PBXGroup;
 			children = (
+				C35F4B9C1917E7BF00C7A54E /* World */,
+				C35F4B9B1917E77000C7A54E /* PixelSounds */,
+				C35F4B9A1917E75B00C7A54E /* RootVC */,
+				C35F4B941917CD5600C7A54E /* Sounds */,
 				C35F4B611917C6FB00C7A54E /* PixelNoise */,
 				C35F4B7A1917C6FB00C7A54E /* PixelNoiseTests */,
 				C35F4B5A1917C6FB00C7A54E /* Frameworks */,
@@ -142,6 +157,41 @@
 				C35F4B7D1917C6FB00C7A54E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C35F4B941917CD5600C7A54E /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				C35F4B921917CD2F00C7A54E /* click_alert.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		C35F4B9A1917E75B00C7A54E /* RootVC */ = {
+			isa = PBXGroup;
+			children = (
+				C35F4B8F1917C84000C7A54E /* PNAViewController.h */,
+				C35F4B901917C84000C7A54E /* PNAViewController.m */,
+			);
+			name = RootVC;
+			sourceTree = "<group>";
+		};
+		C35F4B9B1917E77000C7A54E /* PixelSounds */ = {
+			isa = PBXGroup;
+			children = (
+				C35F4B8A1917C7C400C7A54E /* PNAPixelSounds.h */,
+				C35F4B8B1917C7C400C7A54E /* PNAPixelSounds.m */,
+			);
+			name = PixelSounds;
+			sourceTree = "<group>";
+		};
+		C35F4B9C1917E7BF00C7A54E /* World */ = {
+			isa = PBXGroup;
+			children = (
+				C35F4B9D1917E7F600C7A54E /* PNAPixelWorldController.h */,
+				C35F4B9E1917E7F600C7A54E /* PNAPixelWorldController.m */,
+			);
+			name = World;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C35F4B931917CD2F00C7A54E /* click_alert.wav in Resources */,
 				C35F4B661917C6FB00C7A54E /* InfoPlist.strings in Resources */,
 				C35F4B6E1917C6FB00C7A54E /* Images.xcassets in Resources */,
 			);
@@ -240,6 +291,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C35F4B911917C84000C7A54E /* PNAViewController.m in Sources */,
+				C35F4B8C1917C7C400C7A54E /* PNAPixelSounds.m in Sources */,
+				C35F4B9F1917E7F600C7A54E /* PNAPixelWorldController.m in Sources */,
 				C35F4B6C1917C6FB00C7A54E /* PNAAppDelegate.m in Sources */,
 				C35F4B681917C6FB00C7A54E /* main.m in Sources */,
 			);
@@ -438,6 +492,7 @@
 				C35F4B861917C6FB00C7A54E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C35F4B871917C6FB00C7A54E /* Build configuration list for PBXNativeTarget "PixelNoiseTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +501,7 @@
 				C35F4B891917C6FB00C7A54E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
