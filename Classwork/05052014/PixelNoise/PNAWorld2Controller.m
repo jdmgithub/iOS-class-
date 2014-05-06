@@ -104,7 +104,6 @@
         
         [collidedBlock removeFromSuperview];
     }
-    
     if([behavior isEqual:self.shardCollision])
     {
         UIView * collidedShard = (UIView *)item;
@@ -115,7 +114,6 @@
         
         [collidedShard removeFromSuperview];
     }
-    
 }
 
 - (void)createShardsWithLocation:(CGPoint)location
