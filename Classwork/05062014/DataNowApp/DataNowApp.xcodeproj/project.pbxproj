@@ -19,6 +19,8 @@
 		C39806FE19193139002C2BD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39806E619193139002C2BD5 /* UIKit.framework */; };
 		C398070619193139002C2BD5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C398070419193139002C2BD5 /* InfoPlist.strings */; };
 		C398070819193139002C2BD5 /* DataNowAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C398070719193139002C2BD5 /* DataNowAppTests.m */; };
+		C39807131919314E002C2BD5 /* DNATableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C39807121919314E002C2BD5 /* DNATableViewController.m */; };
+		C39807161919345E002C2BD5 /* DNASingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = C39807151919345E002C2BD5 /* DNASingleton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		C398070319193139002C2BD5 /* DataNowAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DataNowAppTests-Info.plist"; sourceTree = "<group>"; };
 		C398070519193139002C2BD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C398070719193139002C2BD5 /* DataNowAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataNowAppTests.m; sourceTree = "<group>"; };
+		C39807111919314E002C2BD5 /* DNATableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNATableViewController.h; sourceTree = "<group>"; };
+		C39807121919314E002C2BD5 /* DNATableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNATableViewController.m; sourceTree = "<group>"; };
+		C39807141919345E002C2BD5 /* DNASingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNASingleton.h; sourceTree = "<group>"; };
+		C39807151919345E002C2BD5 /* DNASingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNASingleton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,10 @@
 		C39806D619193139002C2BD5 = {
 			isa = PBXGroup;
 			children = (
+				C39807141919345E002C2BD5 /* DNASingleton.h */,
+				C39807151919345E002C2BD5 /* DNASingleton.m */,
+				C39807111919314E002C2BD5 /* DNATableViewController.h */,
+				C39807121919314E002C2BD5 /* DNATableViewController.m */,
 				C39806E819193139002C2BD5 /* DataNowApp */,
 				C398070119193139002C2BD5 /* DataNowAppTests */,
 				C39806E119193139002C2BD5 /* Frameworks */,
@@ -241,7 +251,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C39806F319193139002C2BD5 /* DNAAppDelegate.m in Sources */,
+				C39807131919314E002C2BD5 /* DNATableViewController.m in Sources */,
 				C39806EF19193139002C2BD5 /* main.m in Sources */,
+				C39807161919345E002C2BD5 /* DNASingleton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
