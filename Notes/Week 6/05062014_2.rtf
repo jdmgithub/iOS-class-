@@ -1,0 +1,166 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red63\green110\blue116;\red170\green13\blue145;\red100\green56\blue32;
+\red46\green13\blue110;\red92\green38\blue153;\red28\green0\blue207;\red0\green116\blue0;}
+\margl1440\margr1440\vieww9000\viewh16300\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 05062014_2\
+
+\b0 \
+Created new project\
+DNAData\
+\
+Singletons\
+\
+every time you create a class you alloc and init a new object\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf0 \CocoaLigature0 @synthesize only happens with properties\
+getter, setter, @synthesize\
+local instance variable _property = property\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b\fs48 \cf0 SINGLETON 
+\fs24 \
+- 
+\b0 every time you make a request you are calling the same object.  Returning an instance of the same object.\
+\
+(class entity)\
+\
+DNASingleton\
+NSObject\
+when we return an object it is always a return of the same class\
+\
+In our singleton.h\
+create a new class method\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf0 \CocoaLigature0 + (\cf2 DNASingleton\cf0  *)sharedSinglton;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\
+now you have an object to play\
+\
+.m\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf0 \CocoaLigature0 + (\cf2 DNASingleton\cf0  *)sharedSingleton\
+\{\
+    \cf3 static\cf0  dispatch_once_t singletonBlock;\
+\}\
+\
+this is thread safe and prevents is from being called more than once\
+\
+ \cf3 static\cf0  \cf2 DNASingleton\cf0  * singleton = nil;\
+creates one pointer \
+can only be defined once unlike other pointers that can be redefined.\
+\
+ \cf4 dispatch_once\cf0 (&singletonBlock, ^\{\
+        singleton = [[\cf2 DNASingleton\cf0  \cf5 alloc\cf0 ] \cf5 init\cf0 ];\
+this defines the singleton\
+\
+we are returning itself\
+ \cf3 return\cf0  singleton;\
+\
+\
++ (\cf2 DNASingleton\cf0  *)sharedSingleton\
+\{\
+    \cf3 static\cf0  \cf6 dispatch_once_t\cf0  singletonBlock;\
+    \cf3 static\cf0  \cf2 DNASingleton\cf0  * singleton = \cf3 nil\cf0 ;\
+    \
+    \cf4 dispatch_once\cf0 (&singletonBlock, ^\{\
+        singleton = [[\cf2 DNASingleton\cf0  \cf5 alloc\cf0 ] \cf5 init\cf0 ];\
+    \});\
+    \
+    \cf3 return\cf0  singleton;\
+\}\
+\
+\
+.h\
+singleton\
+\
+property\
+\
+methods\
+\
+\
+\
+- (\cf6 NSArray\cf0  *)allSections\
+\{\
+    \
+\}\
+\
+inputting the keys for each section\
+\
+\
+\
+using singletons in BrickBreaker and GitHub\
+\
+NSMutable Array * listItems\
+moved this to Singleton\
+use Setter and Getter to make sure the array does not pass through a nil value\
+\
+\pard\tx481\pardeftab481\pardirnatural
+\cf3 @property\cf0  (\cf3 nonatomic\cf0 ) \cf6 NSMutableArray\cf0  * listItems;\
+\
+- (\cf6 NSMutableArray\cf0  *)listItems\
+\{\
+    \cf3 if\cf0 (\cf2 _listItems\cf0  == \cf3 nil\cf0 )\
+    \{\
+        \cf2 _listItems\cf0  = [\cf7 @[]\cf5 mutableCopy\cf0 ];\
+    \}\
+    \cf3 return\cf0  \cf2 _listItems\cf0 ;\
+\}\
+\
+\
+instance property\
+TDLSingleton.sharedCollection.listItems\
+\
+not initialized till the first time you are using list items.  then you are saving some memory by initializing only when you need it.\
+\
+ \
+\
+- (\cf3 void\cf0 )addListItem: (\cf6 NSDictionary\cf0  *)listItem;\
+- (\cf6 NSArray\cf0  *)allListItems;\
+\
+\
+two methods to be implemented in .m\
+\
+- (\cf3 void\cf0 )addListItem:(\cf6 NSDictionary\cf0  *)listItem\
+\{\
+    [\cf3 self\cf0 .\cf2 listItems\cf0  \cf5 addObject\cf0 :listItem];\
+\}\
+\
+accessing our getter method - creating an array to add to\
+\
+- (\cf6 NSArray\cf0  *)allListItems\
+\{\
+    \cf3 return\cf0  [\cf3 self\cf0 .\cf2 listItems\cf0  \cf5 copy\cf0 ];\
+    \cf8 //return [NSArray arrayWithArray:self.listItems];\cf0 \
+\}\
+is an immutable object\
+\
+creating a copy so not to affect the original object.  this way multiple items can access this object, without crashing the app.\
+\
+Should remove user - navigation bar\
+\
+TVC should not manage data just have access\
+\
+singleton is only a singleton for the lifetime of the app (how long it is on)  then it will be reloaded every time your system is rebooted.\
+\
+\
+\
+\
+\
+\
+\
+}
