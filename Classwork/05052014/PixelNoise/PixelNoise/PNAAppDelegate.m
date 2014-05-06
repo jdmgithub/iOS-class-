@@ -9,13 +9,14 @@
 #import "PNAAppDelegate.h"
 #import "PNAViewController.h"
 #import "PNAPixelWorldController.h"
+#import "PNAWorld2Controller.h"
 
 @implementation PNAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[PNAPixelWorldController alloc] initWithNibName:nil bundle:nil];
+    self.window.rootViewController = [[PNAWorld2Controller alloc] initWithNibName:nil bundle:nil];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

@@ -23,6 +23,8 @@
 		C35F4B911917C84000C7A54E /* PNAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C35F4B901917C84000C7A54E /* PNAViewController.m */; };
 		C35F4B931917CD2F00C7A54E /* click_alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = C35F4B921917CD2F00C7A54E /* click_alert.wav */; };
 		C35F4B9F1917E7F600C7A54E /* PNAPixelWorldController.m in Sources */ = {isa = PBXBuildFile; fileRef = C35F4B9E1917E7F600C7A54E /* PNAPixelWorldController.m */; };
+		C39806D119191545002C2BD5 /* PNAWorld2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = C39806D019191545002C2BD5 /* PNAWorld2Controller.m */; };
+		C39806D51919226B002C2BD5 /* drip.wav in Resources */ = {isa = PBXBuildFile; fileRef = C39806D41919226B002C2BD5 /* drip.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,9 @@
 		C35F4B921917CD2F00C7A54E /* click_alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = click_alert.wav; path = ../../../../../../../../../../Desktop/Sounds/narfstuff_ui_sounds/buttons/on_alert/click_alert.wav; sourceTree = "<group>"; };
 		C35F4B9D1917E7F600C7A54E /* PNAPixelWorldController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNAPixelWorldController.h; sourceTree = "<group>"; };
 		C35F4B9E1917E7F600C7A54E /* PNAPixelWorldController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNAPixelWorldController.m; sourceTree = "<group>"; };
+		C39806CF19191545002C2BD5 /* PNAWorld2Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNAWorld2Controller.h; sourceTree = "<group>"; };
+		C39806D019191545002C2BD5 /* PNAWorld2Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNAWorld2Controller.m; sourceTree = "<group>"; };
+		C39806D41919226B002C2BD5 /* drip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drip.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +93,7 @@
 		C35F4B4F1917C6FB00C7A54E = {
 			isa = PBXGroup;
 			children = (
+				C39806CE1919152B002C2BD5 /* World2 */,
 				C35F4B9C1917E7BF00C7A54E /* World */,
 				C35F4B9B1917E77000C7A54E /* PixelSounds */,
 				C35F4B9A1917E75B00C7A54E /* RootVC */,
@@ -162,6 +168,7 @@
 		C35F4B941917CD5600C7A54E /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				C39806D41919226B002C2BD5 /* drip.wav */,
 				C35F4B921917CD2F00C7A54E /* click_alert.wav */,
 			);
 			name = Sounds;
@@ -192,6 +199,15 @@
 				C35F4B9E1917E7F600C7A54E /* PNAPixelWorldController.m */,
 			);
 			name = World;
+			sourceTree = "<group>";
+		};
+		C39806CE1919152B002C2BD5 /* World2 */ = {
+			isa = PBXGroup;
+			children = (
+				C39806CF19191545002C2BD5 /* PNAWorld2Controller.h */,
+				C39806D019191545002C2BD5 /* PNAWorld2Controller.m */,
+			);
+			name = World2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +289,7 @@
 				C35F4B931917CD2F00C7A54E /* click_alert.wav in Resources */,
 				C35F4B661917C6FB00C7A54E /* InfoPlist.strings in Resources */,
 				C35F4B6E1917C6FB00C7A54E /* Images.xcassets in Resources */,
+				C39806D51919226B002C2BD5 /* drip.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +313,7 @@
 				C35F4B9F1917E7F600C7A54E /* PNAPixelWorldController.m in Sources */,
 				C35F4B6C1917C6FB00C7A54E /* PNAAppDelegate.m in Sources */,
 				C35F4B681917C6FB00C7A54E /* main.m in Sources */,
+				C39806D119191545002C2BD5 /* PNAWorld2Controller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

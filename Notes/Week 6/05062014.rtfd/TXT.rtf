@@ -1,0 +1,244 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red170\green13\blue145;\red92\green38\blue153;\red63\green110\blue116;
+\red46\green13\blue110;\red28\green0\blue207;\red38\green71\blue75;\red196\green26\blue22;}
+\margl1440\margr1440\vieww9080\viewh16300\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 05062014\
+\
+1. Added a new UIViewController - World2Controller\
+\
+2. added properties\
+\
+3. added properties\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf2 \CocoaLigature0 @property\cf0  (\cf2 nonatomic\cf0 )\cf3 UICollisionBehavior\cf0  * collision;\
+\cf2 @property\cf0  (\cf2 nonatomic\cf0 )\cf3 UIDynamicAnimator\cf0  * animator;\
+\cf2 @property\cf0  (\cf2 nonatomic\cf0 )\cf3 UIGravityBehavior\cf0  * gravity;\
+\
+4. initialized  in init and created square\
+\
+ 		\cf2 self\cf0 .\cf4 animator\cf0  = [[\cf3 UIDynamicAnimator\cf0  \cf5 alloc\cf0 ] \cf5 initWithReferenceView\cf0 :\cf2 self\cf0 .\cf3 view\cf0 ];\
+        \
+        \cf2 self\cf0 .\cf4 gravity\cf0  = [[\cf3 UIGravityBehavior\cf0  \cf5 alloc\cf0 ] \cf5 init\cf0 ];\
+        [\cf2 self\cf0 .\cf4 animator\cf0  \cf5 addBehavior\cf0 :\cf2 self\cf0 .\cf4 gravity\cf0 ];\
+        \
+        \cf2 self\cf0 .\cf4 collision\cf0  = [[\cf3 UICollisionBehavior\cf0  \cf5 alloc\cf0 ]\cf5 init\cf0 ];\
+        \cf2 self\cf0 .\cf4 collision\cf0 .\cf3 translatesReferenceBoundsIntoBoundary\cf0  = \cf2 YES\cf0 ;\
+translates screen references into boundaries\
+\
+        [\cf2 self\cf0 .\cf4 animator\cf0  \cf5 addBehavior\cf0 :\cf2 self\cf0 .\cf4 collision\cf0 ];\
+\
+collision and gravity are behaviors given to objects\
+animator makes items \'93look like\'94 they are animated\
+\
+\cf3 		UIView\cf0  * block = [[\cf3 UIView\cf0  \cf5 alloc\cf0 ] \cf5 initWithFrame\cf0 :\cf5 CGRectMake\cf0 (\cf6 160\cf0 , \cf6 50\cf0 , \cf6 20\cf0 , \cf6 20\cf0 )];\
+        block.\cf3 backgroundColor\cf0  = [\cf3 UIColor\cf0  \cf5 blueColor\cf0 ];\
+        [\cf2 self\cf0 .\cf3 view\cf0  \cf5 addSubview\cf0 :block];\
+        \
+        [\cf2 self\cf0 .\cf4 gravity\cf0  \cf5 addItem\cf0 :block];\
+        [\cf2 self\cf0 .\cf4 collision\cf0  \cf5 addItem\cf0 :block];\
+\
+now the block has gravity and collision \
+\
+5. allow for blocks to be created in touches began, moved and createBlockWithLocation \
+\
+- (\cf2 void\cf0 )touchesBegan:(\cf3 NSSet\cf0  *)touches withEvent:(\cf3 UIEvent\cf0  *)event\
+\{\
+    \
+\}\
+\
+- (\cf2 void\cf0 )touchesMoved:(\cf3 NSSet\cf0  *)touches withEvent:(\cf3 UIEvent\cf0  *)event\
+\{\
+    \cf2 for\cf0  (\cf3 UITouch\cf0  * touch \cf2 in\cf0  touches)\
+    \{\
+        \cf3 CGPoint\cf0  loc = [touch \cf5 locationInView\cf0 :\cf2 self\cf0 .\cf3 view\cf0 ];\
+        [\cf2 self\cf0  \cf7 createBlockWithLocation\cf0 :loc];\
+    \}\
+\}\
+\
+\
+6. condensed and copied code into the touches began\
+\cf2 for\cf0  (\cf3 UITouch\cf0  * touch \cf2 in\cf0  touches)\
+        [\cf2 self\cf0  \cf7 createBlockWithLocation\cf0 :[touch \cf5 locationInView\cf0 :\cf2 self\cf0 .\cf3 view\cf0 ]];\
+\
+- (\cf2 void\cf0 )createBlockWithLocation:(CGPoint)location\
+\{\
+     \cf3 UIView\cf0  * block = [[\cf3 UIView\cf0  \cf5 alloc\cf0 ] \cf5 initWithFrame\cf0 :\cf5 CGRectMake\cf0 (location.\cf3 x\cf0 , location.\cf3 y\cf0 , \cf6 10\cf0 , \cf6 10\cf0 )];\
+    block.\cf3 backgroundColor\cf0  = [\cf3 UIColor\cf0  \cf5 blueColor\cf0 ];\
+    [\cf2 self\cf0 .\cf3 view\cf0  \cf5 addSubview\cf0 :block];\
+    \
+    [\cf2 self\cf0 .\cf4 gravity\cf0  \cf5 addItem\cf0 :block];\
+    [\cf2 self\cf0 .\cf4 collision\cf0  \cf5 addItem\cf0 :block];\
+\
+\}\
+\
+moved block creation into its own method with a dynamic x and y\
+\
+7. created a UICollisionBehaviorDelegate\
+8. self.collision.collisionDelegate = self (where you alloc and initialized the Collision Behavior)\
+ - collisionDelegate - not usual naming collision\
+\
+9. now we have to listen for delegate methods by implementing them\
+\
+- (\cf2 void\cf0 )collisionBehavior:(\cf3 UICollisionBehavior\cf0  *)behavior beganContactForItem:(\cf2 id\cf0 <\cf3 UIDynamicItem\cf0 >)item withBoundaryIdentifier:(\cf2 id\cf0 <\cf3 NSCopying\cf0 >)identifier atPoint:(\cf3 CGPoint\cf0 )p\
+\{\
+ made an inline declaration to change the UIView into an item\
+\cf3  UIView\cf0  * collidedBlock = (\cf3 UIView\cf0  *)item;\
+\
+\}\
+\
+do not want to make it global because it is not the same \
+has a different property\
+\
+* block just points to the object \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 {{\NeXTGraphic Pasted Graphic.tiff \width4500 \height4500
+}¬}
+\f1\fs20 \
+this is what is necessary\
+\
+the different methods are pointing to the same exact one\
+\
+1st pointer creates it (backgroundColor, subView, addItem)\
+2nd pointer references when it hits the boundary\
+(not a new instance just an pointer to the original object)\
+(collision behavior has knowledge of the block) where it began, what boundary, and the point)\CocoaLigature0 \
+\CocoaLigature1 \
+\
+*** objects can have multiple pointers pointing to it ***\
+so while different memory address\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \CocoaLigature0 \
+\
+\pard\tx481\pardeftab481\pardirnatural
+\cf0  	\cf3 UIView\cf0  * collidedBlock = (\cf3 UIView\cf0  *)item;\
+    [\cf2 self\cf0 .\cf4 gravity\cf0  \cf5 removeItem\cf0 :collidedBlock];\
+    [\cf2 self\cf0 .\cf4 collision\cf0  \cf5 removeItem\cf0 :collidedBlock];\
+    [collidedBlock \cf5 removeFromSuperview\cf0 ];\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \
+\
+\
+\
+\pard\tx481\pardeftab481\pardirnatural
+\cf0 10. imported PixelSounds to access method 
+\f2\b playSoundsWithName 
+\f1\b0 to import sounds to associate with block creation\
+\
+ [\cf4 sounds\cf0  \cf7 playSoundWithName\cf0 :\cf8 @"drip"\cf0 ];\
+\
+11. to create splatter \
+created an NSArray \
+NSArray * splatterDirections\
+\
+in the init \
+\
+\pard\tx481\pardeftab481\pardirnatural
+\cf4 splatterDirections\cf0  = \cf6 @[\cf0 \
+                        [\cf3 NSValue\cf0  \cf5 valueWithCGPoint\cf0 :\cf5 CGPointMake\cf0 (-\cf6 1.0\cf0 , -\cf6 1.0\cf0 )],\
+                        [\cf3 NSValue\cf0  \cf5 valueWithCGPoint\cf0 :\cf5 CGPointMake\cf0 (-\cf6 0.5\cf0 , -\cf6 1.0\cf0 )],\
+                        [\cf3 NSValue\cf0  \cf5 valueWithCGPoint\cf0 :\cf5 CGPointMake\cf0 (\cf6 0.0\cf0 , -\cf6 1.0\cf0 )],\
+                        [\cf3 NSValue\cf0  \cf5 valueWithCGPoint\cf0 :\cf5 CGPointMake\cf0 (\cf6 0.5\cf0 , -\cf6 1.0\cf0 )],\
+                        [\cf3 NSValue\cf0  \cf5 valueWithCGPoint\cf0 :\cf5 CGPointMake\cf0 (\cf6 1.0\cf0 , -\cf6 1.0\cf0 )]\cf6 ]\cf0 ;\
+\
+\
+instead of CGVector used CGPoint because vector is a cstruct\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 12.  created method that runs through Array to create shards at specific points\
+\
+\pard\tx481\pardeftab481\pardirnatural
+\cf0 - (\cf2 void\cf0 )createShardsWithLocation:(\cf3 CGPoint\cf0 )location\
+\{\
+    \cf2 for\cf0  (\cf3 NSValue\cf0  * pointValue \cf2 in\cf0  \cf4 splatterDirections\cf0 ) \{\
+        \cf3 CGPoint\cf0  direction = [pointValue \cf5 CGPointValue\cf0 ];\
+        \
+        \cf3 UIView\cf0  * shard = [[\cf3 UIView\cf0  \cf5 alloc\cf0 ] \cf5 initWithFrame\cf0 :\cf5 CGRectMake\cf0 (location.\cf3 x\cf0 , location.\cf3 y\cf0  - \cf6 50\cf0 , \cf6 3\cf0 , \cf6 3\cf0 )];\
+        shard.\cf3 backgroundColor\cf0  = [\cf3 UIColor\cf0  \cf5 blueColor\cf0 ];\
+        [\cf2 self\cf0 .\cf3 view\cf0  \cf5 addSubview\cf0 :shard];\
+        \
+        [\cf2 self\cf0 .\cf4 gravity\cf0  \cf5 addItem\cf0 :shard];\
+        [\cf2 self\cf0 .\cf4 shardBehavior\cf0  \cf5 addItem\cf0 :shard];\
+        [\cf2 self\cf0 .\cf4 shardCollision\cf0  \cf5 addItem\cf0 :shard];\
+        \
+        \cf3 UIPushBehavior\cf0  * pusher = [[\cf3 UIPushBehavior\cf0  \cf5 alloc\cf0 ] \cf5 init\cf0 ];\
+        [pusher \cf5 addItem\cf0 :shard];\
+        [\cf2 self\cf0 .\cf4 animator\cf0  \cf5 addBehavior\cf0 :pusher];\
+        pusher.\cf3 pushDirection\cf0  = \cf5 CGVectorMake\cf0 (direction.\cf3 x\cf0 , direction.\cf3 y\cf0 );\
+    \}\
+\}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \
+13.  added property shardCollision and shardBehavior\
+alloc and init . then created if statement to remove blocks and shard from superview\
+\
+\pard\tx481\pardeftab481\pardirnatural
+\cf0 - (\cf2 void\cf0 )collisionBehavior:(\cf3 UICollisionBehavior\cf0  *)behavior beganContactForItem:(\cf2 id\cf0 <\cf3 UIDynamicItem\cf0 >)item withBoundaryIdentifier:(\cf2 id\cf0 <\cf3 NSCopying\cf0 >)identifier atPoint:(\cf3 CGPoint\cf0 )p\
+\{\
+    \cf2 if\cf0 ([behavior \cf5 isEqual\cf0 :\cf2 self\cf0 .\cf4 collision\cf0 ])\
+    \{\
+        [\cf4 sounds\cf0  \cf7 playSoundWithName\cf0 :\cf8 @"drip"\cf0 ];\
+        \
+        [\cf2 self\cf0  \cf7 createShardsWithLocation\cf0 :p];\
+        \
+        \cf3 UIView\cf0  * collidedBlock = (\cf3 UIView\cf0  *)item;\
+        \
+        [\cf2 self\cf0 .\cf4 gravity\cf0  \cf5 removeItem\cf0 :collidedBlock];\
+        [\cf2 self\cf0 .\cf4 collision\cf0  \cf5 removeItem\cf0 :collidedBlock];\
+        \
+        [collidedBlock \cf5 removeFromSuperview\cf0 ];\
+    \}\
+    \
+    \cf2 if\cf0 ([behavior \cf5 isEqual\cf0 :\cf2 self\cf0 .\cf4 shardCollision\cf0 ])\
+    \{\
+        \cf3 UIView\cf0  * collidedShard = (\cf3 UIView\cf0  *)item;\
+        \
+        [\cf2 self\cf0 .\cf4 gravity\cf0  \cf5 removeItem\cf0 :collidedShard];\
+        [\cf2 self\cf0 .\cf4 shardCollision\cf0  \cf5 removeItem\cf0 :collidedShard];\
+        [\cf2 self\cf0 .\cf4 shardBehavior\cf0  \cf5 removeItem\cf0 :collidedShard];\
+        \
+        [collidedShard \cf5 removeFromSuperview\cf0 ];\
+    \}\
+    \
+\}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \
+14. made the pusher instantaneous instead of continuous\
+\pard\tx481\pardeftab481\pardirnatural
+\cf3 UIPushBehavior\cf0  * pusher = [[\cf3 UIPushBehavior\cf0  \cf5 alloc\cf0 ] \cf5 initWithItems\cf0 :\cf6 @[\cf0 shard\cf6 ]\cf0  \cf5 mode\cf0 :\cf5 UIPushBehaviorModeInstantaneous\cf0 ];\
+\
+15.changed density in the init to 10\
+\
+16. x direction (location.\cf3 x\cf0  + (direction.\cf3 x\cf0  * \cf6 200\cf0 ) to account for size of shards.\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}

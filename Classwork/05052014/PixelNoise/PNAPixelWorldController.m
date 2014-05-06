@@ -19,6 +19,7 @@
 @property (nonatomic) UIAttachmentBehavior * attacher;
 @property (nonatomic) NSArray * squares;
 @property (nonatomic) UIDynamicItemBehavior * squareDynamicsProperties;
+@property (nonatomic) UIPushBehavior * pusherBehavior;
 
 @end
 
@@ -116,6 +117,12 @@
            UIView * square1 = [[UIView alloc] initWithFrame:CGRectMake(point.x, point.y, 10, 10)];
            square1.backgroundColor = [UIColor greenColor];
            [self.view addSubview:square1];
+           
+           self.pusherBehavior = [[UIPushBehavior alloc] initWithItems:@[square1] mode:UIPushBehaviorModeInstantaneous];
+           self.pusherBehavior.pushDirection = CGVectorMake(-0.02, 0.02);
+           self.pusherBehavior.active = YES; //Because push is instantaneous, it will only happen once
+           [self.animator addBehavior:self.pusherBehavior];
+
     
             [sounds playSoundWithName:@"electric_alert"];
             [self.collisionBehavior removeItem:self.square];
