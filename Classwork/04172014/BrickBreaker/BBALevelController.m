@@ -154,13 +154,6 @@
                 
                 [self.delegate addPoints:(int)points];
                 
-/*
-                [UIView animateWithDuration:0.4 animations:^{
-                    label.alpha = 0.0;
-                } completion:^(BOOL finished){
-                    [label removeFromSuperview];
-                }]
- */
             }
             brick.alpha = 0.5;
         }

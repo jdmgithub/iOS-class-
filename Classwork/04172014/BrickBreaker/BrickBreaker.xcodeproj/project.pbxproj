@@ -12,6 +12,7 @@
 		C314F4C81900A8A400E19509 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C314F4C51900A8A400E19509 /* README.md */; };
 		C35F4B961917D5FD00C7A54E /* electric_alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = C35F4B951917D5FD00C7A54E /* electric_alert.wav */; };
 		C35F4B981917D61000C7A54E /* retro_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = C35F4B971917D61000C7A54E /* retro_click.wav */; };
+		C398071E19195AAF002C2BD5 /* BBASingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = C398071D19195AAF002C2BD5 /* BBASingleton.m */; };
 		C3B5851C190018C500A8B1CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B5851B190018C500A8B1CB /* Foundation.framework */; };
 		C3B5851E190018C500A8B1CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B5851D190018C500A8B1CB /* CoreGraphics.framework */; };
 		C3B58520190018C500A8B1CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B5851F190018C500A8B1CB /* UIKit.framework */; };
@@ -51,6 +52,8 @@
 		C314F4C51900A8A400E19509 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		C35F4B951917D5FD00C7A54E /* electric_alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = electric_alert.wav; path = ../../../../../../../../../../Desktop/Sounds/narfstuff_ui_sounds/buttons/on_alert/electric_alert.wav; sourceTree = "<group>"; };
 		C35F4B971917D61000C7A54E /* retro_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = retro_click.wav; path = ../../../../../../../../../../Desktop/Sounds/narfstuff_ui_sounds/buttons/on_click/retro_click.wav; sourceTree = "<group>"; };
+		C398071C19195AAF002C2BD5 /* BBASingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBASingleton.h; sourceTree = "<group>"; };
+		C398071D19195AAF002C2BD5 /* BBASingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBASingleton.m; sourceTree = "<group>"; };
 		C3B58518190018C500A8B1CB /* BrickBreaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrickBreaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3B5851B190018C500A8B1CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C3B5851D190018C500A8B1CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -123,9 +126,19 @@
 			name = Sounds;
 			sourceTree = "<group>";
 		};
+		C398071B19195A9C002C2BD5 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				C398071C19195AAF002C2BD5 /* BBASingleton.h */,
+				C398071D19195AAF002C2BD5 /* BBASingleton.m */,
+			);
+			name = Singleton;
+			sourceTree = "<group>";
+		};
 		C3B5850F190018C500A8B1CB = {
 			isa = PBXGroup;
 			children = (
+				C398071B19195A9C002C2BD5 /* Singleton */,
 				C35F4B991917D61E00C7A54E /* Sounds */,
 				C314F4C11900A8A400E19509 /* Move */,
 				C3B585531900324300A8B1CB /* images */,
@@ -344,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C314F4C71900A8A400E19509 /* MOVE.m in Sources */,
+				C398071E19195AAF002C2BD5 /* BBASingleton.m in Sources */,
 				C3B5854F19001D3300A8B1CB /* BBALevelController.m in Sources */,
 				C3B5854C19001BD500A8B1CB /* BBAViewController.m in Sources */,
 				C3B5852C190018C500A8B1CB /* BBAAppDelegate.m in Sources */,
