@@ -7,6 +7,7 @@
 //
 
 #import "TDLTableViewCell.h"
+#import "TDLSingleton.h"
 
 @implementation TDLTableViewCell
 {
@@ -32,34 +33,32 @@
     return self;
 }
 
-- (void)setProfileInfo: (NSDictionary *)profileInfo
- {
-     NSURL * imageURL = [NSURL URLWithString:profileInfo[@"image"]];
-     
-     NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-     
-     //NSData * imageData = [NSData dataWithContentsOfURL:profileInfo[@"imag"]];
-     
-     UIImage * image = [UIImage imageWithData:imageData];
-     
-     profileImage.image = image;
-  //   profileImage.image = profileInfo[@"image"];
-     profileImage.layer.cornerRadius = 30;
-     profileImage.layer.masksToBounds = YES;
-     
-     profileName.text = profileInfo[@"name"];
-     profileName.backgroundColor = [UIColor clearColor];
-     profileName.font = [UIFont fontWithName:@"Times New Roman" size:(12)];
-     
-     profileURL.text = profileInfo[@"github"];
-     profileURL.backgroundColor = [UIColor clearColor];
-     profileURL.font = [UIFont fontWithName:@"Times New Roman" size:(12)];
-
-     _profileInfo = profileInfo;
- }
-
-- (void)awakeFromNib
-{   
+- (void)setIndex:(NSInteger)index
+{
+    _index = index;
+    
+    NSDictionary * profileInfo = [[TDLSingleton sharedCollection] allListItems][index];
+    
+    NSURL * imageURL = [NSURL URLWithString:profileInfo[@"image"]];
+    
+    NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+    
+    //NSData * imageData = [NSData dataWithContentsOfURL:profileInfo[@"imag"]];
+    
+    UIImage * image = [UIImage imageWithData:imageData];
+    
+    profileImage.image = image;
+    //   profileImage.image = profileInfo[@"image"];
+    profileImage.layer.cornerRadius = 30;
+    profileImage.layer.masksToBounds = YES;
+    
+    profileName.text = profileInfo[@"name"];
+    profileName.backgroundColor = [UIColor clearColor];
+    profileName.font = [UIFont fontWithName:@"Times New Roman" size:(12)];
+    
+    profileURL.text = profileInfo[@"github"];
+    profileURL.backgroundColor = [UIColor clearColor];
+    profileURL.font = [UIFont fontWithName:@"Times New Roman" size:(12)];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

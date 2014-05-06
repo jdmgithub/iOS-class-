@@ -9,11 +9,12 @@
 #import "TDLTableViewController.h"
 #import "TDLTableViewCell.h"
 #import "TDLGitHubRequest.h"
+#import "TDLSingleton.h"
 
 @implementation TDLTableViewController
 
 {
-    NSMutableArray *listItems;
+   
     UITextField * nameField;
 }
 
@@ -41,11 +42,6 @@
 //                      @{@"name":@"T.J. Mercer", @"image":[UIImage imageNamed:@"tjmercer"], @"github": @"https://github.com/gwanunig14"},
 //                      @{@"name":@"Teddy Conyers", @"image":[UIImage imageNamed:@"teddyconyers"], @"github": @"https://github.com/talented76"}
 //                      ] mutableCopy];
-        
-        
-        listItems =[@[] mutableCopy];
-        
-        [self loadListItems];
         
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
         self.tableView.rowHeight = 100;
@@ -102,22 +98,22 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-      return [listItems count];
+      return [[[TDLSingleton sharedCollection] allListItems]count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell==nil) cell =[[TDLTableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell"];
-     cell.profileInfo = [self getListItem:indexPath.row];
-     cell.backgroundColor = [UIColor clearColor];
+    
+    cell.index = indexPath.row;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary * listItem =[self getListItem:indexPath.row];
+    NSDictionary * listItem = [[TDLSingleton sharedCollection] allListItems][indexPath.row];
     NSLog(@"%@",listItem);
     
     UIViewController * webController = [[UIViewController alloc] init];
@@ -136,16 +132,12 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary * listItem = [self getListItem:indexPath.row];
-    
-    [listItems removeObjectIdenticalTo:listItem];
+    [[TDLSingleton sharedCollection]removeListItemsAtIndex:indexPath.row];
     
     TDLTableViewCell *cell = (TDLTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     cell.alpha = 0;
     
     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    
-    [self saveData];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
@@ -153,21 +145,6 @@
     return YES;
 }
 
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
-{
-    if (sourceIndexPath == destinationIndexPath) return;
-// we will switch array objects here
-    
-    NSDictionary * sourceItem = [self getListItem:sourceIndexPath.row];
-    
-    NSDictionary * toItem = [self getListItem:destinationIndexPath.row];
-    
-    [listItems removeObjectIdenticalTo:sourceItem];
-    
-    [listItems insertObject:sourceItem atIndex:[listItems indexOfObject:toItem]];
-    
-    [self saveData];
-}
 - (void)newUser
 {
     NSString * username = nameField.text;
@@ -176,7 +153,8 @@
     
     if([[userInfo allKeys] count] ==3)
     {
-        [listItems addObject:userInfo];
+        NSLog(@"%@",userInfo);
+        [[TDLSingleton sharedCollection] addListItem:userInfo];
     } else {
         NSLog(@"not enough data");
         
@@ -187,42 +165,12 @@
     
     [nameField resignFirstResponder];
     [self.tableView reloadData];
-    [self saveData];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
- 
     return YES;
 }
 
-- (NSDictionary *)getListItem: (NSInteger)row
-{
-    NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
-    return reverseArray[row];
-}
-
-- (void)saveData
-{
-    NSString *path = [self listArchivePath];
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:listItems];
-    [data writeToFile:path options:NSDataWritingAtomic error:nil];
-}
-
-- (NSString *)listArchivePath
-{
-    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentDirectory = documentDirectories[0];
-    return [documentDirectory stringByAppendingPathComponent:@"listdata.data"];
-}
-
-- (void)loadListItems
-{
-    NSString *path = [self listArchivePath];
-    if([[NSFileManager defaultManager] fileExistsAtPath:path])
-    {
-        listItems = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-    }
-}
 
 @end

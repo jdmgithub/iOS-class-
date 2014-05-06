@@ -24,7 +24,6 @@
 		C32C55C918EC8FA10038B237 /* teddyconyers.png in Resources */ = {isa = PBXBuildFile; fileRef = C32C55BA18EC8FA10038B237 /* teddyconyers.png */; };
 		C32C55CA18EC8FA10038B237 /* tjmercer.png in Resources */ = {isa = PBXBuildFile; fileRef = C32C55BB18EC8FA10038B237 /* tjmercer.png */; };
 		C35A9C4F18EF22BB007D1F9C /* defaultuser.png in Resources */ = {isa = PBXBuildFile; fileRef = C35A9C4E18EF22BB007D1F9C /* defaultuser.png */; };
-		C35A9C5318EF336D007D1F9C /* GitHubFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C35A9C5218EF336D007D1F9C /* GitHubFlow.storyboard */; };
 		C38101BA18EC4B210020FC07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38101B918EC4B210020FC07 /* Foundation.framework */; };
 		C38101BC18EC4B210020FC07 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38101BB18EC4B210020FC07 /* CoreGraphics.framework */; };
 		C38101BE18EC4B210020FC07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38101BD18EC4B210020FC07 /* UIKit.framework */; };
@@ -39,6 +38,7 @@
 		C38101DF18EC4B220020FC07 /* ToDoListsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C38101DE18EC4B220020FC07 /* ToDoListsTests.m */; };
 		C38101EA18EC4C800020FC07 /* TDLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38101E918EC4C800020FC07 /* TDLTableViewController.m */; };
 		C388AB6218F2F50A0047B4FE /* TDLGitHubRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C388AB6118F2F50A0047B4FE /* TDLGitHubRequest.m */; };
+		C398071A19195962002C2BD5 /* TDLSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = C398071919195962002C2BD5 /* TDLSingleton.m */; };
 		C3C88A9E18EDA75A0086D9BC /* TDLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C88A9D18EDA75A0086D9BC /* TDLTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +70,6 @@
 		C32C55BA18EC8FA10038B237 /* teddyconyers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = teddyconyers.png; path = ../teddyconyers.png; sourceTree = "<group>"; };
 		C32C55BB18EC8FA10038B237 /* tjmercer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tjmercer.png; path = ../tjmercer.png; sourceTree = "<group>"; };
 		C35A9C4E18EF22BB007D1F9C /* defaultuser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultuser.png; sourceTree = "<group>"; };
-		C35A9C5218EF336D007D1F9C /* GitHubFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GitHubFlow.storyboard; path = ../ToDoLists/ToDoLists/GitHubFlow.storyboard; sourceTree = "<group>"; };
 		C38101B618EC4B210020FC07 /* ToDoLists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoLists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38101B918EC4B210020FC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C38101BB18EC4B210020FC07 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -91,6 +90,8 @@
 		C38101E918EC4C800020FC07 /* TDLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLTableViewController.m; sourceTree = "<group>"; };
 		C388AB6018F2F50A0047B4FE /* TDLGitHubRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLGitHubRequest.h; sourceTree = "<group>"; };
 		C388AB6118F2F50A0047B4FE /* TDLGitHubRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLGitHubRequest.m; sourceTree = "<group>"; };
+		C398071819195962002C2BD5 /* TDLSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLSingleton.h; sourceTree = "<group>"; };
+		C398071919195962002C2BD5 /* TDLSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLSingleton.m; sourceTree = "<group>"; };
 		C3C88A9C18EDA75A0086D9BC /* TDLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLTableViewCell.h; sourceTree = "<group>"; };
 		C3C88A9D18EDA75A0086D9BC /* TDLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,8 +147,8 @@
 		C38101AD18EC4B210020FC07 = {
 			isa = PBXGroup;
 			children = (
+				C398071719195944002C2BD5 /* Singleton */,
 				C388AB5618F2F3D60047B4FE /* Random */,
-				C35A9C5218EF336D007D1F9C /* GitHubFlow.storyboard */,
 				C3C88A9F18EDA7AD0086D9BC /* Controllers */,
 				C38101BF18EC4B210020FC07 /* ToDoLists */,
 				C38101D818EC4B220020FC07 /* ToDoListsTests */,
@@ -224,6 +225,15 @@
 				C388AB6118F2F50A0047B4FE /* TDLGitHubRequest.m */,
 			);
 			name = Random;
+			sourceTree = "<group>";
+		};
+		C398071719195944002C2BD5 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				C398071819195962002C2BD5 /* TDLSingleton.h */,
+				C398071919195962002C2BD5 /* TDLSingleton.m */,
+			);
+			name = Singleton;
 			sourceTree = "<group>";
 		};
 		C3C88A9F18EDA7AD0086D9BC /* Controllers */ = {
@@ -327,7 +337,6 @@
 				C32C55C318EC8FA10038B237 /* jeffreymoulds.png in Resources */,
 				C32C55C918EC8FA10038B237 /* teddyconyers.png in Resources */,
 				C32C55C718EC8FA10038B237 /* johnyam.png in Resources */,
-				C35A9C5318EF336D007D1F9C /* GitHubFlow.storyboard in Resources */,
 				C32C55CA18EC8FA10038B237 /* tjmercer.png in Resources */,
 				C32C55C618EC8FA10038B237 /* jonfox.png in Resources */,
 				C35A9C4F18EF22BB007D1F9C /* defaultuser.png in Resources */,
@@ -362,6 +371,7 @@
 			files = (
 				C3C88A9E18EDA75A0086D9BC /* TDLTableViewCell.m in Sources */,
 				C38101EA18EC4C800020FC07 /* TDLTableViewController.m in Sources */,
+				C398071A19195962002C2BD5 /* TDLSingleton.m in Sources */,
 				C388AB6218F2F50A0047B4FE /* TDLGitHubRequest.m in Sources */,
 				C38101C618EC4B210020FC07 /* main.m in Sources */,
 				C38101CA18EC4B210020FC07 /* TDLAppDelegate.m in Sources */,
