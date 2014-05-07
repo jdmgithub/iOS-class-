@@ -8,13 +8,15 @@
 
 #import "TDLSingleton.h"
 
-@interface TDLSingleton()
+@interface TDLSingleton() 
 
 @property (nonatomic) NSMutableArray * listItems;
+
 
 @end
 
 @implementation TDLSingleton
+
 
 
 + (TDLSingleton *)sharedCollection
@@ -65,6 +67,8 @@
     [self.listItems removeObjectIdenticalTo:listItem];
     [self saveData];
 }
+
+
 
 
 - (void)saveData

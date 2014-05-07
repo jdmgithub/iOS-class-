@@ -11,11 +11,11 @@
 #import "TDLGitHubRequest.h"
 #import "TDLSingleton.h"
 
-@implementation TDLTableViewController
 
+@implementation TDLTableViewController
 {
-   
-    UITextField * nameField;
+    UIBarItem * nameField;
+    UITextField * textField;
 }
 
 
@@ -57,22 +57,7 @@
         [header addSubview:titleHeader];
         
         
-        nameField = [[UITextField alloc] initWithFrame:CGRectMake(05, 40, 180, 30)];
-        nameField.backgroundColor = [UIColor whiteColor];
-        nameField.font = [UIFont fontWithName:@"Times New Roman" size:(14)];
-        nameField.delegate = self;
-        [header addSubview:nameField];
-        
-        UIButton * submitButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 40, 100, 30)];
-        submitButton.backgroundColor = [UIColor lightGrayColor];
-        submitButton.layer.cornerRadius = 6;
-        [submitButton setTitle:@"New User" forState:UIControlStateNormal];
-        [submitButton addTarget:(self) action:@selector (newUser) forControlEvents:UIControlEventTouchUpInside];
-        [header addSubview:submitButton];
-        
-        submitButton.titleLabel.font =[UIFont fontWithName:@"Times New Roman" size:(14)];
-        submitButton.titleLabel.textColor =[UIColor darkGrayColor];
-
+       
         
         UIView * footer =[[UIView alloc] initWithFrame:CGRectMake(0, 0 ,320, 40)];
         footer.backgroundColor = [UIColor darkGrayColor];
@@ -87,6 +72,25 @@
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+    UIBarButtonItem * addNewUserButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewUser)];
+    self.navigationItem.leftBarButtonItem = addNewUserButton;
+    
+    CGRect textFieldFrame = CGRectMake(60.0f, 100.0f, 180.0f, 30.0f);
+    textField = [[UITextField alloc] initWithFrame:textFieldFrame];
+    
+    textField.placeholder = @"Enter Text!";
+    textField.backgroundColor = [UIColor whiteColor];
+    textField.textColor = [UIColor blackColor];
+    
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    textField.returnKeyType = UIReturnKeyDone;
+    
+    textField.delegate = self; // ADD THIS LINE
+    self.navigationItem.titleView = textField;
+    [self.navigationController.navigationBar addSubview:textField];
 }
 
 - (void)didReceiveMemoryWarning
@@ -116,7 +120,7 @@
     NSDictionary * listItem = [[TDLSingleton sharedCollection] allListItems][indexPath.row];
     NSLog(@"%@",listItem);
     
-    UIViewController * webController = [[UIViewController alloc] init];
+   UIViewController* webController = [[UIViewController alloc] init];
     UIWebView * webView = [[UIWebView alloc]init];
     webController.view = webView;
     [self.navigationController pushViewController:webController animated:YES];
@@ -124,6 +128,29 @@
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     [webView loadRequest:request];
 }
+
+- (void)addNewUser
+{
+    NSString * username = textField.text;
+    textField.text =@"";
+    NSDictionary * userInfo = [TDLGitHubRequest getUserWithUsername:username];
+    
+    if([[userInfo allKeys] count] ==3)
+    {
+        NSLog(@"%@",userInfo);
+        [[TDLSingleton sharedCollection] addListItem:userInfo];
+    } else {
+        NSLog(@"not enough data");
+        
+        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Not Enough Information" message:@"Unable to Add User" delegate:self cancelButtonTitle:@"Try Again" otherButtonTitles:nil];
+        
+        [alertView show];
+    }
+    
+    [textField resignFirstResponder];
+//    [self saveData];
+}
+
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -145,27 +172,6 @@
     return YES;
 }
 
-- (void)newUser
-{
-    NSString * username = nameField.text;
-    nameField.text =@"";
-    NSDictionary * userInfo = [TDLGitHubRequest getUserWithUsername:username];
-    
-    if([[userInfo allKeys] count] ==3)
-    {
-        NSLog(@"%@",userInfo);
-        [[TDLSingleton sharedCollection] addListItem:userInfo];
-    } else {
-        NSLog(@"not enough data");
-        
-        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Not Enough Information" message:@"Unable to Add User" delegate:self cancelButtonTitle:@"Try Again" otherButtonTitles:nil];
-        
-        [alertView show];
-    }
-    
-    [nameField resignFirstResponder];
-    [self.tableView reloadData];
-}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {

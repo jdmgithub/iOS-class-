@@ -23,6 +23,7 @@
 		C32C55C818EC8FA10038B237 /* savithareddy.png in Resources */ = {isa = PBXBuildFile; fileRef = C32C55B918EC8FA10038B237 /* savithareddy.png */; };
 		C32C55C918EC8FA10038B237 /* teddyconyers.png in Resources */ = {isa = PBXBuildFile; fileRef = C32C55BA18EC8FA10038B237 /* teddyconyers.png */; };
 		C32C55CA18EC8FA10038B237 /* tjmercer.png in Resources */ = {isa = PBXBuildFile; fileRef = C32C55BB18EC8FA10038B237 /* tjmercer.png */; };
+		C330CD161919995C0015793B /* TDLVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C330CD151919995C0015793B /* TDLVC.m */; };
 		C35A9C4F18EF22BB007D1F9C /* defaultuser.png in Resources */ = {isa = PBXBuildFile; fileRef = C35A9C4E18EF22BB007D1F9C /* defaultuser.png */; };
 		C38101BA18EC4B210020FC07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38101B918EC4B210020FC07 /* Foundation.framework */; };
 		C38101BC18EC4B210020FC07 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38101BB18EC4B210020FC07 /* CoreGraphics.framework */; };
@@ -69,6 +70,9 @@
 		C32C55B918EC8FA10038B237 /* savithareddy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = savithareddy.png; path = ../savithareddy.png; sourceTree = "<group>"; };
 		C32C55BA18EC8FA10038B237 /* teddyconyers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = teddyconyers.png; path = ../teddyconyers.png; sourceTree = "<group>"; };
 		C32C55BB18EC8FA10038B237 /* tjmercer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tjmercer.png; path = ../tjmercer.png; sourceTree = "<group>"; };
+		C330CD0E1919885B0015793B /* ToDoLists.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ToDoLists.xcodeproj; path = "/Users/Jisha/Documents/Personal/Learning/Programming/FCG Inc/Iron Yard/iOS_Class/Classwork/04022014/ToDoLists2/ToDoLists.xcodeproj"; sourceTree = "<absolute>"; };
+		C330CD141919995C0015793B /* TDLVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLVC.h; sourceTree = "<group>"; };
+		C330CD151919995C0015793B /* TDLVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLVC.m; sourceTree = "<group>"; };
 		C35A9C4E18EF22BB007D1F9C /* defaultuser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultuser.png; sourceTree = "<group>"; };
 		C38101B618EC4B210020FC07 /* ToDoLists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoLists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38101B918EC4B210020FC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -86,8 +90,8 @@
 		C38101DA18EC4B220020FC07 /* ToDoListsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ToDoListsTests-Info.plist"; sourceTree = "<group>"; };
 		C38101DC18EC4B220020FC07 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C38101DE18EC4B220020FC07 /* ToDoListsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoListsTests.m; sourceTree = "<group>"; };
-		C38101E818EC4C800020FC07 /* TDLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLTableViewController.h; sourceTree = "<group>"; };
-		C38101E918EC4C800020FC07 /* TDLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLTableViewController.m; sourceTree = "<group>"; };
+		C38101E818EC4C800020FC07 /* TDLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TDLTableViewController.h; path = ../ToDoLists/TDLTableViewController.h; sourceTree = "<group>"; };
+		C38101E918EC4C800020FC07 /* TDLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDLTableViewController.m; path = ../ToDoLists/TDLTableViewController.m; sourceTree = "<group>"; };
 		C388AB6018F2F50A0047B4FE /* TDLGitHubRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLGitHubRequest.h; sourceTree = "<group>"; };
 		C388AB6118F2F50A0047B4FE /* TDLGitHubRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLGitHubRequest.m; sourceTree = "<group>"; };
 		C398071819195962002C2BD5 /* TDLSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLSingleton.h; sourceTree = "<group>"; };
@@ -144,9 +148,23 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		C330CD0F1919885B0015793B /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				C38101E818EC4C800020FC07 /* TDLTableViewController.h */,
+				C38101E918EC4C800020FC07 /* TDLTableViewController.m */,
+				C3C88AA018EDA7CB0086D9BC /* TableView */,
+				C330CD0E1919885B0015793B /* ToDoLists.xcodeproj */,
+			);
+			name = "New Group";
+			path = ../ToDoLists.xcodeproj;
+			sourceTree = "<group>";
+		};
 		C38101AD18EC4B210020FC07 = {
 			isa = PBXGroup;
 			children = (
+				C330CD141919995C0015793B /* TDLVC.h */,
+				C330CD151919995C0015793B /* TDLVC.m */,
 				C398071719195944002C2BD5 /* Singleton */,
 				C388AB5618F2F3D60047B4FE /* Random */,
 				C3C88A9F18EDA7AD0086D9BC /* Controllers */,
@@ -239,9 +257,7 @@
 		C3C88A9F18EDA7AD0086D9BC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C38101E818EC4C800020FC07 /* TDLTableViewController.h */,
-				C38101E918EC4C800020FC07 /* TDLTableViewController.m */,
-				C3C88AA018EDA7CB0086D9BC /* TableView */,
+				C330CD0F1919885B0015793B /* New Group */,
 			);
 			name = Controllers;
 			path = ToDoLists;
@@ -254,6 +270,7 @@
 				C3C88A9D18EDA75A0086D9BC /* TDLTableViewCell.m */,
 			);
 			name = TableView;
+			path = ../ToDoLists;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +392,7 @@
 				C388AB6218F2F50A0047B4FE /* TDLGitHubRequest.m in Sources */,
 				C38101C618EC4B210020FC07 /* main.m in Sources */,
 				C38101CA18EC4B210020FC07 /* TDLAppDelegate.m in Sources */,
+				C330CD161919995C0015793B /* TDLVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
