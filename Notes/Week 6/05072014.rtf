@@ -1,0 +1,208 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red170\green13\blue145;\red92\green38\blue153;\red46\green13\blue110;
+\red63\green110\blue116;\red100\green56\blue32;\red28\green0\blue207;\red196\green26\blue22;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 05072014\
+\
+BRICKBREAKER\
+
+\b0 \
+Creating multiple sounds/players in game\
+\
+1. add property\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf2 \CocoaLigature0 @property\cf0  (\cf2 nonatomic\cf0 ) \cf3 NSMutableArray\cf0  * players;\
+\
+2. update method\
+\
+- (\cf2 void\cf0 )playSoundWithName:(\cf3 NSString\cf0  *)soundName\
+\
+ 	\cf3 AVAudioPlayer\cf0  * player = [[\cf3 AVAudioPlayer\cf0  \cf4 alloc\cf0 ] \cf4 initWithContentsOfURL\cf0 :url \cf4 error\cf0 :\cf2 nil\cf0 ];\
+    \
+    [\cf2 self\cf0 .\cf5 players\cf0  \cf4 addObject\cf0 :player];\
+    \
+    [player \cf4 play\cf0 ];\
+3. now we have to listen for the player to finish\
+use delegate to detect and then remove to save memory\
+\cf3 AVAudioPlayerDelegate\
+\
+\cf0 4. create method to listen when player is finished playing\
+- (\cf2 void\cf0 )audioPlayerDidFinishPlaying:(\cf3 AVAudioPlayer\cf0  *)player successfully:(\cf2 BOOL\cf0 )flag\
+\{\
+    [\cf2 self\cf0 .\cf5 players\cf0  \cf4 removeObjectIdenticalTo\cf0 :player];\
+\}\
+\
+add delegate in the playSoundWithName\
+player.\cf3 delegate\cf0  = \cf2 self\cf0 ;\
+\
+\
+* self is always the instance of the class you are in\
+\
+\
+
+\f2\b SINGLETON\
+
+\f1\b0 Create a new class NSObject\
+\
+BBAGameData\
+add class method\
+\
++ (\cf5 BBAGameData\cf0  *)mainData\
+\{\
+    \cf2 static\cf0  \cf3 dispatch_once_t\cf0  create;\
+    \cf2 static\cf0  \cf5 BBAGameData\cf0  * singleton = \cf2 nil\cf0 ;\
+    \
+    [\cf6 dispatch_once\cf0 (&create, ^\{\
+        singleton = [[BBAGameData alloc] init];\
+    \});\
+     \
+     \cf2 return\cf0  singleton;\
+\}\
+\
+the singleton passes around a consistent object to be passed around instead of having to create multiple methods to access the same object.\
+\
+but you can have multiple singles that handle different pieces.\
+(game data and player)\
+\
+can turn anything into a singleton\
+\
+data, ints, and strings you can update but if you try to update an array while trying to access an array it will crash\
+\
+can be the same instance object but its properties can change.\
+i.e one level call John then another calls Jeff it is now Jeff\
+only knows it once it accesses that object\
+\
+\
+\cf2 @property\cf0  (\cf2 nonatomic\cf0 , \cf2 readonly\cf0 )\cf3 NSInteger\cf0  topScore;\
+\cf2 @property\cf0  (\cf2 nonatomic\cf0 ) \cf3 NSInteger\cf0  currentScore;\
+\
+- (\cf3 NSArray\cf0  *)gameScores;\
+\
+added property and readonly scores\
+\
+- (\cf2 void\cf0 )setCurrentScore:(\cf3 NSInteger\cf0 )currentScore (setter method)\
+\{\
+    \cf5 _currentScore\cf0  = currentScore;\
+    instance variable\
+	_version is a local instance variable\
+\
+(self.currentScore = currentScore is an infinite loop)\
+\
+    \cf2 if\cf0  (currentScore > \cf5 _topScore\cf0 )\cf5 _topScore\cf0  = currentScore;\
+\}\
+\
+\
+self.currentScore = is a property setter\
+\
+(NSInteger) currentScore\
+\{\
+	return _currentScore;\
+\}\
+\
+self.currentScore = 100;\
+always accessing an instance variable which holds the value the property does not hold the value\
+\
+\
+_topScore outside the getter/setter method because it is read only\
+cannot set it because it is read only do not want to change or manipulate\
+allows an if statement inside a getter and setter.  \
+keeps object static instead of a self. which makes it manipulative.\
+\
+properties are on an object and the instance variable holds the value\
+\
+properties are things that you want to have a getter and setters and you want others to be able to access it.  Allows for it be on an object.\
+\
+but\
+ UIView * greenBox  is a variable \
+cannot be accessed outside the class.\
+\
+\
+- (\cf3 NSArray\cf0  *)gameScores\
+\{\
+    \cf2 return\cf0  \cf7 @[]\cf0 ;\
+\}\
+\
+BBALevelController.m\
+\pard\tx481\pardeftab481\pardirnatural
+\cf6 #import \cf8 "BBAGameData.h"\
+\pard\tx481\pardeftab481\pardirnatural
+\cf0 \
+then in the collision behavior with Item1 and Item2\
+call the singleton to update currentScore\cf8 \
+\cf0 \
+
+\f2\b ONE NIGHT STAND\
+\
+
+\f1\b0 Logged in ONSData (singleton)\
+ - init method\
+ - controller Name\
+AppDelegate\
+\
+the init happens first then the controller and finally the app delegate\
+this is because in a singleton the object only inits when necessary\
+\
+app Delegate is the first access to mainData\
+but in the log app delegate goes to mainData and then the rest have to run.\
+\
+singleton can access in any other class \
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\fs22 \cf0 1. 2014-05-07 12:01:22.546 OneNightStand[1900:60b] ONSData created\
+
+\f2\b singleton init
+\f1\b0 \
+\
+2. 2014-05-07 12:01:22.547 OneNightStand[1900:60b] Getting Controller Name: NoController\
+
+\f2\b singleton string
+\f1\b0 \
+\
+3. 2014-05-07 12:01:22.547 OneNightStand[1900:60b] App Delegate First Contact : NoController\
+
+\f2\b app delegate before root view is set
+\f1\b0 \
+\
+4. 2014-05-07 12:01:22.548 OneNightStand[1900:60b] Getting Controller Name: ViewController\
+
+\f2\b app delegate after root view is set
+\f1\b0 \
+\
+\
+5. 2014-05-07 12:01:22.548 OneNightStand[1900:60b] ViewController Init : ViewController\
+
+\f2\b first view Controller
+\f1\b0 \
+\
+6. 2014-05-07 12:01:22.549 OneNightStand[1900:60b] Getting Controller Name: SecondViewController\
+
+\f2\b second view controller was added to first VC\'92s view
+\f1\b0 \
+\
+7. 2014-05-07 12:01:22.549 OneNightStand[1900:60b] ViewController Init : SecondViewController\
+
+\f2\b second view controller 
+\f1\b0 \
+\
+8/ 2014-05-07 12:01:22.550 OneNightStand[1900:60b] Getting Controller Name: ThirdViewController\
+
+\f2\b third view controller instantiated in app delegate
+\f1\b0 \
+\
+9. 2014-05-07 12:01:22.550 OneNightStand[1900:60b] After ViewController Init : ThirdViewController\
+
+\f2\b third view controller\
+
+\f1\b0 \
+\pard\tx481\pardeftab481\pardirnatural
+
+\fs20 \cf0 but now the singleton has been updated\
+\
+\
+}
