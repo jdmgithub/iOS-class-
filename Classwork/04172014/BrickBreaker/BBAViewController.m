@@ -44,13 +44,9 @@
         
         [self.view addSubview:lifeCount];
         
-        homeButton = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 300, 0, 100, 40)];
-        NSLog(@"%@", homeButton);
-        homeButton.imageView.image = [UIImage imageNamed:@"home"];
-//        homeButton.backgroundColor = [UIColor greenColor];
-        homeButton.layer.masksToBounds = YES;
+        homeButton = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 285, 0, 50, 40)];
+        [homeButton setImage:[UIImage imageNamed:@"home"] forState:UIControlStateNormal];
         [homeButton addTarget:self action:@selector(backToStart) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:homeButton];
     }
     return self;
 }
@@ -58,16 +54,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-//    NSUserDefaults * userDefaults = [[NSUserDefaults standardUserDefaults];
-//                                     
-//    int defaultTopScore =[[NSUserDefaults standardUserDefaults]];
-//    topScore = [[userDefaults objectForKey:@"topScore"] intValue];
-//    
-//    header = [[BBAHeader alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
-//    header.topScore = topScore;
-//    [header showStart];
-//    [self.view addSubview:header];
     
     startButton = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-200)/2, (SCREEN_HEIGHT-200)/2,200,200)];
     startButton.layer.cornerRadius = 100;
@@ -93,6 +79,8 @@
     
     [startButton removeFromSuperview];
     [level resetLevel];
+    
+    [self.view addSubview:homeButton];
 }
 
 - (void)addPoints:(int)points
@@ -120,29 +108,6 @@
     [self.view addSubview:startButton];
     [scoreBoard removeFromSuperview];
 }
-
-//- (void)updatePoints:(int)points
-//{
-//    scoreBoard.currentScore = points;
-//    if (scoreBoard.currentScore > topScore)
-//    {
-//        topScore - scoreBoard.currentScore;
-//        newHighScore = YES;
-//        //update my default value
-//        
-//        NSUserDefaults * userDefaults = [[NSUserDefaults standardUserDefaults];
-//        [userDefault setObject: @(topSCore) forKey:@"topScore"];
-//        [userDefaults synchronize];
-//    }
-//}
-//
-//- (int)loseLife
-//{
-//    if(lives > 0) lives --;
-//    lifeCount.livesLeft = lives;
-//    if(lives == 0)[self.viewDidLoad];
-//    return lives;
-//}
 
 - (void)didReceiveMemoryWarning
 {
