@@ -254,6 +254,11 @@
 			name = Singleton;
 			sourceTree = "<group>";
 		};
+		C398DBCC191A6339005153B9 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C3C88A9F18EDA7AD0086D9BC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +341,12 @@
 			mainGroup = C38101AD18EC4B210020FC07;
 			productRefGroup = C38101B718EC4B210020FC07 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C398DBCC191A6339005153B9 /* Products */;
+					ProjectRef = C330CD0E1919885B0015793B /* ToDoLists.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C38101B518EC4B210020FC07 /* ToDoLists */,

@@ -55,7 +55,6 @@
     //return [NSArray arrayWithArray:self.listItems];
 }
 
-
 - (void)addListItem:(NSDictionary *)listItem
 {
     [self.listItems addObject:listItem];
@@ -68,8 +67,11 @@
     [self saveData];
 }
 
-
-
+- (void)removeListItemsAtIndex:(NSInteger)index;
+{
+    [self.listItems removeObjectAtIndex:index];
+    [self saveData];
+}
 
 - (void)saveData
 {
@@ -95,11 +97,6 @@
     }
 }
 
-- (void)removeListItemsAtIndex:(NSInteger)index;
-{
-    [self.listItems removeObjectAtIndex:index];
-    [self saveData];
-}
 
 
 @end

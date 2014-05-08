@@ -43,21 +43,18 @@
 //                      @{@"name":@"Teddy Conyers", @"image":[UIImage imageNamed:@"teddyconyers"], @"github": @"https://github.com/talented76"}
 //                      ] mutableCopy];
         
-        self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
         self.tableView.rowHeight = 100;
         
-        UIView * header =[[UIView alloc] initWithFrame:CGRectMake(0, 0 ,320, 100)];
+        UIView * header =[[UIView alloc] initWithFrame:CGRectMake(0, 0 ,320, 50)];
         header.backgroundColor = [UIColor darkGrayColor];
         self.tableView.tableHeaderView = header;
         
         UILabel * titleHeader = [[UILabel alloc] initWithFrame:CGRectMake(20,10,280,30)];
         titleHeader.text = @"GITHUB USERS";
         titleHeader.textColor = [UIColor whiteColor];
-        titleHeader.font = [UIFont fontWithName:@"Times New Roman" size:(14)];
+        titleHeader.textAlignment = NSTextAlignmentCenter;
+        titleHeader.font = [UIFont fontWithName:@"CHALKBOARD" size:(14)];
         [header addSubview:titleHeader];
-        
-        
-       
         
         UIView * footer =[[UIView alloc] initWithFrame:CGRectMake(0, 0 ,320, 40)];
         footer.backgroundColor = [UIColor darkGrayColor];
@@ -72,7 +69,6 @@
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     
     UIBarButtonItem * addNewUserButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewUser)];
     self.navigationItem.leftBarButtonItem = addNewUserButton;
