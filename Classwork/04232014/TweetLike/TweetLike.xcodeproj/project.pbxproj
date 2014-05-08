@@ -21,10 +21,8 @@
 		C32DB76F1907F66000DE1BF8 /* TweetLikeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C32DB76E1907F66000DE1BF8 /* TweetLikeTests.m */; };
 		C32DB77B1907F68100DE1BF8 /* TLATableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C32DB77A1907F68100DE1BF8 /* TLATableViewController.m */; };
 		C32DB77F1907F72C00DE1BF8 /* TLATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C32DB77E1907F72C00DE1BF8 /* TLATableViewCell.m */; };
-		C32DB7821907F77900DE1BF8 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = C32DB7811907F77900DE1BF8 /* heart.png */; };
 		C32DB7861908187900DE1BF8 /* TLANavController.m in Sources */ = {isa = PBXBuildFile; fileRef = C32DB7851908187900DE1BF8 /* TLANavController.m */; };
 		C32DB78A1908373400DE1BF8 /* TLAView.m in Sources */ = {isa = PBXBuildFile; fileRef = C32DB7891908373400DE1BF8 /* TLAView.m */; };
-		C32DB78C190839CF00DE1BF8 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C32DB78B190839CF00DE1BF8 /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,12 +56,10 @@
 		C32DB77A1907F68100DE1BF8 /* TLATableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLATableViewController.m; sourceTree = "<group>"; };
 		C32DB77D1907F72C00DE1BF8 /* TLATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLATableViewCell.h; sourceTree = "<group>"; };
 		C32DB77E1907F72C00DE1BF8 /* TLATableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLATableViewCell.m; sourceTree = "<group>"; };
-		C32DB7811907F77900DE1BF8 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart.png; path = ../../../../../../../../../../Desktop/heart.png; sourceTree = "<group>"; };
 		C32DB7841908187900DE1BF8 /* TLANavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLANavController.h; sourceTree = "<group>"; };
 		C32DB7851908187900DE1BF8 /* TLANavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLANavController.m; sourceTree = "<group>"; };
 		C32DB7881908373400DE1BF8 /* TLAView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLAView.h; sourceTree = "<group>"; };
 		C32DB7891908373400DE1BF8 /* TLAView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAView.m; sourceTree = "<group>"; };
-		C32DB78B190839CF00DE1BF8 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../../../../../../../../../Desktop/logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,8 +182,6 @@
 		C32DB7801907F76F00DE1BF8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				C32DB78B190839CF00DE1BF8 /* logo.png */,
-				C32DB7811907F77900DE1BF8 /* heart.png */,
 			);
 			name = Images;
 			path = ..;
@@ -287,9 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C32DB78C190839CF00DE1BF8 /* logo.png in Resources */,
 				C32DB7541907F66000DE1BF8 /* InfoPlist.strings in Resources */,
-				C32DB7821907F77900DE1BF8 /* heart.png in Resources */,
 				C32DB75C1907F66000DE1BF8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,6 +503,7 @@
 				C32DB7741907F66000DE1BF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C32DB7751907F66000DE1BF8 /* Build configuration list for PBXNativeTarget "TweetLikeTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +512,7 @@
 				C32DB7771907F66000DE1BF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
