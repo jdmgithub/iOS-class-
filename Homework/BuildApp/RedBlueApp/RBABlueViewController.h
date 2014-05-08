@@ -7,22 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@protocol RBABlueDelegate;
-
-@interface RBABlueViewController : UIViewController
-
-@property (nonatomic,assign)id<RBABlueDelegate> delegate;
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
-
-@end
-
-@protocol RBABlueDelegate <NSObject>
-
-- (void)addPoints;
+#import "RBARedViewController.h"
 
 
-
-
+@interface RBABlueViewController : RBARedViewController
 @end

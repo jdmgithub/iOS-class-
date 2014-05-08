@@ -16,8 +16,7 @@
 
 @implementation RBARedViewController
 {
-    RBABlueViewController * threeVC;
-    int points;
+       int points;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,9 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.frame = CGRectMake(0, 50, SCREEN_WIDTH/2, SCREEN_HEIGHT);
-    self.view.backgroundColor = [UIColor redColor];
-}
+    }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {

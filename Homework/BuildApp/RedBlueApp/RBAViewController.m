@@ -11,7 +11,7 @@
 #import "RBABlueViewController.h"
 #import "RBAPoints.h"
 
-@interface RBAViewController () <RBARedDelegate, RBABlueDelegate>
+@interface RBAViewController () <RBARedDelegate>
 
 @end
 
@@ -86,6 +86,7 @@
 - (void)callTwoVC
 {
     twoVC = [[RBARedViewController alloc] initWithNibName:nil bundle:nil];
+    twoVC.view.frame = CGRectMake(0, 50, SCREEN_WIDTH/2, SCREEN_HEIGHT);
     twoVC.delegate = self;
     [self.view addSubview:twoVC.view];
 }
@@ -93,7 +94,8 @@
 - (void)callThreeVC
 {
     threeVC = [[RBABlueViewController alloc] initWithNibName:nil bundle:nil];
-    threeVC.delegate = self;
+    threeVC.view.frame = CGRectMake(240, 50, SCREEN_WIDTH/2, SCREEN_HEIGHT);
+    threeVC.view.backgroundColor = [UIColor blueColor];
     [self.view addSubview:threeVC.view];
     
 }
