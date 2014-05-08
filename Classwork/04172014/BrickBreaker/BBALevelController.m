@@ -10,10 +10,14 @@
 #import "MOVE.h"
 
 #import <AVFoundation/AVFoundation.h>
+#import "BBAGameData.h"
 
-@interface BBALevelController () <UICollisionBehaviorDelegate>
 
-@property(nonatomic) AVAudioPlayer * player;
+@interface BBALevelController () <UICollisionBehaviorDelegate, AVAudioPlayerDelegate>
+
+//@property(nonatomic) AVAudioPlayer * player;
+@property (nonatomic) NSMutableArray * players;
+
 //All PRIVATE PROPERTIES
 @property (nonatomic) UIView * paddle;
 @property (nonatomic) NSMutableArray * balls;
@@ -77,9 +81,19 @@
 {
     NSString * file = [[NSBundle mainBundle] pathForResource:soundName ofType:@"wav"];
     NSURL * url = [[NSURL alloc] initFileURLWithPath:file];
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     
-    [self.player play];
+    AVAudioPlayer * player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    [self.players addObject:player];
+    
+    player.delegate = self;
+    
+    [player play];
+}
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+    [self.players removeObjectIdenticalTo:player];
 }
 
 - (void)viewDidLoad
@@ -89,6 +103,7 @@
 
 - (void)resetLevel
 {
+    [BBAGameData mainData].currentScore = 0;
     
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
@@ -136,6 +151,8 @@
 //        paddleHits++;
 //        levelInfo[@"paddle_hits"] = @(paddleHits);
     }
+    
+    
     UIView * tempBrick;
     
     for (UIView * brick in self.bricks)
@@ -154,7 +171,9 @@
                 
                 [self.delegate addPoints:(int)points];
                 
-            }
+                NSInteger currentScore = [BBAGameData mainData].currentScore;//getter
+                [BBAGameData mainData].currentScore = currentScore + brick.tag;//setter
+              }
             brick.alpha = 0.5;
         }
     }

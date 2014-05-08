@@ -9,6 +9,7 @@
 #import "BBAViewController.h"
 #import "BBALevelController.h"
 #import "MOVE.h"
+#import "BBAGameData.h"
 
 @interface BBAViewController () <BBALevelDelegate>
 
@@ -20,6 +21,7 @@
     UIButton * startButton;
     UILabel * scoreBoard;
     UILabel * lifeCount;
+    UIButton * homeButton;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -41,6 +43,14 @@
         lifeCount.text = @"Lives : 3";
         
         [self.view addSubview:lifeCount];
+        
+        homeButton = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 300, 0, 100, 40)];
+        NSLog(@"%@", homeButton);
+        homeButton.imageView.image = [UIImage imageNamed:@"home"];
+//        homeButton.backgroundColor = [UIColor greenColor];
+        homeButton.layer.masksToBounds = YES;
+        [homeButton addTarget:self action:@selector(backToStart) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:homeButton];
     }
     return self;
 }
@@ -96,6 +106,14 @@
     lifeCount.text = [NSString stringWithFormat:@"Lives : %d", lives];
     [self.view addSubview:lifeCount];
 }
+
+- (void)backToStart
+{
+    [level.view removeFromSuperview];
+    [self.view addSubview:startButton];
+    [scoreBoard removeFromSuperview];
+}
+
 - (void)gameDone
 {
     [level.view removeFromSuperview];

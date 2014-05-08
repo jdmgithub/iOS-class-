@@ -13,6 +13,8 @@
 		C35F4B961917D5FD00C7A54E /* electric_alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = C35F4B951917D5FD00C7A54E /* electric_alert.wav */; };
 		C35F4B981917D61000C7A54E /* retro_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = C35F4B971917D61000C7A54E /* retro_click.wav */; };
 		C398071E19195AAF002C2BD5 /* BBASingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = C398071D19195AAF002C2BD5 /* BBASingleton.m */; };
+		C398DBD1191A691A005153B9 /* BBAGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = C398DBD0191A691A005153B9 /* BBAGameData.m */; };
+		C398DBD4191A85F7005153B9 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = C398DBD3191A85F7005153B9 /* home.png */; };
 		C3B5851C190018C500A8B1CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B5851B190018C500A8B1CB /* Foundation.framework */; };
 		C3B5851E190018C500A8B1CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B5851D190018C500A8B1CB /* CoreGraphics.framework */; };
 		C3B58520190018C500A8B1CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B5851F190018C500A8B1CB /* UIKit.framework */; };
@@ -54,6 +56,9 @@
 		C35F4B971917D61000C7A54E /* retro_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = retro_click.wav; path = ../../../../../../../../../../Desktop/Sounds/narfstuff_ui_sounds/buttons/on_click/retro_click.wav; sourceTree = "<group>"; };
 		C398071C19195AAF002C2BD5 /* BBASingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBASingleton.h; sourceTree = "<group>"; };
 		C398071D19195AAF002C2BD5 /* BBASingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBASingleton.m; sourceTree = "<group>"; };
+		C398DBCF191A691A005153B9 /* BBAGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAGameData.h; sourceTree = "<group>"; };
+		C398DBD0191A691A005153B9 /* BBAGameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAGameData.m; sourceTree = "<group>"; };
+		C398DBD3191A85F7005153B9 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		C3B58518190018C500A8B1CB /* BrickBreaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrickBreaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3B5851B190018C500A8B1CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C3B5851D190018C500A8B1CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,9 +140,19 @@
 			name = Singleton;
 			sourceTree = "<group>";
 		};
+		C398DBCE191A6903005153B9 /* GameInfo */ = {
+			isa = PBXGroup;
+			children = (
+				C398DBCF191A691A005153B9 /* BBAGameData.h */,
+				C398DBD0191A691A005153B9 /* BBAGameData.m */,
+			);
+			name = GameInfo;
+			sourceTree = "<group>";
+		};
 		C3B5850F190018C500A8B1CB = {
 			isa = PBXGroup;
 			children = (
+				C398DBCE191A6903005153B9 /* GameInfo */,
 				C398071B19195A9C002C2BD5 /* Singleton */,
 				C35F4B991917D61E00C7A54E /* Sounds */,
 				C314F4C11900A8A400E19509 /* Move */,
@@ -240,6 +255,7 @@
 		C3B585531900324300A8B1CB /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C398DBD3191A85F7005153B9 /* home.png */,
 				C3B5855E19004D9500A8B1CB /* alien1.png */,
 				C3B5855C19004D9100A8B1CB /* alien2.png */,
 				C3B5855A19004D8E00A8B1CB /* ball.png */,
@@ -336,6 +352,7 @@
 				C3B585571900325000A8B1CB /* soccerGoal.png in Resources */,
 				C35F4B961917D5FD00C7A54E /* electric_alert.wav in Resources */,
 				C3B58559190037E300A8B1CB /* soccerPlayerLeft.png in Resources */,
+				C398DBD4191A85F7005153B9 /* home.png in Resources */,
 				C314F4C61900A8A400E19509 /* .gitignore in Resources */,
 				C3B5855F19004D9500A8B1CB /* alien1.png in Resources */,
 			);
@@ -360,6 +377,7 @@
 				C398071E19195AAF002C2BD5 /* BBASingleton.m in Sources */,
 				C3B5854F19001D3300A8B1CB /* BBALevelController.m in Sources */,
 				C3B5854C19001BD500A8B1CB /* BBAViewController.m in Sources */,
+				C398DBD1191A691A005153B9 /* BBAGameData.m in Sources */,
 				C3B5852C190018C500A8B1CB /* BBAAppDelegate.m in Sources */,
 				C3B58528190018C500A8B1CB /* main.m in Sources */,
 			);
