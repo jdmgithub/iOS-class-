@@ -1,0 +1,251 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+\f3\fnil\fcharset0 LucidaGrande;\f4\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red170\green13\blue145;\red92\green38\blue153;\red46\green13\blue110;
+\red63\green110\blue116;\red28\green0\blue207;\red39\green78\blue192;\red83\green83\blue83;\red196\green26\blue22;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww10800\viewh16280\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 05082014\
+\
+
+\b0 Create a new Xcode project\
+Audio List\
+\
+self.view.rootViewController = [[UISplitViewController alloc] initWithNibname: nil bundle:nil];\
+\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf0 \CocoaLigature0  \cf2 if\cf0  ([\cf3 UIDevice\cf0  \cf4 currentDevice\cf0 ].\cf3 userInterfaceIdiom\cf0  == \cf4 UIUserInterfaceIdiomPad\cf0 )\
+    \{\
+        \cf2 self\cf0 .\cf5 window\cf0 .\cf3 rootViewController\cf0  = [[\cf3 UISplitViewController\cf0  \cf4 alloc\cf0 ] \cf4 initWithNibName\cf0 :\cf2 nil\cf0  \cf4 bundle\cf0 :\cf2 nil\cf0 ];\
+    \} \cf2 else\cf0  \{\
+        \cf2 self\cf0 .\cf5 window\cf0 .\cf3 rootViewController\cf0  = [[\cf3 UITableViewController\cf0  \cf4 alloc\cf0 ] \cf4 initWithStyle\cf0 :\cf4 UITableViewStylePlain\cf0 ];\
+    \}\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 gave an error \
+Splitview controller  is expected to have a view controller at index 0 before it's used!\
+Splitview controller  is expected to have a view controller at index 1 before it's used!\
+must have a child view controller\
+\
+
+\f1\fs20 \CocoaLigature0 \
+\pard\tx481\pardeftab481\pardirnatural
+\cf0  \cf2 if\cf0  ([\cf3 UIDevice\cf0  \cf4 currentDevice\cf0 ].\cf3 userInterfaceIdiom\cf0  == \cf4 UIUserInterfaceIdiomPad\cf0 )\
+    \{\
+        \cf3 UISplitViewController\cf0  * splitVC = [[\cf3 UISplitViewController\cf0  \cf4 alloc\cf0 ] \cf4 initWithNibName\cf0 :\cf2 nil\cf0  \cf4 bundle\cf0 :\cf2 nil\cf0 ];\
+        \
+        splitVC.\cf3 viewControllers\cf0  = \cf6 @[\cf0 [[\cf3 UITableViewController\cf0  \cf4 alloc\cf0 ] \cf4 initWithStyle\cf0 :\cf4 UITableViewStylePlain\cf0 ],\
+        [[\cf3 UIViewController\cf0  \cf4 alloc\cf0 ] \cf4 initWithNibName\cf0 :\cf2 nil\cf0  \cf4 bundle\cf0 :\cf2 nil\cf0 ]\
+                                    \cf6 ]\cf0 ;\
+                                    \
+        \cf2 self\cf0 .\cf5 window\cf0 .\cf3 rootViewController\cf0  = splitVC;\
+        \
+    \} \cf2 else\cf0  \{\
+        \cf2 self\cf0 .\cf5 window\cf0 .\cf3 rootViewController\cf0  = [[\cf3 UITableViewController\cf0  \cf4 alloc\cf0 ] \cf4 initWithStyle\cf0 :\cf4 UITableViewStylePlain\cf0 ];\
+    \}\
+ 
+\f0\fs24 \CocoaLigature1 {{\NeXTGraphic Screen Shot 2014-05-08 at 9.30.42 AM.png \width10480 \height6180
+}¬}
+\f1\fs20 \
+\
+\
+This is the current view for the iPad\
+this is the email view on the iPad\
+\
+\
+
+\f2\b NOTE: \
+iPhone\
+portrait\
+landscape left/right\
+\
+not upside down so you can use the phone.\
+\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls1\ilvl0
+\f3\b0\fs22 \cf0 {\listtext	\'95	}When the split view controller switches to a portrait orientation, it calls the {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/Reference/Reference.html#//apple_ref/occ/intfm/UISplitViewControllerDelegate/splitViewController:willHideViewController:withBarButtonItem:forPopoverController:"}}{\fldrslt 
+\f4 \cf7 splitViewController:willHideViewController:withBarButtonItem:forPopoverController:}} method of its delegate. The bar button item passed as the third argument is configured to present the master view controller in a popover controller. Your delegate\'92s implementation of this method should add the bar button item to a visible tool bar or navigation bar.\
+{\listtext	\'95	}When the split view controller switches to a landscape orientation, it calls the {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/Reference/Reference.html#//apple_ref/occ/intfm/UISplitViewControllerDelegate/splitViewController:willShowViewController:invalidatingBarButtonItem:"}}{\fldrslt 
+\f4 \cf7 splitViewController:willShowViewController:invalidatingBarButtonItem:}} method of its delegate. Your delegate\'92s implementation of this method should remove the bar button item from the bar in which it was placed.\
+\pard\tx720\pardeftab720
+
+\f2\b\fs20 \cf0 \
+added a Navigation Controller\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\b0 \cf3 \CocoaLigature0 UINavigationController\cf0  * nC = [[\cf3 UINavigationController\cf0  \cf4 alloc\cf0 ]\cf4 initWithNibName\cf0 :\cf2 nil\cf0  \cf4 bundle\cf0 :\cf2 nil\cf0 ];\
+    \
+    \cf2 if\cf0  ([\cf3 UIDevice\cf0  \cf4 currentDevice\cf0 ].\cf3 userInterfaceIdiom\cf0  == \cf4 UIUserInterfaceIdiomPad\cf0 )\
+    \{\
+        \cf3 UISplitViewController\cf0  * splitVC = [[\cf3 UISplitViewController\cf0  \cf4 alloc\cf0 ] \cf4 initWithNibName\cf0 :\cf2 nil\cf0  \cf4 bundle\cf0 :\cf2 nil\cf0 ];\
+        \
+        splitVC.\cf3 viewControllers\cf0  = \cf6 @[\cf0 [[\cf3 UITableViewController\cf0  \cf4 alloc\cf0 ] \cf4 initWithStyle\cf0 :\cf4 UITableViewStylePlain\cf0 ],\
+        [[\cf3 UIViewController\cf0  \cf4 alloc\cf0 ] \cf4 initWithNibName\cf0 :\cf2 nil\cf0  \cf4 bundle\cf0 :\cf2 nil\cf0 ]\
+                                    \cf6 ]\cf0 ;\
+        \
+        [nC \cf4 pushViewController\cf0 :splitVC \cf4 animated\cf0 :\cf2 NO\cf0 ];\
+\
+    \} \cf2 else\cf0  \{\
+        \cf3 UITableViewController\cf0  * tVC = [[\cf3 UITableViewController\cf0  \cf4 alloc\cf0 ] \cf4 initWithStyle\cf0 :\cf4 UITableViewStylePlain\cf0 ];\
+        [nC \cf4 pushViewController\cf0 :tVC \cf4 animated\cf0 :\cf2 NO\cf0 ];\
+    \}\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f2\b\fs22 \cf0 Application windows are expected to have a root view controller at the end of application launch\
+\pard\tx720\pardeftab720
+
+\fs20 \cf0 \CocoaLigature1 \
+\
+\pard\pardeftab720\sa180
+
+\f3\b0\fs22 \cf0 When the split view controller rotates from a landscape to portrait orientation, it normally hides one of its view controllers. When that happens, it calls this method to coordinate the addition of a button to the toolbar (or navigation bar) of the remaining custom view controller. If you want the soon-to-be hidden view controller to be displayed in a popover, you must implement this method and use it to add the specified button to your interface.\
+\pard\tx720\pardeftab720
+
+\f2\b\fs20 \cf0 \
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\b0 \cf3 \CocoaLigature0 UINavigationController\cf0  * nC = [[\cf3 UINavigationController\cf0  \cf4 alloc\cf0 ]\cf4 initWithNibName\cf0 :\cf2 nil\cf0  \cf4 bundle\cf0 :\cf2 nil\cf0 ];\
+    \
+    \cf2 if\cf0  ([\cf3 UIDevice\cf0  \cf4 currentDevice\cf0 ].\cf3 userInterfaceIdiom\cf0  == \cf4 UIUserInterfaceIdiomPad\cf0 )\
+    \{\
+        \cf3 UISplitViewController\cf0  * splitVC = [[\cf3 UISplitViewController\cf0  \cf4 alloc\cf0 ] \cf4 initWithNibName\cf0 :\cf2 nil\cf0  \cf4 bundle\cf0 :\cf2 nil\cf0 ];\
+        \
+        splitVC.\cf3 viewControllers\cf0  = \cf6 @[\cf0 [[\cf3 UITableViewController\cf0  \cf4 alloc\cf0 ] \cf4 initWithStyle\cf0 :\cf4 UITableViewStylePlain\cf0 ],\
+        [[\cf3 UIViewController\cf0  \cf4 alloc\cf0 ] \cf4 initWithNibName\cf0 :\cf2 nil\cf0  \cf4 bundle\cf0 :\cf2 nil\cf0 ]\
+                                    \cf6 ]\cf0 ;\
+        \
+        \cf2 self\cf0 .\cf5 window\cf0 .\cf3 rootViewController\cf0  = splitVC;\
+    \} \cf2 else\cf0  \{\
+        \
+        \cf3 UITableViewController\cf0  * tVC = [[\cf3 UITableViewController\cf0  \cf4 alloc\cf0 ] \cf4 initWithStyle\cf0 :\cf4 UITableViewStylePlain\cf0 ];\
+        \
+        [nC \cf4 pushViewController\cf0 :tVC \cf4 animated\cf0 :\cf2 NO\cf0 ];\
+        \cf2 self\cf0 .\cf5 window\cf0 .\cf3 rootViewController\cf0  = nC;\
+    \}\
+\pard\tx720\pardeftab720
+
+\f2\b \cf0 \CocoaLigature1 \
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\b0 \cf0 \
+made sure to have both have nC\
+
+\f2\b \
+TRIED USING A SWIPE GESTURE\
+\
+\pard\pardeftab720\sa78
+
+\f3\b0\fs32 \cf0 presentsWithGesture\cf7 \
+\
+\pard\pardeftab720\sa180
+
+\fs22 \cf0 Specifies whether the hidden view can be presented and dismissed via a swipe gesture.\
+\pard\pardeftab720
+
+\f4 \cf0 @property (nonatomic) BOOL presentsWithGesture\
+\pard\pardeftab720\sa33
+
+\f3\b \cf0 Discussion\
+\pard\pardeftab720\sa180
+
+\b0 \cf0 If 
+\f4 \cf8 YES
+\f3 \cf0  and your delegate implements {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/Reference/Reference.html#//apple_ref/occ/intfm/UISplitViewControllerDelegate/splitViewController:willHideViewController:withBarButtonItem:forPopoverController:"}}{\fldrslt 
+\f4 \cf7 splitViewController:willHideViewController:withBarButtonItem:forPopoverController:}}, the hidden view can be presented and dismissed via a swipe gesture.\
+The default value is 
+\f4 \cf8 YES
+\f3 \cf0 .\
+\
+need a delegate\
+can subclass UISplitViewController \
+or in the appDelegate - UISplitViewControllerDelegate\
+splitVC.delegate = self;\
+\
+
+\b can self.delegate = self \
+you can do it to manage certain things that you do not have access to  but proper convention is to subclass an add a method when you can \
+
+\f2\fs20 delegate is just asking where am I being implemented and where am i being called\
+\
+
+\f1\b0 does not call or trigger call update score it will not go into a loop (using RedBlueApp)\
+like self.currentScore = currentScore;
+\f2\b \
+
+\f1\b0 its just self calling an instance method of itself\
+\
+\pard\tx481\pardeftab481\pardirnatural
+\cf0 \CocoaLigature0 <\cf3 UISplitViewControllerDelegate\cf0 >\
+in the ALAiPadViewController\
+\
+self.delegate = self; \
+
+\f2\b allows for swipe gesture\
+\
+
+\f1\b0 self.presentWithGesture = YES; \
+not necessary because default is YES;\
+\
+\CocoaLigature1 \
+\CocoaLigature0 - (\cf2 void\cf0 )splitViewController:(\cf3 UISplitViewController\cf0  *)svc willHideViewController:(\cf3 UIViewController\cf0  *)aViewController withBarButtonItem:(\cf3 UIBarButtonItem\cf0  *)barButtonItem forPopoverController:(\cf3 UIPopoverController\cf0  *)pc\
+\{\
+    \
+\}\
+\
+- (\cf2 void\cf0 )splitViewController:(\cf3 UISplitViewController\cf0  *)svc willShowViewController:(\cf3 UIViewController\cf0  *)aViewController invalidatingBarButtonItem:(\cf3 UIBarButtonItem\cf0  *)barButtonItem\
+\{\
+    In landscape this is not necessary\
+\}\
+\CocoaLigature1 \
+\
+added the different VC\'92s to the implementation so that it will be global and accessed by the rest of the file\
+\
+\cf2 \CocoaLigature0 @implementation\cf0  ALAiPadViewController\
+\{\
+    \cf3 UITableViewController\cf0  * listVC;\
+    \cf3 UIViewController\cf0  * detailVC;\
+    \cf3 UINavigationController\cf0  * nC;\
+\}\
+\CocoaLigature1 \
+\
+update the inits\
+\
+\CocoaLigature0 	barButtonItem.\cf3 title\cf0  = \cf9 @"Button"\cf0 ;\
+    \
+    \cf5 detailVC\cf0 .\cf3 navigationItem\cf0 .\cf3 leftBarButtonItem\cf0  = barButtonItem;\
+    \
+    \cf5 detailVC\cf0 .\cf3 navigationController\cf0 .\cf3 navigationBarHidden\cf0  = \cf2 NO\cf0 ;\
+    \
+    \cf5 nC\cf0 .\cf3 navigationBarHidden\cf0  = \cf2 NO\cf0 ;\CocoaLigature1 \
+\
+added a bar button item to call the listVC\
+\
+\
+TWO TVC \
+one push\
+singleton to hold list of data\
+in TVC for iphone and ipad\
+name, image, audio file\
+number of times played\
+like or dislike\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
