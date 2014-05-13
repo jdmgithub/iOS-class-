@@ -19,6 +19,8 @@
 @property (nonatomic)UIDynamicItemBehavior * shardBehavior;
 @property (nonatomic)UICollisionBehavior * shardCollision;
 
+
+
 @end
 
 @implementation PNAWorld2Controller
@@ -111,6 +113,25 @@
         [self.gravity removeItem:collidedShard];
         [self.shardCollision removeItem:collidedShard];
         [self.shardBehavior removeItem:collidedShard];
+        
+//        floor and incremental UIView
+        
+        int w = self.view.frame.size.width;
+        int h = self.view.frame.size.height;
+
+        static int y = 10;
+        y++;
+        
+        UIView * shardPuddle = [[UIView alloc] initWithFrame:CGRectMake(0, 479, SCREEN_WIDTH, 0 - y)];
+        shardPuddle.backgroundColor = [UIColor greenColor];
+        [self.view addSubview:shardPuddle];
+        
+        
+        
+        [self.collision addBoundaryWithIdentifier:@"floor" fromPoint:CGPointMake(0,h - y)
+                                                  toPoint:CGPointMake(w, h - y)];
+        
+        [self.animator addBehavior:self.collision];
         
         [collidedShard removeFromSuperview];
     }
