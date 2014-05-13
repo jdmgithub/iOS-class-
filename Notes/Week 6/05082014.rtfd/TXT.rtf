@@ -35,8 +35,9 @@ Splitview controller  is expected to have a view controller at index 0 before it
 Splitview controller  is expected to have a view controller at index 1 before it's used!\
 must have a child view controller\
 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\f1\fs20 \CocoaLigature0 \
+\f1\fs20 \cf0 \CocoaLigature0 \
 \pard\tx481\pardeftab481\pardirnatural
 \cf0  \cf2 if\cf0  ([\cf3 UIDevice\cf0  \cf4 currentDevice\cf0 ].\cf3 userInterfaceIdiom\cf0  == \cf4 UIUserInterfaceIdiomPad\cf0 )\
     \{\
@@ -61,8 +62,9 @@ This is the current view for the iPad\
 this is the email view on the iPad\
 \
 \
+\pard\tx481\pardeftab481\pardirnatural
 
-\f2\b NOTE: \
+\f2\b \cf0 NOTE: \
 iPhone\
 portrait\
 landscape left/right\
@@ -171,8 +173,9 @@ can subclass UISplitViewController \
 or in the appDelegate - UISplitViewControllerDelegate\
 splitVC.delegate = self;\
 \
+\pard\pardeftab720\sa180
 
-\b can self.delegate = self \
+\b \cf0 can self.delegate = self \
 you can do it to manage certain things that you do not have access to  but proper convention is to subclass an add a method when you can \
 
 \f2\fs20 delegate is just asking where am I being implemented and where am i being called\
@@ -189,15 +192,19 @@ like self.currentScore = currentScore;
 in the ALAiPadViewController\
 \
 self.delegate = self; \
+\pard\tx481\pardeftab481\pardirnatural
 
-\f2\b allows for swipe gesture\
+\f2\b \cf0 allows for swipe gesture\
 \
+\pard\tx481\pardeftab481\pardirnatural
 
-\f1\b0 self.presentWithGesture = YES; \
+\f1\b0 \cf0 self.presentWithGesture = YES; \
 not necessary because default is YES;\
 \
-\CocoaLigature1 \
-\CocoaLigature0 - (\cf2 void\cf0 )splitViewController:(\cf3 UISplitViewController\cf0  *)svc willHideViewController:(\cf3 UIViewController\cf0  *)aViewController withBarButtonItem:(\cf3 UIBarButtonItem\cf0  *)barButtonItem forPopoverController:(\cf3 UIPopoverController\cf0  *)pc\
+\pard\tx481\pardeftab481\pardirnatural
+\cf0 \CocoaLigature1 \
+\pard\tx481\pardeftab481\pardirnatural
+\cf0 \CocoaLigature0 - (\cf2 void\cf0 )splitViewController:(\cf3 UISplitViewController\cf0  *)svc willHideViewController:(\cf3 UIViewController\cf0  *)aViewController withBarButtonItem:(\cf3 UIBarButtonItem\cf0  *)barButtonItem forPopoverController:(\cf3 UIPopoverController\cf0  *)pc\
 \{\
     \
 \}\
@@ -206,21 +213,25 @@ not necessary because default is YES;\
 \{\
     In landscape this is not necessary\
 \}\
-\CocoaLigature1 \
+\pard\tx481\pardeftab481\pardirnatural
+\cf0 \CocoaLigature1 \
 \
 added the different VC\'92s to the implementation so that it will be global and accessed by the rest of the file\
 \
+\pard\tx481\pardeftab481\pardirnatural
 \cf2 \CocoaLigature0 @implementation\cf0  ALAiPadViewController\
 \{\
     \cf3 UITableViewController\cf0  * listVC;\
     \cf3 UIViewController\cf0  * detailVC;\
     \cf3 UINavigationController\cf0  * nC;\
 \}\
-\CocoaLigature1 \
+\pard\tx481\pardeftab481\pardirnatural
+\cf0 \CocoaLigature1 \
 \
 update the inits\
 \
-\CocoaLigature0 	barButtonItem.\cf3 title\cf0  = \cf9 @"Button"\cf0 ;\
+\pard\tx481\pardeftab481\pardirnatural
+\cf0 \CocoaLigature0 	barButtonItem.\cf3 title\cf0  = \cf9 @"Button"\cf0 ;\
     \
     \cf5 detailVC\cf0 .\cf3 navigationItem\cf0 .\cf3 leftBarButtonItem\cf0  = barButtonItem;\
     \
