@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>C0805F65-FCFB-4785-B2AC-78AB12B577D2</string>
+	<string>10150A56-24E7-4F48-9A51-DC26E868D6C0</string>
 	<key>IDESourceControlProjectName</key>
-	<string>AudioList</string>
+	<string>LotsOfTabs</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>F07B2953-D845-48AB-BC9A-81C432C7F92D</key>
+		<key>10BE7809-2975-4DB4-B594-32F657EAA810</key>
 		<string>https://github.com/Jiobu/iOS-class-.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Classwork/05082014/AudioList/AudioList.xcodeproj/project.xcworkspace</string>
+	<string>Classwork/05132014/LotsOfTabs/LotsOfTabs.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F07B2953-D845-48AB-BC9A-81C432C7F92D</key>
+		<key>10BE7809-2975-4DB4-B594-32F657EAA810</key>
 		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,16 +25,16 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F07B2953-D845-48AB-BC9A-81C432C7F92D</string>
+	<string>10BE7809-2975-4DB4-B594-32F657EAA810</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F07B2953-D845-48AB-BC9A-81C432C7F92D</string>
+			<string>10BE7809-2975-4DB4-B594-32F657EAA810</string>
 			<key>IDESourceControlWCCName</key>
-			<string>BrickBreaker</string>
+			<string>iOS_Class</string>
 		</dict>
 	</array>
 </dict>
