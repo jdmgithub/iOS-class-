@@ -55,22 +55,18 @@
     //return [NSArray arrayWithArray:self.listItems];
 }
 
-- (void)addListItem:(NSDictionary *)listItem
-{
-    [self.listItems addObject:listItem];
-    [self saveData];
-}
-
-- (void)removeListItems:(NSDictionary *)listItem
-{
-    [self.listItems removeObjectIdenticalTo:listItem];
-    [self saveData];
-}
-
 - (void)removeListItemsAtIndex:(NSInteger)index;
 {
-    [self.listItems removeObjectAtIndex:index];
-    [self saveData];
+    
+}
+
+- (void)addListItem: (NSDictionary *)listItem;
+{
+    
+}
+- (void)removeListItems:(NSDictionary *)listItem;
+{
+    
 }
 
 - (void)saveData
