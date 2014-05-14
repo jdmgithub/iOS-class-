@@ -23,6 +23,10 @@
     UIButton * playButton;
     UIButton * stopButton;
     UILabel * songTimer;
+    NSTimeInterval currentTime;
+    NSTimeInterval duration;
+    CGFloat progress;
+    
     
     int h;
     int w;
@@ -36,31 +40,29 @@
          w = [UIScreen mainScreen].bounds.size.width;
          h = [UIScreen mainScreen].bounds.size.height;
         
-        playButton = [[UIButton alloc] initWithFrame:CGRectMake(10, (h-50)/2, 50, 50)];
-        [playButton setImage:[UIImage imageNamed:@"button-play"] forState:UIControlStateNormal];
-        [playButton setImage:[UIImage imageNamed:@"button-pause"] forState:UIControlStateSelected];
-        playButton.layer.cornerRadius = 25;
-        
+        playButton = [[UIButton alloc] initWithFrame:CGRectMake(110, 100, 100, 100)];
+        [playButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+        [playButton setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateSelected];
+        playButton.layer.cornerRadius = 50;
         [self.view addSubview:playButton];
         
-        stopButton = [[UIButton alloc] initWithFrame:CGRectMake(w - 60, (h-50)/2, 50, 50)];
-        [stopButton setImage:[UIImage imageNamed:@"button-stop"] forState:UIControlStateNormal];
-        stopButton.layer.cornerRadius = 25;
+        stopButton = [[UIButton alloc] initWithFrame:CGRectMake(105, 350, 100, 100)];
+        [stopButton setImage:[UIImage imageNamed:@"stop"] forState:UIControlStateNormal];
+        stopButton.layer.cornerRadius = 50;
         [self.view addSubview:stopButton];
         
-        songTimer = [[UILabel alloc] initWithFrame:CGRectMake(0, -25, 40, 20)];
-        songTimer.font = [UIFont fontWithName:@"HELVETICANEUE-ULTRALIGHT" size:10];
-        [progressBar addSubview:songTimer];
-        
-        progressBar = [[UIView alloc] initWithFrame:CGRectMake(70, (h-50)/2, w - 140, 4)];
+        progressBar = [[UIView alloc] initWithFrame:CGRectMake(5, 250, w- 20, 5)];
         progressBar.backgroundColor = [UIColor lightGrayColor];
         [self.view addSubview:progressBar];
         
-        seekButton = [[UIView alloc]initWithFrame:CGRectMake(0, -10, 20, 20)];
-        seekButton.layer.cornerRadius  = 10;
+        seekButton = [[UIView alloc]initWithFrame:CGRectMake(0, -10, 30, 30)];
+        seekButton.layer.cornerRadius  = 15;
         seekButton.backgroundColor = [UIColor magentaColor];
         [progressBar addSubview:seekButton];
 
+        songTimer = [[UILabel alloc] initWithFrame:CGRectMake(0, -55, 40, 20)];
+        songTimer.font = [UIFont fontWithName:@"HELVETICANEUE-ULTRALIGHT" size:10];
+        [seekButton addSubview:songTimer];
         
         volumeSlider = [[UISlider alloc] initWithFrame:CGRectMake(10, 50, 160, 10)];
         volumeSlider.minimumValue = 0.0;
@@ -104,8 +106,16 @@
 - (void)stopPlay:(UIButton *)sender
 {
     [player stop];
+    
     [self stopTimer];
-    seekButton.frame = CGRectMake(70, (h-61)/2, 20, 20);
+    
+    seekButton.frame = CGRectMake(0, -10, 30, 30);
+    seekButton.layer.cornerRadius = 15;
+    [progressBar addSubview:seekButton];
+    
+    songTimer.frame = CGRectMake(0, -25, 40, 20);
+    songTimer.text = [NSString stringWithFormat:@"0.00"];
+    
     playButton.selected = NO;
 }
 
@@ -116,22 +126,21 @@
 
 - (void)updateProgressBar:(NSTimer *)sender
 {
-    NSTimeInterval currentTime = [player currentTime];
-    NSTimeInterval duration = [player duration];
-    CGFloat progress = currentTime/duration;
+    currentTime = [player currentTime];
+    duration = [player duration];
+    progress = currentTime/duration;
     
     float xPosition = progressBar.frame.origin.x + progress * progressBar.frame.size.width;
-    
-    seekButton.frame = CGRectMake(xPosition, -10, 20, 20);
-    
     xPosition = player.currentTime;
     
-    NSLog(@"%f", currentTime);
+    seekButton.frame = CGRectMake(xPosition, -10, 30, 30);
+    seekButton.layer.cornerRadius = 15;
     
-    songTimer.frame = CGRectMake(xPosition, -25, 40, 20);
-    songTimer.text = [NSString stringWithFormat:@"%0.02f", currentTime];
+       NSLog(@"%f", currentTime);
+    
+    songTimer.frame = CGRectMake(0, -25, 40, 20);
+    songTimer.text = [NSString stringWithFormat:@"%0.02f, 0.02f",player.currentTime];
     songTimer.textAlignment = NSTextAlignmentLeft;
-    
 }
 
 - (void)stopTimer
@@ -154,8 +163,11 @@
     for (UITouch *touch in touches)
     {
         CGPoint location = [touch locationInView:progressBar];
-        seekButton.frame = CGRectMake(location.x, (h-50)/2, 10, 10);
-
+        seekButton.frame = CGRectMake(location.x, -10, 30, 30);
+        seekButton.layer.cornerRadius = 15;
+        
+        songTimer.text = [NSString stringWithFormat:@"%0.02f",player.currentTime];
+        
     }
      
 }
@@ -165,8 +177,14 @@
     for (UITouch *touch in touches)
     {
         CGPoint location = [touch locationInView:progressBar];
-        seekButton.frame = CGRectMake(location.x, (h-50)/2, 10, 10);
+        seekButton.frame = CGRectMake(location.x, -10, 30, 30);
+        seekButton.layer.cornerRadius = 15;
+        
         player.currentTime = location.x;
+        
+        songTimer.text = [NSString stringWithFormat:@"%0.02f, 0.02f",player.currentTime];
+        
+        
         [player play];
     }
 }

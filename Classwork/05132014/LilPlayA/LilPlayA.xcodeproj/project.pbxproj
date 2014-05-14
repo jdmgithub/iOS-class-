@@ -20,9 +20,9 @@
 		C3356C8819225A8C00C9FCB8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3356C8619225A8C00C9FCB8 /* InfoPlist.strings */; };
 		C3356C8A19225A8C00C9FCB8 /* LilPlayATests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3356C8919225A8C00C9FCB8 /* LilPlayATests.m */; };
 		C3356C9519225AB800C9FCB8 /* LPAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3356C9419225AB800C9FCB8 /* LPAViewController.m */; };
-		C3356CA219228A6400C9FCB8 /* button-pause.png in Resources */ = {isa = PBXBuildFile; fileRef = C3356C9F19228A6400C9FCB8 /* button-pause.png */; };
-		C3356CA319228A6400C9FCB8 /* button-play.png in Resources */ = {isa = PBXBuildFile; fileRef = C3356CA019228A6400C9FCB8 /* button-play.png */; };
-		C3356CA419228A6400C9FCB8 /* button-stop.png in Resources */ = {isa = PBXBuildFile; fileRef = C3356CA119228A6400C9FCB8 /* button-stop.png */; };
+		C39642F919230F1200131723 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = C39642F619230F1200131723 /* pause.png */; };
+		C39642FA19230F1200131723 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = C39642F719230F1200131723 /* play.png */; };
+		C39642FB19230F1200131723 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = C39642F819230F1200131723 /* stop.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +54,9 @@
 		C3356C8919225A8C00C9FCB8 /* LilPlayATests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LilPlayATests.m; sourceTree = "<group>"; };
 		C3356C9319225AB800C9FCB8 /* LPAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPAViewController.h; sourceTree = "<group>"; };
 		C3356C9419225AB800C9FCB8 /* LPAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPAViewController.m; sourceTree = "<group>"; };
-		C3356C9F19228A6400C9FCB8 /* button-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-pause.png"; sourceTree = "<group>"; };
-		C3356CA019228A6400C9FCB8 /* button-play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-play.png"; sourceTree = "<group>"; };
-		C3356CA119228A6400C9FCB8 /* button-stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-stop.png"; sourceTree = "<group>"; };
+		C39642F619230F1200131723 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		C39642F719230F1200131723 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		C39642F819230F1200131723 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,9 +92,9 @@
 				C3356C8319225A8C00C9FCB8 /* LilPlayATests */,
 				C3356C6319225A8C00C9FCB8 /* Frameworks */,
 				C3356C6219225A8C00C9FCB8 /* Products */,
-				C3356C9F19228A6400C9FCB8 /* button-pause.png */,
-				C3356CA019228A6400C9FCB8 /* button-play.png */,
-				C3356CA119228A6400C9FCB8 /* button-stop.png */,
+				C39642F619230F1200131723 /* pause.png */,
+				C39642F719230F1200131723 /* play.png */,
+				C39642F819230F1200131723 /* stop.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,10 +235,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3356C6F19225A8C00C9FCB8 /* InfoPlist.strings in Resources */,
-				C3356CA319228A6400C9FCB8 /* button-play.png in Resources */,
+				C39642FB19230F1200131723 /* stop.png in Resources */,
+				C39642FA19230F1200131723 /* play.png in Resources */,
 				C3356C7719225A8C00C9FCB8 /* Images.xcassets in Resources */,
-				C3356CA219228A6400C9FCB8 /* button-pause.png in Resources */,
-				C3356CA419228A6400C9FCB8 /* button-stop.png in Resources */,
+				C39642F919230F1200131723 /* pause.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +456,7 @@
 				C3356C8F19225A8C00C9FCB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3356C9019225A8C00C9FCB8 /* Build configuration list for PBXNativeTarget "LilPlayATests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +465,7 @@
 				C3356C9219225A8C00C9FCB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
