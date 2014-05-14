@@ -26,6 +26,7 @@
     NSTimeInterval currentTime;
     NSTimeInterval duration;
     CGFloat progress;
+    UIView * progressBar2;
     
     
     int h;
@@ -54,6 +55,10 @@
         progressBar = [[UIView alloc] initWithFrame:CGRectMake(5, 250, w- 20, 5)];
         progressBar.backgroundColor = [UIColor lightGrayColor];
         [self.view addSubview:progressBar];
+        
+        progressBar2 = [[UIView alloc] initWithFrame:self.view.frame];
+        progressBar2.backgroundColor = [UIColor clearColor];
+        [progressBar addSubview:progressBar2];
         
         seekButton = [[UIView alloc]initWithFrame:CGRectMake(0, -10, 30, 30)];
         seekButton.layer.cornerRadius  = 15;
@@ -116,12 +121,9 @@
     songTimer.frame = CGRectMake(0, -25, 40, 20);
     songTimer.text = [NSString stringWithFormat:@"0.00"];
     
+    progressBar2.backgroundColor = [UIColor clearColor];
+    
     playButton.selected = NO;
-}
-
-- (void)volumeControl
-{
-    player.volume = [volumeSlider value];
 }
 
 - (void)updateProgressBar:(NSTimer *)sender
@@ -141,21 +143,16 @@
     songTimer.frame = CGRectMake(0, -25, 40, 20);
     songTimer.text = [NSString stringWithFormat:@"%0.02f, 0.02f",player.currentTime];
     songTimer.textAlignment = NSTextAlignmentLeft;
-}
+    
+    progressBar2.frame = CGRectMake(0, 0, xPosition, 5);
+    progressBar2.backgroundColor = [UIColor blackColor];
 
-- (void)stopTimer
-{
-    [countDown invalidate];
-    countDown = nil;
-    player.currentTime = 0;
 }
-
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [countDown invalidate];
     [player pause];
-
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -168,8 +165,9 @@
         
         songTimer.text = [NSString stringWithFormat:@"%0.02f",player.currentTime];
         
+        progressBar2.frame = CGRectMake(0, 0, location.x, 5);
+        progressBar2.backgroundColor = [UIColor blackColor];
     }
-     
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -184,9 +182,23 @@
         
         songTimer.text = [NSString stringWithFormat:@"%0.02f, 0.02f",player.currentTime];
         
+        progressBar2.frame = CGRectMake(0, 0, location.x, 5);
+        progressBar2.backgroundColor = [UIColor blackColor];
         
         [player play];
     }
+}
+
+- (void)stopTimer
+{
+    [countDown invalidate];
+    countDown = nil;
+    player.currentTime = 0;
+}
+
+- (void)volumeControl
+{
+    player.volume = [volumeSlider value];
 }
 
 - (void)viewDidLoad
@@ -205,6 +217,5 @@
 {
     return YES;
 }
-
 
 @end
