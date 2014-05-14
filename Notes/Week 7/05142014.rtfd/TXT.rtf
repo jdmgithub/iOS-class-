@@ -1,0 +1,272 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fmodern\fcharset0 Courier;
+\f3\fnil\fcharset0 LucidaGrande;\f4\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red170\green13\blue145;\red92\green38\blue153;\red28\green0\blue207;
+\red83\green83\blue83;\red0\green0\blue0;\red238\green242\blue247;\red187\green196\blue203;\red46\green13\blue110;
+\red196\green26\blue22;\red63\green110\blue116;\red255\green255\blue255;\red39\green78\blue192;\red191\green191\blue191;
+\red0\green116\blue0;\red38\green71\blue75;}
+\margl1440\margr1440\vieww9480\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 05142014\
+\
+Singleton \
+delegate - error message\
+\
+CGStrokePath\
+\
+animating a view with a view\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\b0\fs20 \cf0 \CocoaLigature0 - (\cf2 void\cf0 )runPingWithDelay:(\cf2 float\cf0 )delay\
+\{\
+\cf3 UIView\cf0  * ping - \cf4 00\cf2 self\cf0 .view.frame\
+ping.layer.borderWidth = \cf4 1.0\cf0 \
+ping.layer.cornerRadius = \cf4 18.0\cf0 \
+    ping.layer.borderColor = \cf2 self\cf0 .tintColor.\
+    \
+    add to subview\
+    UIview with animation\
+    \
+    ping.frame =\
+    ping.alpha = \cf4 0.0\cf0 \
+    \
+    \
+    Bool\
+    ping removeFromSuperviwe\
+    \cf2 self\cf0  runPing\
+\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 \CocoaLigature1 \
+CORE DATA\
+\
+
+\b0 key value pair\
+- how they relate to each other\
+\
+open empty application and selected core data\
+
+\b \
+
+\b0 creating a column\
+\
+created two entities\
+1. World\
+2. Environment\
+\
+@synthesize - \
+\
+allows access to \
+storage\
+\
+core documentation \
+ fetch request\
+\
+reading material\
+{\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html#//apple_ref/doc/uid/TP30001200-SW1"}}{\fldrslt https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html#//apple_ref/doc/uid/TP30001200-SW1}}\
+\
+cut and paste \
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat7 \trbrdrt\brdrs\brdrw20\brdrcf8 \trbrdrl\brdrs\brdrw20\brdrcf8 \trbrdrr\brdrs\brdrw20\brdrcf8 \tapadb80 
+\clvertalc \clshdrawnil \clwWidth13680\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt120 \clpadl120 \clpadb120 \clpadr120 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl260
+
+\f2 \cf5 NSManagedObject *newEmployee = [NSEntityDescription\
+\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat7 \trbrdrl\brdrs\brdrw20\brdrcf8 \trbrdrr\brdrs\brdrw20\brdrcf8 \tapadb80 
+\clvertalc \clshdrawnil \clwWidth13680\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt120 \clpadl120 \clpadb120 \clpadr120 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl260
+\cf5     insertNewObjectForEntityForName:@"Employee"\
+\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat7 \trbrdrl\brdrs\brdrw20\brdrcf8 \trbrdrb\brdrs\brdrw20\brdrcf8 \trbrdrr\brdrs\brdrw20\brdrcf8 \tapadb80 
+\clvertalc \clshdrawnil \clwWidth13680\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt120 \clpadl120 \clpadb120 \clpadr120 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl260
+\cf5     inManagedObjectContext:context];\cell \lastrow\row
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b \cf0 \
+changed to \
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\b0\fs20 \cf0 \CocoaLigature0  \cf3 NSManagedObject\cf0  *newWorld = [\cf3 NSEntityDescription\cf0 \
+                                    \cf9 insertNewObjectForEntityForName\cf0 :\cf10 @"World"\cf0 \
+                                    \cf9 inManagedObjectContext\cf0 :\cf2 self\cf0 .\cf11 managedObjectContext\cf0 ];\
+\
+creates a newWorld object with difficulty and size\
+\
+
+\f0\b\fs24 \CocoaLigature1 \
+\pard\pardeftab720\sa216
+
+\f3\b0\fs26 \cf0 \cb12 In many cases the default values you set in the model may be sufficient. Sometimes, however, you may wish to perform additional initialization\'97perhaps using dynamic values (such as the current date and time) that cannot be represented in the model. In a typical Cocoa application you would override the class\'92s 
+\f2 \cf5 init
+\f3 \cf0 method to provide this functionality. With 
+\f2 \cf5 NSManagedObject
+\f3 \cf0 , you are discouraged from overriding
+\f2 \cf5 initWithEntity:insertIntoManagedObjectContext:
+\f3 \cf0 ; instead, Core Data provides several other means of initializing values\'97these are described in {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/Articles/cdManagedObjects.html#//apple_ref/doc/uid/TP40003397-SW2"}}{\fldrslt \cf13 \'93Object Life-Cycle\'97Initialization and Deallocation.\'94}}\
+Simply creating a managed object does not cause it to be saved to a persistent store. The managed object context acts as a scratchpad. You can create and register objects with it, make changes to the objects, and undo and redo changes as you wish. If you make changes to managed objects associated with a given context, those changes remain local to that context until you commit the changes by sending the context a{\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/mac/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/NSManagedObjectContext.html#//apple_ref/occ/instm/NSManagedObjectContext/save:"}}{\fldrslt 
+\f2 \cf13 save:}} message. At that point\'97provided that there are no validation errors\'97the changes are committed to the store\
+\
+still nothing in our world but we have size and difficulty \
+WORLD\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth1140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadl100 \clpadr100 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth1020\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadl100 \clpadr100 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth940\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 \cb1 \cell 
+\pard\intbl\itap1\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \cell 
+\pard\intbl\itap1\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth1140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadl100 \clpadr100 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth1020\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadl100 \clpadr100 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth940\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \cell 
+\pard\intbl\itap1\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \cell 
+\pard\intbl\itap1\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth1140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadl100 \clpadr100 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth1020\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadl100 \clpadr100 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth940\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \cell 
+\pard\intbl\itap1\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \cell 
+\pard\intbl\itap1\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \cell \lastrow\row
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+  SIZE				DIFFICULTY\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth2320\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth3640\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf14 \clbrdrl\brdrs\brdrw20\brdrcf14 \clbrdrb\brdrs\brdrw20\brdrcf14 \clbrdrr\brdrs\brdrw20\brdrcf14 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 10\cell 
+\pard\intbl\itap1\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 HARD\cell \lastrow\row
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+\
+
+\b0 needs an NSError\
+- ** pointer to a pointer \
+pass through with a &\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf0 \CocoaLigature0 - (\cf2 void\cf0 )saveContext\
+\{\
+    \cf3 NSError\cf0  *error = \cf2 nil\cf0 ;\
+    \cf3 NSManagedObjectContext\cf0  *managedObjectContext = \cf2 self\cf0 .\cf11 managedObjectContext\cf0 ;\
+    \cf2 if\cf0  (managedObjectContext != \cf2 nil\cf0 ) \{\
+        \cf2 if\cf0  ([managedObjectContext \cf9 hasChanges\cf0 ] && ![managedObjectContext \cf9 save\cf0 :
+\f4\b &error
+\f1\b0 ])
+\f0\b\fs24 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+checking for changes - no changes nothing happens\
+has changes and can save\
+\
+
+\b0 can a run a fetch request \
+good for running query\
+(filtering an excel document)\
+\
+cannot look inside data\
+\
+\
+can save info but we cannot see what happens\
+\
+cannot add into an area we have not set - caused a crash\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf0 \CocoaLigature0  \cf3 NSManagedObject\cf0  *newWorld = [\cf3 NSEntityDescription\cf0 \
+                                    \cf9 insertNewObjectForEntityForName\cf0 :\cf10 @"World"\cf0 \
+                                    \cf9 inManagedObjectContext\cf0 :\cf2 self\cf0 .\cf11 managedObjectContext\cf0 ];\
+    \
+    [newWorld \cf9 setValue\cf0 :\cf4 @(4)\cf0  \cf9 forKey\cf0 :\cf10 @"size"\cf0 ];\
+    [newWorld \cf9 setValue\cf0 :\cf10 @"Very Easy"\cf0  \cf9 forKey\cf0 :\cf10 @"difficulty"\cf0 ];\
+\pard\tx481\pardeftab481\pardirnatural
+\cf15 //    [newWorld setValue:@"Hello" forKey:@"Welcome"];\
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 deleting an object\
+\
+- (void)deleteObject: (NSObject)\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf0 \CocoaLigature0  \cf3 NSFetchRequest\cf0  * fetch = [\cf3 NSFetchRequest\cf0  \cf9 fetchRequestWithEntityName\cf0 :\cf10 @"World"\cf0 ];\
+    \
+   [fetch \cf9 setReturnsObjectsAsFaults\cf0 :\cf2 NO\cf0 ];\
+    \
+    \cf3 NSArray\cf0  * fetchedObjects = [\cf2 self\cf0 .\cf11 managedObjectContext\cf0  \cf9 executeFetchRequest\cf0 :fetch \cf9 error\cf0 :\cf2 nil\cf0 ];\
+    \
+    \cf2 for\cf0 (\cf3 NSManagedObject\cf0  *object \cf2 in\cf0  fetchedObjects)\
+    \{\
+        \cf9 NSLog\cf0  (\cf10 @"Size : %@"\cf0 , [object \cf9 valueForKey\cf0 :\cf10 @"size"\cf0 ]);\
+        [\cf2 self\cf0 .\cf11 managedObjectContext\cf0  \cf9 deleteObject\cf0 :object];\
+    \}\
+    \
+    [\cf2 self\cf0  \cf16 saveContext\cf0 ];\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 This deletes all the object\
+\
+
+\b \
+\
+Walked through \
+- capabilities for an app\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0 \cf0 {{\NeXTGraphic Pasted Graphic.tiff \width1620 \height4000
+}¬}
+\b \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
