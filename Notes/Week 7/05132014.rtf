@@ -1,0 +1,203 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 LucidaGrande;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red92\green38\blue153;\red46\green13\blue110;\red170\green13\blue145;
+\red83\green83\blue83;\red100\green56\blue32;\red196\green26\blue22;\red63\green110\blue116;\red0\green116\blue0;
+\red28\green0\blue207;}
+\margl1440\margr1440\vieww9320\viewh16300\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 05132014\
+\
+NOTES \
+\
+must set listVC.detailVC = detailVC\
+frame of detailVC = 1024 * 768\
+\
+UITabBarItem Class Reference\
+\
+title\
+image\
+likes\
+dislikes ???\
+timesPlayed\
+\
+\
+
+\b Lots of Tabs\
+
+\b0 \
+
+\b AppDelegate\
+\
+\'97 used tabBar\
+\'97 used UINavaigation Controller with barButtonItem\
+\
+\
+flexible space\
+\pard\tx481\pardeftab481\pardirnatural
+
+\b0 \cf2 \CocoaLigature0 UIBarButtonItem\cf0  * flexible = [[\cf2 UIBarButtonItem\cf0  \cf3 alloc\cf0 ] \cf3 initWithBarButtonSystemItem\cf0 :\cf3 UIBarButtonSystemItemFlexibleSpace\cf0  \cf3 target\cf0 :\cf4 nil\cf0  \cf3 action\cf0 :\cf4 nil\cf0 ];\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \CocoaLigature1 \
+\
+\pard\pardeftab720
+\cf5 UIBarButtonSystemItemFlexibleSpace\cf0 \
+\pard\pardeftab720\sa108
+\cf0 Blank space to add between other items. The space is distributed equally between the other items. Other item properties are ignored when this value is set.\
+Available in iOS 2.0 and later.\
+Declared in \cf5 UIBarButtonItem.h\cf0 .\
+\
+
+\b LilPlayA
+\f1 \
+
+\f0\b0 UIViewController - made it a rootViewController\
+\
+self is self\
+super is the superclass you inherit from\
+changed the init in the RootViewController but it still called the superclass initWithNibName\
+\
+using avaudio player\
+initWithContentsofURL\
+be able to play it\
+\
+UIView - position of play time (play bar)\
+\
+1. 
+\f2 \cf6 \CocoaLigature0 #import \cf7 <AVFoundation/AVFoundation.h> \cf0 in .m\cf6 \
+\cf0 2. global variable \cf2 AVPlayer\cf0  * playa;\
+3. \
+
+\fs20 \cf2 NSURL\cf0  * url = [\cf2 NSURL\cf0  \cf3 URLWithString\cf0 :\cf7 @"https://api.soundcloud.com/tracks/147445565/download?client_id=2d87025c8392069f828c446b965862e3"\cf0  ];\
+\pard\tx481\pardeftab481\pardirnatural
+\cf8 player\cf0  = [[\cf2 AVPlayer\cf0  \cf3 alloc\cf0 ] \cf3 initWithURL\cf0 :url];\
+        \
+[\cf8 player\cf0  \cf3 play\cf0 ];
+\fs24 \
+\pard\pardeftab720\sa108
+\cf0 \
+used AVPlayer instead of AVAudioPlayer - do not have to worry about creating an error\
+4. create stop and play button along with a UIView of a progressBar \
+\
+5. to increase speed \
+\pard\tx481\pardeftab481\pardirnatural
+
+\fs20 \cf3 dispatch_async\cf0 (\cf3 dispatch_get_global_queue\cf0 (\cf6 DISPATCH_QUEUE_PRIORITY_DEFAULT\cf0 , (\cf4 unsigned\cf0  \cf4 long\cf0 )\cf4 NULL\cf0 ), ^\{\
+            \
+            \cf2 NSURL\cf0  * url = [\cf2 NSURL\cf0  \cf3 URLWithString\cf0 :\cf7 @"https://api.soundcloud.com/tracks/147445565/download?client_id=2d87025c8392069f828c446b965862e3"\cf0  ];\
+            \
+            \cf2 NSData\cf0  * data = [\cf2 NSData\cf0  \cf3 dataWithContentsOfURL\cf0 :url];\
+            \
+            \cf3 dispatch_async\cf0 (\cf6 dispatch_get_main_queue\cf0 (), ^(\cf4 void\cf0 )\{\
+                \
+                \cf8 player\cf0  = [[\cf2 AVAudioPlayer\cf0  \cf3 alloc\cf0 ] \cf3 initWithData\cf0 :data \cf3 error\cf0 :\cf4 nil\cf0 ];\
+\
+			 [\cf8 player\cf0  \cf3 play\cf0 ];\
+\
+            \});\
+        \});\
+\pard\pardeftab720\sa108
+
+\fs24 \cf0 \
+HOMEWORK\
+stop should be a reset \
+play/pause\
+NSTimer\
+\
+set ToolBars in listview controller\
+(tab items)\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\fs20 \cf0  \cf4 float\cf0  timePosition = \cf8 player\cf0 .\cf2 duration\cf0 / \cf8 progressBar\cf0 .\cf2 frame\cf0 .\cf2 size\cf0 .\cf2 width\cf0 ;\
+\pard\tx481\pardeftab481\pardirnatural
+\cf9 //    float xPosition= timePosition * progressBar,frame.size.width;\cf0 \
+    \
+\cf9 //    NSLog(@"%f", timePosition);\cf0 \
+    \
+    seekButton.frame = CGRectMake(progressBar.frame.origin.x-\cf10 6\cf0  +, progressBar.frame.origin.y + \cf10 34\cf0 , \cf10 14\cf0 , \cf10 14\cf0 )];\
+\pard\pardeftab720\sa108
+
+\fs24 \cf0 \
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\fs20 \cf0 \
+\pard\tx481\pardeftab481\pardirnatural
+\cf9 /*  If the sound is playing, currentTime is the offset into the sound of the current playback position.  \
+If the sound is not playing, currentTime is the offset into the sound where playing would start. */\cf0 \
+\pard\tx481\pardeftab481\pardirnatural
+\cf4 @property\cf0  \cf2 NSTimeInterval\cf0  currentTime;\
+\pard\pardeftab720\sa108
+
+\fs24 \cf0 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
