@@ -23,6 +23,18 @@
 		C3A036BB1924F60900B8B88E /* StuffedAnimalBattaleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A036BA1924F60900B8B88E /* StuffedAnimalBattaleTests.m */; };
 		C3A036C61924F6F600B8B88E /* SABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A036C51924F6F600B8B88E /* SABViewController.m */; };
 		C3A036C91924FBD300B8B88E /* SABGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A036C81924FBD300B8B88E /* SABGameScene.m */; };
+		C3E07AE8192555AC00679C8C /* catL.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E07ADC192555AC00679C8C /* catL.png */; };
+		C3E07AE9192555AC00679C8C /* catR.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E07ADD192555AC00679C8C /* catR.png */; };
+		C3E07AEA192555AC00679C8C /* hippoL.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E07ADE192555AC00679C8C /* hippoL.png */; };
+		C3E07AEB192555AC00679C8C /* hippoR.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E07ADF192555AC00679C8C /* hippoR.png */; };
+		C3E07AEC192555AC00679C8C /* monkeyL.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E07AE0192555AC00679C8C /* monkeyL.png */; };
+		C3E07AED192555AC00679C8C /* monkeyR.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E07AE1192555AC00679C8C /* monkeyR.png */; };
+		C3E07AEE192555AC00679C8C /* pandaL.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E07AE2192555AC00679C8C /* pandaL.png */; };
+		C3E07AEF192555AC00679C8C /* pandaR.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E07AE3192555AC00679C8C /* pandaR.png */; };
+		C3E07AF0192555AC00679C8C /* rabbitL.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E07AE4192555AC00679C8C /* rabbitL.png */; };
+		C3E07AF1192555AC00679C8C /* rabbitR.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E07AE5192555AC00679C8C /* rabbitR.png */; };
+		C3E07AF2192555AC00679C8C /* racoonL.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E07AE6192555AC00679C8C /* racoonL.png */; };
+		C3E07AF3192555AC00679C8C /* racoonR.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E07AE7192555AC00679C8C /* racoonR.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +70,18 @@
 		C3A036C51924F6F600B8B88E /* SABViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SABViewController.m; sourceTree = "<group>"; };
 		C3A036C71924FBD300B8B88E /* SABGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SABGameScene.h; sourceTree = "<group>"; };
 		C3A036C81924FBD300B8B88E /* SABGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SABGameScene.m; sourceTree = "<group>"; };
+		C3E07ADC192555AC00679C8C /* catL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = catL.png; path = "stuffed animals/catL.png"; sourceTree = "<group>"; };
+		C3E07ADD192555AC00679C8C /* catR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = catR.png; path = "stuffed animals/catR.png"; sourceTree = "<group>"; };
+		C3E07ADE192555AC00679C8C /* hippoL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hippoL.png; path = "stuffed animals/hippoL.png"; sourceTree = "<group>"; };
+		C3E07ADF192555AC00679C8C /* hippoR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hippoR.png; path = "stuffed animals/hippoR.png"; sourceTree = "<group>"; };
+		C3E07AE0192555AC00679C8C /* monkeyL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = monkeyL.png; path = "stuffed animals/monkeyL.png"; sourceTree = "<group>"; };
+		C3E07AE1192555AC00679C8C /* monkeyR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = monkeyR.png; path = "stuffed animals/monkeyR.png"; sourceTree = "<group>"; };
+		C3E07AE2192555AC00679C8C /* pandaL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pandaL.png; path = "stuffed animals/pandaL.png"; sourceTree = "<group>"; };
+		C3E07AE3192555AC00679C8C /* pandaR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pandaR.png; path = "stuffed animals/pandaR.png"; sourceTree = "<group>"; };
+		C3E07AE4192555AC00679C8C /* rabbitL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rabbitL.png; path = "stuffed animals/rabbitL.png"; sourceTree = "<group>"; };
+		C3E07AE5192555AC00679C8C /* rabbitR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rabbitR.png; path = "stuffed animals/rabbitR.png"; sourceTree = "<group>"; };
+		C3E07AE6192555AC00679C8C /* racoonL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = racoonL.png; path = "stuffed animals/racoonL.png"; sourceTree = "<group>"; };
+		C3E07AE7192555AC00679C8C /* racoonR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = racoonR.png; path = "stuffed animals/racoonR.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +121,18 @@
 				C3A036B41924F60900B8B88E /* StuffedAnimalBattaleTests */,
 				C3A036941924F60900B8B88E /* Frameworks */,
 				C3A036931924F60900B8B88E /* Products */,
+				C3E07ADC192555AC00679C8C /* catL.png */,
+				C3E07ADD192555AC00679C8C /* catR.png */,
+				C3E07ADE192555AC00679C8C /* hippoL.png */,
+				C3E07ADF192555AC00679C8C /* hippoR.png */,
+				C3E07AE0192555AC00679C8C /* monkeyL.png */,
+				C3E07AE1192555AC00679C8C /* monkeyR.png */,
+				C3E07AE2192555AC00679C8C /* pandaL.png */,
+				C3E07AE3192555AC00679C8C /* pandaR.png */,
+				C3E07AE4192555AC00679C8C /* rabbitL.png */,
+				C3E07AE5192555AC00679C8C /* rabbitR.png */,
+				C3E07AE6192555AC00679C8C /* racoonL.png */,
+				C3E07AE7192555AC00679C8C /* racoonR.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -237,9 +273,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3A036A01924F60900B8B88E /* InfoPlist.strings in Resources */,
+				C3E07AED192555AC00679C8C /* monkeyR.png in Resources */,
+				C3E07AF3192555AC00679C8C /* racoonR.png in Resources */,
+				C3E07AE8192555AC00679C8C /* catL.png in Resources */,
 				C3858C2819253FEC007AB654 /* Explosion.sks in Resources */,
+				C3E07AEC192555AC00679C8C /* monkeyL.png in Resources */,
+				C3E07AEA192555AC00679C8C /* hippoL.png in Resources */,
+				C3E07AF1192555AC00679C8C /* rabbitR.png in Resources */,
 				C3858C2A1925406C007AB654 /* Fireball.sks in Resources */,
 				C3A036A81924F60900B8B88E /* Images.xcassets in Resources */,
+				C3E07AE9192555AC00679C8C /* catR.png in Resources */,
+				C3E07AEE192555AC00679C8C /* pandaL.png in Resources */,
+				C3E07AF2192555AC00679C8C /* racoonL.png in Resources */,
+				C3E07AEB192555AC00679C8C /* hippoR.png in Resources */,
+				C3E07AF0192555AC00679C8C /* rabbitL.png in Resources */,
+				C3E07AEF192555AC00679C8C /* pandaR.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

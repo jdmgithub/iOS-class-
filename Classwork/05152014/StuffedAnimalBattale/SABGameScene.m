@@ -37,6 +37,7 @@ typedef NS_ENUM(uint32_t, CollisionType) {
     
     SKSpriteNode * player1;
     SKSpriteNode * player2;
+    SKSpriteNode * player1A;
 
 }
 
@@ -101,12 +102,14 @@ typedef NS_ENUM(uint32_t, CollisionType) {
         dpadRight.position = CGPointMake(130, 90);
         [self addChild:dpadRight];
         
-        player1 = [SKSpriteNode spriteNodeWithColor:[SKColor whiteColor] size:CGSizeMake(40, 100)];
+        player1 = [SKSpriteNode spriteNodeWithImageNamed:@"monkeyR" ];
+        player1.size = CGSizeMake(100, 100);
         player1.position = CGPointMake(SCREEN_WIDTH/3.0, 80.0);
         [self addChild:player1];
         
         
-        player2 = [SKSpriteNode spriteNodeWithColor:[SKColor blueColor] size:CGSizeMake(40, 100)];
+        player2 = [SKSpriteNode spriteNodeWithImageNamed:@"racoonL" ];
+        player2.size = CGSizeMake(100, 100);
         player2.position = CGPointMake(SCREEN_WIDTH * 0.75, 80.0);
         [self addChild:player2];
 
@@ -178,7 +181,7 @@ typedef NS_ENUM(uint32_t, CollisionType) {
                     NSString *myParticlePath = [[NSBundle mainBundle]pathForResource:@"Fireball" ofType:@"sks"];
                     SKEmitterNode *fireball = [NSKeyedUnarchiver unarchiveObjectWithFile:myParticlePath];
                     
-                    fireball.position = CGPointMake(player1.position.x + 26.0, player1.position.y) ;
+                    fireball.position = CGPointMake(player1.position.x + 57.0, player1.position.y) ;
                     
                     SKPhysicsBody * fireballPhysics = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(10, 10)];
                     
@@ -216,15 +219,28 @@ typedef NS_ENUM(uint32_t, CollisionType) {
                     
             case 4://left
                 {  NSLog(@"Move Left");
-                    [player1.physicsBody applyImpulse:CGVectorMake(- 20.0, 0.0)];
+                    [player1 removeFromParent];
+                    player1A = [SKSpriteNode spriteNodeWithImageNamed:@"monkeyL" ];
+                    player1A.size = CGSizeMake(100, 100);
+                    player1A.position = CGPointMake(SCREEN_WIDTH/3.0, 80.0);
+                    [self addChild:player1A];
+
+                    [player1A.physicsBody applyImpulse:CGVectorMake(- 20.0, 0.0)];
 //                    [player2.physicsBody applyImpulse:CGVectorMake(- 20.0, 0.0)];
+                    
                 }
                     break;
                     
             case 5://right
                 {  NSLog(@"Move Right");
+                     [player1A removeFromParent];
+                    player1 = [SKSpriteNode spriteNodeWithImageNamed:@"monkeyR" ];
+                    player1.size = CGSizeMake(100, 100);
+                    player1.position = CGPointMake(SCREEN_WIDTH/3.0, 80.0);
+                    [self addChild:player1];
                     [player1.physicsBody applyImpulse:CGVectorMake(20.0, 0.0)];
 //                    [player2.physicsBody applyImpulse:CGVectorMake(20.0, 0.0)];
+                   
 
                 }
                 break;
