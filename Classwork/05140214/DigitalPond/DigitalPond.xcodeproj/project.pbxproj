@@ -19,6 +19,10 @@
 		C3918FF11923BE5600814DD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3918FD91923BE5600814DD3 /* UIKit.framework */; };
 		C3918FF91923BE5600814DD3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3918FF71923BE5600814DD3 /* InfoPlist.strings */; };
 		C3918FFB1923BE5600814DD3 /* DigitalPondTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3918FFA1923BE5600814DD3 /* DigitalPondTests.m */; };
+		C39190071923C22000814DD3 /* DPAPondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C39190051923C22000814DD3 /* DPAPondViewController.m */; };
+		C39190081923C22000814DD3 /* DPAPond.xib in Resources */ = {isa = PBXBuildFile; fileRef = C39190061923C22000814DD3 /* DPAPond.xib */; };
+		C391900A1923C3C900814DD3 /* DPALava.xib in Resources */ = {isa = PBXBuildFile; fileRef = C39190091923C3C900814DD3 /* DPALava.xib */; };
+		C391900D1923C70100814DD3 /* DPARipple.m in Sources */ = {isa = PBXBuildFile; fileRef = C391900C1923C70100814DD3 /* DPARipple.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,12 @@
 		C3918FF61923BE5600814DD3 /* DigitalPondTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DigitalPondTests-Info.plist"; sourceTree = "<group>"; };
 		C3918FF81923BE5600814DD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C3918FFA1923BE5600814DD3 /* DigitalPondTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitalPondTests.m; sourceTree = "<group>"; };
+		C39190041923C22000814DD3 /* DPAPondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPAPondViewController.h; sourceTree = "<group>"; };
+		C39190051923C22000814DD3 /* DPAPondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPAPondViewController.m; sourceTree = "<group>"; };
+		C39190061923C22000814DD3 /* DPAPond.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPAPond.xib; sourceTree = "<group>"; };
+		C39190091923C3C900814DD3 /* DPALava.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPALava.xib; sourceTree = "<group>"; };
+		C391900B1923C70100814DD3 /* DPARipple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPARipple.h; sourceTree = "<group>"; };
+		C391900C1923C70100814DD3 /* DPARipple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPARipple.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,12 @@
 		C3918FC91923BE5600814DD3 = {
 			isa = PBXGroup;
 			children = (
+				C391900B1923C70100814DD3 /* DPARipple.h */,
+				C391900C1923C70100814DD3 /* DPARipple.m */,
+				C39190091923C3C900814DD3 /* DPALava.xib */,
+				C39190041923C22000814DD3 /* DPAPondViewController.h */,
+				C39190051923C22000814DD3 /* DPAPondViewController.m */,
+				C39190061923C22000814DD3 /* DPAPond.xib */,
 				C3918FDB1923BE5600814DD3 /* DigitalPond */,
 				C3918FF41923BE5600814DD3 /* DigitalPondTests */,
 				C3918FD41923BE5600814DD3 /* Frameworks */,
@@ -191,6 +207,11 @@
 				CLASSPREFIX = DPA;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Jisha Obukwelu";
+				TargetAttributes = {
+					C3918FEC1923BE5600814DD3 = {
+						TestTargetID = C3918FD11923BE5600814DD3;
+					};
+				};
 			};
 			buildConfigurationList = C3918FCD1923BE5600814DD3 /* Build configuration list for PBXProject "DigitalPond" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -216,7 +237,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3918FE01923BE5600814DD3 /* InfoPlist.strings in Resources */,
+				C391900A1923C3C900814DD3 /* DPALava.xib in Resources */,
 				C3918FE81923BE5600814DD3 /* Images.xcassets in Resources */,
+				C39190081923C22000814DD3 /* DPAPond.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,8 +258,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C39190071923C22000814DD3 /* DPAPondViewController.m in Sources */,
 				C3918FE61923BE5600814DD3 /* DPAAppDelegate.m in Sources */,
 				C3918FE21923BE5600814DD3 /* main.m in Sources */,
+				C391900D1923C70100814DD3 /* DPARipple.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +402,7 @@
 		C39190021923BE5600814DD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DigitalPond.app/DigitalPond";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -390,6 +416,7 @@
 				);
 				INFOPLIST_FILE = "DigitalPondTests/DigitalPondTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -397,6 +424,7 @@
 		C39190031923BE5600814DD3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DigitalPond.app/DigitalPond";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -406,6 +434,7 @@
 				GCC_PREFIX_HEADER = "DigitalPond/DigitalPond-Prefix.pch";
 				INFOPLIST_FILE = "DigitalPondTests/DigitalPondTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;

@@ -7,6 +7,7 @@
 //
 
 #import "DPAAppDelegate.h"
+#import "DPAPondViewController.h"
 
 @implementation DPAAppDelegate
 
@@ -14,6 +15,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+   
+    self.window.rootViewController = [[DPAPondViewController alloc] initWithNibName:@"DPALava" bundle:nil];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
