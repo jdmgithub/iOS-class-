@@ -27,6 +27,7 @@
     NSTimeInterval duration;
     CGFloat progress;
     UIView * progressBar2;
+    CGPoint location;
     
     
     int h;
@@ -38,8 +39,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-         w = [UIScreen mainScreen].bounds.size.width;
-         h = [UIScreen mainScreen].bounds.size.height;
+        w = [UIScreen mainScreen].bounds.size.width;
+        h = [UIScreen mainScreen].bounds.size.height;
         
         playButton = [[UIButton alloc] initWithFrame:CGRectMake(110, 100, 100, 100)];
         [playButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
@@ -64,7 +65,7 @@
         seekButton.layer.cornerRadius  = 15;
         seekButton.backgroundColor = [UIColor magentaColor];
         [progressBar addSubview:seekButton];
-
+        
         songTimer = [[UILabel alloc] initWithFrame:CGRectMake(0, -55, 40, 20)];
         songTimer.font = [UIFont fontWithName:@"HELVETICANEUE-ULTRALIGHT" size:10];
         [seekButton addSubview:songTimer];
@@ -138,7 +139,7 @@
     seekButton.frame = CGRectMake(xPosition, -10, 30, 30);
     seekButton.layer.cornerRadius = 15;
     
-       NSLog(@"%f", currentTime);
+    NSLog(@"%f", currentTime);
     
     songTimer.frame = CGRectMake(0, -25, 40, 20);
     songTimer.text = [NSString stringWithFormat:@"%0.02f, 0.02f",player.currentTime];
@@ -146,7 +147,7 @@
     
     progressBar2.frame = CGRectMake(0, 0, xPosition, 5);
     progressBar2.backgroundColor = [UIColor blackColor];
-
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -157,9 +158,23 @@
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+   [self moveMySeekButton:touches];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
+    [self moveMySeekButton:touches];
+    player.currentTime = location.x;
+    [player play];
+    
+}
+
+- (void)moveMySeekButton: (NSSet *)touches
+{
     for (UITouch *touch in touches)
     {
-        CGPoint location = [touch locationInView:progressBar];
+        location = [touch locationInView:progressBar];
         seekButton.frame = CGRectMake(location.x, -10, 30, 30);
         seekButton.layer.cornerRadius = 15;
         
@@ -167,25 +182,6 @@
         
         progressBar2.frame = CGRectMake(0, 0, location.x, 5);
         progressBar2.backgroundColor = [UIColor blackColor];
-    }
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    for (UITouch *touch in touches)
-    {
-        CGPoint location = [touch locationInView:progressBar];
-        seekButton.frame = CGRectMake(location.x, -10, 30, 30);
-        seekButton.layer.cornerRadius = 15;
-        
-        player.currentTime = location.x;
-        
-        songTimer.text = [NSString stringWithFormat:@"%0.02f, 0.02f",player.currentTime];
-        
-        progressBar2.frame = CGRectMake(0, 0, location.x, 5);
-        progressBar2.backgroundColor = [UIColor blackColor];
-        
-        [player play];
     }
 }
 
