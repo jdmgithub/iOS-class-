@@ -1,0 +1,257 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red170\green13\blue145;\red46\green13\blue110;\red92\green38\blue153;
+\red28\green0\blue207;\red100\green56\blue32;\red63\green105\blue30;\red63\green110\blue116;\red196\green26\blue22;
+\red38\green71\blue75;\red0\green116\blue0;}
+\margl1440\margr1440\vieww12160\viewh16300\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 Stuffed Animal Battle\
+Read SKNode\
+\
+{\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/Reference/Reference.html"}}{\fldrslt https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/Reference/Reference.html}}\
+\
+
+\b APPDELEGATE\
+1. set root view controller\
+\
+SABViewController\
+2. 
+\b0 \
+custom init (erase NibName)\
+\
+//create SCREEN_WIDTH and SCREEN_HEIGHT constants\
+// import SpriteKit\
+\
+create an SKView and SKScene\
+\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf0 \CocoaLigature0 - (\cf2 id\cf0 )init\
+\{\
+    \cf2 self\cf0   =[\cf2 super\cf0  \cf3 init\cf0 ];\
+    \cf2 if\cf0 (\cf2 self\cf0 )\
+    \{\
+        \cf4 SKView\cf0  * skView = [[\cf4 SKView\cf0  \cf3 alloc\cf0 ] \cf3 initWithFrame\cf0 :\cf3 CGRectMake\cf0 (\cf5 0\cf0 , \cf5 0\cf0 , \cf6 SCREEN_WIDTH\cf0 , \cf6 SCREEN_HEIGHT\cf0 )];\
+        [\cf2 self\cf0 .\cf4 view\cf0  \cf3 addSubview\cf0 :skView];\
+\
+        \cf4 SKScene\cf0  * skScene = [[\cf4 SKScene\cf0  \cf3 alloc\cf0 ] \cf3 initWithSize\cf0 :\cf3 CGSizeMake\cf0 (\cf6 SCREEN_WIDTH\cf0 , \cf6 SCREEN_HEIGHT\cf0 )];\
+        [skView \cf3 presentScene\cf0 :skScene];\
+    \}\
+    \cf2 return\cf0  \cf2 self\cf0 ;\
+\}\
+\
+\
+objects on the scene are called nodes\
+(like a UIBUTTON in a UIView)\
+\
+\
+
+\f2\b\fs24 SABGAMESCENE\
+
+\f0 (SKScene subclass)\
+
+\b0 1. instance type init\
+\
+
+\f1\fs20 - (\cf2 instancetype\cf0 )initWithSize:(\cf4 CGSize\cf0 )size\
+\{\
+    \cf2 self\cf0  = [\cf2 super\cf0  \cf3 initWithSize\cf0 :size];\
+    \cf2 if\cf0 (\cf2 self\cf0 )\
+    \{\
+        \cf4 SKSpriteNode\cf0  * box = [\cf4 SKSpriteNode\cf0  \cf3 spriteNodeWithColor\cf0 :[\cf6 SKColor\cf0  \cf3 redColor\cf0 ] \cf3 size\cf0 :\cf3 CGSizeMake\cf0 (\cf5 20\cf0 , \cf5 20\cf0 )];\
+\cf7 //SKSpriteNode has a defined frame\
+// has a defined frame\
+\cf0 \
+        [\cf2 self\cf0  \cf3 addChild\cf0 :box];\
+\cf7 // add to scene\
+        \
+\cf0     \}\
+    \cf2 return\cf0  \cf2 self\cf0 ;\
+\}\
+
+\f0\fs24 \
+1. allocated and initialized some of our game features\
+\{\
+
+\f1\fs20         \cf8 timerLabel\cf0  = [\cf4 SKLabelNode\cf0  \cf3 node\cf0 ];\
+        \cf8 timerLabel\cf0 .\cf4 position\cf0  = \cf3 CGPointMake\cf0 (\cf6 SCREEN_WIDTH\cf0 /\cf5 2.0\cf0 , \cf6 SCREEN_HEIGHT\cf0  - \cf5 30\cf0 );\
+        \cf8 timerLabel\cf0 .\cf4 text\cf0  = \cf9 @"0.00"\cf0 ;\
+        \cf8 timerLabel\cf0 .\cf4 fontColor\cf0  = [\cf6 SKColor\cf0  \cf3 greenColor\cf0 ];\
+        \cf8 timerLabel\cf0 .\cf4 fontSize\cf0  = \cf5 16.0\cf0 ;\
+        [\cf2 self\cf0  \cf3 addChild\cf0 :\cf8 timerLabel\cf0 ];\
+        \
+        \cf2 float\cf0  barArea = ((\cf6 SCREEN_WIDTH\cf0  - \cf5 60\cf0 )/\cf5 2.0\cf0 ) - \cf5 20\cf0 ;\
+        \
+        \cf8 player1HPBar\cf0  = [\cf4 SKSpriteNode\cf0  \cf3 spriteNodeWithColor\cf0 :[\cf6 SKColor\cf0  \cf3 lightGrayColor\cf0 ] \cf3 size\cf0 :\cf3 CGSizeMake\cf0 (barArea, \cf5 20\cf0 )];\
+        \cf8 player1HPBar\cf0 .\cf4 position\cf0  = \cf3 CGPointMake\cf0 ((barArea+ \cf5 20\cf0 )/\cf5 2.0\cf0 , \cf6 SCREEN_HEIGHT\cf0  - \cf5 20.0\cf0 );\
+        [\cf2 self\cf0  \cf3 addChild\cf0 :\cf8 player1HPBar\cf0 ];\
+        \
+        \cf8 player2HPBar\cf0  = [\cf4 SKSpriteNode\cf0  \cf3 spriteNodeWithColor\cf0 :[\cf6 SKColor\cf0  \cf3 lightGrayColor\cf0 ] \cf3 size\cf0 :\cf3 CGSizeMake\cf0 (barArea, \cf5 20\cf0 )];\
+        \cf8 player2HPBar\cf0 .\cf4 position\cf0  = \cf3 CGPointMake\cf0 ((\cf6 SCREEN_WIDTH\cf0  - (barArea+ \cf5 20\cf0 )/\cf5 2.0\cf0 ), \cf6 SCREEN_HEIGHT\cf0  - \cf5 20.0\cf0 );\
+        [\cf2 self\cf0  \cf3 addChild\cf0 :\cf8 player2HPBar\cf0 ];\
+        \
+        \cf8 buttonA\cf0  = [\cf4 SKSpriteNode\cf0  \cf3 spriteNodeWithColor\cf0 :[\cf6 SKColor\cf0  \cf3 redColor\cf0 ] \cf3 size\cf0 :\cf3 CGSizeMake\cf0 (\cf5 40\cf0 , \cf5 40\cf0 )];\
+        \cf8 buttonA\cf0 .\cf4 position\cf0  = \cf3 CGPointMake\cf0 (\cf6 SCREEN_WIDTH\cf0  - \cf5 40\cf0 , \cf5 80\cf0 );\
+        [\cf2 self\cf0  \cf3 addChild\cf0 :\cf8 buttonA\cf0 ];\
+        \
+        \cf8 buttonB\cf0  = [\cf4 SKSpriteNode\cf0  \cf3 spriteNodeWithColor\cf0 :[\cf6 SKColor\cf0  \cf3 redColor\cf0 ] \cf3 size\cf0 :\cf3 CGSizeMake\cf0 (\cf5 40\cf0 , \cf5 40\cf0 )];\
+        \cf8 buttonB\cf0 .\cf4 position\cf0  = \cf3 CGPointMake\cf0 (\cf6 SCREEN_WIDTH\cf0  - \cf5 80\cf0 , \cf5 40\cf0 );\
+        [\cf2 self\cf0  \cf3 addChild\cf0 :\cf8 buttonB\cf0 ];\
+
+\f0\fs24 \
+\}\
+\
+3. . touches began to read touches\
+
+\f1\fs20 - (\cf2 void\cf0 )touchesBegan:(\cf4 NSSet\cf0  *)touches withEvent:(\cf4 UIEvent\cf0  *)event\
+\{\
+    \cf4 UITouch\cf0  * touch = [touches \cf3 anyObject\cf0 ];\
+    \
+    \cf4 CGPoint\cf0  location = [touch \cf3 locationInNode\cf0 :\cf2 self\cf0 ];\
+    \
+    \
+    \cf3 NSLog\cf0 (\cf9 @"%f, %f"\cf0 , location.\cf4 x\cf0 , location.\cf4 y\cf0 );\
+    \cf3 NSLog\cf0 (\cf9 @"%u"\cf0 , [\cf8 buttonA\cf0  \cf3 containsPoint\cf0 :location]);\
+returns a bool value, 0, 1\
+\
+    \
+    [\cf2 self\cf0  \cf10 testButtonsWithLocations\cf0 :location];\
+\}\
+\
+\
+4. Created a switch statement to punch and kick\
+- (\cf2 void\cf0 )testButtonsWithLocations: (\cf4 CGPoint\cf0 )location\
+\{\
+    \cf4 NSArray\cf0  * buttons = \cf5 @[\cf8 buttonA\cf0 , \cf8 buttonB\cf5 ]\cf0 ;\
+    \cf2 for\cf0  (\cf4 SKNode\cf0  * button \cf2 in\cf0  buttons)\
+    \{\
+        \cf2 if\cf0 ([button \cf3 containsPoint\cf0 :location])\
+        \{\
+            \cf3 NSLog\cf0 (\cf9 @"button%d, %u"\cf0 ,[buttons \cf3 indexOfObject\cf0 :button]);\
+            \{\
+                \cf2 case\cf0  \cf5 0\cf0 :\cf11 //buttonA\cf0 \
+                \cf3 NSLog\cf0 (\cf9 @"Punch"\cf0 );\
+                \cf2 break\cf0 ;\
+                \cf2 case\cf0  \cf5 1\cf0 :\cf11 //buttonB\cf0 \
+                \cf3 NSLog\cf0 (\cf9 @"Kick"\cf0 );\
+                \cf2 break\cf0 ;\
+                \
+                \cf2 default\cf0 :\
+                \cf2 break\cf0 ;\
+            \}\}\}\}\}\
+\
+
+\f0\fs24 \
+5. defined more of our nodes\
+\
+
+\f1\fs20          \cf8 dpadDown\cf0  = [\cf4 SKSpriteNode\cf0  \cf3 spriteNodeWithColor\cf0 :[\cf6 SKColor\cf0  \cf3 blueColor\cf0 ] \cf3 size\cf0 :\cf3 CGSizeMake\cf0 (\cf5 30\cf0 , \cf5 30\cf0 )];\
+        \cf8 dpadDown\cf0 .\cf4 position\cf0  = \cf3 CGPointMake\cf0 (\cf5 80\cf0 , \cf5 40\cf0 );\
+        [\cf2 self\cf0  \cf3 addChild\cf0 :\cf8 dpadDown\cf0 ];\
+\
+        \cf8 dpadUp\cf0  = [\cf4 SKSpriteNode\cf0  \cf3 spriteNodeWithColor\cf0 :[\cf6 SKColor\cf0  \cf3 blueColor\cf0 ] \cf3 size\cf0 :\cf3 CGSizeMake\cf0 (\cf5 30\cf0 , \cf5 30\cf0 )];\
+        \cf8 dpadUp\cf0 .\cf4 position\cf0  = \cf3 CGPointMake\cf0 (\cf5 80\cf0 , \cf5 120\cf0 );\
+        [\cf2 self\cf0  \cf3 addChild\cf0 :\cf8 dpadUp\cf0 ];\
+        \
+        \cf8 dpadLeft\cf0  = [\cf4 SKSpriteNode\cf0  \cf3 spriteNodeWithColor\cf0 :[\cf6 SKColor\cf0  \cf3 blueColor\cf0 ] \cf3 size\cf0 :\cf3 CGSizeMake\cf0 (\cf5 30\cf0 , \cf5 30\cf0 )];\
+        \cf8 dpadLeft\cf0 .\cf4 position\cf0  = \cf3 CGPointMake\cf0 (\cf5 40\cf0 , \cf5 80\cf0 );\
+        [\cf2 self\cf0  \cf3 addChild\cf0 :\cf8 dpadLeft\cf0 ];\
+        \
+        \cf8 dpadRight\cf0  = [\cf4 SKSpriteNode\cf0  \cf3 spriteNodeWithColor\cf0 :[\cf6 SKColor\cf0  \cf3 blueColor\cf0 ] \cf3 size\cf0 :\cf3 CGSizeMake\cf0 (\cf5 30\cf0 , \cf5 30\cf0 )];\
+        \cf8 dpadRight\cf0 .\cf4 position\cf0  = \cf3 CGPointMake\cf0 (\cf5 120\cf0 , \cf5 80\cf0 );\
+        [\cf2 self\cf0  \cf3 addChild\cf0 :\cf8 dpadRight\cf0 ];\
+        \
+        \cf8 player1\cf0  = [\cf4 SKSpriteNode\cf0  \cf3 spriteNodeWithColor\cf0 :[\cf6 SKColor\cf0  \cf3 whiteColor\cf0 ] \cf3 size\cf0 :\cf3 CGSizeMake\cf0 (\cf5 40\cf0 , \cf5 100\cf0 )];\
+        \cf8 player1\cf0 .\cf4 position\cf0  = \cf3 CGPointMake\cf0 (\cf6 SCREEN_WIDTH\cf0 /\cf5 2.0\cf0 , \cf5 80\cf0 );\
+        [\cf2 self\cf0  \cf3 addChild\cf0 :\cf8 player1\cf0 ];\
+
+\f0\fs24 \
+6. created a switch statement (forgot to put that in)\
+add the new button to the array and add on to our cases\
+
+\f1\fs20 - (\cf2 void\cf0 )testButtonsWithLocations: (\cf4 CGPoint\cf0 )location\
+\{\
+    \cf4 NSArray\cf0  * buttons = \cf5 @[\cf8 buttonA\cf0 , \cf8 buttonB\cf0 , \cf8 dpadUp\cf0 , \cf8 dpadDown\cf0 , \cf8 dpadLeft\cf0 , \cf8 dpadRight\cf5 ]\cf0 ;\
+    \cf2 for\cf0  (\cf4 SKNode\cf0  * button \cf2 in\cf0  buttons)\
+    \{\
+        \cf2 if\cf0 ([button \cf3 containsPoint\cf0 :location])\
+        \{\
+           \cf2 switch\cf0  ([buttons \cf3 indexOfObject\cf0 :button])\
+            \{\
+            \cf2 case\cf0  \cf5 0\cf0 :\cf11 //buttonA\cf0 \
+                \cf3 NSLog\cf0 (\cf9 @"Punch"\cf0 );\
+                \cf2 break\cf0 ;\
+            \cf2 case\cf0  \cf5 1\cf0 :\cf11 //buttonB\cf0 \
+                \cf3 NSLog\cf0 (\cf9 @"Kick"\cf0 );\
+                \cf2 break\cf0 ;\
+                \
+            \cf2 case\cf0  \cf5 2\cf0 :\cf11 //up\cf0 \
+                \cf3 NSLog\cf0 (\cf9 @"Jump"\cf0 );\
+                \cf2 break\cf0 ;\
+            \cf2 case\cf0  \cf5 3\cf0 :\cf11 //down\cf0 \
+                \cf3 NSLog\cf0 (\cf9 @"Duck"\cf0 );\
+                \cf2 break\cf0 ;\
+            \cf2 case\cf0  \cf5 4\cf0 :\cf11 //left\cf0 \
+                \cf3 NSLog\cf0 (\cf9 @"Move Left"\cf0 );\
+                \cf2 break\cf0 ;\
+            \cf2 case\cf0  \cf5 5\cf0 :\cf11 //right\cf0 \
+                \cf3 NSLog\cf0 (\cf9 @"Move Right"\cf0 );\
+                \cf2 break\cf0 ;\
+                \
+                \cf2 default\cf0 :\
+                \cf2 break\cf0 ;\
+\}\}\}\}\
+
+\f0\fs24 \
+\
+HOMEWORK!!!!!!!!!!!!!!!!!!!\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf11 // health points for players\cf0 \
+\cf11 // make the HP Bars represent HP points per player\cf0 \
+\cf11 // make fireball remove HP points\cf0 \
+\cf11 // sound effects from sprite kit to explosion, landing after jumping\cf0 \
+\cf11 // Research Sprite Character (designed and look like)\cf0 \
+\cf11 // random pictures online for your characters\cf0 \
+\pard\tx481\pardeftab481\pardirnatural
+
+\f0\fs24 \cf0 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
