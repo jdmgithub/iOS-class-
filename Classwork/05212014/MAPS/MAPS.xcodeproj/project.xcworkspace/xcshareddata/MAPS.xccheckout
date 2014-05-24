@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>ACA77F77-CB7C-487E-97D4-6180D2230E51</string>
+	<string>D3CE09C4-6732-40C9-8F2A-76AFFF635CC3</string>
 	<key>IDESourceControlProjectName</key>
-	<string>STTwitterDemoOSX</string>
+	<string>MAPS</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C46D47C2-4E85-450C-8CD0-68C8DA32B03D</key>
-		<string>https://github.com/nst/STTwitter.git</string>
+		<key>870B18FE-EC7C-4B28-9417-013787BF2498</key>
+		<string>https://github.com/Jiobu/iOS-class-.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>demo_osx/STTwitterDemoOSX.xcodeproj/project.xcworkspace</string>
+	<string>Classwork/05202014/MAPS/MAPS.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C46D47C2-4E85-450C-8CD0-68C8DA32B03D</key>
-		<string>../../..</string>
+		<key>870B18FE-EC7C-4B28-9417-013787BF2498</key>
+		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/nst/STTwitter.git</string>
+	<string>https://github.com/Jiobu/iOS-class-.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C46D47C2-4E85-450C-8CD0-68C8DA32B03D</string>
+	<string>870B18FE-EC7C-4B28-9417-013787BF2498</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C46D47C2-4E85-450C-8CD0-68C8DA32B03D</string>
+			<string>870B18FE-EC7C-4B28-9417-013787BF2498</string>
 			<key>IDESourceControlWCCName</key>
-			<string>STTwitter</string>
+			<string>iOS_Class</string>
 		</dict>
 	</array>
 </dict>
