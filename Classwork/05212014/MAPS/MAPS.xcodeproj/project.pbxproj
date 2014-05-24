@@ -19,6 +19,10 @@
 		C3E96E87192CDCB400FBF88B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E96E6F192CDCB300FBF88B /* UIKit.framework */; };
 		C3E96E8F192CDCB400FBF88B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3E96E8D192CDCB400FBF88B /* InfoPlist.strings */; };
 		C3E96E91192CDCB400FBF88B /* MAPSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E96E90192CDCB400FBF88B /* MAPSTests.m */; };
+		C3E96E9C192CDCC100FBF88B /* MAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E96E9B192CDCC100FBF88B /* MAPViewController.m */; };
+		C3E96E9E192CDD1300FBF88B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E96E9D192CDD1300FBF88B /* MapKit.framework */; };
+		C3E96EA0192CDEB100FBF88B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E96E9F192CDEB100FBF88B /* CoreLocation.framework */; };
+		C3E96EA3192CE33A00FBF88B /* MAPAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E96EA2192CE33A00FBF88B /* MAPAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,12 @@
 		C3E96E8C192CDCB400FBF88B /* MAPSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MAPSTests-Info.plist"; sourceTree = "<group>"; };
 		C3E96E8E192CDCB400FBF88B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C3E96E90192CDCB400FBF88B /* MAPSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAPSTests.m; sourceTree = "<group>"; };
+		C3E96E9A192CDCC100FBF88B /* MAPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPViewController.h; sourceTree = "<group>"; };
+		C3E96E9B192CDCC100FBF88B /* MAPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPViewController.m; sourceTree = "<group>"; };
+		C3E96E9D192CDD1300FBF88B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C3E96E9F192CDEB100FBF88B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C3E96EA1192CE33A00FBF88B /* MAPAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPAnnotation.h; sourceTree = "<group>"; };
+		C3E96EA2192CE33A00FBF88B /* MAPAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3E96EA0192CDEB100FBF88B /* CoreLocation.framework in Frameworks */,
+				C3E96E9E192CDD1300FBF88B /* MapKit.framework in Frameworks */,
 				C3E96E6E192CDCB300FBF88B /* CoreGraphics.framework in Frameworks */,
 				C3E96E70192CDCB300FBF88B /* UIKit.framework in Frameworks */,
 				C3E96E6C192CDCB300FBF88B /* Foundation.framework in Frameworks */,
@@ -77,6 +89,10 @@
 		C3E96E5F192CDCB300FBF88B = {
 			isa = PBXGroup;
 			children = (
+				C3E96EA1192CE33A00FBF88B /* MAPAnnotation.h */,
+				C3E96EA2192CE33A00FBF88B /* MAPAnnotation.m */,
+				C3E96E9A192CDCC100FBF88B /* MAPViewController.h */,
+				C3E96E9B192CDCC100FBF88B /* MAPViewController.m */,
 				C3E96E71192CDCB300FBF88B /* MAPS */,
 				C3E96E8A192CDCB400FBF88B /* MAPSTests */,
 				C3E96E6A192CDCB300FBF88B /* Frameworks */,
@@ -96,6 +112,8 @@
 		C3E96E6A192CDCB300FBF88B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3E96E9F192CDEB100FBF88B /* CoreLocation.framework */,
+				C3E96E9D192CDD1300FBF88B /* MapKit.framework */,
 				C3E96E6B192CDCB300FBF88B /* Foundation.framework */,
 				C3E96E6D192CDCB300FBF88B /* CoreGraphics.framework */,
 				C3E96E6F192CDCB300FBF88B /* UIKit.framework */,
@@ -242,6 +260,8 @@
 			files = (
 				C3E96E78192CDCB300FBF88B /* main.m in Sources */,
 				C3E96E7C192CDCB300FBF88B /* MAPAppDelegate.m in Sources */,
+				C3E96E9C192CDCC100FBF88B /* MAPViewController.m in Sources */,
+				C3E96EA3192CE33A00FBF88B /* MAPAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
