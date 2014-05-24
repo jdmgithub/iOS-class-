@@ -42,7 +42,7 @@ return self;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    smileyFrame = [[UIView alloc]initWithFrame:CGRectMake (56, 180, 192, 192)];
+    smileyFrame = [[UIView alloc]initWithFrame:CGRectMake (56, 160, 192, 192)];
     smileyFrame.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:smileyFrame];
     

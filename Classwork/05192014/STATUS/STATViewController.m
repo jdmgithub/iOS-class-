@@ -38,7 +38,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    buttonFrame = [[UIView alloc]initWithFrame:CGRectMake (56, 180, 192, 192)];
+    buttonFrame = [[UIView alloc]initWithFrame:CGRectMake (56, 160, 192, 192)];
     buttonFrame.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:buttonFrame];
     
@@ -69,21 +69,21 @@
                      [UIImage imageNamed:@"colors_9"],
                      ];
     
-    float brickWidth = 48;
+    float squareWidth = 48;
     
     //create squares
     for(int row=0; row <3; row++)
     {
         for (int col = 0; col <3; col++)
         {
-            float brickX = ((brickWidth +16) * col)+8;
-            float brickY = ((brickWidth +16) * row)+8;
+            float squareX = ((squareWidth +16) * col)+8;
+            float squareY = ((squareWidth +16) * row)+8;
             
             int index = (row * 3) +col;
             
             int colorIndex = (row * 3) + col;
             
-            colorSquare = [[UIButton alloc] initWithFrame:CGRectMake(brickX, brickY, 48, 48)];
+            colorSquare = [[UIButton alloc] initWithFrame:CGRectMake(squareX, squareY, 48, 48)];
             [colorSquare setImage:buttonImages[index] forState:UIControlStateNormal];
             [colorSquare setTag:colorIndex];
             [buttonFrame addSubview:colorSquare];
@@ -94,7 +94,7 @@
 
 - (void)figureOutSelector: (UIButton *)sender
 {
-    NSLog(@"%i",sender.tag);
+    NSLog(@"%ld",(long)sender.tag);
     [sender insertSubview:selectedFrame atIndex:0];
     [STATSmileySingle singleton].colors = (int)sender.tag;
 }

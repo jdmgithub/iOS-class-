@@ -9,8 +9,11 @@
 #import "STATChosenVC.h"
 #import "STATSmileySingle.h"
 #import "STATYellowSmileyVC.h"
+#import "STTwitter.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface STATChosenVC ()
+
+@interface STATChosenVC () <CLLocationManagerDelegate>
 @property (nonatomic) NSMutableArray * bigSmilies;
 @property (nonatomic) BOOL twitterOn;
 @property (nonatomic) BOOL fbOn;
@@ -21,10 +24,10 @@
 {
     UIView * chosenFrame;
     UIView * socialMediaView;
+    UIImageView * bigSmileFrame;
     
     UIButton * checkBox;
     UIButton * socialMedia;
-    UIButton * bigSmileFrame;
     UIButton * backButton;
     UIButton * selectedMedia;
     
@@ -34,6 +37,12 @@
     NSArray * selSocialMedias;
     
     STATYellowSmileyVC * smallSmiley;
+    STTwitterAPI * twitter;
+    CLLocationManager * lManager;
+    CLLocation * currentLocation;
+    
+    NSString * locationLat;
+    NSString * locationLong;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -41,7 +50,23 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
+        lManager = [[CLLocationManager alloc] init];
+        lManager.delegate = self;
+        [lManager startUpdatingLocation];
+        
         selectedMedia = [[UIButton alloc] initWithFrame:CGRectMake( 0, 0, 48, 48)];
+        
+        twitter = [STTwitterAPI twitterAPIOSWithFirstAccount];
+        
+        [twitter verifyCredentialsWithSuccessBlock:^(NSString *username)
+         {
+             NSLog(@"%@", username);
+             
+         } errorBlock:^(NSError *error) {
+             
+             NSLog(@"%@", error.userInfo);
+         }];
+        
     }
     return self;
 }
@@ -68,9 +93,8 @@
     chosenFrame.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:chosenFrame];
     
-    bigSmileFrame = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 192, 192)];
-    [bigSmileFrame setImage:bigSmiles[index] forState:UIControlStateNormal];
-    [bigSmileFrame addTarget:self action:@selector(figureOutSelector:) forControlEvents:UIControlEventTouchUpInside ];
+    bigSmileFrame = [[UIImageView alloc] initWithImage:bigSmiles[index]];
+    bigSmileFrame.frame = CGRectMake(0, 0, 192, 192);
     [chosenFrame addSubview:bigSmileFrame];
     [self.bigSmilies addObject:bigSmileFrame];
     
@@ -113,9 +137,13 @@
     [self.view addSubview:checkBox];
 }
 
-- (void)figureOutSelector: (UIButton *)sender
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    [STATSmileySingle singleton].bigSmiley = (int)sender.tag;
+    currentLocation = [locations objectAtIndex:0];
+    [lManager stopUpdatingLocation];
+    
+    locationLat = [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
+    locationLong = [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude ];
 }
 
 - (void)selectedState: (UIButton *)sender
@@ -123,6 +151,7 @@
     [sender setSelected:!sender.selected];
     if(sender.tag == 0)
     {
+        
         _twitterOn = !_twitterOn;
         
     } else if (sender.tag == 1)
@@ -144,6 +173,25 @@
     if(_twitterOn)
     {
         NSLog(@"Twitter On");
+        NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString * documentPath = paths[0];
+        
+        NSData * imageData = UIImagePNGRepresentation(bigSmileFrame.image);
+        
+        NSString* pngPath = [documentPath stringByAppendingPathComponent:@"big_smilie.png"];
+        [imageData writeToFile:pngPath atomically:YES];
+        NSURL * url = [NSURL fileURLWithPath:pngPath];
+        
+        [twitter postStatusUpdate:[NSString stringWithFormat:@"SMILEY FACE! %@, %@", locationLat, locationLong] inReplyToStatusID:nil mediaURL:url placeID:nil latitude:locationLat longitude:locationLong uploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {NSLog(@"posted!");
+            
+        } successBlock:^(NSDictionary *status) {
+            
+            NSLog(@"%@", status);
+            NSLog(@"MY LOCATION IS %@, %@", locationLong, locationLat);
+            
+        } errorBlock:^(NSError *error) {
+            NSLog(@"%@", error.userInfo);
+        }];
     }
     else {
         NSLog(@"Twitter Off");
@@ -156,8 +204,6 @@
     else {
         NSLog(@"FB Off");
     }
-
-    
 }
 
 - (void)didReceiveMemoryWarning
