@@ -8,21 +8,31 @@
 
 #import "TPAViewController.h"
 #import "STTwitter.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface TPAViewController ()
+@interface TPAViewController () <CLLocationManagerDelegate>
 
 @end
 
 @implementation TPAViewController
 {
     STTwitterAPI * twitter;
+    CLLocationManager * lManager;
+    CLLocation * currentLocation;
+    
     UITextField * tweetField;
+    NSString * locationLat;
+    NSString * locationLong;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
+        lManager = [[CLLocationManager alloc] init];
+        lManager.delegate = self;
+        [lManager startUpdatingLocation];
         
        twitter = [STTwitterAPI twitterAPIOSWithFirstAccount];
         
@@ -34,8 +44,6 @@
              
              NSLog(@"%@", error.userInfo);
          }];
-        
-       
     }
     return self;
 }
@@ -62,10 +70,20 @@
 
 }
 
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    currentLocation = [locations objectAtIndex:0];
+    [lManager stopUpdatingLocation];
+    
+    locationLat = [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
+    locationLong = [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude ];
+}
+
 - (void)postTweet
 {
-    [twitter postStatusUpdate:tweetField.text inReplyToStatusID:nil latitude:nil longitude:nil placeID:nil displayCoordinates:nil trimUser:nil successBlock:^(NSDictionary *status) {
+    [twitter postStatusUpdate:tweetField.text inReplyToStatusID:nil latitude:locationLat longitude:locationLong placeID:nil displayCoordinates:nil trimUser:nil successBlock:^(NSDictionary *status) {
         NSLog (@"%@", status);
+        NSLog(@"%@, %@", locationLat, locationLong);
         
     } errorBlock:^(NSError *error) {
         

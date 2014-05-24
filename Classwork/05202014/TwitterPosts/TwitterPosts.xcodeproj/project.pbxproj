@@ -154,11 +154,11 @@
 		C3D1546E192BAFD7005342CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3D1549E192BB003005342CD /* STTwitter */,
 				C3D154CF192BB03F005342CD /* Security.framework */,
 				C3D154CD192BB01F005342CD /* Social.framework */,
 				C3D154CB192BB019005342CD /* Twitter.framework */,
 				C3D154C9192BB012005342CD /* Accounts.framework */,
-				C3D1549E192BB003005342CD /* STTwitter */,
 				C3D1546F192BAFD7005342CD /* Foundation.framework */,
 				C3D15471192BAFD7005342CD /* CoreGraphics.framework */,
 				C3D15473192BAFD7005342CD /* UIKit.framework */,
@@ -310,6 +310,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				_en,
 			);
 			mainGroup = C3D15463192BAFD7005342CD;
 			productRefGroup = C3D1546D192BAFD7005342CD /* Products */;
@@ -559,6 +560,7 @@
 				C3D1549A192BAFD8005342CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3D1549B192BAFD8005342CD /* Build configuration list for PBXNativeTarget "TwitterPostsTests" */ = {
 			isa = XCConfigurationList;
@@ -567,6 +569,7 @@
 				C3D1549D192BAFD8005342CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
