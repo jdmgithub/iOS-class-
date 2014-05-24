@@ -1,0 +1,90 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red170\green13\blue145;\red92\green38\blue153;\red46\green13\blue110;
+\red63\green110\blue116;\red28\green0\blue207;\red38\green71\blue75;\red196\green26\blue22;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 WORKING WITH MAPS\
+\
+- import MapKit\
+- import CoreLocation\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f1\fs20 \cf0 \CocoaLigature0 - (\cf2 id\cf0 )initWithNibName:(\cf3 NSString\cf0  *)nibNameOrNil bundle:(\cf3 NSBundle\cf0  *)nibBundleOrNil\
+\{\
+    \cf2 self\cf0  = [\cf2 super\cf0  \cf4 initWithNibName\cf0 :nibNameOrNil \cf4 bundle\cf0 :nibBundleOrNil];\
+    \cf2 if\cf0  (\cf2 self\cf0 ) \{\
+        \
+        \cf5 lManager\cf0  = [[\cf3 CLLocationManager\cf0  \cf4 alloc\cf0 ] \cf4 init\cf0 ];\
+        \cf5 lManager\cf0 .\cf3 delegate\cf0  = \cf2 self\cf0 ;\
+        \
+        \cf5 lManager\cf0 .\cf3 desiredAccuracy\cf0  = \cf3 kCLLocationAccuracyBest\cf0 ;\
+        \cf5 lManager\cf0 .\cf3 distanceFilter\cf0  = \cf6 100\cf0 ;\
+        \
+        [\cf5 lManager\cf0  \cf4 startUpdatingLocation\cf0 ];\
+    \}\
+    \cf2 return\cf0  \cf2 self\cf0 ;\
+\}\
+\
+manager (cllocationmanager) manages locations\
+set the accuracy from best to various distance\
+\
+- (\cf2 void\cf0 )locationManager:(\cf3 CLLocationManager\cf0  *)manager didUpdateLocations:(\cf3 NSArray\cf0  *)locations\
+\{\
+    [\cf5 mapView\cf0  \cf4 removeAnnotations\cf0 :\cf5 mapView\cf0 .\cf3 annotations\cf0 ];\
+    \
+    \cf2 for\cf0  (\cf3 CLLocation\cf0  * location \cf2 in\cf0  locations) \{\
+        \
+        \cf5 MAPAnnotation\cf0  * annotation = [[\cf5 MAPAnnotation\cf0  \cf4 alloc\cf0 ] \cf7 initWithCoordinate\cf0 :location.\cf3 coordinate\cf0 ];\
+        \cf4 NSLog\cf0 (\cf8 @"%@"\cf0 , location);\
+        \
+        [\cf5 mapView\cf0  \cf4 addAnnotation\cf0 :annotation];\
+        \
+        [\cf5 mapView\cf0  \cf4 setCenterCoordinate\cf0 :location.\cf3 coordinate\cf0  \cf4 animated\cf0 :\cf2 YES\cf0 ];\
+        [\cf5 mapView\cf0  \cf4 setZoomEnabled\cf0 :\cf2 YES\cf0 ];\
+        \
+    \}    \
+\}\
+\
+mapView create an array to store the location coordinates \
+\
+Created an NSObject MKAnnotation\
+\
+.h\
+\cf2 @interface\cf0  MAPAnnotation : \cf3 NSObject\cf0  <\cf3 MKAnnotation\cf0 >\
+\
+\cf2 @property\cf0  (\cf2 nonatomic\cf0 , \cf2 readonly\cf0 ) \cf3 CLLocationCoordinate2D\cf0  coordinate;\
+\
+- (\cf2 id\cf0 )initWithCoordinate:(\cf3 CLLocationCoordinate2D\cf0 )coordinate;\
+\
+\cf2 @end\cf0 \
+\
+.m\
+\cf2 @implementation\cf0  MAPAnnotation\
+\
+- (\cf2 id\cf0 )initWithCoordinate: (\cf3 CLLocationCoordinate2D\cf0 )coordinate\
+\{\
+    \cf2 self\cf0  = [\cf2 super\cf0  \cf4 init\cf0 ];\
+    \cf2 if\cf0  (\cf2 self\cf0 )\
+    \{\
+        \cf5 _coordinate\cf0  = coordinate;\
+    \}\
+    \cf2 return\cf0  \cf2 self\cf0 ;\
+\}\
+\
+connecting annotation to mapView\
+- MKMapViewDelegate\
+\
+- (contains the pen and callout)\
+- callout on a specific view\
+- must use annotation but view is not necessary.\
+\
+- (\cf3 MKAnnotationView\cf0  *)mapView:(\cf3 MKMapView\cf0  *)mapView viewForAnnotation:(\cf2 id\cf0 <\cf3 MKAnnotation\cf0 >)annotation\
+\{\
+     \cf3 MKAnnotationView\cf0  * annotationView = [[\cf3 MKAnnotationView\cf0  \cf4 alloc\cf0 ]\cf4 initWithAnnotation\cf0 :annotation \cf4 reuseIdentifier\cf0 :\cf8 @"annoationView"\cf0 ];\
+    \cf2 return\cf0  annotationView;\
+\}\
+\
+}

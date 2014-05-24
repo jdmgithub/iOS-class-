@@ -1,0 +1,154 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 LucidaGrande;\f2\fmodern\fcharset0 Courier;
+\f3\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red83\green83\blue83;\red39\green78\blue192;\red63\green110\blue116;
+\red46\green13\blue110;\red92\green38\blue153;\red196\green26\blue22;\red0\green116\blue0;}
+\margl1440\margr1440\vieww10800\viewh16300\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 05222014\
+\
+
+\b CMAttitude
+\b0 \
+\pard\pardeftab720\sa180
+
+\f1\fs22 \cf0 An instance of the 
+\f2 \cf2 CMAttitude
+\f1 \cf0  class represents a measurement of the device\'92s attitude at a point in time. "Attitude\'94 refers to the orientation of a body relative to a given frame of reference.\
+The 
+\f2 \cf2 CMAttitude
+\f1 \cf0  class offers three different mathematical representations of attitude: a rotation matrix, a quaternion, and Euler angles (roll, pitch, and yaw values). You access 
+\f2 \cf2 CMAttitude
+\f1 \cf0  objects through the attitude property of each {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMDeviceMotion_Class/Reference/Reference.html#//apple_ref/occ/cl/CMDeviceMotion"}}{\fldrslt 
+\f2 \cf3 CMDeviceMotion}} objects passed to an application. An application starts receiving these device-motion objects as a result of calling the {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/Reference/Reference.html#//apple_ref/occ/instm/CMMotionManager/startDeviceMotionUpdatesUsingReferenceFrame:toQueue:withHandler:"}}{\fldrslt 
+\f2 \cf3 startDeviceMotionUpdatesUsingReferenceFrame:toQueue:withHandler:}} method, the{\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/Reference/Reference.html#//apple_ref/occ/instm/CMMotionManager/startDeviceMotionUpdatesToQueue:withHandler:"}}{\fldrslt 
+\f2 \cf3 startDeviceMotionUpdatesToQueue:withHandler:}} method, the {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/Reference/Reference.html#//apple_ref/occ/instm/CMMotionManager/startDeviceMotionUpdatesUsingReferenceFrame:"}}{\fldrslt 
+\f2 \cf3 startDeviceMotionUpdatesUsingReferenceFrame:}} method or the {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/Reference/Reference.html#//apple_ref/occ/instm/CMMotionManager/startDeviceMotionUpdates"}}{\fldrslt 
+\f2 \cf3 startDeviceMotionUpdates}} method of the {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/Reference/Reference.html#//apple_ref/occ/cl/CMMotionManager"}}{\fldrslt 
+\f2 \cf3 CMMotionManager}} class.\
+
+\b CMMotionActivity\
+
+\b0 The 
+\f2 \cf2 CMMotionActivity
+\f1 \cf0  class contains the data for a single motion update event. On devices that support motion, you can use a {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivityManager_class/Reference/Reference.html#//apple_ref/occ/cl/CMMotionActivityManager"}}{\fldrslt 
+\f2 \cf3 CMMotionActivityManager}} object to request updates when the current type of motion changes. When a change occurs, the update information is packaged into a 
+\f2 \cf2 CMMotionActivity
+\f1 \cf0  object and sent to your app.\
+The motion-related properties of this class are not mutually exclusive. In other words, it is possible for more than one of the motion-related properties to contain the value 
+\f2 \cf2 YES
+\f1 \cf0 . For example, if the user was driving in a car and the car stopped at a red light, the update event associated with that change in motion would have both the 
+\f2 \cf3 automotive
+\f1 \cf0  and 
+\f2 \cf3 stationary
+\f1 \cf0  properties set to 
+\f2 \cf2 YES
+\f1 \cf0 . It is also possible for all of the properties to be set to 
+\f2 \cf2 NO
+\f1 \cf0  when the device is in motion but the movement does not correlate to walking, running, or automotive travel.\
+\
+no delegates necessary\
+work with blocks\
+get device data right away\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f3\fs20 \cf4 \CocoaLigature0 mManager\cf0  \cf5 startAccelerometerUpdatesToQueue\cf0 :[\cf6 NSOperationQueue\cf0  \cf5 mainQueue\cf0 ] \cf5 withHandler\cf0 :^(\cf6 CMAccelerometerData\cf0  *accelerometerData, \cf6 NSError\cf0  *error) \{\
+        \
+         \cf5 NSLog\cf0 (\cf7 @"x : %f"\cf0 , accelerometerData.\cf6 acceleration\cf0 .\cf6 x\cf0 );\
+         \cf5 NSLog\cf0 (\cf7 @"y : %f"\cf0 , accelerometerData.\cf6 acceleration\cf0 .\cf6 y\cf0 );\
+         \cf5 NSLog\cf0 (\cf7 @"z : %f"\cf0 , accelerometerData.\cf6 acceleration\cf0 .\cf6 z\cf0 );\
+        \
+\pard\pardeftab720\sa180
+
+\f1\fs22 \cf0 \CocoaLigature1 \}\
+logs the vibrations of x,y,z axis\
+\
+able to have objects move based on movement.\
+\
+\pard\pardeftab720
+
+\fs32 \cf0 CMAcceleration\cf3 \
+\pard\pardeftab720\sa180
+
+\fs22 \cf0 The type of a structure containing 3-axis acceleration values.\
+\pard\pardeftab720
+
+\f2 \cf2 typedef struct \{\
+      double x;\
+      double y;\
+      double z;\
+\} CMAcceleration;\
+\pard\pardeftab720\sa33
+
+\f1\b \cf0 Fields\
+\pard\pardeftab720
+
+\f2\b0 \cf2 x
+\f1 \cf0 \
+\pard\pardeftab720\sa108
+\cf0 X-axis acceleration in G's (gravitational force).\
+\pard\pardeftab720
+
+\f2 \cf2 y
+\f1 \cf0 \
+\pard\pardeftab720\sa108
+\cf0 Y-axis acceleration in G's (gravitational force).\
+\pard\pardeftab720
+
+\f2 \cf2 z
+\f1 \cf0 \
+\pard\pardeftab720\sa108
+\cf0 Z-axis acceleration in G's (gravitational force).\
+\pard\pardeftab720\sa33
+
+\b \cf0 Discussion\
+\pard\pardeftab720\sa180
+
+\b0 \cf0 A G is a unit of gravitation force equal to that exerted by the earth\'92s gravitational field (9.81 m s
+\fs18 \super \uc0\u8722 2
+\fs22 \nosupersub ).\
+\
+\pard\pardeftab720\sa78
+
+\fs32 \cf0 gravity\cf3 \
+\pard\pardeftab720\sa180
+
+\fs22 \cf0 The gravity acceleration vector expressed in the device's reference frame. (read-only)\
+\pard\pardeftab720
+
+\f2 \cf0 @property(readonly, nonatomic) {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAccelerometerData_Class/Reference/Reference.html#//apple_ref/doc/c_ref/CMAcceleration"}}{\fldrslt \cf3 CMAcceleration}} gravity\
+\pard\pardeftab720\sa33
+
+\f1\b \cf0 Discussion\
+\pard\pardeftab720\sa180
+
+\b0 \cf0 The total acceleration of the device is equal to gravity plus the acceleration the user imparts to the device (
+\f2 \cf3 userAcceleration
+\f1 \cf0 ).\
+\
+\pard\tx481\pardeftab481\pardirnatural
+
+\f3\fs20 \cf8 \CocoaLigature0 //    [mManager startMagnetometerUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMMagnetometerData *magnetometerData, NSError *error)\cf0 \
+\cf8 //    \{\cf0 \
+\cf8 //        NSLog(@"%f", magnetometerData.magneticField.z);\cf0 \
+\cf8 //    \}];\cf0 \
+\cf8 //    \cf0 \
+\cf8 //    [mManager startDeviceMotionUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMDeviceMotion *motion, NSError *error) \{\cf0 \
+\cf8 //    \}];\
+\
+ADD SPLATTER SOUND\
+CHANGE EGG IMAGE TO CRACKED EGG\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 {{\NeXTGraphic Pasted Graphic.tiff \width1880 \height1880
+}¬}
+\f3\fs20 \cf8 \CocoaLigature0 \
+\pard\tx481\pardeftab481\pardirnatural
+\cf8 \
+\
+ADD TOUCH TO MOVE SPOONS(TOUCH INSIDE HANDLE)\
+MAKE EGG MORE SENSITIVE\
+EGG TO ROLL OFF THE EDGE OF THE SPOON\
+}
