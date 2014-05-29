@@ -87,6 +87,7 @@
 		C3D1545E192BAA74005342CD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D1545D192BAA74005342CD /* Social.framework */; };
 		C3D15460192BAAEF005342CD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D1545F192BAAEF005342CD /* Accounts.framework */; };
 		C3D15462192BAAFE005342CD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D15461192BAAFE005342CD /* Security.framework */; };
+		C3DB6ADA193769B30064E21D /* BitDataArchitecture.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DB6AD9193769B30064E21D /* BitDataArchitecture.m */; };
 		C3E96EA5192D232100FBF88B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E96EA4192D232100FBF88B /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -204,6 +205,8 @@
 		C3D1545D192BAA74005342CD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		C3D1545F192BAAEF005342CD /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C3D15461192BAAFE005342CD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C3DB6AD8193769B30064E21D /* BitDataArchitecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitDataArchitecture.h; sourceTree = "<group>"; };
+		C3DB6AD9193769B30064E21D /* BitDataArchitecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitDataArchitecture.m; sourceTree = "<group>"; };
 		C3E96EA4192D232100FBF88B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -239,6 +242,8 @@
 		C3D152B4192A3CD9005342CD = {
 			isa = PBXGroup;
 			children = (
+				C3DB6AD8193769B30064E21D /* BitDataArchitecture.h */,
+				C3DB6AD9193769B30064E21D /* BitDataArchitecture.m */,
 				C3D15334192AA64F005342CD /* Singleton */,
 				C3D152F3192A44D3005342CD /* Images */,
 				C3D152EF192A40C1005342CD /* VC */,
@@ -674,6 +679,7 @@
 				C3D15422192BAA3A005342CD /* NSString+STTwitter.m in Sources */,
 				C3D15337192AA66E005342CD /* STATSmileySingle.m in Sources */,
 				C3D15429192BAA3A005342CD /* STTwitterOSRequest.m in Sources */,
+				C3DB6ADA193769B30064E21D /* BitDataArchitecture.m in Sources */,
 				C3D15425192BAA3A005342CD /* STTwitterAppOnly.m in Sources */,
 				C3D1542C192BAA3A005342CD /* STHTTPRequest.m in Sources */,
 				C3D15420192BAA3A005342CD /* NSDateFormatter+STTwitter.m in Sources */,
