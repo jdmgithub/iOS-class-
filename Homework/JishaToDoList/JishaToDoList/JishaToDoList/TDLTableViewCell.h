@@ -36,7 +36,7 @@
 
 @protocol TDLTableViewCellDeglegate <NSObject>
 
--(IBAction)buttonPressed:(id)sender;
+-(void)buttonPressed:(id)sender;
 
 //deletes Item
 - (void)deleteItem:(TDLTableViewCell *)cell ;

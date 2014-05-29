@@ -48,10 +48,6 @@
 
 - (void)resetLayout
 {
-//    if (self.swiped)
-//    {
-//        [self createButtons];
-//    } else {
     self.priorityLevel.frame = CGRectMake(10,0, self.frame.size.width -20, 40);
     [button1 removeFromSuperview];
     [button2 removeFromSuperview];
@@ -126,7 +122,7 @@
     [MOVE animateView:button3 properties:@{@"alpha":@1, @"duration":@0.2, @"delay":@0.3}];
 }
 
--(IBAction)buttonPressed:(id)sender
+-(void)buttonPressed:(id)sender
 {
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Changing Priority"
                                                    message: @"Do you want to change the priority?"
@@ -145,23 +141,23 @@
 {
     NSLog(@"alert clicked : %d",buttonIndex);
     
-    // 0 cancel
-    // 1 ok
-//    switch (gesture.direction) {
+//    // 0 cancel
+//    // 1 ok
+//   switch (gesture.direction) {
 //        case 1://0 Cancel
-//            
-//            NSLog(@"Cancel");
-//            
+//           
+//           NSLog(@"Cancel");
+//           
 //            return cell;
 //            break;
-//            
+//           
 //        case 2://1 Ok
-//            
+//           
 //            NSLog(@"Ok");
-//            
+//           
 //            [MOVE animateView:cell.priorityLevel properties:@{@"x":@-147, @"duration":@0.5}];
 //            [cell showCircleButtons];
-//            cell.swiped = YES;
+//           cell.swiped = YES;
 //            break;
 //    }
     
