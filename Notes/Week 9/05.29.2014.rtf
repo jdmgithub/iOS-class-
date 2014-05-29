@@ -82,4 +82,27 @@ to get specific key\
         \cf3 UIImage\cf0  * colorImage = [\cf3 UIImage\cf0  \cf7 imageNamed\cf0 :imageFileName];\
     \}\
 \}\
-}
+\
+\
+\
+can call each key value\
+\
+- (void) createColors\
+\{\
+	for (NSDictionary * color in colors)\
+	\{\
+		NSString * colorName = color[@\'93color\'94];\
+		UIImage * imageName = [UIImage imageNamed: color[@\'93image\'94]];\
+		NSArray * faces = color[@\'93faces\'94];\
+		for (NSDictionary * face in faces)\
+		\{\
+			NSString * faceImage = face[@\'93image\'94];\
+		\}\
+	\}\
+		\
+	NSMutableDictionary * face = colors[0][@\'93faces\'94][1];  \
+	Array > Dictionary > Array > Dictionary\
+\
+	updating \
+	[face setObject:@\'93hello\'94 forKey:@\'93text\'94]\
+\}}
