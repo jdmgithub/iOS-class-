@@ -19,6 +19,7 @@
 		C3DB6B03193771E90064E21D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DB6AEB193771E90064E21D /* UIKit.framework */; };
 		C3DB6B0B193771E90064E21D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3DB6B09193771E90064E21D /* InfoPlist.strings */; };
 		C3DB6B0D193771E90064E21D /* DataArchitectureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DB6B0C193771E90064E21D /* DataArchitectureTests.m */; };
+		C3DB6B18193772D30064E21D /* BitDataArchitecture.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DB6B17193772D30064E21D /* BitDataArchitecture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		C3DB6B08193771E90064E21D /* DataArchitectureTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DataArchitectureTests-Info.plist"; sourceTree = "<group>"; };
 		C3DB6B0A193771E90064E21D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C3DB6B0C193771E90064E21D /* DataArchitectureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataArchitectureTests.m; sourceTree = "<group>"; };
+		C3DB6B16193772D30064E21D /* BitDataArchitecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitDataArchitecture.h; sourceTree = "<group>"; };
+		C3DB6B17193772D30064E21D /* BitDataArchitecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitDataArchitecture.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 		C3DB6AED193771E90064E21D /* DataArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				C3DB6B16193772D30064E21D /* BitDataArchitecture.h */,
+				C3DB6B17193772D30064E21D /* BitDataArchitecture.m */,
 				C3DB6AF6193771E90064E21D /* DAAAppDelegate.h */,
 				C3DB6AF7193771E90064E21D /* DAAAppDelegate.m */,
 				C3DB6AF9193771E90064E21D /* Images.xcassets */,
@@ -241,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3DB6AF4193771E90064E21D /* main.m in Sources */,
+				C3DB6B18193772D30064E21D /* BitDataArchitecture.m in Sources */,
 				C3DB6AF8193771E90064E21D /* DAAAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

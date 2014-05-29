@@ -7,6 +7,7 @@
 //
 
 #import "DAAAppDelegate.h"
+#import "BITDataArchitecture.h"
 
 @implementation DAAAppDelegate
 
@@ -14,6 +15,12 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    BITDataArchitecture * data = [[BITDataArchitecture alloc] init];
+    
+    [data setUpArchitecture];
+    [data createColors];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
