@@ -28,13 +28,13 @@
 }
 
 
-//- (NSArray *)sectioninfo
-//{
-//    return @{
-//             @"section1": @[@"row 1", @"row 2"],
-//             @"section 2": @[@"row 1", @"row 2", @"row 3"],
-//             };
-//}
+- (NSDictionary *)sectioninfo
+{
+    return @{
+             @"section1": @[@"row 1", @"row 2"],
+             @"section 2": @[@"row 1", @"row 2", @"row 3"],
+             };
+}
 
 -  (NSArray *)allSections
 {

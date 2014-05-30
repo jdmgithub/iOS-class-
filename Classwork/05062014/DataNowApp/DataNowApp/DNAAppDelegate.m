@@ -16,13 +16,13 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    [DNASingleton sharedSingleton].sectionInfo = @{
-                                                   @"section1":@[@"row1"],
-                                                   @"section2":@[@"row1", @"row 2"],
-                                                   @"section3":@[@"row1", @"row 2",  @"row 3"],
-                                                   @"section4":@[@"row1"]
-                                                   };
-                                                   
+//    [DNASingleton sharedSingleton].sectionInfo = @{
+//                                                   @"section1":@[@"row1"],
+//                                                   @"section2":@[@"row1", @"row 2"],
+//                                                   @"section3":@[@"row1", @"row 2",  @"row 3"],
+//                                                   @"section4":@[@"row1"]
+//                                                   };
+    
                                                    
     self.window.rootViewController = [[DNATableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     self.window.backgroundColor = [UIColor whiteColor];
