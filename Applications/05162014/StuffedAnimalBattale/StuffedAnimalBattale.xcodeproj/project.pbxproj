@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C33145D3192656B8007D683F /* char.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C33145D2192656B8007D683F /* char.atlas */; };
+		C350E4F31926663900A8F4D6 /* dance.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C350E4F21926663800A8F4D6 /* dance.atlas */; };
+		C3858C2819253FEC007AB654 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = C3858C2719253FEC007AB654 /* Explosion.sks */; };
+		C3858C2A1925406C007AB654 /* Fireball.sks in Resources */ = {isa = PBXBuildFile; fileRef = C3858C291925406C007AB654 /* Fireball.sks */; };
+		C3A036961924F60900B8B88E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A036951924F60900B8B88E /* Foundation.framework */; };
+		C3A036981924F60900B8B88E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A036971924F60900B8B88E /* CoreGraphics.framework */; };
+		C3A0369A1924F60900B8B88E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A036991924F60900B8B88E /* UIKit.framework */; };
+		C3A036A01924F60900B8B88E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3A0369E1924F60900B8B88E /* InfoPlist.strings */; };
+		C3A036A21924F60900B8B88E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A036A11924F60900B8B88E /* main.m */; };
+		C3A036A61924F60900B8B88E /* SABAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A036A51924F60900B8B88E /* SABAppDelegate.m */; };
+		C3A036A81924F60900B8B88E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A036A71924F60900B8B88E /* Images.xcassets */; };
+		C3A036AF1924F60900B8B88E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A036AE1924F60900B8B88E /* XCTest.framework */; };
+		C3A036B01924F60900B8B88E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A036951924F60900B8B88E /* Foundation.framework */; };
+		C3A036B11924F60900B8B88E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A036991924F60900B8B88E /* UIKit.framework */; };
+		C3A036B91924F60900B8B88E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3A036B71924F60900B8B88E /* InfoPlist.strings */; };
+		C3A036BB1924F60900B8B88E /* StuffedAnimalBattaleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A036BA1924F60900B8B88E /* StuffedAnimalBattaleTests.m */; };
+		C3A036C61924F6F600B8B88E /* SABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A036C51924F6F600B8B88E /* SABViewController.m */; };
+		C3A036C91924FBD300B8B88E /* SABGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A036C81924FBD300B8B88E /* SABGameScene.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C3A036B21924F60900B8B88E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3A0368A1924F60900B8B88E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3A036911924F60900B8B88E;
+			remoteInfo = StuffedAnimalBattale;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C33145D2192656B8007D683F /* char.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = char.atlas; sourceTree = "<group>"; };
+		C350E4F21926663800A8F4D6 /* dance.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = dance.atlas; sourceTree = "<group>"; };
+		C3858C2719253FEC007AB654 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
+		C3858C291925406C007AB654 /* Fireball.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fireball.sks; sourceTree = "<group>"; };
+		C3A036921924F60900B8B88E /* StuffedAnimalBattale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StuffedAnimalBattale.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3A036951924F60900B8B88E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C3A036971924F60900B8B88E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C3A036991924F60900B8B88E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C3A0369D1924F60900B8B88E /* StuffedAnimalBattale-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StuffedAnimalBattale-Info.plist"; sourceTree = "<group>"; };
+		C3A0369F1924F60900B8B88E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3A036A11924F60900B8B88E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C3A036A31924F60900B8B88E /* StuffedAnimalBattale-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StuffedAnimalBattale-Prefix.pch"; sourceTree = "<group>"; };
+		C3A036A41924F60900B8B88E /* SABAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SABAppDelegate.h; sourceTree = "<group>"; };
+		C3A036A51924F60900B8B88E /* SABAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SABAppDelegate.m; sourceTree = "<group>"; };
+		C3A036A71924F60900B8B88E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C3A036AD1924F60900B8B88E /* StuffedAnimalBattaleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StuffedAnimalBattaleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3A036AE1924F60900B8B88E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C3A036B61924F60900B8B88E /* StuffedAnimalBattaleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StuffedAnimalBattaleTests-Info.plist"; sourceTree = "<group>"; };
+		C3A036B81924F60900B8B88E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3A036BA1924F60900B8B88E /* StuffedAnimalBattaleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StuffedAnimalBattaleTests.m; sourceTree = "<group>"; };
+		C3A036C41924F6F600B8B88E /* SABViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SABViewController.h; sourceTree = "<group>"; };
+		C3A036C51924F6F600B8B88E /* SABViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SABViewController.m; sourceTree = "<group>"; };
+		C3A036C71924FBD300B8B88E /* SABGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SABGameScene.h; sourceTree = "<group>"; };
+		C3A036C81924FBD300B8B88E /* SABGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SABGameScene.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3A0368F1924F60900B8B88E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3A036981924F60900B8B88E /* CoreGraphics.framework in Frameworks */,
+				C3A0369A1924F60900B8B88E /* UIKit.framework in Frameworks */,
+				C3A036961924F60900B8B88E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3A036AA1924F60900B8B88E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3A036AF1924F60900B8B88E /* XCTest.framework in Frameworks */,
+				C3A036B11924F60900B8B88E /* UIKit.framework in Frameworks */,
+				C3A036B01924F60900B8B88E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3A036891924F60900B8B88E = {
+			isa = PBXGroup;
+			children = (
+				C3858C291925406C007AB654 /* Fireball.sks */,
+				C3858C2719253FEC007AB654 /* Explosion.sks */,
+				C3A036C71924FBD300B8B88E /* SABGameScene.h */,
+				C3A036C81924FBD300B8B88E /* SABGameScene.m */,
+				C3A036C41924F6F600B8B88E /* SABViewController.h */,
+				C3A036C51924F6F600B8B88E /* SABViewController.m */,
+				C3A0369B1924F60900B8B88E /* StuffedAnimalBattale */,
+				C3A036B41924F60900B8B88E /* StuffedAnimalBattaleTests */,
+				C3A036941924F60900B8B88E /* Frameworks */,
+				C3A036931924F60900B8B88E /* Products */,
+				C33145D2192656B8007D683F /* char.atlas */,
+				C350E4F21926663800A8F4D6 /* dance.atlas */,
+			);
+			sourceTree = "<group>";
+		};
+		C3A036931924F60900B8B88E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3A036921924F60900B8B88E /* StuffedAnimalBattale.app */,
+				C3A036AD1924F60900B8B88E /* StuffedAnimalBattaleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3A036941924F60900B8B88E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3A036951924F60900B8B88E /* Foundation.framework */,
+				C3A036971924F60900B8B88E /* CoreGraphics.framework */,
+				C3A036991924F60900B8B88E /* UIKit.framework */,
+				C3A036AE1924F60900B8B88E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3A0369B1924F60900B8B88E /* StuffedAnimalBattale */ = {
+			isa = PBXGroup;
+			children = (
+				C3A036A41924F60900B8B88E /* SABAppDelegate.h */,
+				C3A036A51924F60900B8B88E /* SABAppDelegate.m */,
+				C3A036A71924F60900B8B88E /* Images.xcassets */,
+				C3A0369C1924F60900B8B88E /* Supporting Files */,
+			);
+			path = StuffedAnimalBattale;
+			sourceTree = "<group>";
+		};
+		C3A0369C1924F60900B8B88E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3A0369D1924F60900B8B88E /* StuffedAnimalBattale-Info.plist */,
+				C3A0369E1924F60900B8B88E /* InfoPlist.strings */,
+				C3A036A11924F60900B8B88E /* main.m */,
+				C3A036A31924F60900B8B88E /* StuffedAnimalBattale-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3A036B41924F60900B8B88E /* StuffedAnimalBattaleTests */ = {
+			isa = PBXGroup;
+			children = (
+				C3A036BA1924F60900B8B88E /* StuffedAnimalBattaleTests.m */,
+				C3A036B51924F60900B8B88E /* Supporting Files */,
+			);
+			path = StuffedAnimalBattaleTests;
+			sourceTree = "<group>";
+		};
+		C3A036B51924F60900B8B88E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3A036B61924F60900B8B88E /* StuffedAnimalBattaleTests-Info.plist */,
+				C3A036B71924F60900B8B88E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3A036911924F60900B8B88E /* StuffedAnimalBattale */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3A036BE1924F60900B8B88E /* Build configuration list for PBXNativeTarget "StuffedAnimalBattale" */;
+			buildPhases = (
+				C3A0368E1924F60900B8B88E /* Sources */,
+				C3A0368F1924F60900B8B88E /* Frameworks */,
+				C3A036901924F60900B8B88E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StuffedAnimalBattale;
+			productName = StuffedAnimalBattale;
+			productReference = C3A036921924F60900B8B88E /* StuffedAnimalBattale.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C3A036AC1924F60900B8B88E /* StuffedAnimalBattaleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3A036C11924F60900B8B88E /* Build configuration list for PBXNativeTarget "StuffedAnimalBattaleTests" */;
+			buildPhases = (
+				C3A036A91924F60900B8B88E /* Sources */,
+				C3A036AA1924F60900B8B88E /* Frameworks */,
+				C3A036AB1924F60900B8B88E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3A036B31924F60900B8B88E /* PBXTargetDependency */,
+			);
+			name = StuffedAnimalBattaleTests;
+			productName = StuffedAnimalBattaleTests;
+			productReference = C3A036AD1924F60900B8B88E /* StuffedAnimalBattaleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3A0368A1924F60900B8B88E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SAB;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Jisha Obukwelu";
+				TargetAttributes = {
+					C3A036AC1924F60900B8B88E = {
+						TestTargetID = C3A036911924F60900B8B88E;
+					};
+				};
+			};
+			buildConfigurationList = C3A0368D1924F60900B8B88E /* Build configuration list for PBXProject "StuffedAnimalBattale" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C3A036891924F60900B8B88E;
+			productRefGroup = C3A036931924F60900B8B88E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3A036911924F60900B8B88E /* StuffedAnimalBattale */,
+				C3A036AC1924F60900B8B88E /* StuffedAnimalBattaleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3A036901924F60900B8B88E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3A036A01924F60900B8B88E /* InfoPlist.strings in Resources */,
+				C33145D3192656B8007D683F /* char.atlas in Resources */,
+				C3858C2819253FEC007AB654 /* Explosion.sks in Resources */,
+				C350E4F31926663900A8F4D6 /* dance.atlas in Resources */,
+				C3858C2A1925406C007AB654 /* Fireball.sks in Resources */,
+				C3A036A81924F60900B8B88E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3A036AB1924F60900B8B88E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3A036B91924F60900B8B88E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3A0368E1924F60900B8B88E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3A036C61924F6F600B8B88E /* SABViewController.m in Sources */,
+				C3A036A21924F60900B8B88E /* main.m in Sources */,
+				C3A036A61924F60900B8B88E /* SABAppDelegate.m in Sources */,
+				C3A036C91924FBD300B8B88E /* SABGameScene.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3A036A91924F60900B8B88E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3A036BB1924F60900B8B88E /* StuffedAnimalBattaleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C3A036B31924F60900B8B88E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3A036911924F60900B8B88E /* StuffedAnimalBattale */;
+			targetProxy = C3A036B21924F60900B8B88E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C3A0369E1924F60900B8B88E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3A0369F1924F60900B8B88E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C3A036B71924F60900B8B88E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3A036B81924F60900B8B88E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C3A036BC1924F60900B8B88E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+			};
+			name = Debug;
+		};
+		C3A036BD1924F60900B8B88E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C3A036BF1924F60900B8B88E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StuffedAnimalBattale/StuffedAnimalBattale-Prefix.pch";
+				INFOPLIST_FILE = "StuffedAnimalBattale/StuffedAnimalBattale-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C3A036C01924F60900B8B88E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StuffedAnimalBattale/StuffedAnimalBattale-Prefix.pch";
+				INFOPLIST_FILE = "StuffedAnimalBattale/StuffedAnimalBattale-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C3A036C21924F60900B8B88E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/StuffedAnimalBattale.app/StuffedAnimalBattale";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StuffedAnimalBattale/StuffedAnimalBattale-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "StuffedAnimalBattaleTests/StuffedAnimalBattaleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C3A036C31924F60900B8B88E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/StuffedAnimalBattale.app/StuffedAnimalBattale";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StuffedAnimalBattale/StuffedAnimalBattale-Prefix.pch";
+				INFOPLIST_FILE = "StuffedAnimalBattaleTests/StuffedAnimalBattaleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3A0368D1924F60900B8B88E /* Build configuration list for PBXProject "StuffedAnimalBattale" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3A036BC1924F60900B8B88E /* Debug */,
+				C3A036BD1924F60900B8B88E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3A036BE1924F60900B8B88E /* Build configuration list for PBXNativeTarget "StuffedAnimalBattale" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3A036BF1924F60900B8B88E /* Debug */,
+				C3A036C01924F60900B8B88E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3A036C11924F60900B8B88E /* Build configuration list for PBXNativeTarget "StuffedAnimalBattaleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3A036C21924F60900B8B88E /* Debug */,
+				C3A036C31924F60900B8B88E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C3A0368A1924F60900B8B88E /* Project object */;
+}
