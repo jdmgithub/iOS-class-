@@ -1,4 +1,0 @@
-Move
-====
-
-Simple Animation Class
