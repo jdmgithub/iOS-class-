@@ -1,0 +1,499 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C39702D918F44ADC00D77A63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39702D818F44ADC00D77A63 /* Foundation.framework */; };
+		C39702DB18F44ADC00D77A63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39702DA18F44ADC00D77A63 /* CoreGraphics.framework */; };
+		C39702DD18F44ADC00D77A63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39702DC18F44ADC00D77A63 /* UIKit.framework */; };
+		C39702E318F44ADC00D77A63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C39702E118F44ADC00D77A63 /* InfoPlist.strings */; };
+		C39702E518F44ADC00D77A63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C39702E418F44ADC00D77A63 /* main.m */; };
+		C39702E918F44ADC00D77A63 /* TDLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C39702E818F44ADC00D77A63 /* TDLAppDelegate.m */; };
+		C39702EB18F44ADC00D77A63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C39702EA18F44ADC00D77A63 /* Images.xcassets */; };
+		C39702F218F44ADC00D77A63 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39702F118F44ADC00D77A63 /* XCTest.framework */; };
+		C39702F318F44ADC00D77A63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39702D818F44ADC00D77A63 /* Foundation.framework */; };
+		C39702F418F44ADC00D77A63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39702DC18F44ADC00D77A63 /* UIKit.framework */; };
+		C39702FC18F44ADC00D77A63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C39702FA18F44ADC00D77A63 /* InfoPlist.strings */; };
+		C39702FE18F44ADC00D77A63 /* JishaToDoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C39702FD18F44ADC00D77A63 /* JishaToDoListTests.m */; };
+		C397030918F44B2800D77A63 /* TDLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C397030818F44B2800D77A63 /* TDLTableViewController.m */; };
+		C397030C18F44B7500D77A63 /* TDLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C397030B18F44B7500D77A63 /* TDLTableViewCell.m */; };
+		C3991F3D18F5D514006F0D26 /* MOVE.m in Sources */ = {isa = PBXBuildFile; fileRef = C3991F3C18F5D514006F0D26 /* MOVE.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C39702F518F44ADC00D77A63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C39702CD18F44ADC00D77A63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C39702D418F44ADC00D77A63;
+			remoteInfo = JishaToDoList;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C39702D518F44ADC00D77A63 /* JishaToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JishaToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C39702D818F44ADC00D77A63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C39702DA18F44ADC00D77A63 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C39702DC18F44ADC00D77A63 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C39702E018F44ADC00D77A63 /* JishaToDoList-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JishaToDoList-Info.plist"; sourceTree = "<group>"; };
+		C39702E218F44ADC00D77A63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C39702E418F44ADC00D77A63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C39702E618F44ADC00D77A63 /* JishaToDoList-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JishaToDoList-Prefix.pch"; sourceTree = "<group>"; };
+		C39702E718F44ADC00D77A63 /* TDLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDLAppDelegate.h; sourceTree = "<group>"; };
+		C39702E818F44ADC00D77A63 /* TDLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDLAppDelegate.m; sourceTree = "<group>"; };
+		C39702EA18F44ADC00D77A63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C39702F018F44ADC00D77A63 /* JishaToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JishaToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C39702F118F44ADC00D77A63 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C39702F918F44ADC00D77A63 /* JishaToDoListTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JishaToDoListTests-Info.plist"; sourceTree = "<group>"; };
+		C39702FB18F44ADC00D77A63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C39702FD18F44ADC00D77A63 /* JishaToDoListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JishaToDoListTests.m; sourceTree = "<group>"; };
+		C397030718F44B2800D77A63 /* TDLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TDLTableViewController.h; path = JishaToDoList/TDLTableViewController.h; sourceTree = "<group>"; };
+		C397030818F44B2800D77A63 /* TDLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDLTableViewController.m; path = JishaToDoList/TDLTableViewController.m; sourceTree = "<group>"; };
+		C397030A18F44B7500D77A63 /* TDLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TDLTableViewCell.h; path = JishaToDoList/TDLTableViewCell.h; sourceTree = "<group>"; };
+		C397030B18F44B7500D77A63 /* TDLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDLTableViewCell.m; path = JishaToDoList/TDLTableViewCell.m; sourceTree = "<group>"; };
+		C3991F3B18F5D514006F0D26 /* MOVE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVE.h; sourceTree = "<group>"; };
+		C3991F3C18F5D514006F0D26 /* MOVE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVE.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C39702D218F44ADC00D77A63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C39702DB18F44ADC00D77A63 /* CoreGraphics.framework in Frameworks */,
+				C39702DD18F44ADC00D77A63 /* UIKit.framework in Frameworks */,
+				C39702D918F44ADC00D77A63 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C39702ED18F44ADC00D77A63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C39702F218F44ADC00D77A63 /* XCTest.framework in Frameworks */,
+				C39702F418F44ADC00D77A63 /* UIKit.framework in Frameworks */,
+				C39702F318F44ADC00D77A63 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C39702CC18F44ADC00D77A63 = {
+			isa = PBXGroup;
+			children = (
+				C39702DE18F44ADC00D77A63 /* JishaToDoList */,
+				C397030E18F4503500D77A63 /* Cells */,
+				C397030D18F4501D00D77A63 /* Controllers */,
+				C3991F3E18F5D522006F0D26 /* Animation */,
+				C39702F718F44ADC00D77A63 /* JishaToDoListTests */,
+				C39702D718F44ADC00D77A63 /* Frameworks */,
+				C39702D618F44ADC00D77A63 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C39702D618F44ADC00D77A63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C39702D518F44ADC00D77A63 /* JishaToDoList.app */,
+				C39702F018F44ADC00D77A63 /* JishaToDoListTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C39702D718F44ADC00D77A63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C39702D818F44ADC00D77A63 /* Foundation.framework */,
+				C39702DA18F44ADC00D77A63 /* CoreGraphics.framework */,
+				C39702DC18F44ADC00D77A63 /* UIKit.framework */,
+				C39702F118F44ADC00D77A63 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C39702DE18F44ADC00D77A63 /* JishaToDoList */ = {
+			isa = PBXGroup;
+			children = (
+				C39702E718F44ADC00D77A63 /* TDLAppDelegate.h */,
+				C39702E818F44ADC00D77A63 /* TDLAppDelegate.m */,
+				C39702EA18F44ADC00D77A63 /* Images.xcassets */,
+				C39702DF18F44ADC00D77A63 /* Supporting Files */,
+			);
+			path = JishaToDoList;
+			sourceTree = "<group>";
+		};
+		C39702DF18F44ADC00D77A63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C39702E018F44ADC00D77A63 /* JishaToDoList-Info.plist */,
+				C39702E118F44ADC00D77A63 /* InfoPlist.strings */,
+				C39702E418F44ADC00D77A63 /* main.m */,
+				C39702E618F44ADC00D77A63 /* JishaToDoList-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C39702F718F44ADC00D77A63 /* JishaToDoListTests */ = {
+			isa = PBXGroup;
+			children = (
+				C39702FD18F44ADC00D77A63 /* JishaToDoListTests.m */,
+				C39702F818F44ADC00D77A63 /* Supporting Files */,
+			);
+			path = JishaToDoListTests;
+			sourceTree = "<group>";
+		};
+		C39702F818F44ADC00D77A63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C39702F918F44ADC00D77A63 /* JishaToDoListTests-Info.plist */,
+				C39702FA18F44ADC00D77A63 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C397030D18F4501D00D77A63 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C397030718F44B2800D77A63 /* TDLTableViewController.h */,
+				C397030818F44B2800D77A63 /* TDLTableViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C397030E18F4503500D77A63 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C397030A18F44B7500D77A63 /* TDLTableViewCell.h */,
+				C397030B18F44B7500D77A63 /* TDLTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		C3991F3E18F5D522006F0D26 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				C3991F3B18F5D514006F0D26 /* MOVE.h */,
+				C3991F3C18F5D514006F0D26 /* MOVE.m */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C39702D418F44ADC00D77A63 /* JishaToDoList */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C397030118F44ADC00D77A63 /* Build configuration list for PBXNativeTarget "JishaToDoList" */;
+			buildPhases = (
+				C39702D118F44ADC00D77A63 /* Sources */,
+				C39702D218F44ADC00D77A63 /* Frameworks */,
+				C39702D318F44ADC00D77A63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JishaToDoList;
+			productName = JishaToDoList;
+			productReference = C39702D518F44ADC00D77A63 /* JishaToDoList.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C39702EF18F44ADC00D77A63 /* JishaToDoListTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C397030418F44ADC00D77A63 /* Build configuration list for PBXNativeTarget "JishaToDoListTests" */;
+			buildPhases = (
+				C39702EC18F44ADC00D77A63 /* Sources */,
+				C39702ED18F44ADC00D77A63 /* Frameworks */,
+				C39702EE18F44ADC00D77A63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C39702F618F44ADC00D77A63 /* PBXTargetDependency */,
+			);
+			name = JishaToDoListTests;
+			productName = JishaToDoListTests;
+			productReference = C39702F018F44ADC00D77A63 /* JishaToDoListTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C39702CD18F44ADC00D77A63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TDL;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Jisha Obukwelu";
+				TargetAttributes = {
+					C39702EF18F44ADC00D77A63 = {
+						TestTargetID = C39702D418F44ADC00D77A63;
+					};
+				};
+			};
+			buildConfigurationList = C39702D018F44ADC00D77A63 /* Build configuration list for PBXProject "JishaToDoList" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C39702CC18F44ADC00D77A63;
+			productRefGroup = C39702D618F44ADC00D77A63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C39702D418F44ADC00D77A63 /* JishaToDoList */,
+				C39702EF18F44ADC00D77A63 /* JishaToDoListTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C39702D318F44ADC00D77A63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C39702E318F44ADC00D77A63 /* InfoPlist.strings in Resources */,
+				C39702EB18F44ADC00D77A63 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C39702EE18F44ADC00D77A63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C39702FC18F44ADC00D77A63 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C39702D118F44ADC00D77A63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3991F3D18F5D514006F0D26 /* MOVE.m in Sources */,
+				C397030C18F44B7500D77A63 /* TDLTableViewCell.m in Sources */,
+				C397030918F44B2800D77A63 /* TDLTableViewController.m in Sources */,
+				C39702E518F44ADC00D77A63 /* main.m in Sources */,
+				C39702E918F44ADC00D77A63 /* TDLAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C39702EC18F44ADC00D77A63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C39702FE18F44ADC00D77A63 /* JishaToDoListTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C39702F618F44ADC00D77A63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C39702D418F44ADC00D77A63 /* JishaToDoList */;
+			targetProxy = C39702F518F44ADC00D77A63 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C39702E118F44ADC00D77A63 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C39702E218F44ADC00D77A63 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C39702FA18F44ADC00D77A63 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C39702FB18F44ADC00D77A63 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C39702FF18F44ADC00D77A63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C397030018F44ADC00D77A63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C397030218F44ADC00D77A63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JishaToDoList/JishaToDoList-Prefix.pch";
+				INFOPLIST_FILE = "JishaToDoList/JishaToDoList-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C397030318F44ADC00D77A63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JishaToDoList/JishaToDoList-Prefix.pch";
+				INFOPLIST_FILE = "JishaToDoList/JishaToDoList-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C397030518F44ADC00D77A63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JishaToDoList.app/JishaToDoList";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JishaToDoList/JishaToDoList-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "JishaToDoListTests/JishaToDoListTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C397030618F44ADC00D77A63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JishaToDoList.app/JishaToDoList";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JishaToDoList/JishaToDoList-Prefix.pch";
+				INFOPLIST_FILE = "JishaToDoListTests/JishaToDoListTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C39702D018F44ADC00D77A63 /* Build configuration list for PBXProject "JishaToDoList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C39702FF18F44ADC00D77A63 /* Debug */,
+				C397030018F44ADC00D77A63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C397030118F44ADC00D77A63 /* Build configuration list for PBXNativeTarget "JishaToDoList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C397030218F44ADC00D77A63 /* Debug */,
+				C397030318F44ADC00D77A63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C397030418F44ADC00D77A63 /* Build configuration list for PBXNativeTarget "JishaToDoListTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C397030518F44ADC00D77A63 /* Debug */,
+				C397030618F44ADC00D77A63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C39702CD18F44ADC00D77A63 /* Project object */;
+}
