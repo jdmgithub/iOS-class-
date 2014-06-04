@@ -51,7 +51,6 @@
         toDoField.font = [UIFont fontWithName:@"Times New Roman" size:(20)];
         
         toDoField.delegate = self;
-        
         [self.tableView.tableHeaderView addSubview:toDoField];
         
         button1 = [[UIButton alloc] initWithFrame:CGRectMake(170, 20, 40, 40)];
