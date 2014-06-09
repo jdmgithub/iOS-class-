@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C33E51FF1943B3920014A6BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33E51FE1943B3920014A6BF /* Foundation.framework */; };
+		C33E52011943B3920014A6BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33E52001943B3920014A6BF /* CoreGraphics.framework */; };
+		C33E52031943B3920014A6BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33E52021943B3920014A6BF /* UIKit.framework */; };
+		C33E52091943B3920014A6BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C33E52071943B3920014A6BF /* InfoPlist.strings */; };
+		C33E520B1943B3920014A6BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C33E520A1943B3920014A6BF /* main.m */; };
+		C33E520F1943B3920014A6BF /* MGAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C33E520E1943B3920014A6BF /* MGAAppDelegate.m */; };
+		C33E52111943B3920014A6BF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C33E52101943B3920014A6BF /* Images.xcassets */; };
+		C33E52181943B3920014A6BF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33E52171943B3920014A6BF /* XCTest.framework */; };
+		C33E52191943B3920014A6BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33E51FE1943B3920014A6BF /* Foundation.framework */; };
+		C33E521A1943B3920014A6BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33E52021943B3920014A6BF /* UIKit.framework */; };
+		C33E52221943B3920014A6BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C33E52201943B3920014A6BF /* InfoPlist.strings */; };
+		C33E52241943B3920014A6BF /* MGASwipeViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C33E52231943B3920014A6BF /* MGASwipeViewTests.m */; };
+		C33E52301943B3C30014A6BF /* MGASwipe.m in Sources */ = {isa = PBXBuildFile; fileRef = C33E522F1943B3C30014A6BF /* MGASwipe.m */; };
+		C33E52351943B4450014A6BF /* MGAPreferenceArrays.m in Sources */ = {isa = PBXBuildFile; fileRef = C33E52341943B4450014A6BF /* MGAPreferenceArrays.m */; };
+		C33E52381943BA6D0014A6BF /* MOVE.m in Sources */ = {isa = PBXBuildFile; fileRef = C33E52371943BA6D0014A6BF /* MOVE.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C33E521B1943B3920014A6BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C33E51F31943B3920014A6BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C33E51FA1943B3920014A6BF;
+			remoteInfo = MGASwipeView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C33E51FB1943B3920014A6BF /* MGASwipeView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGASwipeView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C33E51FE1943B3920014A6BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C33E52001943B3920014A6BF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C33E52021943B3920014A6BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C33E52061943B3920014A6BF /* MGASwipeView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MGASwipeView-Info.plist"; sourceTree = "<group>"; };
+		C33E52081943B3920014A6BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C33E520A1943B3920014A6BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C33E520C1943B3920014A6BF /* MGASwipeView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MGASwipeView-Prefix.pch"; sourceTree = "<group>"; };
+		C33E520D1943B3920014A6BF /* MGAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGAAppDelegate.h; sourceTree = "<group>"; };
+		C33E520E1943B3920014A6BF /* MGAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGAAppDelegate.m; sourceTree = "<group>"; };
+		C33E52101943B3920014A6BF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C33E52161943B3920014A6BF /* MGASwipeViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MGASwipeViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C33E52171943B3920014A6BF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C33E521F1943B3920014A6BF /* MGASwipeViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MGASwipeViewTests-Info.plist"; sourceTree = "<group>"; };
+		C33E52211943B3920014A6BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C33E52231943B3920014A6BF /* MGASwipeViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGASwipeViewTests.m; sourceTree = "<group>"; };
+		C33E522E1943B3C30014A6BF /* MGASwipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGASwipe.h; sourceTree = "<group>"; };
+		C33E522F1943B3C30014A6BF /* MGASwipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGASwipe.m; sourceTree = "<group>"; };
+		C33E52331943B4450014A6BF /* MGAPreferenceArrays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGAPreferenceArrays.h; sourceTree = "<group>"; };
+		C33E52341943B4450014A6BF /* MGAPreferenceArrays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGAPreferenceArrays.m; sourceTree = "<group>"; };
+		C33E52361943BA6D0014A6BF /* MOVE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOVE.h; sourceTree = "<group>"; };
+		C33E52371943BA6D0014A6BF /* MOVE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOVE.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C33E51F81943B3920014A6BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C33E52011943B3920014A6BF /* CoreGraphics.framework in Frameworks */,
+				C33E52031943B3920014A6BF /* UIKit.framework in Frameworks */,
+				C33E51FF1943B3920014A6BF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C33E52131943B3920014A6BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C33E52181943B3920014A6BF /* XCTest.framework in Frameworks */,
+				C33E521A1943B3920014A6BF /* UIKit.framework in Frameworks */,
+				C33E52191943B3920014A6BF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C33E51F21943B3920014A6BF = {
+			isa = PBXGroup;
+			children = (
+				C33E52361943BA6D0014A6BF /* MOVE.h */,
+				C33E52371943BA6D0014A6BF /* MOVE.m */,
+				C33E52321943B4270014A6BF /* Singleton */,
+				C33E522D1943B3A30014A6BF /* VC */,
+				C33E52041943B3920014A6BF /* MGASwipeView */,
+				C33E521D1943B3920014A6BF /* MGASwipeViewTests */,
+				C33E51FD1943B3920014A6BF /* Frameworks */,
+				C33E51FC1943B3920014A6BF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C33E51FC1943B3920014A6BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C33E51FB1943B3920014A6BF /* MGASwipeView.app */,
+				C33E52161943B3920014A6BF /* MGASwipeViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C33E51FD1943B3920014A6BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C33E51FE1943B3920014A6BF /* Foundation.framework */,
+				C33E52001943B3920014A6BF /* CoreGraphics.framework */,
+				C33E52021943B3920014A6BF /* UIKit.framework */,
+				C33E52171943B3920014A6BF /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C33E52041943B3920014A6BF /* MGASwipeView */ = {
+			isa = PBXGroup;
+			children = (
+				C33E520D1943B3920014A6BF /* MGAAppDelegate.h */,
+				C33E520E1943B3920014A6BF /* MGAAppDelegate.m */,
+				C33E52101943B3920014A6BF /* Images.xcassets */,
+				C33E52051943B3920014A6BF /* Supporting Files */,
+			);
+			path = MGASwipeView;
+			sourceTree = "<group>";
+		};
+		C33E52051943B3920014A6BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C33E52061943B3920014A6BF /* MGASwipeView-Info.plist */,
+				C33E52071943B3920014A6BF /* InfoPlist.strings */,
+				C33E520A1943B3920014A6BF /* main.m */,
+				C33E520C1943B3920014A6BF /* MGASwipeView-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C33E521D1943B3920014A6BF /* MGASwipeViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				C33E52231943B3920014A6BF /* MGASwipeViewTests.m */,
+				C33E521E1943B3920014A6BF /* Supporting Files */,
+			);
+			path = MGASwipeViewTests;
+			sourceTree = "<group>";
+		};
+		C33E521E1943B3920014A6BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C33E521F1943B3920014A6BF /* MGASwipeViewTests-Info.plist */,
+				C33E52201943B3920014A6BF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C33E522D1943B3A30014A6BF /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				C33E522E1943B3C30014A6BF /* MGASwipe.h */,
+				C33E522F1943B3C30014A6BF /* MGASwipe.m */,
+			);
+			name = VC;
+			sourceTree = "<group>";
+		};
+		C33E52321943B4270014A6BF /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				C33E52331943B4450014A6BF /* MGAPreferenceArrays.h */,
+				C33E52341943B4450014A6BF /* MGAPreferenceArrays.m */,
+			);
+			name = Singleton;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C33E51FA1943B3920014A6BF /* MGASwipeView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C33E52271943B3920014A6BF /* Build configuration list for PBXNativeTarget "MGASwipeView" */;
+			buildPhases = (
+				C33E51F71943B3920014A6BF /* Sources */,
+				C33E51F81943B3920014A6BF /* Frameworks */,
+				C33E51F91943B3920014A6BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MGASwipeView;
+			productName = MGASwipeView;
+			productReference = C33E51FB1943B3920014A6BF /* MGASwipeView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C33E52151943B3920014A6BF /* MGASwipeViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C33E522A1943B3920014A6BF /* Build configuration list for PBXNativeTarget "MGASwipeViewTests" */;
+			buildPhases = (
+				C33E52121943B3920014A6BF /* Sources */,
+				C33E52131943B3920014A6BF /* Frameworks */,
+				C33E52141943B3920014A6BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C33E521C1943B3920014A6BF /* PBXTargetDependency */,
+			);
+			name = MGASwipeViewTests;
+			productName = MGASwipeViewTests;
+			productReference = C33E52161943B3920014A6BF /* MGASwipeViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C33E51F31943B3920014A6BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MGA;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Jisha Obukwelu";
+				TargetAttributes = {
+					C33E52151943B3920014A6BF = {
+						TestTargetID = C33E51FA1943B3920014A6BF;
+					};
+				};
+			};
+			buildConfigurationList = C33E51F61943B3920014A6BF /* Build configuration list for PBXProject "MGASwipeView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C33E51F21943B3920014A6BF;
+			productRefGroup = C33E51FC1943B3920014A6BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C33E51FA1943B3920014A6BF /* MGASwipeView */,
+				C33E52151943B3920014A6BF /* MGASwipeViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C33E51F91943B3920014A6BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C33E52091943B3920014A6BF /* InfoPlist.strings in Resources */,
+				C33E52111943B3920014A6BF /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C33E52141943B3920014A6BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C33E52221943B3920014A6BF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C33E51F71943B3920014A6BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C33E52381943BA6D0014A6BF /* MOVE.m in Sources */,
+				C33E52301943B3C30014A6BF /* MGASwipe.m in Sources */,
+				C33E520F1943B3920014A6BF /* MGAAppDelegate.m in Sources */,
+				C33E52351943B4450014A6BF /* MGAPreferenceArrays.m in Sources */,
+				C33E520B1943B3920014A6BF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C33E52121943B3920014A6BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C33E52241943B3920014A6BF /* MGASwipeViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C33E521C1943B3920014A6BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C33E51FA1943B3920014A6BF /* MGASwipeView */;
+			targetProxy = C33E521B1943B3920014A6BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C33E52071943B3920014A6BF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C33E52081943B3920014A6BF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C33E52201943B3920014A6BF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C33E52211943B3920014A6BF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C33E52251943B3920014A6BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C33E52261943B3920014A6BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C33E52281943B3920014A6BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MGASwipeView/MGASwipeView-Prefix.pch";
+				INFOPLIST_FILE = "MGASwipeView/MGASwipeView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C33E52291943B3920014A6BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MGASwipeView/MGASwipeView-Prefix.pch";
+				INFOPLIST_FILE = "MGASwipeView/MGASwipeView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C33E522B1943B3920014A6BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MGASwipeView.app/MGASwipeView";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MGASwipeView/MGASwipeView-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MGASwipeViewTests/MGASwipeViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C33E522C1943B3920014A6BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MGASwipeView.app/MGASwipeView";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MGASwipeView/MGASwipeView-Prefix.pch";
+				INFOPLIST_FILE = "MGASwipeViewTests/MGASwipeViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C33E51F61943B3920014A6BF /* Build configuration list for PBXProject "MGASwipeView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C33E52251943B3920014A6BF /* Debug */,
+				C33E52261943B3920014A6BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C33E52271943B3920014A6BF /* Build configuration list for PBXNativeTarget "MGASwipeView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C33E52281943B3920014A6BF /* Debug */,
+				C33E52291943B3920014A6BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C33E522A1943B3920014A6BF /* Build configuration list for PBXNativeTarget "MGASwipeViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C33E522B1943B3920014A6BF /* Debug */,
+				C33E522C1943B3920014A6BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C33E51F31943B3920014A6BF /* Project object */;
+}
