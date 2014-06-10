@@ -29,6 +29,7 @@
 		C38205D5193CB2F000188290 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38205D4193CB2F000188290 /* Security.framework */; };
 		C38205D7193CB2F900188290 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38205D6193CB2F900188290 /* StoreKit.framework */; };
 		C38205D9193CB30100188290 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38205D8193CB30100188290 /* SystemConfiguration.framework */; };
+		C3BDD36A194623D6009EE28F /* TTMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDD369194623D6009EE28F /* TTMViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		C38205D4193CB2F000188290 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C38205D6193CB2F900188290 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C38205D8193CB30100188290 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C3BDD368194623D6009EE28F /* TTMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTMViewController.h; sourceTree = "<group>"; };
+		C3BDD369194623D6009EE28F /* TTMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTMViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 		C382058B193CB1CE00188290 = {
 			isa = PBXGroup;
 			children = (
+				C3BDD368194623D6009EE28F /* TTMViewController.h */,
+				C3BDD369194623D6009EE28F /* TTMViewController.m */,
 				C382059D193CB1CE00188290 /* TTM */,
 				C38205B6193CB1CF00188290 /* TTMTests */,
 				C3820596193CB1CE00188290 /* Frameworks */,
@@ -284,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C38205A8193CB1CE00188290 /* TTMAppDelegate.m in Sources */,
+				C3BDD36A194623D6009EE28F /* TTMViewController.m in Sources */,
 				C38205A4193CB1CE00188290 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +501,7 @@
 				C38205C2193CB1CF00188290 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C38205C3193CB1CF00188290 /* Build configuration list for PBXNativeTarget "TTMTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +510,7 @@
 				C38205C5193CB1CF00188290 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
